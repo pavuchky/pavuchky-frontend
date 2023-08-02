@@ -1,1 +1,1 @@
-{"version":3,"file":"static/js/101.161c9723.chunk.js","mappings":"8IAIA,UAJkB,WAChB,OAAO,sCACR,C","sources":["pages/OrderPage/OrderPage.jsx"],"sourcesContent":["const OrderPage = () => {\n  return <div>OrderPage</div>;\n};\n\nexport default OrderPage;\n"],"names":[],"sourceRoot":""}
+{"version":3,"file":"static/js/101.161c9723.chunk.js","mappings":"8IAIA,UAJkB,WAChB,OAAO,yBAAK,aACb,C","sources":["pages/OrderPage/OrderPage.jsx"],"sourcesContent":["const OrderPage = () => {\n  return <div>OrderPage</div>;\n};\n\nexport default OrderPage;\n"],"names":[],"sourceRoot":""}
