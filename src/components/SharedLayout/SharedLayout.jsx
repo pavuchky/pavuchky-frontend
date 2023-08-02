@@ -1,12 +1,15 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
+import { StyledContainer } from './SharedLayout.styled';
 
 export const SharedLayout = () => {
   return (
     <main>
-      <Suspense fallback={null}>
-        <Outlet />
-      </Suspense>
+      <StyledContainer>
+        <Suspense fallback={null}>
+          <Outlet />
+        </Suspense>
+      </StyledContainer>
     </main>
   );
 };
