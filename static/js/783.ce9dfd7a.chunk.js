@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkpavuchky_frontend=self.webpackChunkpavuchky_frontend||[]).push([[783],{8783:function(e,n,u){u.r(n);var c=u(184);n.default=function(){return(0,c.jsx)("div",{children:"ReviewPage"})}}}]);
+//# sourceMappingURL=783.ce9dfd7a.chunk.js.map

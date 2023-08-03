@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkpavuchky_frontend=self.webpackChunkpavuchky_frontend||[]).push([[252],{252:function(e,n,u){u.r(n);var r=u(184);n.default=function(){return(0,r.jsx)("div",{children:"GalleryVideos"})}}}]);
-//# sourceMappingURL=252.df4ecdac.chunk.js.map

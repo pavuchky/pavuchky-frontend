@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/252.bc0b52a0.chunk.js","mappings":"+IAIA,UAJsB,WACpB,OAAO,yBAAK,iBACb,C","sources":["components/GalleryVideos/GalleryVideos.jsx"],"sourcesContent":["const GalleryVideos = () => {\n  return <div>GalleryVideos</div>;\n};\n\nexport default GalleryVideos;\n"],"names":[],"sourceRoot":""}

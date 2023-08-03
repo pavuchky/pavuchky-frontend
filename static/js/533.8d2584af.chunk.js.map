@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/533.8d2584af.chunk.js","mappings":"8IAIA,UAJsB,WACpB,OAAO,yBAAK,iBACb,C","sources":["pages/ReportingPage/ReportingPage.jsx"],"sourcesContent":["const ReportingPage = () => {\n  return <div>ReportingPage</div>;\n};\n\nexport default ReportingPage;\n"],"names":[],"sourceRoot":""}

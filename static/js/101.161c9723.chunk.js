@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkpavuchky_frontend=self.webpackChunkpavuchky_frontend||[]).push([[101],{101:function(e,n,r){r.r(n);var u=r(184);n.default=function(){return(0,u.jsx)("div",{children:"OrderPage"})}}}]);
-//# sourceMappingURL=101.161c9723.chunk.js.map

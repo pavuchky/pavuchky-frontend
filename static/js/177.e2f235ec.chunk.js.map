@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/177.e2f235ec.chunk.js","mappings":"8IAIA,UAJqB,WACnB,OAAO,yBAAK,gBACb,C","sources":["pages/PartnersPage/PartnersPage.jsx"],"sourcesContent":["const PartnersPage = () => {\n  return <div>PartnersPage</div>;\n};\n\nexport default PartnersPage;\n"],"names":[],"sourceRoot":""}
