@@ -7,10 +7,11 @@ import {
   AboutUsMap,
   AboutUsSectionWrapper,
   AboutUsTitle,
+  ButtonLearnMore,
+  DescriptionContainer,
   DescriptionWrapper,
   TitleWrapper,
 } from './AboutUs.styled';
-import Button from '@mui/material/Button';
 
 const AboutUs = () => {
   return (
@@ -23,21 +24,21 @@ const AboutUs = () => {
         </AboutUSButton>
       </TitleWrapper>
       <AboutUsMainContentWrapper>
-        <DescriptionWrapper>
-          <AboutUsDescription>
-            Повномасштабне вторгнення росії змусило кожного українця замислитися
-            про те, що він чи вона може зробити для допомоги своїй країні,
-            армії, співгромадянам.
-          </AboutUsDescription>
-          <AboutUsDescription>
-            Ми відчули єдність і солідарність, взялися активно волонтерити,
-            донатити, поширювати важливу інформацію для збереження життів
-            українців і правду про злочини росіян на нашій землі.
-          </AboutUsDescription>
-        </DescriptionWrapper>
-        <AboutUsMap src={Map} alt="Ukraine map" />
-        {/* <button>Дізнатись більше</button> */}
-        <Button variant="contained">Дізнатись більше</Button>
+        <DescriptionContainer>
+          <DescriptionWrapper>
+            <AboutUsDescription>
+              Повномасштабне вторгнення росії змусило кожного українця
+              замислитися про те, що він чи вона може зробити для допомоги своїй
+              країні, армії, співгромадянам.
+            </AboutUsDescription>
+            <AboutUsDescription>
+              Ми відчули єдність і солідарність, взялися активно волонтерити,
+              донатити, поширювати...
+            </AboutUsDescription>
+          </DescriptionWrapper>
+          <AboutUsMap src={Map} alt="Ukraine map" />
+        </DescriptionContainer>
+        <ButtonLearnMore variant="contained">Дізнатись більше</ButtonLearnMore>
       </AboutUsMainContentWrapper>
     </AboutUsSectionWrapper>
   );
