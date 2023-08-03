@@ -3,8 +3,8 @@ import { theme } from '../../stylesheet/theme';
 import Button from '@mui/material/Button';
 
 export const AboutUsSectionWrapper = styled.section`
+  position: relative;
   padding: 28px 16px 32px;
-  width: 100vw;
   margin: 0px auto;
   width: 100%;
 `;
@@ -14,6 +14,10 @@ export const TitleWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 24px;
+  padding-right: 34px;
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 28px;
+  }
 `;
 
 export const AboutUsTitle = styled.h3`
@@ -24,14 +28,15 @@ export const AboutUsTitle = styled.h3`
   @media screen and (min-width: 768px) {
     font-size: 36px;
   }
+  @media screen and (min-width: 1280px) {
+    font-size: 60px;
+  }
 `;
 
 export const AboutUSButton = styled.button`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: 147px;
-  height: 28px;
   border: none;
   background-color: transparent;
 
@@ -43,21 +48,40 @@ export const AboutUSButton = styled.button`
   @media screen and (min-width: 768px) {
     font-size: 14px;
   }
+  @media screen and (min-width: 1280px) {
+    font-size: 16px;
+  }
+`;
+
+export const AboutUsIcon = styled.svg`
+  margin-left: 13px;
 `;
 
 export const AboutUsMainContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
+
+  @media screen and (min-width: 768px) {
+    gap: 28px;
+  }
+  @media screen and (min-width: 1280px) {
+    gap: 44px;
+  }
 `;
 
 export const DescriptionContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
+
   @media screen and (min-width: 768px) {
     display: flex;
     flex-direction: row-reverse;
+    gap: 22px;
+  }
+  @media screen and (min-width: 1280px) {
+    gap: 93px;
   }
 `;
 
@@ -65,6 +89,9 @@ export const DescriptionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 12px;
+  @media screen and (min-width: 1280px) {
+    gap: 16px;
+  }
 `;
 
 export const AboutUsDescription = styled.p`
@@ -75,6 +102,9 @@ export const AboutUsDescription = styled.p`
   @media screen and (min-width: 768px) {
     font-size: 18px;
   }
+  @media screen and (min-width: 1280px) {
+    font-size: 20px;
+  }
 `;
 
 export const AboutUsMap = styled.img`
@@ -84,7 +114,7 @@ export const AboutUsMap = styled.img`
   @media screen and (min-width: 768px) {
     width: 318px;
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     width: 605px;
     height: 404px;
   }
@@ -98,5 +128,12 @@ export const ButtonLearnMore = styled(Button)`
   font-family: ${theme.fonts.regular};
   @media screen and (min-width: 768px) {
     font-size: 24px !important;
+  }
+  @media screen and (min-width: 1280px) {
+    position: absolute !important;
+    top: 80% !important;
+    right: 1% !important;
+    width: 519px;
+    height: 64px;
   }
 `;

@@ -1,5 +1,8 @@
 import React from 'react';
 import Map from '../../assets/images/map.svg';
+import sprite from '../../assets/images/sprite.svg';
+import { useMediaQuery } from 'react-responsive';
+
 import {
   AboutUSButton,
   AboutUsDescription,
@@ -11,16 +14,23 @@ import {
   DescriptionContainer,
   DescriptionWrapper,
   TitleWrapper,
+  AboutUsIcon,
 } from './AboutUs.styled';
 
 const AboutUs = () => {
+  const isDesktop = useMediaQuery({
+    query: '(min-width: 1280px)',
+  });
+
   return (
     <AboutUsSectionWrapper>
       <TitleWrapper>
         <AboutUsTitle>Хто ми</AboutUsTitle>
         <AboutUSButton>
-          Про нас
-          {/* <svg data-testid="ArrowOutwardIcon"></svg> */}
+          {isDesktop ? 'Переглянути усе' : 'Про нас'}
+          <AboutUsIcon width="11px" height="13px">
+            <use xlinkHref={`${sprite}#arrow`} />
+          </AboutUsIcon>
         </AboutUSButton>
       </TitleWrapper>
       <AboutUsMainContentWrapper>
