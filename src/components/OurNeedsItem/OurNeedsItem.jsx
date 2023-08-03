@@ -1,3 +1,5 @@
+import { useMediaQuery } from 'react-responsive';
+
 import {
   ContactContainer,
   Location,
@@ -11,20 +13,24 @@ import {
 } from './OurNeedsItem.styled';
 
 const OurNeedsItem = ({ location, needType, titel, description, contact }) => {
+  const isTabletScreen = useMediaQuery({ minWidth: 768 });
+
   return (
     <OurNeedsItemLi>
       <LocationAndNeedTypeContainer>
         <Location>{location}</Location>
-        <NeedType>{needType.trim() + ' потреби'}</NeedType>
+        {!isTabletScreen && <NeedType>{needType.trim() + ' потреби'}</NeedType>}
       </LocationAndNeedTypeContainer>
 
       <NeedsItemTitel>{titel}</NeedsItemTitel>
       <NeedsItemDeccription>{description}</NeedsItemDeccription>
 
-      <ContactContainer>
-        <NeedsItemContact>Контакти</NeedsItemContact>
-        <NeedsItemContactPerson>{contact}</NeedsItemContactPerson>
-      </ContactContainer>
+      {!isTabletScreen && (
+        <ContactContainer>
+          <NeedsItemContact>Контакти</NeedsItemContact>
+          <NeedsItemContactPerson>{contact}</NeedsItemContactPerson>
+        </ContactContainer>
+      )}
     </OurNeedsItemLi>
   );
 };

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { theme } from 'stylesheet/theme';
-const { fontSizes, fontWeights, colors, borders } = theme;
+const { fontSizes, fontWeights, colors, borders, fonts } = theme;
 
 export const OurNeedsItemLi = styled.li`
   width: 100%;
@@ -12,6 +12,15 @@ export const OurNeedsItemLi = styled.li`
   background-color: ${colors.white};
 
   padding: 16px 12px;
+
+  @media (min-width: 768px) {
+    padding: 14px;
+    min-width: 316px;
+    height: 178px;
+  }
+
+  @media (min-width: 1280px) {
+  }
 `;
 
 export const NeedType = styled.p`
@@ -35,23 +44,40 @@ export const LocationAndNeedTypeContainer = styled.div`
 `;
 
 export const NeedsItemTitel = styled.h4`
+  color: ${colors.primaryFont};
   font-size: ${fontSizes.xs};
+  font-family: ${fonts.regular};
   font-weight: ${fontWeights.regular};
-  font-weight: 700;
+
   margin-bottom: 8px;
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
+
+  @media (min-width: 1280px) {
+  }
 `;
 
 export const NeedsItemDeccription = styled.p`
+  font-family: ${fonts.regular};
   font-size: ${fontSizes.xs};
   font-weight: ${fontWeights.light};
   color: ${colors.secondaryFont};
   margin-bottom: 12px;
   white-space: pre-line;
+
+  @media (min-width: 768px) {
+    font-weight: ${fontWeights.regular};
+  }
+
+  @media (min-width: 1280px) {
+  }
 `;
 
 export const NeedsItemContact = styled.p`
+  font-family: ${fonts.regular};
   font-weight: ${fontWeights.regular};
-  font-weight: 700;
 `;
 
 export const NeedsItemContactPerson = styled.p`
