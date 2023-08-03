@@ -1,21 +1,38 @@
 import React from 'react';
 import location from './ImgLocation/location_s_mob_@.png';
+import Icons from '../../assets/images/sprite.svg';
+import {
+  ContactsContainer,
+  ContactsTitle,
+  ContactsSubTitle,
+    ContactsFirstAdress,
+    ContactsFirstAdressList,
+  ContactsSecondAdress,
+} from './Contacts.styled';
+
+const Icon = ({ name, color, size }) => (
+  <svg className={`icon-${name}`} fill={color} width={size} height={size}>
+    <use xlinkHref={`${Icons}#icon-${name}`} />
+  </svg>
+);
 
 const Contacts = () => {
   return (
-    <div>
-      <h3>Де нас знайти</h3>
-      <p>Локація плетіння</p>
+    <ContactsContainer>
+      <ContactsTitle>Де нас знайти</ContactsTitle>
+      <ContactsSubTitle>Локація плетіння</ContactsSubTitle>
       <ul>
-        <p>с. Софіївська Борщагівка: ЖК ‘’Софіївський квартал’’</p>
-        <li>вул.Шалімова, 63a (підвал будинку)</li>
-        <li>Дитячий майданчик дит.садочку "Мозаїка"</li>
+        <ContactsFirstAdress>
+          c. Софіївська Борщагівка: ЖК ‘’Софіївський квартал’’
+        </ContactsFirstAdress>
+        <ContactsFirstAdressList>вул.Шалімова, 63a (підвал будинку)</ContactsFirstAdressList>
+        <ContactsFirstAdressList>Дитячий майданчик дит.садочку "Мозаїка"</ContactsFirstAdressList>
       </ul>
-      <p>ЖК ‘’Уютний квартал’’ - уточнюється</p>
-      <p> пр-т Героїв Небесної Сотні, 16/22</p>
+      <ContactsSecondAdress>ЖК ‘’Уютний квартал’’ - уточнюється</ContactsSecondAdress>
+      <ContactsSecondAdress> пр-т Героїв Небесної Сотні, 16/22</ContactsSecondAdress>
       <div>
-        <p>Контактні дані</p>
-        <p>Aдміністратор: Ольга Кузакова</p>
+        <ContactsSubTitle>Контактні дані</ContactsSubTitle>
+        <p>Aдмiнicтpaтop: Ольга Кузакова</p>
         <p>+380635693058</p>
       </div>
       <div>
@@ -23,11 +40,17 @@ const Contacts = () => {
       </div>
       <div>
         <p>Слідкуй за нами тут:</p>
-        <svg></svg>
-     
+        <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
+          <Icon name="facebook" size={24} />
+        </a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
+          <Icon name="telegram" size={24} />
+        </a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
+          <Icon name="instagram" size={24} />
+        </a>
       </div>
-    </div>
+    </ContactsContainer>
   );
 };
-
 export default Contacts;

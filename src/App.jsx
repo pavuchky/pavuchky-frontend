@@ -2,7 +2,7 @@ import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { SharedLayout } from 'components/SharedLayout/SharedLayout';
 import HomePage from 'pages/HomePage/HomePage';
-import Contacts from 'components/Contacts/Contacts';
+import Contacts from '../src/components/Contacts/Contacts';
 
 const AboutPage = lazy(() => import('pages/AboutPage/AboutPage'));
 const OrderPage = lazy(() => import('pages/OrderPage/OrderPage'));
