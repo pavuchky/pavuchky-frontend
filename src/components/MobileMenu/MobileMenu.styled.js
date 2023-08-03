@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const MenuBtn = styled.button`
   position: relative;
-  padding: 8px 10px;
+  padding: 12px 8px;
   margin-left: 16px;
   border-radius: 10px;
   font-size: 14px;
@@ -13,6 +13,7 @@ export const MenuBtn = styled.button`
   }
 
   @media (min-width: 768px) {
+    padding: 12px 10px;
     margin-left: 34px;
     font-size: ${({ theme }) => theme.fontSizes.xs};
   }
@@ -20,7 +21,7 @@ export const MenuBtn = styled.button`
 
 export const MenuList = styled.ul`
   position: absolute;
-  top: 70px;
+  top: 86px;
   left: 52%;
   padding: 32px 34px;
   border-radius: 16px;
@@ -43,6 +44,7 @@ export const MenuList = styled.ul`
   }
 
   @media (min-width: 768px) {
+    top: 124px;
     left: 70%;
   }
 `;

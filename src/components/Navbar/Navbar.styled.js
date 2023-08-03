@@ -16,13 +16,16 @@ export const Header = styled.header`
 `;
 
 export const NavBar = styled.nav`
-  height: 41px;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  @media (min-width: 1280px) {
-    height: 69px;
+  Link {
+    height: 41px;
+
+    @media (min-width: 1280px) {
+      height: 69px;
+    }
   }
 `;
 
@@ -45,17 +48,18 @@ export const Logo = styled.svg`
 `;
 
 export const LangBtn = styled.button`
-  padding: 8px 10px;
+  padding: 12px 10px;
   border-radius: 41px;
   font-size: 14px;
   background-color: ${({ theme }) => theme.colors.lightGrey};
 
   @media (min-width: 768px) {
-    padding: 10px;
+    padding: 12px 9px;
     font-size: ${({ theme }) => theme.fontSizes.xs};
   }
 
   @media (min-width: 1280px) {
+    padding: 14px 10px;
     margin-left: 64px;
   }
 `;
@@ -72,6 +76,7 @@ export const DonatBtn = styled.button`
   }
 
   @media (min-width: 768px) {
+    padding: 12px 10px;
     margin-left: 34px;
     font-size: ${({ theme }) => theme.fontSizes.xs};
   }

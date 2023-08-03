@@ -20,13 +20,13 @@ export const Navbar = () => {
             <use href={Icon + '#logo'}></use>
           </Logo>
         </Link>
+        {isDesktop && <DesktopNav />}
+        <LangBtn>UA</LangBtn>
+        <Link to="/donation">
+          <DonatBtn>Задонатити</DonatBtn>
+        </Link>
+        {isTabletOrMobile && <MobileMenu />}
       </NavBar>
-      {isDesktop && <DesktopNav />}
-      <LangBtn>UA</LangBtn>
-      <Link to="/donation">
-        <DonatBtn>Задонатити</DonatBtn>
-      </Link>
-      {isTabletOrMobile && <MobileMenu />}
     </Header>
   );
 };
