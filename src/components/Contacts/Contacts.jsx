@@ -23,12 +23,8 @@ const Contacts = () => {
       </div>
       <div>
         <p>Слідкуй за нами тут:</p>
-        <svg width="24" height="24">
-          <use href="../../assets/images/sprite.svg#facebook" />
-        </svg>
-        <svg width="24" height="24">
-          <use xlinkHref="#twitter" />
-        </svg>
+        <svg></svg>
+     
       </div>
     </div>
   );
