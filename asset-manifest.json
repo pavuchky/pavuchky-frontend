@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/pavuchky-frontend/static/css/main.cd2e038f.css",
-    "main.js": "/pavuchky-frontend/static/js/main.c8cef527.js",
+    "main.js": "/pavuchky-frontend/static/js/main.e80de211.js",
     "static/js/643.f686b52d.chunk.js": "/pavuchky-frontend/static/js/643.f686b52d.chunk.js",
     "static/js/101.161c9723.chunk.js": "/pavuchky-frontend/static/js/101.161c9723.chunk.js",
     "static/js/177.e2f235ec.chunk.js": "/pavuchky-frontend/static/js/177.e2f235ec.chunk.js",
@@ -11,13 +11,14 @@
     "static/js/533.8d2584af.chunk.js": "/pavuchky-frontend/static/js/533.8d2584af.chunk.js",
     "static/js/748.31cf9b94.chunk.js": "/pavuchky-frontend/static/js/748.31cf9b94.chunk.js",
     "static/js/783.a49ecfec.chunk.js": "/pavuchky-frontend/static/js/783.a49ecfec.chunk.js",
+    "static/media/sprite.svg": "/pavuchky-frontend/static/media/sprite.97b0ec69c2b506a0668e7711163ef869.svg",
     "static/media/e-UkraineHead-Regular.otf": "/pavuchky-frontend/static/media/e-UkraineHead-Regular.4e9dc7df09b113ce919f.otf",
     "static/media/e-UkraineHead-Light.otf": "/pavuchky-frontend/static/media/e-UkraineHead-Light.a4b8d387036a575cfb4e.otf",
     "static/media/e-Ukraine-Regular.otf": "/pavuchky-frontend/static/media/e-Ukraine-Regular.38805a5a6a103eb1aa7d.otf",
     "static/media/e-Ukraine-Light.otf": "/pavuchky-frontend/static/media/e-Ukraine-Light.051230eeb9d14f5e4305.otf",
     "index.html": "/pavuchky-frontend/index.html",
     "main.cd2e038f.css.map": "/pavuchky-frontend/static/css/main.cd2e038f.css.map",
-    "main.c8cef527.js.map": "/pavuchky-frontend/static/js/main.c8cef527.js.map",
+    "main.e80de211.js.map": "/pavuchky-frontend/static/js/main.e80de211.js.map",
     "643.f686b52d.chunk.js.map": "/pavuchky-frontend/static/js/643.f686b52d.chunk.js.map",
     "101.161c9723.chunk.js.map": "/pavuchky-frontend/static/js/101.161c9723.chunk.js.map",
     "177.e2f235ec.chunk.js.map": "/pavuchky-frontend/static/js/177.e2f235ec.chunk.js.map",
@@ -30,6 +31,6 @@
   },
   "entrypoints": [
     "static/css/main.cd2e038f.css",
-    "static/js/main.c8cef527.js"
+    "static/js/main.e80de211.js"
   ]
 }
