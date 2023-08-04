@@ -19,7 +19,7 @@ export const theme = {
 
   fonts: {
     regular: 'e-Ukraine-Regular, sans-serif',
-    light: 'e-Ukraine-Head-Light, sans-serif',
+    light: 'e-Ukraine-Light, sans-serif',
     medium: 'e-Ukraine-Medium, sans-serif',
     headRegular: 'e-Ukraine-Head-Regular, sans-serif',
     headLight: 'e-Ukraine-Head-Light, sans-serif',
