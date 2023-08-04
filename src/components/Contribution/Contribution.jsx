@@ -1,16 +1,48 @@
-import { Link } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
+import {
+  ContributeSection,
+  ContributeDescr,
+  ContributeTitle,
+  DonateStyledLink,
+  LinksList,
+  LinksListItem,
+  OrderStyledLink,
+  TextWrapper,
+} from './Contribution.styled';
 
 export const Contribution = () => {
+  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+
   return (
-    <section>
-      <div>
-        <p>Збережи життя захисників</p>
-        <h3>Зроби внесок на маскувальні сітки</h3>
-      </div>
-      <div>
-        <Link>Задонатити</Link>
-        <Link to="/order">Замовити сітку</Link>
-      </div>
-    </section>
+    <ContributeSection>
+      <TextWrapper>
+        {isMobile ? (
+          <ContributeDescr>Збережи життя захисників</ContributeDescr>
+        ) : (
+          <ContributeTitle>
+            Зроби внесок <br />
+            на маскувальні сітки
+          </ContributeTitle>
+        )}
+
+        {isMobile ? (
+          <ContributeTitle>
+            Зроби внесок <br />
+            на маскувальні сітки
+          </ContributeTitle>
+        ) : (
+          <ContributeDescr>Збережи життя захисників</ContributeDescr>
+        )}
+      </TextWrapper>
+
+      <LinksList>
+        <LinksListItem>
+          <DonateStyledLink to="/#donation">Задонатити</DonateStyledLink>
+        </LinksListItem>
+        <LinksListItem>
+          <OrderStyledLink to="/order">Замовити сітку</OrderStyledLink>
+        </LinksListItem>
+      </LinksList>
+    </ContributeSection>
   );
 };
