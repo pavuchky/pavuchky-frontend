@@ -1,3 +1,4 @@
+import Contacts from 'components/Contacts/Contacts';
 import { Contribution } from 'components/Contribution/Contribution';
 
 const HomePage = () => {
@@ -5,6 +6,7 @@ const HomePage = () => {
     <>
       <div>HomePage</div>
       <Contribution />
+      <Contacts/>
     </>
   );
 };

@@ -2,7 +2,7 @@ import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { SharedLayout } from 'components/SharedLayout/SharedLayout';
 import HomePage from 'pages/HomePage/HomePage';
-import Contacts from '../src/components/Contacts/Contacts';
+
 
 const AboutPage = lazy(() => import('pages/AboutPage/AboutPage'));
 const OrderPage = lazy(() => import('pages/OrderPage/OrderPage'));
@@ -25,7 +25,7 @@ export const App = () => {
         <Route index element={<HomePage />} />
         <Route path="about" element={<AboutPage />} />
         <Route path="order" element={<OrderPage />} />
-        <Route path="partners" element={<><PartnersPage /><Contacts /></>}/>
+        <Route path="partners" element={<PartnersPage />}/>
         <Route path="gallery" element={<GalleryPage />}>
           <Route path="photos" element={<GalleryPhotos />} />
           <Route path="videos" element={<GalleryVideos />} />

@@ -15,6 +15,7 @@ export const DesktopNav = () => {
       {items.map((i, index) => (
         <li key={index}>
           <NavLink to={i.href} dangerouslySetInnerHTML={{ __html: i.value }} />
+
         </li>
       ))}
     </NavList>
