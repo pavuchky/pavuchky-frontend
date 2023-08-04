@@ -1,4 +1,3 @@
-import React from 'react';
 import Map from '../../assets/images/map.svg';
 import sprite from '../../assets/images/sprite.svg';
 import { useMediaQuery } from 'react-responsive';
@@ -10,11 +9,13 @@ import {
   AboutUsMap,
   AboutUsSectionWrapper,
   AboutUsTitle,
-  ButtonLearnMore,
   DescriptionContainer,
   DescriptionWrapper,
   TitleWrapper,
   AboutUsIcon,
+  AboutUsDescriptionShort,
+  AboutUsDescriptionDesktop,
+  LearnMoreStyledLink,
 } from './AboutUs.styled';
 
 const AboutUs = () => {
@@ -26,7 +27,7 @@ const AboutUs = () => {
     <AboutUsSectionWrapper>
       <TitleWrapper>
         <AboutUsTitle>Хто ми</AboutUsTitle>
-        <AboutUSButton>
+        <AboutUSButton to="/about">
           {isDesktop ? 'Переглянути усе' : 'Про нас'}
           <AboutUsIcon width="11px" height="13px">
             <use xlinkHref={`${sprite}#arrow`} />
@@ -41,14 +42,21 @@ const AboutUs = () => {
               замислитися про те, що він чи вона може зробити для допомоги своїй
               країні, армії, співгромадянам.
             </AboutUsDescription>
-            <AboutUsDescription>
+            <AboutUsDescriptionShort>
               Ми відчули єдність і солідарність, взялися активно волонтерити,
-              донатити, поширювати...
-            </AboutUsDescription>
+              донатити, поширювати важливу інформацію для збереження життів
+              українців і правду про злочини росіян на нашій землі.
+            </AboutUsDescriptionShort>
+            <AboutUsDescriptionDesktop>
+              Кожен з нас долучався до різних волонтерських акцій і рухів, шукав
+              шляхи бути корисним країні й народу та віддячити нашим героїчним
+              захисникам і захисницям.
+            </AboutUsDescriptionDesktop>
           </DescriptionWrapper>
           <AboutUsMap src={Map} alt="Ukraine map" />
         </DescriptionContainer>
-        <ButtonLearnMore variant="contained">Дізнатись більше</ButtonLearnMore>
+        {/* <ButtonLearnMore variant="contained">Дізнатись більше</ButtonLearnMore> */}
+        <LearnMoreStyledLink to="/about">Дізнатись більше</LearnMoreStyledLink>
       </AboutUsMainContentWrapper>
     </AboutUsSectionWrapper>
   );

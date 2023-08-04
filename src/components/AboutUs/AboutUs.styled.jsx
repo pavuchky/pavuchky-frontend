@@ -1,12 +1,23 @@
 import styled from 'styled-components';
-import { theme } from '../../stylesheet/theme';
-import Button from '@mui/material/Button';
+import { HashLink } from 'react-router-hash-link';
 
 export const AboutUsSectionWrapper = styled.section`
   position: relative;
-  padding: 28px 16px 32px;
+  padding: ${({ theme }) => theme.spacing(9)} ${({ theme }) => theme.spacing(4)};
   margin: 0px auto;
+  margin-bottom: 36px;
   width: 100%;
+  @media only screen and (min-width: 768px) {
+    padding: ${({ theme }) => theme.spacing(8)};
+    margin-bottom: 44px;
+  }
+  @media only screen and (min-width: 1280px) {
+    padding-top: ${({ theme }) => theme.spacing(11)};
+    padding-bottom: ${({ theme }) => theme.spacing(19)};
+    padding-left: ${({ theme }) => theme.spacing(15.75)};
+    padding-right: ${({ theme }) => theme.spacing(15.75)};
+    margin-bottom: 64px;
+  }
 `;
 
 export const TitleWrapper = styled.div`
@@ -21,8 +32,8 @@ export const TitleWrapper = styled.div`
 `;
 
 export const AboutUsTitle = styled.h3`
-  color: ${theme.colors.primaryFont};
-  font-family: ${theme.fonts.headRegular};
+  color: ${({ theme }) => theme.colors.primaryFont};
+  font-family: ${({ theme }) => theme.fonts.headRegular};
   font-size: 24px;
   font-weight: 400;
   @media screen and (min-width: 768px) {
@@ -33,17 +44,24 @@ export const AboutUsTitle = styled.h3`
   }
 `;
 
-export const AboutUSButton = styled.button`
+export const AboutUSButton = styled(HashLink)`
   display: flex;
   justify-content: flex-end;
   align-items: center;
   border: none;
   background-color: transparent;
+  cursor: pointer;
 
-  font-family: ${theme.fonts.regular};
+  font-family: ${({ theme }) => theme.fonts.regular};
   font-size: 16px;
   font-weight: 300;
-  color: ${theme.colors.secondaryFont};
+  color: ${({ theme }) => theme.colors.secondaryFont};
+
+  &:hover,
+  &:focus {
+    color: ${({ theme }) => theme.colors.blue};
+    stroke: ${({ theme }) => theme.colors.blue};
+  }
 
   @media screen and (min-width: 768px) {
     font-size: 14px;
@@ -55,6 +73,10 @@ export const AboutUSButton = styled.button`
 
 export const AboutUsIcon = styled.svg`
   margin-left: 13px;
+  &:hover,
+  &:focus {
+    stroke: ${({ theme }) => theme.colors.blue};
+  }
 `;
 
 export const AboutUsMainContentWrapper = styled.div`
@@ -86,16 +108,22 @@ export const DescriptionContainer = styled.div`
 `;
 
 export const DescriptionWrapper = styled.div`
+  height: 210px;
+
   display: flex;
   flex-direction: column;
   gap: 12px;
+  overflow: hidden;
+
   @media screen and (min-width: 1280px) {
+    height: 322px;
     gap: 16px;
   }
 `;
 
 export const AboutUsDescription = styled.p`
-  font-family: ${theme.fonts.regular};
+  display: block;
+  font-family: ${({ theme }) => theme.fonts.regular};
   font-size: 16px;
   font-weight: 300;
 
@@ -104,6 +132,39 @@ export const AboutUsDescription = styled.p`
   }
   @media screen and (min-width: 1280px) {
     font-size: 20px;
+  }
+`;
+
+export const AboutUsDescriptionShort = styled(AboutUsDescription)`
+  max-height: 84px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+
+  @media screen and (min-width: 375px) {
+    -webkit-line-clamp: 4;
+  }
+
+  @media screen and (min-width: 768px) {
+    max-height: 84px;
+    -webkit-line-clamp: 2;
+  }
+  @media screen and (min-width: 1280px) {
+    display: block;
+    max-height: none;
+    overflow: visible;
+    text-overflow: clip;
+    -webkit-line-clamp: none;
+  }
+`;
+
+export const AboutUsDescriptionDesktop = styled(AboutUsDescription)`
+  display: none;
+
+  @media screen and (min-width: 1280px) {
+    display: block;
   }
 `;
 
@@ -120,20 +181,38 @@ export const AboutUsMap = styled.img`
   }
 `;
 
-export const ButtonLearnMore = styled(Button)`
-  text-transform: none !important;
-  border-radius: 12px !important;
-  font-size: 18px !important;
-  font-weight: 400 !important;
-  font-family: ${theme.fonts.regular};
-  @media screen and (min-width: 768px) {
-    font-size: 24px !important;
+export const LearnMoreStyledLink = styled(HashLink)`
+  min-width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 10.5px;
+
+  font-family: ${({ theme }) => theme.fonts.regular};
+  font-size: ${({ theme }) => theme.fontSizes.xs};
+  font-weight: ${({ theme }) => theme.fontWeights.regular};
+  text-align: center;
+  color: ${({ theme }) => theme.colors.white};
+
+  background-color: ${({ theme }) => theme.colors.blue};
+  transition: color ${({ theme }) => theme.transitions.regular};
+
+  &:hover,
+  &:focus {
+    color: ${({ theme }) => theme.colors.yellow};
   }
-  @media screen and (min-width: 1280px) {
+
+  @media only screen and (min-width: 768px) {
+    border-radius: 16px;
+    padding: 9.5px;
+    font-size: ${({ theme }) => theme.fontSizes.m};
+  }
+
+  @media only screen and (min-width: 1280px) {
+    min-width: 520px;
+    border-radius: ${({ theme }) => theme.radii.l};
+    padding: 17.5px;
     position: absolute !important;
     top: 80% !important;
-    right: 1% !important;
-    width: 519px;
-    height: 64px;
+    right: 10% !important;
   }
 `;
