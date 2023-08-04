@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/pavuchky-frontend/static/css/main.cd2e038f.css",
-    "main.js": "/pavuchky-frontend/static/js/main.2174126c.js",
+    "main.js": "/pavuchky-frontend/static/js/main.eb9726d0.js",
     "static/js/643.4e757ae5.chunk.js": "/pavuchky-frontend/static/js/643.4e757ae5.chunk.js",
     "static/js/101.200faca9.chunk.js": "/pavuchky-frontend/static/js/101.200faca9.chunk.js",
     "static/js/177.1ee0f5aa.chunk.js": "/pavuchky-frontend/static/js/177.1ee0f5aa.chunk.js",
@@ -14,7 +14,7 @@
     "static/media/warrior_desk@2x.png": "/pavuchky-frontend/static/media/warrior_desk@2x.0fbc5cdacf843e2a11de.png",
     "static/media/warrior_tablet@2x.png": "/pavuchky-frontend/static/media/warrior_tablet@2x.63003035cc03b8840cf9.png",
     "static/media/warrior_desk.png": "/pavuchky-frontend/static/media/warrior_desk.5a315f62a97e5ea56f26.png",
-    "static/media/sprite.svg": "/pavuchky-frontend/static/media/sprite.97b0ec69c2b506a0668e7711163ef869.svg",
+    "static/media/sprite.svg": "/pavuchky-frontend/static/media/sprite.ba3272f4da9fe30a2342ca51a10228c8.svg",
     "static/media/weaving_desk@2x.png": "/pavuchky-frontend/static/media/weaving_desk@2x.4fa89f3bde88074b3983.png",
     "static/media/warrior_mob@2x.png": "/pavuchky-frontend/static/media/warrior_mob@2x.eb6587239e79f05d6f00.png",
     "static/media/warrior_tablet.png": "/pavuchky-frontend/static/media/warrior_tablet.d9cc2df9a66da0f2c7cb.png",
@@ -32,7 +32,7 @@
     "static/media/weaving_mob.png": "/pavuchky-frontend/static/media/weaving_mob.03361a1cb7d78317752a.png",
     "index.html": "/pavuchky-frontend/index.html",
     "main.cd2e038f.css.map": "/pavuchky-frontend/static/css/main.cd2e038f.css.map",
-    "main.2174126c.js.map": "/pavuchky-frontend/static/js/main.2174126c.js.map",
+    "main.eb9726d0.js.map": "/pavuchky-frontend/static/js/main.eb9726d0.js.map",
     "643.4e757ae5.chunk.js.map": "/pavuchky-frontend/static/js/643.4e757ae5.chunk.js.map",
     "101.200faca9.chunk.js.map": "/pavuchky-frontend/static/js/101.200faca9.chunk.js.map",
     "177.1ee0f5aa.chunk.js.map": "/pavuchky-frontend/static/js/177.1ee0f5aa.chunk.js.map",
@@ -45,6 +45,6 @@
   },
   "entrypoints": [
     "static/css/main.cd2e038f.css",
-    "static/js/main.2174126c.js"
+    "static/js/main.eb9726d0.js"
   ]
 }
