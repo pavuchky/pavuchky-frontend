@@ -1,3 +1,4 @@
+import { Contribution } from 'components/Contribution/Contribution';
 import OurNeeds from 'components/OurNeeds/OurNeeds';
 
 const HomePage = () => {
@@ -5,6 +6,7 @@ const HomePage = () => {
     <>
       <div>HomePage</div>
       <OurNeeds />
+      <Contribution />
     </>
   );
 };
