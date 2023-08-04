@@ -1,12 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
+import i18n from 'i18n';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Icon from '../../assets/images/sprite.svg';
-import { DonatBtn, Header, LangBtn, Logo, NavBar } from './Navbar.styled';
+import {
+  DonatBtn,
+  Header,
+  LangContainer,
+  LangList,
+  LangSelect,
+  Logo,
+  NavBar,
+} from './Navbar.styled';
 import { MobileMenu } from 'components/MobileMenu/MobileMenu';
 import { useMediaQuery } from 'react-responsive';
 import { DesktopNav } from 'components/DesktopNav/DesktopNav';
 
 export const Navbar = () => {
+  const locales = { ua: { title: 'UA' }, en: { title: 'EN' } };
+  const { t } = useTranslation();
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(prev => !prev);
+  };
+
+  const handleLanguageChange = locale => {
+    i18n.changeLanguage(locale);
+    setIsOpen(false);
+  };
+
   const isDesktop = useMediaQuery({
     query: '(min-width: 1280px)',
   });
@@ -21,9 +45,26 @@ export const Navbar = () => {
           </Logo>
         </Link>
         {isDesktop && <DesktopNav />}
-        <LangBtn>UA</LangBtn>
-        <Link to="/donation">
-          <DonatBtn>Задонатити</DonatBtn>
+
+        <LangContainer>
+          <LangSelect onClick={toggleDropdown}>
+            {locales[i18n.language].title}
+          </LangSelect>
+          {isOpen && (
+            <LangList>
+              {Object.keys(locales).map(locale => (
+                <li key={locale}>
+                  <div onClick={() => handleLanguageChange(locale)}>
+                    {locales[locale].title}
+                  </div>
+                </li>
+              ))}
+            </LangList>
+          )}
+        </LangContainer>
+
+        <Link to="#donation">
+          <DonatBtn>{t('header.donat')}</DonatBtn>
         </Link>
         {isTabletOrMobile && <MobileMenu />}
       </NavBar>
