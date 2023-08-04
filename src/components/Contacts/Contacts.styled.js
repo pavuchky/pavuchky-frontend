@@ -4,7 +4,7 @@ import { theme } from '../../stylesheet/theme';
 
 
 
-const { fontSizes, fontWeights, colors, lineHeights } = theme;
+const { fontSizes, fontWeights, colors, fonts } = theme;
 
 export const ContactsContainer = styled.div`
   padding: 28px 16px;
@@ -27,13 +27,17 @@ export const ContactsContainer = styled.div`
 `;
 export const ContactsTitle = styled.h3`
   font-size: ${fontSizes.m};
-  font-weight: 600;
+  font-weight: 400;
   margin-bottom: 24px;
-  line-height: ${lineHeights.secondary};
+  line-height: normal;
+  font-family:${fonts.regular};
+  font-style: normal;
 `;
 export const ContactsSubTitle = styled.p`
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 400;
+  font-family: ${fonts.regular};
+  font-style: normal;
   padding-bottom: 8px;
   margin-bottom: 8px;
   border-bottom: 1px solid rgba(76, 76, 76, 1);
@@ -44,6 +48,7 @@ export const ContactsFirstAdress = styled.p`
   font-weight: ${fontWeights.light};
   margin-bottom: 4px;
   padding-bottom: 6px;
+  line-height: normal;
 `;
 export const ContactsFirstAdressList = styled.li`
   font-size: 14px;
@@ -56,6 +61,8 @@ export const ContactsSecondAdress = styled.p`
   font-size: ${fontSizes.xs};
   font-weight: ${fontWeights.light};
   margin-bottom: 16px;
+  width: 316px;
+  line-height: normal;
 `;
 export const ContactPerson = styled.p`
  font-size: ${fontSizes.xs};
