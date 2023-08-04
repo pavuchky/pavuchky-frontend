@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/pavuchky-frontend/static/css/main.cd2e038f.css",
-    "main.js": "/pavuchky-frontend/static/js/main.e93f0689.js",
+    "main.js": "/pavuchky-frontend/static/js/main.f26e4640.js",
     "static/js/643.4e757ae5.chunk.js": "/pavuchky-frontend/static/js/643.4e757ae5.chunk.js",
     "static/js/101.200faca9.chunk.js": "/pavuchky-frontend/static/js/101.200faca9.chunk.js",
     "static/js/177.1ee0f5aa.chunk.js": "/pavuchky-frontend/static/js/177.1ee0f5aa.chunk.js",
@@ -31,8 +31,9 @@
     "static/media/e-Ukraine-Light.otf": "/pavuchky-frontend/static/media/e-Ukraine-Light.051230eeb9d14f5e4305.otf",
     "static/media/weaving_mob.png": "/pavuchky-frontend/static/media/weaving_mob.03361a1cb7d78317752a.png",
     "index.html": "/pavuchky-frontend/index.html",
+    "static/media/getFetch.cjs": "/pavuchky-frontend/static/media/getFetch.40f37ddea2378391108f.cjs",
     "main.cd2e038f.css.map": "/pavuchky-frontend/static/css/main.cd2e038f.css.map",
-    "main.e93f0689.js.map": "/pavuchky-frontend/static/js/main.e93f0689.js.map",
+    "main.f26e4640.js.map": "/pavuchky-frontend/static/js/main.f26e4640.js.map",
     "643.4e757ae5.chunk.js.map": "/pavuchky-frontend/static/js/643.4e757ae5.chunk.js.map",
     "101.200faca9.chunk.js.map": "/pavuchky-frontend/static/js/101.200faca9.chunk.js.map",
     "177.1ee0f5aa.chunk.js.map": "/pavuchky-frontend/static/js/177.1ee0f5aa.chunk.js.map",
@@ -45,6 +46,6 @@
   },
   "entrypoints": [
     "static/css/main.cd2e038f.css",
-    "static/js/main.e93f0689.js"
+    "static/js/main.f26e4640.js"
   ]
 }
