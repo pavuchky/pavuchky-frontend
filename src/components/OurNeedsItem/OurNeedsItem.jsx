@@ -14,6 +14,7 @@ import {
 
 const OurNeedsItem = ({ location, needType, titel, description, contact }) => {
   const isTabletScreen = useMediaQuery({ minWidth: 768 });
+  const isDesctopScreen = useMediaQuery({ minWidth: 1280 });
 
   return (
     <OurNeedsItemLi>
@@ -25,7 +26,7 @@ const OurNeedsItem = ({ location, needType, titel, description, contact }) => {
       <NeedsItemTitel>{titel}</NeedsItemTitel>
       <NeedsItemDeccription>{description}</NeedsItemDeccription>
 
-      {!isTabletScreen && (
+      {(!isTabletScreen || isDesctopScreen) && (
         <ContactContainer>
           <NeedsItemContact>Контакти</NeedsItemContact>
           <NeedsItemContactPerson>{contact}</NeedsItemContactPerson>

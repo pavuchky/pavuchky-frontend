@@ -38,6 +38,10 @@ export const OurNeedsSection = styled.section`
   }
 
   @media (min-width: 1280px) {
+    padding: 44px 64px;
+    width: 1408px;
+    border-radius: ${radii.xl};
+    gap: 44px;
   }
 `;
 
@@ -52,5 +56,6 @@ export const OurNeedsList = styled.ul`
   }
 
   @media (min-width: 1280px) {
+    gap: 27px;
   }
 `;
