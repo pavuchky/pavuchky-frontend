@@ -31,6 +31,7 @@ export const OurNeedsSection = styled.section`
 
   @media (min-width: 768px) {
     padding: 32px;
+    padding-right: 0px;
     width: 720px;
     overflow: hidden;
     border-radius: ${radii.m};
