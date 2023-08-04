@@ -1,17 +1,10 @@
 import styled from 'styled-components';
-
+// import { GlobalStyles } from 'stylesheet/GlobalStyles';
 import { theme } from '../../stylesheet/theme';
-const { fontSizes, fontWeights, colors } = theme;
 
-// export const OurNeedsItemLi = styled.li`
-//   width: 100%;
 
-//   border: ${borders.normal};
-//   border-color: ${colors.blue};
-//   border-radius: 8px;
-//   background-color: ${colors.white};
 
-//   padding: 16px 12px;`
+const { fontSizes, fontWeights, colors, lineHeights } = theme;
 
 export const ContactsContainer = styled.div`
   padding: 28px 16px;
@@ -19,7 +12,7 @@ export const ContactsContainer = styled.div`
   margin-bottom: 36px;
   border-radius: 16px;
   background: ${colors.gradientBackground};
-  @media only screen and (min-width: 767px) {
+  @media only screen and (min-width: 768px) {
     margin-top: 44px;
     margin-bottom: 44px;
     max-width: 768px;
@@ -32,11 +25,11 @@ export const ContactsContainer = styled.div`
     padding: 0 16px;
   }
 `;
-
 export const ContactsTitle = styled.h3`
   font-size: ${fontSizes.m};
   font-weight: 600;
   margin-bottom: 24px;
+  line-height: ${lineHeights.secondary};
 `;
 export const ContactsSubTitle = styled.p`
   font-size: 18px;
