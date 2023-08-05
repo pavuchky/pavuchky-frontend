@@ -7,11 +7,10 @@ import OurNeeds from 'components/OurNeeds/OurNeeds';
 const HomePage = () => {
   return (
     <>
-      <div>HomePage</div>
       <AboutUs />
       <Contribution />
-      <Donation />
       <OurNeeds />
+      <Donation />
       <Contacts />
     </>
   );
