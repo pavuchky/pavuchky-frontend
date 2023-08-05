@@ -68,7 +68,8 @@ export const ContactsSubTitle = styled.p`
     font-size: 26px;
     margin-bottom: 24px;
     padding-bottom: 10px;
-   width: 477px;
+    width: 477px;
+    margin-top: 24px;
   }
 `;
 
@@ -85,12 +86,10 @@ export const ContactsFirstAdress = styled.p`
   @media (min-width: 1280px) {
     margin-top: 0;
     font-size: ${fontSizes.s};
-
   }
 `;
 export const ContactsAdressUl = styled.ul`
   @media (min-width: 768px) {
-
   }
 `;
 export const ContactsFirstAdressList = styled.li`
@@ -132,15 +131,20 @@ export const ImgLocationContainer = styled.div`
   @media (min-width: 768px) {
     margin-top: 0;
     margin-left: 24px;
-    margin-bottom:0;
+    margin-bottom: 0;
+  }
+  @media (min-width: 1280px) {
+    margin-top: -80px;
+    margin-left: 144px;
+
   }
 `;
 export const ImgLocRad = styled.img`
   border-radius: 10px;
-  width:327px;
-   @media (min-width: 768px) {
+  width: 327px;
+  @media (min-width: 768px) {
     width: 316px;
-   }
+  }
   @media (min-width: 1280px) {
     width: 500px;
     height: 402px;
@@ -150,8 +154,12 @@ export const SocialMediaContainer = styled.div`
   display: flex;
   margin-top: 24px;
   @media (min-width: 768px) {
-    margin-top: 0px;
+    margin-top: -22px;
     justify-content: flex-end;
+  }
+  @media (min-width: 1280px) {
+    margin-top: 44px;
+    justify-content: flex-start;
   }
 `;
 
@@ -161,7 +169,6 @@ export const SocialMediaTitle = styled.p`
   @media (min-width: 768px) {
     display: flex;
     justify-content: center;
-    margin-top: 5px;
   }
   @media (min-width: 1280px) {
     font-size: ${fontSizes.s};
@@ -175,9 +182,7 @@ export const SocialMediaLinks = styled.div`
   margin-left: 16px;
   align-items: center;
   @media (min-width: 768px) {
-
   }
-   @media (min-width: 1280px) {
-  
-   }
+  @media (min-width: 1280px) {
+  }
 `;
