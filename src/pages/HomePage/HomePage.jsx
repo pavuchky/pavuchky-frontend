@@ -6,7 +6,6 @@ const HomePage = () => {
   return (
     <>
       <div>HomePage</div>
-
       <Contribution />
       <Donation />
       <OurNeeds />

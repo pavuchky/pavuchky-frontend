@@ -22,7 +22,7 @@ const cardNumber = '5375 4112 0306 8395';
 
 export const Donation = () => {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
-  const isDesktop = useMediaQuery({ query: '(min-width: 1280px)' });
+  const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 
   return (
     <DonationSection id="donation">

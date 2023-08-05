@@ -47,7 +47,7 @@ export const ContributeSection = styled.section`
     border-radius: ${({ theme }) => theme.radii.m};
   }
 
-  @media only screen and (min-width: 1280px) {
+  @media only screen and (min-width: 1440px) {
     padding-top: ${({ theme }) => theme.spacing(11)};
     padding-bottom: ${({ theme }) => theme.spacing(12)};
     padding-left: ${({ theme }) => theme.spacing(15.75)};
@@ -118,7 +118,7 @@ export const TextWrapper = styled.div`
     margin-bottom: ${({ theme }) => theme.spacing(13.75)};
   }
 
-  @media only screen and (min-width: 1280px) {
+  @media only screen and (min-width: 1440px) {
     gap: ${({ theme }) => theme.spacing(7)};
     margin-bottom: 289px;
   }
@@ -138,7 +138,7 @@ export const ContributeTitle = styled.h3`
     letter-spacing: -1.44px;
   }
 
-  @media only screen and (min-width: 1280px) {
+  @media only screen and (min-width: 1440px) {
     max-width: 692px;
     font-size: ${({ theme }) => theme.fontSizes.xl};
     letter-spacing: -2.4px;
@@ -162,7 +162,7 @@ export const LinksList = styled.ul`
   align-items: center;
   gap: ${({ theme }) => theme.spacing(4)};
 
-  @media only screen and (min-width: 1280px) {
+  @media only screen and (min-width: 1440px) {
     flex-direction: row;
     justify-content: flex-start;
     gap: ${({ theme }) => theme.spacing(16)};
@@ -178,7 +178,7 @@ export const LinksListItem = styled.li`
     border-radius: 16px;
   }
 
-  @media only screen and (min-width: 1280px) {
+  @media only screen and (min-width: 1440px) {
     min-width: 520px;
     border-radius: ${({ theme }) => theme.radii.l};
   }
@@ -206,7 +206,7 @@ export const DonateStyledLink = styled(HashLink)`
     font-size: ${({ theme }) => theme.fontSizes.m};
   }
 
-  @media only screen and (min-width: 1280px) {
+  @media only screen and (min-width: 1440px) {
     padding: 17.5px;
   }
 `;
@@ -233,7 +233,7 @@ export const OrderStyledLink = styled(Link)`
     font-size: ${({ theme }) => theme.fontSizes.m};
   }
 
-  @media only screen and (min-width: 1280px) {
+  @media only screen and (min-width: 1440px) {
     padding: 17.5px;
   }
 `;

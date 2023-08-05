@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 
 export const DonationSection = styled.section`
-  display: flex;
-  flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(6)};
-
   padding: ${({ theme }) => theme.spacing(7)} ${({ theme }) => theme.spacing(4)};
   margin-bottom: ${({ theme }) => theme.spacing(9)};
 
@@ -12,9 +8,43 @@ export const DonationSection = styled.section`
   border-radius: 16px;
 
   @media only screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    gap: ${({ theme }) => theme.spacing(6)};
+
     padding: ${({ theme }) => theme.spacing(8)};
     margin-bottom: ${({ theme }) => theme.spacing(11)};
     border-radius: ${({ theme }) => theme.radii.m};
+  }
+
+  @media only screen and (min-width: 1440px) {
+    flex-direction: row;
+
+    padding-top: ${({ theme }) => theme.spacing(11)};
+    padding-bottom: ${({ theme }) => theme.spacing(11)};
+    padding-left: ${({ theme }) => theme.spacing(16)};
+    padding-right: ${({ theme }) => theme.spacing(16)};
+    margin-bottom: ${({ theme }) => theme.spacing(16)};
+  }
+`;
+
+export const DonationWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(6)};
+
+  @media only screen and (min-width: 1440px) {
+    width: 100%;
+    gap: 0;
+  }
+`;
+
+export const DonationQRWrapper = styled.div`
+  @media only screen and (min-width: 1440px) {
+    display: flex;
+    flex-direction: column;
+    gap: ${({ theme }) => theme.spacing(3.25)};
+    max-width: 514px;
   }
 `;
 
@@ -26,8 +56,14 @@ export const DonationTitle = styled.h3`
   @media only screen and (min-width: 768px) {
     font-family: ${({ theme }) => theme.fonts.headRegular};
     font-size: ${({ theme }) => theme.fontSizes.l};
-    font-weight: ${({ theme }) => theme.fontWeights.regular};
     letter-spacing: -1.44px;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    margin-bottom: ${({ theme }) => theme.spacing(13.5)};
+
+    font-size: ${({ theme }) => theme.fontSizes.xl};
+    letter-spacing: -2.4px;
   }
 `;
 
@@ -61,6 +97,14 @@ export const CardInput = styled.input`
     font-size: ${({ theme }) => theme.fontSizes.s};
     font-weight: ${({ theme }) => theme.fontWeights.light};
   }
+
+  @media only screen and (min-width: 1440px) {
+    max-width: 522px;
+    height: 76px;
+    padding-top: ${({ theme }) => theme.spacing(6.5)};
+    padding-bottom: ${({ theme }) => theme.spacing(6.5)};
+    margin-bottom: ${({ theme }) => theme.spacing(11)};
+  }
 `;
 
 export const CopyButton = styled.button`
@@ -71,6 +115,11 @@ export const CopyButton = styled.button`
   @media only screen and (min-width: 768px) {
     top: 8px;
   }
+
+  @media only screen and (min-width: 1440px) {
+    top: 20px;
+    right: 240px;
+  }
 `;
 
 export const CopyIcon = styled.svg`
@@ -80,6 +129,11 @@ export const CopyIcon = styled.svg`
   @media only screen and (min-width: 768px) {
     width: 32px;
     height: 32px;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    width: 36px;
+    height: 36px;
   }
 `;
 
@@ -116,6 +170,12 @@ export const DonationDescr = styled.p`
   @media only screen and (min-width: 768px) {
     font-size: ${({ theme }) => theme.fontSizes.m};
   }
+
+  @media only screen and (min-width: 1440px) {
+    font-family: ${({ theme }) => theme.fonts.light};
+    font-weight: ${({ theme }) => theme.fontWeights.light};
+    font-size: 26px;
+  }
 `;
 
 export const BankLink = styled.a`
@@ -125,14 +185,17 @@ export const BankLink = styled.a`
 export const QRIcon = styled.svg`
   @media only screen and (min-width: 768px) {
     align-self: center;
-    fill: transparent;
+    fill: white;
     width: 304px;
     height: 304px;
   }
+
+  @media only screen and (min-width: 1440px) {
+    width: 330px;
+    height: 330px;
+  }
 `;
 
-export const DonationText = styled.p``;
-
-export const DonationWrapper = styled.div``;
-
-export const DonationQRWrapper = styled.div``;
+export const DonationText = styled.p`
+  font-size: 26px;
+`;
