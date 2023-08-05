@@ -3,19 +3,21 @@ import { HashLink } from 'react-router-hash-link';
 
 export const AboutUsSectionWrapper = styled.section`
   position: relative;
-  padding: ${({ theme }) => theme.spacing(9)} ${({ theme }) => theme.spacing(4)};
+  padding: 28px 16px 32px 16px;
   margin: 0px auto;
-  margin-bottom: 36px;
   width: 100%;
+
+  background: ${({ theme }) => theme.colors.gradientBackground};
+
   @media only screen and (min-width: 768px) {
     padding: ${({ theme }) => theme.spacing(8)};
     margin-bottom: 44px;
   }
   @media only screen and (min-width: 1280px) {
-    padding-top: ${({ theme }) => theme.spacing(11)};
-    padding-bottom: ${({ theme }) => theme.spacing(19)};
-    padding-left: ${({ theme }) => theme.spacing(15.75)};
-    padding-right: ${({ theme }) => theme.spacing(15.75)};
+    padding-top: 44px;
+    padding-bottom: 78px;
+    padding-left: 64px;
+    padding-right: 64px;
     margin-bottom: 64px;
   }
 `;
@@ -25,22 +27,20 @@ export const TitleWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 24px;
-  padding-right: 34px;
-  @media screen and (min-width: 1280px) {
-    margin-bottom: 28px;
-  }
 `;
 
 export const AboutUsTitle = styled.h3`
   color: ${({ theme }) => theme.colors.primaryFont};
-  font-family: ${({ theme }) => theme.fonts.headRegular};
+  font-family: ${({ theme }) => theme.fonts.regular};
   font-size: 24px;
   font-weight: 400;
   @media screen and (min-width: 768px) {
     font-size: 36px;
+    letter-spacing: -1.44px;
   }
   @media screen and (min-width: 1280px) {
     font-size: 60px;
+    letter-spacing: -2.4px;
   }
 `;
 
@@ -52,7 +52,7 @@ export const AboutUSButton = styled(HashLink)`
   background-color: transparent;
   cursor: pointer;
 
-  font-family: ${({ theme }) => theme.fonts.regular};
+  font-family: ${({ theme }) => theme.fonts.light};
   font-size: 16px;
   font-weight: 300;
   color: ${({ theme }) => theme.colors.secondaryFont};
@@ -68,6 +68,8 @@ export const AboutUSButton = styled(HashLink)`
   }
   @media screen and (min-width: 1280px) {
     font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
   }
 `;
 
@@ -149,7 +151,7 @@ export const AboutUsDescriptionShort = styled(AboutUsDescription)`
 
   @media screen and (min-width: 768px) {
     max-height: 84px;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
   }
   @media screen and (min-width: 1280px) {
     display: block;
@@ -212,7 +214,7 @@ export const LearnMoreStyledLink = styled(HashLink)`
     border-radius: ${({ theme }) => theme.radii.l};
     padding: 17.5px;
     position: absolute !important;
-    top: 80% !important;
-    right: 10% !important;
+    top: 78% !important;
+    right: 9% !important;
   }
 `;
