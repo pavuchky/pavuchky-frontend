@@ -21,7 +21,7 @@ export const ContributeSection = styled.section`
 
   @media only screen and (min-width: 768px) {
     padding: ${({ theme }) => theme.spacing(8)};
-    margin: ${({ theme }) => theme.spacing(11)} 0;
+    margin-bottom: ${({ theme }) => theme.spacing(11)};
 
     background-image: linear-gradient(
         ${({ theme }) => theme.colors.photoBg},
@@ -52,7 +52,7 @@ export const ContributeSection = styled.section`
     padding-bottom: ${({ theme }) => theme.spacing(12)};
     padding-left: ${({ theme }) => theme.spacing(15.75)};
     padding-right: ${({ theme }) => theme.spacing(15.75)};
-    margin: ${({ theme }) => theme.spacing(16)} 0;
+    margin-bottom: ${({ theme }) => theme.spacing(16)};
 
     background-image: linear-gradient(
         ${({ theme }) => theme.colors.photoBg},
