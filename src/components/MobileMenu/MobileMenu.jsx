@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MenuBtn, MenuList } from './MobileMenu.styled';
 import { useTranslation } from 'react-i18next';
+import { HashLink } from 'react-router-hash-link';
 
 export const MobileMenu = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -13,8 +14,6 @@ export const MobileMenu = () => {
     { href: '/order', value: t('header.order') },
     { href: '/reporting', value: t('header.reporting') },
     { href: '/gallery/photos', value: t('header.gallery') },
-    { href: '#donation', value: t('header.donat') },
-    { href: '/weave', value: t('header.weave') },
   ];
 
   return (
@@ -28,6 +27,12 @@ export const MobileMenu = () => {
             <Link to={i.href} dangerouslySetInnerHTML={{ __html: i.value }} />
           </li>
         ))}
+        <li onClick={() => setShowMenu(false)}>
+          <HashLink to="/#donation"> {t('header.donate')}</HashLink>
+        </li>
+        <li onClick={() => setShowMenu(false)}>
+          <HashLink to="/#contacts">{t('header.weave')}</HashLink>
+        </li>
       </MenuList>
     </>
   );
