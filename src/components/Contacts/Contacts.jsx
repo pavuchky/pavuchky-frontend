@@ -1,5 +1,6 @@
 import React from 'react';
 import location from './ImgLocation/location_s_mob_@.png.jpeg';
+import { useMediaQuery } from 'react-responsive';
 import Icons from '../../assets/images/sprite.svg';
 import {
   ContactsContainer,
@@ -7,6 +8,7 @@ import {
   ContactsSubTitle,
   ContactsFirstAdress,
   ContactsFirstAdressList,
+  AdminTitle,
   ContactsSecondAdress,
   ContactPerson,
   ImgLocationContainer,
@@ -25,6 +27,7 @@ const IconSocial = ({ name, color, size }) => (
 );
 
 const Contacts = () => {
+    const isLargeScreen = useMediaQuery({ minWidth: 1440 });
   return (
     <ContactsContainer id="contacts">
       <ContactsTitle>Де нас знайти</ContactsTitle>
@@ -43,7 +46,7 @@ const Contacts = () => {
             ЖК &#8220;Уютний квартал&#8221;
             <p>пр-т Героїв Небесної Сотні, 16/22</p>
           </ContactsSecondAdress>
-          <ContactsSubTitle>Контактні дані адміністратора</ContactsSubTitle>
+          <AdminTitle>Контактні дані адміністратора</AdminTitle>
           <ContactPerson>Ольги Кузакової: </ContactPerson>
           <ContactPerson>+380635693058</ContactPerson>
         </ContactsAdressUl>
@@ -60,17 +63,17 @@ const Contacts = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <IconSocial name="facebook" size={24} />
+            <IconSocial name="facebook" size={isLargeScreen ? 36 : 24} />
           </a>
           <a href="tel:+380635693058" target="_blank" rel="noreferrer">
-            <IconSocial name="telegram" size={24} />
+            <IconSocial name="telegram" size={isLargeScreen ? 36 : 24} />
           </a>
           <a
             href="https://www.youtube.com/@user-mb3bs9jv1h"
             target="_blank"
             rel="noreferrer"
           >
-            <IconSocial name="youtube" size={24} />
+            <IconSocial name="youtube" size={isLargeScreen ? 36 : 24}/>
           </a>
         </SocialMediaLinks>
       </SocialMediaContainer>
