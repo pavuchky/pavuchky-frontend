@@ -14,7 +14,7 @@ import {
 
 const OurNeedsItem = ({ location, needType, titel, description, contact }) => {
   const isTabletScreen = useMediaQuery({ minWidth: 768 });
-  const isDesctopScreen = useMediaQuery({ minWidth: 1280 });
+  const isDesctopScreen = useMediaQuery({ minWidth: 1440 });
 
   return (
     <OurNeedsItemLi>
