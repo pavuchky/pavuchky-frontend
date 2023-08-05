@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://pavuchky.github.io/pavuchky-frontend/",
   "dependencies": {
+    "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.3",
     "@mui/styled-engine-sc": "^5.12.0",
     "@testing-library/jest-dom": "^5.16.3",
