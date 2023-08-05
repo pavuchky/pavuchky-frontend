@@ -10,7 +10,7 @@ import OurNeedsTabletSwiper from 'components/OurNeedsTabletSwiper/OurNeedsTablet
 
 const OurNeeds = () => {
   const isTabletScreen = useMediaQuery({ minWidth: 768 });
-  const isDesctopScreen = useMediaQuery({ minWidth: 1280 });
+  const isDesctopScreen = useMediaQuery({ minWidth: 1440 });
 
   return (
     <OurNeedsSection>

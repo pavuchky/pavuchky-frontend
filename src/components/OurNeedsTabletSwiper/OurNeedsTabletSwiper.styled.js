@@ -36,7 +36,7 @@ export const SwiperContainer = styled(Swiper)`
     margin-left: 38px;
     min-height: 2px;
   }
-  .swiper-scrollbar-drag:first-child {
+  /* .swiper-scrollbar-drag:first-child {
     display: none;
-  }
+  } */
 `;

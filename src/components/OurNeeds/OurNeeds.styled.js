@@ -14,7 +14,7 @@ export const OurNeedsHeading = styled.h3`
     letter-spacing: -1.44px;
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1440px) {
     font-size: ${fontSizes.xl};
 
     letter-spacing: -2.4px;
@@ -42,7 +42,7 @@ export const OurNeedsSection = styled.section`
     gap: 35px;
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1440px) {
     padding: 44px 64px;
     width: 1408px;
     border-radius: ${radii.xl};
@@ -60,7 +60,7 @@ export const OurNeedsList = styled.ul`
     gap: 24px;
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1440px) {
     gap: 27px;
   }
 `;
