@@ -9,11 +9,7 @@ export const ContactsContainer = styled.section`
   margin-top: 36px;
   margin-bottom: 36px;
   border-radius: 16px;
-  background: linear-gradient(
-    272deg,
-    rgb(189 211 242 / 19%) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: ${colors.gradientBackground};
 
   @media (min-width: 768px) {
     margin-top: 44px;
