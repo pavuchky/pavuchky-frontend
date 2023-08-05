@@ -11,9 +11,13 @@ export const OurNeedsHeading = styled.h3`
   @media (min-width: 768px) {
     font-size: ${fontSizes.l};
     font-family: ${fonts.headRegular};
+    letter-spacing: -1.44px;
   }
 
   @media (min-width: 1280px) {
+    font-size: ${fontSizes.xl};
+
+    letter-spacing: -2.4px;
   }
 `;
 

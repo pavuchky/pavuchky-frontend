@@ -36,7 +36,13 @@ export const NeedType = styled.p`
 
 export const Location = styled.p`
   color: ${colors.grey};
-  font-weight: ${fontWeights.regular};
+  font-weight: ${fontWeights.light};
+
+  @media (min-width: 768px) {
+    font-weight: ${fontWeights.regular};
+    line-height: 1.33;
+    font-family: ${fonts.regular};
+  }
 
   @media (min-width: 1280px) {
     font-size: 14px;
@@ -51,6 +57,10 @@ export const LocationAndNeedTypeContainer = styled.div`
   font-size: 12px;
   font-weight: ${fontWeights.light};
   margin-bottom: 12px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 8px;
+  }
 
   @media (min-width: 1280px) {
     margin-bottom: 20px;
@@ -77,7 +87,7 @@ export const NeedsItemTitel = styled.h4`
 `;
 
 export const NeedsItemDeccription = styled.p`
-  font-family: ${fonts.regular};
+  font-family: ${fonts.light};
   font-size: ${fontSizes.xs};
   font-weight: ${fontWeights.light};
   color: ${colors.secondaryFont};
@@ -112,6 +122,7 @@ export const NeedsItemContactPerson = styled.p`
     font-weight: ${fontWeights.regular};
     color: ${colors.grey};
     line-height: 1.9;
+    font-family: ${fonts.regular};
   }
 `;
 

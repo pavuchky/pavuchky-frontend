@@ -26,7 +26,7 @@ const OurNeedsTabletSwiper = () => {
       <SwiperSlideContainer>
         <OurNeedsItemDiv>
           <LocationAndNeedTypeContainer>
-            <Location>'Київ'</Location>
+            <Location>Київ</Location>
           </LocationAndNeedTypeContainer>
 
           <NeedsItemTitel>Потребумо пластик,капрон</NeedsItemTitel>
@@ -39,7 +39,7 @@ const OurNeedsTabletSwiper = () => {
       <SwiperSlideContainer>
         <OurNeedsItemDiv>
           <LocationAndNeedTypeContainer>
-            <Location>'Київ'</Location>
+            <Location>Київ</Location>
           </LocationAndNeedTypeContainer>
 
           <NeedsItemTitel>Щільна темна тканина</NeedsItemTitel>
@@ -52,7 +52,7 @@ const OurNeedsTabletSwiper = () => {
       <SwiperSlideContainer>
         <OurNeedsItemDiv>
           <LocationAndNeedTypeContainer>
-            <Location>'Київ'</Location>
+            <Location>Київ</Location>
           </LocationAndNeedTypeContainer>
 
           <NeedsItemTitel>Спанбонд</NeedsItemTitel>

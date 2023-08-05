@@ -9,10 +9,10 @@ export const OurNeedsItemDiv = styled.div`
   min-height: 178px;
   border: ${borders.normal};
   border-color: ${colors.blue};
-  border-radius: 8px;
+  border-radius: 10px;
   background-color: ${colors.white};
   margin: 0;
-  padding: 14px;
+  padding: 16px;
 `;
 
 export const SwiperSlideContainer = styled(SwiperSlide)`
