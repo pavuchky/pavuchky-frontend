@@ -10,9 +10,10 @@ export const theme = {
     blue: '#0069B5',
     pink: '#E78585',
     photoBg: 'rgba(0, 0, 0, 0.2)',
+    backdrop: 'rgba(0, 0, 0, 0.23)',
     gradientMain: 'linear-gradient(224deg, #8A90F6 0%, #BDD4F2 100%)',
     gradientBackground:
-      'linear-gradient(140deg, rgba(189, 211, 242, 0.68) 0%, rgba(255, 255, 255, 0.00) 100%)',
+      'linear-gradient(320deg, rgba(189, 211, 242, 0.3) 0%, rgba(255, 255, 255, 0.00) 100%)',
   },
 
   spacing: value => `${4 * value}px`,

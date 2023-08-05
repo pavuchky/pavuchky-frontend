@@ -17,10 +17,14 @@ import {
   QRIcon,
   QRText,
 } from './Donation.styled';
+import { useState } from 'react';
+import { DonationModal } from 'components/DonationModal/DonationModal';
 
 const cardNumber = '5375 4112 0306 8395';
 
 export const Donation = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 
@@ -28,6 +32,10 @@ export const Donation = () => {
     try {
       await navigator.clipboard.writeText(cardNumber);
     } catch (error) {}
+  };
+
+  const handleModalBtnClick = () => {
+    setIsModalOpen(true);
   };
 
   return (
@@ -45,7 +53,7 @@ export const Donation = () => {
         </CardLabel>
 
         {isMobile && (
-          <QRBtn type="button">
+          <QRBtn type="button" onClick={handleModalBtnClick}>
             <QRText>QR-code</QRText>
             <QRCodeIcon>
               <use href={sprite + '#qrcode'}></use>
@@ -78,6 +86,8 @@ export const Donation = () => {
           </QRIcon>
         </DonationQRWrapper>
       )}
+
+      {isModalOpen && <DonationModal setIsModalOpen={setIsModalOpen} />}
     </DonationSection>
   );
 };

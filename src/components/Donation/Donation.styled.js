@@ -96,6 +96,8 @@ export const CardInput = styled.input`
     font-family: ${({ theme }) => theme.fonts.light};
     font-size: ${({ theme }) => theme.fontSizes.s};
     font-weight: ${({ theme }) => theme.fontWeights.light};
+
+    border-radius: ${({ theme }) => theme.radii.s};
   }
 
   @media only screen and (min-width: 1440px) {
@@ -104,6 +106,8 @@ export const CardInput = styled.input`
     padding-top: ${({ theme }) => theme.spacing(6.5)};
     padding-bottom: ${({ theme }) => theme.spacing(6.5)};
     margin-bottom: ${({ theme }) => theme.spacing(11)};
+
+    border-radius: ${({ theme }) => theme.radii.m};
   }
 `;
 
