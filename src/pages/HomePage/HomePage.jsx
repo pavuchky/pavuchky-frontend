@@ -1,15 +1,15 @@
+import Contacts from 'components/Contacts/Contacts';
 import { Contribution } from 'components/Contribution/Contribution';
-
-import AboutUs from 'components/AboutUs/AboutUs';
+import OurNeeds from 'components/OurNeeds/OurNeeds';
 
 const HomePage = () => {
   return (
     <>
-      <>
-        HomePage
-        <AboutUs />
-        <Contribution />
-      </>
+      <div>HomePage</div>
+
+      <Contribution />
+      <OurNeeds />
+      <Contacts />
     </>
   );
 };
