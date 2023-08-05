@@ -46,8 +46,8 @@ const Contacts = () => {
             ЖК &#8220;Уютний квартал&#8221;
             <p>пр-т Героїв Небесної Сотні, 16/22</p>
           </ContactsSecondAdress>
-          <AdminTitle>Контактні дані адміністратора</AdminTitle>
-          <ContactPerson>Ольги Кузакової: </ContactPerson>
+          <AdminTitle>Контактні дані</AdminTitle>
+          <ContactPerson>Адміністратор: Ольга Кузакова  </ContactPerson>
           <ContactPerson>+380635693058</ContactPerson>
         </ContactsAdressUl>
         <ImgLocationContainer>

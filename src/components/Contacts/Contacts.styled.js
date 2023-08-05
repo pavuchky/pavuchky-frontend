@@ -178,6 +178,7 @@ export const ImgLocRad = styled.img`
 export const SocialMediaContainer = styled.div`
   display: flex;
   margin-top: 24px;
+  align-items: center;
   @media (min-width: 768px) {
     margin-top: -58px;
     justify-content: flex-end;
@@ -186,6 +187,7 @@ export const SocialMediaContainer = styled.div`
     flex-direction: column;
     margin-top: 44px;
     justify-content: flex-start;
+    align-items: flex-start;
   }
 `;
 

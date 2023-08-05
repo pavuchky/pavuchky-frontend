@@ -1,6 +1,8 @@
 import Contacts from 'components/Contacts/Contacts';
 import { Contribution } from 'components/Contribution/Contribution';
 import OurNeeds from 'components/OurNeeds/OurNeeds';
+import Footer from 'components/Footer/Footer';
+
 
 const HomePage = () => {
   return (
@@ -10,6 +12,7 @@ const HomePage = () => {
       <Contribution />
       <OurNeeds />
       <Contacts />
+      <Footer/>
     </>
   );
 };
