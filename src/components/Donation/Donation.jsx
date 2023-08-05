@@ -24,6 +24,12 @@ export const Donation = () => {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 
+  const handleCopyClick = async () => {
+    try {
+      await navigator.clipboard.writeText(cardNumber);
+    } catch (error) {}
+  };
+
   return (
     <DonationSection id="donation">
       <DonationWrapper>
@@ -31,7 +37,7 @@ export const Donation = () => {
 
         <CardLabel>
           <CardInput type="text" value={cardNumber} readOnly />
-          <CopyButton type="button">
+          <CopyButton type="button" onClick={() => handleCopyClick()}>
             <CopyIcon>
               <use href={sprite + '#copy'}></use>
             </CopyIcon>
