@@ -11,8 +11,8 @@ const HomePage = () => {
       <Hero />
       <AboutUs />
       <Contribution />
-      <Donation />
       <OurNeeds />
+      <Donation />
       <Contacts />
     </>
   );
