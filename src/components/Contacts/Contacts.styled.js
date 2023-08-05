@@ -23,6 +23,7 @@ export const ContactsContainer = styled.section`
   @media (min-width: 1440px) {
     margin: 64px auto;
     padding: 44px 64px;
+    border-radius:20px;
   }
 `;
 export const ContactsWrapper = styled.div`
