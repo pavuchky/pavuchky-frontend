@@ -41,9 +41,9 @@ const Contacts = () => {
           <ContactsFirstAdressList>
             вул.Шалімова, 65 (підвал будинку)
           </ContactsFirstAdressList>
-          <ContactsFirstAdressList>вул.Шалімова, 63a</ContactsFirstAdressList>
+          {/* <ContactsFirstAdressList>вул.Шалімова, 63a</ContactsFirstAdressList> */}
           <ContactsSecondAdress>
-            ЖК &#8220;Уютний квартал&#8221;
+            ЖК &#8220;Уютний квартал&#8221; <br/> уточнюється
             <p>пр-т Героїв Небесної Сотні, 16/22</p>
           </ContactsSecondAdress>
           <AdminTitle>Контактні дані</AdminTitle>
