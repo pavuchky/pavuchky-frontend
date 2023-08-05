@@ -40,8 +40,11 @@ export const DonationWrapper = styled.div`
 `;
 
 export const DonationQRWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   @media only screen and (min-width: 1440px) {
-    display: flex;
     flex-direction: column;
     gap: ${({ theme }) => theme.spacing(3.25)};
     max-width: 514px;
@@ -188,7 +191,6 @@ export const BankLink = styled.a`
 
 export const QRIcon = styled.svg`
   @media only screen and (min-width: 768px) {
-    align-self: center;
     fill: white;
     width: 304px;
     height: 304px;
