@@ -32,7 +32,7 @@ const TabletDesctopFoter = () => {
   ];
   return (
     <FooterTabContainer>
-      <div>
+      <>
         <FooterTabList>
           {footerItems.map((i, index) => (
             <li key={index}>
@@ -48,7 +48,7 @@ const TabletDesctopFoter = () => {
             +380635693058
           </a>
         </FooterTabTel>
-      </div>
+      </>
       <FooterSocialTabContainer>
         <FooterTabSocialTitle>Слідкуй за нами тут:</FooterTabSocialTitle>
         <FooterSocialTabLinks>

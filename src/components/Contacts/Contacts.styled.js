@@ -15,15 +15,16 @@ export const ContactsContainer = styled.section`
     margin-top: 44px;
     margin-bottom: 44px;
     padding: 32px 32px 58px 32px;
+    border-radius: 20px;
   }
   @media (min-width: 1440px) {
     margin: 64px auto;
     padding: 44px 64px;
-    border-radius:20px;
+    border-radius: 25px;
   }
 `;
 export const ContactsWrapper = styled.div`
-  color: #4c4c4c;
+  color: ${colors.secondaryFont};
   display: flex;
   flex-direction: column;
   @media (min-width: 768px) {
@@ -176,7 +177,7 @@ export const SocialMediaContainer = styled.div`
   margin-top: 24px;
   align-items: center;
   @media (min-width: 768px) {
-    margin-top: -58px;
+    margin-top: -51px;
     justify-content: flex-end;
   }
   @media (min-width: 1440px) {

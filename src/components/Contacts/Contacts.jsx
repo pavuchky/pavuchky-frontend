@@ -39,7 +39,7 @@ const Contacts = () => {
             <br /> ЖК &#8220;Софіївський квартал&#8221;
           </ContactsFirstAdress>
           <ContactsFirstAdressList>
-            вул.Шалімова, 65 (підвал будинку)
+            вул.Шалімова, 63a 
           </ContactsFirstAdressList>
           {/* <ContactsFirstAdressList>вул.Шалімова, 63a</ContactsFirstAdressList> */}
           <ContactsSecondAdress>

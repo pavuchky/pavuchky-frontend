@@ -4,12 +4,11 @@ import { useMediaQuery } from 'react-responsive';
 import TabletDesctopFoter from './TabletDesctopFoter';
 
 const Footer = () => {
-  const isMobile = useMediaQuery({ query: '(max-width: 370px)' });
-
+ const isTabletScreen = useMediaQuery({ minWidth: 768 });
 
   return (
     <>
-      {isMobile ? (<MobFooter />) : (<TabletDesctopFoter />)}
+      {!isTabletScreen ? (<MobFooter />) : (<TabletDesctopFoter />)}
     
     </>
   );
