@@ -3,6 +3,7 @@ import Contacts from 'components/Contacts/Contacts';
 import { Contribution } from 'components/Contribution/Contribution';
 import { Donation } from 'components/Donation/Donation';
 import OurNeeds from 'components/OurNeeds/OurNeeds';
+import Reviews from 'components/Reviews/Reviews';
 import { Hero } from 'components/Hero/Hero';
 import { Statistics } from 'components/Statistics/Statistics';
 
@@ -14,6 +15,7 @@ const HomePage = () => {
       <Statistics />
       <Contribution />
       <OurNeeds />
+      <Reviews />
       <Donation />
       <Contacts />
     </>
