@@ -37,7 +37,7 @@ const ReviewsSwiper = () => {
   return (
     <ReviewsSwiperContainer
       spaceBetween={isDesctopScreen ? 48 : 24}
-      slidesPerView={isTabletScreen ? (isDesctopScreen ? 2.4 : 2) : 1}
+      slidesPerView={isTabletScreen ? (isDesctopScreen ? 2.55 : 2) : 1}
       modules={[Scrollbar, Navigation]}
       scrollbar={{ draggable: true }}
       navigation

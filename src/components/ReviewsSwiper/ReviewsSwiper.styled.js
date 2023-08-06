@@ -19,6 +19,7 @@ export const ReviewsSwiperSlideContainer = styled(SwiperSlide)`
 export const ReviewsSwiperContainer = styled(Swiper)`
   position: relative;
   width: 327px;
+  overflow: hidden;
 
   .swiper-scrollbar {
     background-color: ${colors.grey};
@@ -52,7 +53,7 @@ export const ReviewsSwiperContainer = styled(Swiper)`
 
   @media (min-width: 1440px) {
     width: 1344px;
-    padding-left: 291px;
+    padding-left: 227px;
 
     .swiper-scrollbar-drag:last-child {
       display: none;
@@ -64,9 +65,10 @@ export const ReviewsSwiperContainer = styled(Swiper)`
 
     .swiper-button-prev {
       position: absolute;
+
       display: block;
       top: 95px;
-      left: 20px;
+      left: 0px;
       width: 85px;
       height: 85px;
       border: ${borders.normal};
@@ -78,7 +80,7 @@ export const ReviewsSwiperContainer = styled(Swiper)`
       position: absolute;
       display: block;
       top: 95px;
-      left: 105px;
+      left: 108px;
       width: 85px;
       height: 85px;
       border: ${borders.normal};
@@ -95,6 +97,8 @@ export const ReviewsSwiperContainer = styled(Swiper)`
     }
 
     .swiper-button-disabled {
+      color: ${colors.grey};
+      border-color: ${colors.grey};
     }
   }
 `;
