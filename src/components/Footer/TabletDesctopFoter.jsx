@@ -4,14 +4,14 @@ import { useTranslation } from 'react-i18next';
 import Icons from '../../assets/images/sprite.svg';
 
 import {
-  FooterContainer,
-  FooterSocialMediaContainer,
-  FooterSocialMediaLinks,
-  FooterSocialTitle,
-  FooterList,
-  FooterTel,
-  FooterAllReserved,
-} from './Footer.styled';
+  FooterTabContainer,
+FooterSocialTabContainer,
+  FooterSocialTabLinks,
+ FooterTabSocialTitle,
+ FooterTabList,
+ FooterTabTel,
+FooteTabAllReserved
+} from './TabletDesctopFooter.styled';
 
 
 const TabletDesctopFoter = () => {
@@ -31,9 +31,9 @@ const TabletDesctopFoter = () => {
     { href: '/reporting', value: t('header.reporting') },
   ];
   return (
-    <FooterContainer>
+    <FooterTabContainer>
       <div>
-        <FooterList>
+        <FooterTabList>
           {footerItems.map((i, index) => (
             <li key={index}>
               <NavLink
@@ -42,16 +42,16 @@ const TabletDesctopFoter = () => {
               />
             </li>
           ))}
-        </FooterList>
-        <FooterTel>
+        </FooterTabList>
+        <FooterTabTel>
           <a href="tel:+380635693058" target="_blank" rel="noreferrer">
             +380635693058
           </a>
-        </FooterTel>
+        </FooterTabTel>
       </div>
-      <FooterSocialMediaContainer>
-        <FooterSocialTitle>Слідкуй за нами тут:</FooterSocialTitle>
-        <FooterSocialMediaLinks>
+      <FooterSocialTabContainer>
+        <FooterTabSocialTitle>Слідкуй за нами тут:</FooterTabSocialTitle>
+        <FooterSocialTabLinks>
           <a
             href="https://www.facebook.com/PavuchkyBorschahinky"
             target="_blank"
@@ -69,10 +69,10 @@ const TabletDesctopFoter = () => {
           >
             <IconFooterSocial name="youtube" size={36} />
           </a>
-        </FooterSocialMediaLinks>
-      </FooterSocialMediaContainer>
-      <FooterAllReserved>&#64;All right reserved</FooterAllReserved>
-    </FooterContainer>
+        </FooterSocialTabLinks>
+      </FooterSocialTabContainer>
+      <FooteTabAllReserved>&#64;All right reserved</FooteTabAllReserved>
+    </FooterTabContainer>
   );
 };
 
