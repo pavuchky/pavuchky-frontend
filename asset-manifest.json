@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/pavuchky-frontend/static/css/main.7debf50d.css",
-    "main.js": "/pavuchky-frontend/static/js/main.3bdf8b3e.js",
+    "main.css": "/pavuchky-frontend/static/css/main.2a8afa69.css",
+    "main.js": "/pavuchky-frontend/static/js/main.6f4ab85d.js",
     "static/js/643.4e757ae5.chunk.js": "/pavuchky-frontend/static/js/643.4e757ae5.chunk.js",
     "static/js/101.200faca9.chunk.js": "/pavuchky-frontend/static/js/101.200faca9.chunk.js",
     "static/js/177.1ee0f5aa.chunk.js": "/pavuchky-frontend/static/js/177.1ee0f5aa.chunk.js",
@@ -15,7 +15,7 @@
     "static/media/map.svg": "/pavuchky-frontend/static/media/map.29ead2906e6141cbdeb9941af14ab323.svg",
     "static/media/warrior_tablet@2x.png": "/pavuchky-frontend/static/media/warrior_tablet@2x.63003035cc03b8840cf9.png",
     "static/media/warrior_desk.png": "/pavuchky-frontend/static/media/warrior_desk.5a315f62a97e5ea56f26.png",
-    "static/media/sprite.svg": "/pavuchky-frontend/static/media/sprite.4165a188ff19793da756849e62eefb25.svg",
+    "static/media/sprite.svg": "/pavuchky-frontend/static/media/sprite.aec900bdd4f0cb4784dff5549a840538.svg",
     "static/media/tank.svg": "/pavuchky-frontend/static/media/tank.dee9c0ceb25e9833c99216753bedf5a9.svg",
     "static/media/weaving_desk@2x.png": "/pavuchky-frontend/static/media/weaving_desk@2x.4fa89f3bde88074b3983.png",
     "static/media/warrior_mob@2x.png": "/pavuchky-frontend/static/media/warrior_mob@2x.eb6587239e79f05d6f00.png",
@@ -35,8 +35,8 @@
     "static/media/weaving_mob.png": "/pavuchky-frontend/static/media/weaving_mob.03361a1cb7d78317752a.png",
     "index.html": "/pavuchky-frontend/index.html",
     "static/media/getFetch.cjs": "/pavuchky-frontend/static/media/getFetch.40f37ddea2378391108f.cjs",
-    "main.7debf50d.css.map": "/pavuchky-frontend/static/css/main.7debf50d.css.map",
-    "main.3bdf8b3e.js.map": "/pavuchky-frontend/static/js/main.3bdf8b3e.js.map",
+    "main.2a8afa69.css.map": "/pavuchky-frontend/static/css/main.2a8afa69.css.map",
+    "main.6f4ab85d.js.map": "/pavuchky-frontend/static/js/main.6f4ab85d.js.map",
     "643.4e757ae5.chunk.js.map": "/pavuchky-frontend/static/js/643.4e757ae5.chunk.js.map",
     "101.200faca9.chunk.js.map": "/pavuchky-frontend/static/js/101.200faca9.chunk.js.map",
     "177.1ee0f5aa.chunk.js.map": "/pavuchky-frontend/static/js/177.1ee0f5aa.chunk.js.map",
@@ -48,7 +48,7 @@
     "783.ce9dfd7a.chunk.js.map": "/pavuchky-frontend/static/js/783.ce9dfd7a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7debf50d.css",
-    "static/js/main.3bdf8b3e.js"
+    "static/css/main.2a8afa69.css",
+    "static/js/main.6f4ab85d.js"
   ]
 }
