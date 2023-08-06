@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { NavList } from './DesktopNav.styled';
+import { HashLink } from 'react-router-hash-link';
 
 export const DesktopNav = () => {
   const { t } = useTranslation();
@@ -10,7 +11,6 @@ export const DesktopNav = () => {
     { href: '/order', value: t('header.order') },
     { href: '/reporting', value: t('header.reporting') },
     { href: '/gallery/photos', value: t('header.gallery') },
-    { href: '#contacts', value: t('header.contacts') },
   ];
   return (
     <NavList>
@@ -20,6 +20,9 @@ export const DesktopNav = () => {
 
         </li>
       ))}
+      <li>
+        <HashLink to="/#contacts">{t('header.contacts')}</HashLink>
+      </li>
     </NavList>
   );
 };
