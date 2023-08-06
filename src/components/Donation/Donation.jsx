@@ -36,6 +36,7 @@ export const Donation = () => {
 
   const handleModalBtnClick = () => {
     setIsModalOpen(true);
+    document.body.style.overflow = 'hidden';
   };
 
   return (

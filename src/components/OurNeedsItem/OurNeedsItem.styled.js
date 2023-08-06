@@ -15,7 +15,6 @@ export const OurNeedsItemLi = styled.li`
 
   @media (min-width: 768px) {
     padding: 14px;
-    width: 316px;
     min-height: 178px;
   }
 
