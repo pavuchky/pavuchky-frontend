@@ -17,6 +17,7 @@ export const HeroContainer = styled.section`
   @media only screen and (min-width: 1440px) {
     padding: 140px 64px 44px 64px;
     margin: 0 0 64px 0;
+    border-radius: 25px;
   }
 `;
 
@@ -27,6 +28,11 @@ export const HeroText = styled.p`
     margin-left: 12px;
     display: block;
     font-size: 18px;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    font-size: 24px;
+    font-family: ${({ theme }) => theme.fonts.regular};
   }
 `;
 
@@ -52,35 +58,42 @@ export const HeroListTitle = styled.h1`
 `;
 
 export const HeroTitle = styled.span`
-  margin-bottom: 8px;
   font-family: ${({ theme }) => theme.fonts.headLight};
   font-weight: ${({ theme }) => theme.fontWeights.light};
   font-size: 32px;
+  letter-spacing: -1.28px;
 
   @media only screen and (min-width: 768px) {
-    margin-bottom: 0;
     font-size: 80px;
+    letter-spacing: -3.2px;
   }
 
   @media only screen and (min-width: 1440px) {
     font-size: 100px;
+    letter-spacing: -3.2px;
   }
 `;
 
 export const HeroSubTitle = styled.span`
+  margin-top: 8px;
   display: block;
   text-align: center;
-  font-family: ${({ theme }) => theme.fonts.headLight};
+  font-family: ${({ theme }) => theme.fonts.headRegular};
+  font-weight: ${({ theme }) => theme.fontWeights.regular};
   font-size: ${({ theme }) => theme.fontSizes.m};
+  letter-spacing: -0.96px;
 
   @media only screen and (min-width: 768px) {
+    margin-top: 0;
     font-size: 50px;
+    letter-spacing: -2px;
   }
 
   @media only screen and (min-width: 1440px) {
+    padding-left: 217px;
     font-size: 60px;
     text-align: start;
-    padding-left: 217px;
+    letter-spacing: -2.4px;
   }
 `;
 
@@ -103,7 +116,8 @@ export const HeroBtnList = styled.ul`
   gap: 16px;
 
   @media only screen and (min-width: 1440px) {
-    flex-direction: row;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
     gap: 64px;
   }
 `;
@@ -122,6 +136,7 @@ export const HeroItem = styled.li`
 
   @media only screen and (min-width: 1440px) {
     min-width: 519px;
+    border-radius: 24px;
   }
 `;
 
