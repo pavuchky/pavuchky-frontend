@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Icon from '../../assets/images/sprite.svg';
 import {
-  DonatBtn,
+  DonateBtn,
   Header,
   LangContainer,
   LangList,
@@ -32,9 +32,9 @@ export const Navbar = () => {
   };
 
   const isDesktop = useMediaQuery({
-    query: '(min-width: 1280px)',
+    query: '(min-width: 1440px)',
   });
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1279px)' });
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1439px)' });
 
   return (
     <Header>
@@ -63,9 +63,7 @@ export const Navbar = () => {
           )}
         </LangContainer>
 
-        <Link to="#donation">
-          <DonatBtn>{t('header.donat')}</DonatBtn>
-        </Link>
+        <DonateBtn to="/#donation">{t('header.donate')}</DonateBtn>
         {isTabletOrMobile && <MobileMenu />}
       </NavBar>
     </Header>
