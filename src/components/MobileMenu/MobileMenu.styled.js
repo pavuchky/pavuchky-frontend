@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const MenuBtn = styled.button`
-  position: relative;
   padding: 12px 8px;
   margin-left: 16px;
   border-radius: 10px;
@@ -20,9 +19,11 @@ export const MenuBtn = styled.button`
 `;
 
 export const MenuList = styled.ul`
+  width: 174px;
+  z-index: 1;
   position: absolute;
-  top: 86px;
-  left: 52%;
+  top: 69px;
+  left: 188px;
   padding: 32px 34px;
   border-radius: 16px;
   box-shadow: rgba(25, 0, 0, 0.09) -4px 8px 19px,
@@ -44,7 +45,7 @@ export const MenuList = styled.ul`
   }
 
   @media (min-width: 768px) {
-    top: 124px;
-    left: 70%;
+    top: 104px;
+    left: 515px;
   }
 `;

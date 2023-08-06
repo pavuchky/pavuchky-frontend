@@ -24,18 +24,19 @@ export const OurNeedsHeading = styled.h3`
 export const OurNeedsSection = styled.section`
   display: inline-flex;
   padding: 28px 16px;
+  margin-bottom: 36px;
   flex-direction: column;
   justify-content: center;
 
   gap: 20px;
 
   border-radius: 16px;
-  width: 359px;
   background: ${colors.gradientBackground};
 
   @media (min-width: 768px) {
     padding: 32px;
     padding-right: 0px;
+    margin-bottom: 44px;
     width: 720px;
     overflow: hidden;
     border-radius: ${radii.m};
@@ -44,6 +45,7 @@ export const OurNeedsSection = styled.section`
 
   @media (min-width: 1440px) {
     padding: 44px 64px;
+    margin-bottom: 64px;
     width: 1408px;
     border-radius: ${radii.xl};
     gap: 44px;
