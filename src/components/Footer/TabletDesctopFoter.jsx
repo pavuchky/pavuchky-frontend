@@ -5,14 +5,16 @@ import Icons from '../../assets/images/sprite.svg';
 
 import {
   FooterTabContainer,
-FooterSocialTabContainer,
+  FooterSocialTabContainer,
   FooterSocialTabLinks,
- FooterTabSocialTitle,
- FooterTabList,
- FooterTabTel,
-FooteTabAllReserved
+  FooterTabSocialTitle,
+  FooterTabList,
+  FooterTabTel,
+  FooteTabAllReserved,
+  FooterTabSubList,
+  FooterTabSubLinks, 
+  FooterTabListWrapper
 } from './TabletDesctopFooter.styled';
-
 
 const TabletDesctopFoter = () => {
   const IconFooterSocial = ({ name, color, size }) => (
@@ -23,16 +25,16 @@ const TabletDesctopFoter = () => {
   const { t } = useTranslation();
 
   const footerItems = [
-    { href: '/gallery/photos', value: t('header.gallery') },
     { href: '/about', value: t('header.about') },
-    { href: '#donate', value: t('header.donat') },
     { href: '/order', value: t('header.order') },
-    { href: 'weave', value: t('header.weave') },
     { href: '/reporting', value: t('header.reporting') },
+    { href: '/gallery/photos', value: t('header.gallery') },
+ 
   ];
   return (
     <FooterTabContainer>
       <>
+        <FooterTabListWrapper>
         <FooterTabList>
           {footerItems.map((i, index) => (
             <li key={index}>
@@ -43,6 +45,14 @@ const TabletDesctopFoter = () => {
             </li>
           ))}
         </FooterTabList>
+         <FooterTabSubList>
+          <li>
+            <FooterTabSubLinks  to="/#donation">Задонатити</FooterTabSubLinks>
+          </li>
+          <li>
+            <FooterTabSubLinks  to="/#contacts">Плести</FooterTabSubLinks>
+          </li>
+        </FooterTabSubList></FooterTabListWrapper>
         <FooterTabTel>
           <a href="tel:+380635693058" target="_blank" rel="noreferrer">
             +380635693058

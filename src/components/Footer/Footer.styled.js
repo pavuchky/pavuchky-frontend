@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import { theme } from '../../stylesheet/theme';
+import { HashLink } from 'react-router-hash-link';
 
 const { fontSizes, fontWeights, colors, fonts } = theme;
 
-export const FooterContainer = styled.section`
-  padding: 24px 51px;
+export const FooterContainer = styled.footer`
+  padding: 24px 50px;
   margin-top: 36px;
   margin-bottom: 16px;
   border-radius: 16px;
@@ -36,13 +37,27 @@ export const FooterSocialTitle = styled.p`
 export const FooterList = styled.ul`
   display: grid;
   grid-template-columns: 50% 50%;
-  column-gap: 64px;
+  column-gap: 45px;
   row-gap: 16px;
   font-size: ${fontSizes.xs};
   font-weight: ${fontWeights.regular};
   color: ${colors.secondaryFont};
 
 `;
+export const FooterSubList = styled.ul`
+  display: grid;
+  grid-template-columns: 50% 50%;
+  column-gap: 45px;
+  row-gap: 16px;
+  font-size: ${fontSizes.xs};
+  font-weight: ${fontWeights.regular};
+  color: ${colors.secondaryFont};`
+
+
+
+export const FooterSubLinks = styled(HashLink)`
+ margin-top: 16px;
+`
 
 export const FooterTel = styled.p`
   margin-top: 40px;
@@ -51,11 +66,11 @@ export const FooterTel = styled.p`
   font-weight: ${fontWeights.regular};
   color: ${colors.secondaryFont};
   text-align: center;
+  font-family: ${fonts.regular};
 `;
 export const FooterAllReserved = styled.div`
-  margin-bottom: 24px;
-  font-size: ${fontSizes.xs};
-  font-weight: ${fontWeights.regular};
+  font-size: 14px;
+  font-weight: ${fontWeights.light};
   color: ${colors.secondaryFont};
   text-align: center;
 `;
