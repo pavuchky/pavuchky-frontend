@@ -3,8 +3,10 @@ import Contacts from 'components/Contacts/Contacts';
 import { Contribution } from 'components/Contribution/Contribution';
 import { Donation } from 'components/Donation/Donation';
 import OurNeeds from 'components/OurNeeds/OurNeeds';
+import Reviews from 'components/Reviews/Reviews';
 import { Hero } from 'components/Hero/Hero';
 import GallerySection from 'components/GallerySection/GallerySection';
+import { Partners } from 'components/Partners/Partners';
 
 const HomePage = () => {
   return (
@@ -14,7 +16,9 @@ const HomePage = () => {
       <Contribution />
       <OurNeeds />
       <GallerySection />
+      <Reviews />
       <Donation />
+      <Partners />
       <Contacts />
     </>
   );
