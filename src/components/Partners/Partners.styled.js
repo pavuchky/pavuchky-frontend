@@ -120,7 +120,6 @@ export const PartnersText = styled.p`
 `;
 
 export const PartnersBtn = styled(Link)`
-  width: 327px;
   padding: 10px 16px;
   text-align: center;
   border-radius: 8px;
