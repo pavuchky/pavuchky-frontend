@@ -15,6 +15,7 @@ export const DonationModal = ({ setIsModalOpen }) => {
     const handleEscClick = event => {
       if (event.code === 'Escape') {
         setIsModalOpen(prev => !prev);
+        document.body.style.overflow = 'auto';
       }
     };
 
@@ -27,6 +28,7 @@ export const DonationModal = ({ setIsModalOpen }) => {
 
   const handleCloseBtnClick = () => {
     setIsModalOpen(prev => !prev);
+    document.body.style.overflow = 'auto';
   };
 
   const handleBackdropClick = event => {
@@ -35,6 +37,7 @@ export const DonationModal = ({ setIsModalOpen }) => {
     }
 
     setIsModalOpen(prev => !prev);
+    document.body.style.overflow = 'auto';
   };
 
   return createPortal(

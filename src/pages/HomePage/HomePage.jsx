@@ -5,6 +5,7 @@ import { Donation } from 'components/Donation/Donation';
 import OurNeeds from 'components/OurNeeds/OurNeeds';
 import Footer from "../../components/Footer/Footer"
 
+import Reviews from 'components/Reviews/Reviews';
 import { Hero } from 'components/Hero/Hero';
 
 const HomePage = () => {
@@ -14,6 +15,7 @@ const HomePage = () => {
       <AboutUs />
       <Contribution />
       <OurNeeds />
+      <Reviews />
       <Donation />
       <Contacts />
       <Footer/>
