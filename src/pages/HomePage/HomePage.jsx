@@ -6,6 +6,7 @@ import OurNeeds from 'components/OurNeeds/OurNeeds';
 import Reviews from 'components/Reviews/Reviews';
 import { Hero } from 'components/Hero/Hero';
 import GallerySection from 'components/GallerySection/GallerySection';
+import { Statistics } from 'components/Statistics/Statistics';
 import { Partners } from 'components/Partners/Partners';
 
 const HomePage = () => {
@@ -13,6 +14,7 @@ const HomePage = () => {
     <>
       <Hero />
       <AboutUs />
+      <Statistics />
       <Contribution />
       <OurNeeds />
       <GallerySection />
