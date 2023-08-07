@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { StyledContainer } from './SharedLayout.styled';
 import { Navbar } from 'components/Navbar/Navbar';
+import Footer from 'components/Footer/Footer';
 
 export const SharedLayout = () => {
   return (
@@ -14,6 +15,7 @@ export const SharedLayout = () => {
           </Suspense>
         </StyledContainer>
       </main>
+      <Footer />
     </>
   );
 };
