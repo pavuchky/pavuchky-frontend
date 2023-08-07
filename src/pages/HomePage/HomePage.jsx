@@ -4,6 +4,7 @@ import { Contribution } from 'components/Contribution/Contribution';
 import { Donation } from 'components/Donation/Donation';
 import OurNeeds from 'components/OurNeeds/OurNeeds';
 import { Hero } from 'components/Hero/Hero';
+import GallerySection from 'components/GallerySection/GallerySection';
 
 const HomePage = () => {
   return (
@@ -12,6 +13,7 @@ const HomePage = () => {
       <AboutUs />
       <Contribution />
       <OurNeeds />
+      <GallerySection />
       <Donation />
       <Contacts />
     </>
