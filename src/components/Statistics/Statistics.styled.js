@@ -11,8 +11,19 @@ export const StatisticsSection = styled.section`
 
   @media only screen and (min-width: 768px) {
     padding: ${({ theme }) => theme.spacing(8)};
+    margin-bottom: ${({ theme }) => theme.spacing(11)};
 
     border-radius: ${({ theme }) => theme.radii.m};
+  }
+
+  @media only screen and (min-width: 1440px) {
+    padding-top: ${({ theme }) => theme.spacing(11)};
+    padding-bottom: ${({ theme }) => theme.spacing(11)};
+    padding-left: ${({ theme }) => theme.spacing(16)};
+    padding-right: ${({ theme }) => theme.spacing(16)};
+    margin-bottom: ${({ theme }) => theme.spacing(16)};
+
+    border-radius: ${({ theme }) => theme.radii.xl};
   }
 `;
 

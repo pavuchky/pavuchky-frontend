@@ -6,7 +6,7 @@ import {
   AchievementsTitle,
   StatisticsSection,
 } from './Statistics.styled';
-import { StatisticsDesktop } from 'components/StatisticsMobile/StatisticsDesktop';
+import { StatisticsDesktop } from 'components/StatisticsDesktop/StatisticsDesktop';
 
 export const Statistics = () => {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
