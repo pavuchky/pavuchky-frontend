@@ -14,14 +14,16 @@ export const ContactsContainer = styled.section`
   @media (min-width: 768px) {
     margin-bottom: 44px;
     padding: 32px 32px 58px 32px;
+    border-radius: 20px;
   }
   @media (min-width: 1440px) {
     margin-bottom: 64px;
     padding: 44px 64px;
-    border-radius: 20px;
+    border-radius: 25px;
   }
 `;
 export const ContactsWrapper = styled.div`
+  color: ${colors.secondaryFont};
   @media (min-width: 768px) {
     display: flex;
   }

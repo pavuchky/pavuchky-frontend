@@ -6,6 +6,7 @@ const { colors, radii, fonts, fontWeights, fontSizes } = theme;
 export const ReviewsSection = styled.section`
   display: inline-flex;
   padding: 28px 16px;
+  margin-bottom: 36px;
   flex-direction: column;
   justify-content: center;
 
@@ -28,6 +29,7 @@ export const ReviewsSection = styled.section`
     padding: 44px 64px;
     padding-right: 0px;
     width: 1408px;
+    margin-bottom: 64px;
     border-radius: ${radii.xl};
     gap: 44px;
   }

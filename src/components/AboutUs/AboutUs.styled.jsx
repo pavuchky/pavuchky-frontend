@@ -5,6 +5,7 @@ export const AboutUsSectionWrapper = styled.section`
   position: relative;
   padding: 28px 16px 32px 16px;
   margin: 0px auto;
+  margin-bottom: 36px;
   width: 100%;
   border-radius: 16px;
 
