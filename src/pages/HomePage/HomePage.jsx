@@ -5,6 +5,7 @@ import { Donation } from 'components/Donation/Donation';
 import OurNeeds from 'components/OurNeeds/OurNeeds';
 import Reviews from 'components/Reviews/Reviews';
 import { Hero } from 'components/Hero/Hero';
+import { Partners } from 'components/Partners/Partners';
 
 const HomePage = () => {
   return (
@@ -15,6 +16,7 @@ const HomePage = () => {
       <OurNeeds />
       <Reviews />
       <Donation />
+      <Partners />
       <Contacts />
     </>
   );
