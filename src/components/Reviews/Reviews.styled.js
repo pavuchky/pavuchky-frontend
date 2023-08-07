@@ -32,7 +32,7 @@ export const ReviewsSection = styled.section`
   }
 `;
 
-export const ReviewsTitel = styled.h3`
+export const ReviewsTitle = styled.h3`
   font-family: ${fonts.regular};
   font-weight: ${fontWeights.regular};
   font-size: ${fontSizes.m};
@@ -49,7 +49,7 @@ export const ReviewsTitel = styled.h3`
   }
 `;
 
-export const ReviewsTitelPartContainer = styled.div`
+export const ReviewsTitlePartContainer = styled.div`
   display: flex;
   justify-content: space-between;
 

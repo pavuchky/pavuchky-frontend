@@ -6,6 +6,7 @@ import 'swiper/css/navigation';
 
 import { Scrollbar, Navigation } from 'swiper';
 import {
+  ReviewSwiperWrapper,
   ReviewsSwiperContainer,
   ReviewsSwiperSlideContainer,
 } from './ReviewsSwiper.styled';
@@ -33,23 +34,29 @@ const ReviewsData = [
 
 const ReviewsSwiper = () => {
   const isTabletScreen = useMediaQuery({ minWidth: 768 });
-  const isDesctopScreen = useMediaQuery({ minWidth: 1440 });
+  const isDesktopScreen = useMediaQuery({ minWidth: 1440 });
 
   return (
-    <ReviewsSwiperContainer
-      spaceBetween={isDesctopScreen ? 48 : 24}
-      slidesPerView={isTabletScreen ? (isDesctopScreen ? 2.55 : 2) : 1}
-      modules={[Scrollbar, Navigation]}
-      scrollbar={{ draggable: true }}
-      navigation
-    >
-      {ReviewsData.map(({ id, review, image }) => (
-        <ReviewsSwiperSlideContainer key={id}>
-          <ReviewSwiperItem review={review} reviewImage={image} />
-        </ReviewsSwiperSlideContainer>
-      ))}
-      {isDesctopScreen && <ReviewsSwiperCustomButtons />}
-    </ReviewsSwiperContainer>
+    <ReviewSwiperWrapper>
+      {isDesktopScreen && <ReviewsSwiperCustomButtons />}
+
+      <ReviewsSwiperContainer
+        spaceBetween={isDesktopScreen ? 48 : 24}
+        slidesPerView={isTabletScreen ? (isDesktopScreen ? 2.55 : 2) : 1}
+        modules={[Scrollbar, Navigation]}
+        scrollbar={{ draggable: true }}
+        navigation={{
+          nextEl: '.swiper-next-btn',
+          prevEl: '.swiper-prev-btn',
+        }}
+      >
+        {ReviewsData.map(({ id, review, image }) => (
+          <ReviewsSwiperSlideContainer key={id}>
+            <ReviewSwiperItem review={review} reviewImage={image} />
+          </ReviewsSwiperSlideContainer>
+        ))}
+      </ReviewsSwiperContainer>
+    </ReviewSwiperWrapper>
   );
 };
 

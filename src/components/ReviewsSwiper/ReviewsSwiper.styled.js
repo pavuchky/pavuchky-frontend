@@ -4,6 +4,16 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { theme } from 'stylesheet/theme';
 const { colors, borders } = theme;
 
+export const ReviewSwiperWrapper = styled.div`
+  display: flex;
+  width: 100%;
+
+  .swiper-button-disabled {
+    color: ${colors.grey};
+    border-color: ${colors.grey};
+  }
+`;
+
 export const ReviewsSwiperSlideContainer = styled(SwiperSlide)`
   width: 327px;
   min-height: 263px;
@@ -37,11 +47,6 @@ export const ReviewsSwiperContainer = styled(Swiper)`
     min-height: 2px;
   }
 
-  .swiper-button-prev,
-  .swiper-button-next {
-    display: none;
-  }
-
   @media (min-width: 768px) {
     width: 656px;
 
@@ -62,7 +67,7 @@ export const ReviewsSwiperContainer = styled(Swiper)`
 
     /* width: 1344px; */
     /* padding-left: 227px; */
-    margin-left: 227px; //////////////////////////
+    // margin-left: 227px;
     width: 1117px; ///////////////////////
 
     .swiper-scrollbar-drag:last-child {
@@ -71,44 +76,6 @@ export const ReviewsSwiperContainer = styled(Swiper)`
 
     .swiper-scrollbar {
       display: none;
-    }
-
-    .swiper-button-prev {
-      position: absolute;
-
-      display: block;
-      top: 95px;
-      left: 0px;
-      width: 85px;
-      height: 85px;
-      border: ${borders.normal};
-      border-color: ${colors.blue};
-      border-radius: 50%;
-    }
-
-    .swiper-button-next {
-      position: absolute;
-      display: block;
-      top: 95px;
-      left: 108px;
-      width: 85px;
-      height: 85px;
-      border: ${borders.normal};
-      border-color: ${colors.blue};
-      border-radius: 50%;
-    }
-
-    .swiper-button-prev::after,
-    .swiper-button-next::after {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .swiper-button-disabled {
-      color: ${colors.grey};
-      border-color: ${colors.grey};
     }
   }
 `;
