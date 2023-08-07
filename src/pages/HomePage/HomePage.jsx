@@ -6,6 +6,7 @@ import OurNeeds from 'components/OurNeeds/OurNeeds';
 import Reviews from 'components/Reviews/Reviews';
 import { Hero } from 'components/Hero/Hero';
 import { Statistics } from 'components/Statistics/Statistics';
+import { Partners } from 'components/Partners/Partners';
 
 const HomePage = () => {
   return (
@@ -17,6 +18,7 @@ const HomePage = () => {
       <OurNeeds />
       <Reviews />
       <Donation />
+      <Partners />
       <Contacts />
     </>
   );
