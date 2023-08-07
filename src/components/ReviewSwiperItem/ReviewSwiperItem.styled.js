@@ -38,17 +38,31 @@ export const ReviewsSwiperItemParagraph = styled.p`
   font-family: ${fonts.light};
   color: ${colors.secondaryFont};
 
-  height: 50px;
-  overflow: auto;
-  /* margin-bottom: 12px; */
+  height: 42px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 8px;
+
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${colors.blue};
+    border-radius: 2px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: ${colors.grey};
+    border-radius: 2px;
+  }
 
   @media (min-width: 768px) {
     font-weight: ${fontWeights.regular};
     font-family: ${fonts.regular};
 
-    height: 80px;
-    overflow: auto;
-    /* margin-bottom: 42px; */
+    height: 75px;
+    margin-bottom: 5px;
   }
 
   @media (min-width: 1440px) {
@@ -56,9 +70,12 @@ export const ReviewsSwiperItemParagraph = styled.p`
     font-weight: ${fontWeights.light};
     font-family: ${fonts.light};
 
-    height: 132px;
-    overflow: auto;
-    /* margin-bottom: 84px; */
+    height: 124px;
+    margin-bottom: 8px;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
   }
 `;
 

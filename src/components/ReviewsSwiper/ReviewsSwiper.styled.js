@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { theme } from 'stylesheet/theme';
-const { colors, borders } = theme;
+const { colors } = theme;
 
 export const ReviewSwiperWrapper = styled.div`
   display: flex;
@@ -11,6 +11,10 @@ export const ReviewSwiperWrapper = styled.div`
   .swiper-button-disabled {
     color: ${colors.grey};
     border-color: ${colors.grey};
+
+    & svg {
+      stroke: ${colors.grey};
+    }
   }
 `;
 
@@ -60,15 +64,10 @@ export const ReviewsSwiperContainer = styled(Swiper)`
   }
 
   @media (min-width: 1440px) {
-    ////////////////////
     display: flex;
     flex-direction: row-reverse;
-    ///////////////////////
 
-    /* width: 1344px; */
-    /* padding-left: 227px; */
-    // margin-left: 227px;
-    width: 1117px; ///////////////////////
+    width: 1117px;
 
     .swiper-scrollbar-drag:last-child {
       display: none;

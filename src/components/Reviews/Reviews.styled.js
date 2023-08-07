@@ -26,6 +26,7 @@ export const ReviewsSection = styled.section`
 
   @media (min-width: 1440px) {
     padding: 44px 64px;
+    padding-right: 0px;
     width: 1408px;
     border-radius: ${radii.xl};
     gap: 44px;
@@ -52,6 +53,7 @@ export const ReviewsTitle = styled.h3`
 export const ReviewsTitlePartContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  padding-right: 64px;
 
   @media (min-width: 1440px) {
     padding-left: 11px;
