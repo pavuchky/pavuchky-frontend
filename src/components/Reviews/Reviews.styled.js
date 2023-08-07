@@ -15,6 +15,7 @@ export const ReviewsSection = styled.section`
   border-radius: 16px;
   width: 359px;
   background: ${colors.gradientBackground};
+  margin-bottom: 36px;
 
   @media (min-width: 768px) {
     padding: 32px 26px;
@@ -23,6 +24,7 @@ export const ReviewsSection = styled.section`
     overflow: hidden;
     border-radius: ${radii.m};
     gap: 35px;
+    margin-bottom: 44px;
   }
 
   @media (min-width: 1440px) {
@@ -32,6 +34,7 @@ export const ReviewsSection = styled.section`
     margin-bottom: 64px;
     border-radius: ${radii.xl};
     gap: 44px;
+    margin-bottom: 64px;
   }
 `;
 
