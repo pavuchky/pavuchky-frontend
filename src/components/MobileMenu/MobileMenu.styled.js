@@ -48,4 +48,8 @@ export const MenuList = styled.ul`
     top: 104px;
     left: 515px;
   }
+
+  @media only screen and (max-width: 374px) {
+    left: 178px;
+  }
 `;
