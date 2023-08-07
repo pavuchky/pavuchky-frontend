@@ -10,6 +10,8 @@ export const ReviewsSwiperSlideContainer = styled(SwiperSlide)`
   padding-bottom: 24px;
 
   @media (min-width: 768px) {
+    width: 316px;
+    min-height: 369px;
   }
 
   @media (min-width: 1440px) {
