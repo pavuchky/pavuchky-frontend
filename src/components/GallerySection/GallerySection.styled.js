@@ -3,7 +3,7 @@ import { HashLink } from 'react-router-hash-link';
 
 export const GallerySectionWrapper = styled.section`
   position: relative;
-  padding: 28px 16px 32px 16px;
+  padding: 28px 16px 28px 16px;
   margin: 0px auto;
   width: 100%;
   border-radius: 16px;
@@ -42,6 +42,7 @@ export const GalleryTitle = styled.h3`
   }
   @media screen and (min-width: 1440px) {
     margin-bottom: 44px;
+    font-family: ${({ theme }) => theme.fonts.headRegular};
     font-size: 60px;
     letter-spacing: -2.4px;
   }
@@ -70,6 +71,7 @@ export const GalleryButton = styled(HashLink)`
     font-size: 14px;
   }
   @media screen and (min-width: 1440px) {
+    font-family: ${({ theme }) => theme.fonts.regular};
     font-size: 16px;
     font-weight: 400;
     line-height: 30px;
