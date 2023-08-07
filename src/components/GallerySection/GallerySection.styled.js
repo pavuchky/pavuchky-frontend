@@ -237,9 +237,9 @@ export const GalleryItem6 = styled(GalleryItem)`
 `;
 
 export const GalleryImg = styled.img`
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
   border-radius: 8px;
 `;
