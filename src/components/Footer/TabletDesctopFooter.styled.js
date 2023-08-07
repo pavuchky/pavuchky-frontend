@@ -73,7 +73,7 @@ export const FooterTabList = styled.ul`
   justify-content: center;
   font-family: ${fonts.regular};
   @media (min-width: 1440px) {
-    font-size: ${fontSizes.m};
+    font-size: ${fontSizes.s};
   }
 `;
 export const FooterTabSubList = styled.ul`
