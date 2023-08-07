@@ -10,6 +10,7 @@ import {
   ReviewsSwiperSlideContainer,
 } from './ReviewsSwiper.styled';
 import ReviewSwiperItem from 'components/ReviewSwiperItem/ReviewSwiperItem';
+import ReviewsSwiperCustomButtons from 'components/ReviewsSwiperCustomButtons/ReviewsSwiperCustomButtons';
 
 const ReviewsData = [
   {
@@ -47,6 +48,7 @@ const ReviewsSwiper = () => {
           <ReviewSwiperItem review={review} reviewImage={image} />
         </ReviewsSwiperSlideContainer>
       ))}
+      {isDesctopScreen && <ReviewsSwiperCustomButtons />}
     </ReviewsSwiperContainer>
   );
 };

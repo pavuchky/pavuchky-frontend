@@ -15,6 +15,7 @@ export const ReviewsSwiperSlideContainer = styled(SwiperSlide)`
   }
 
   @media (min-width: 1440px) {
+    width: 409px;
   }
 `;
 
@@ -54,8 +55,15 @@ export const ReviewsSwiperContainer = styled(Swiper)`
   }
 
   @media (min-width: 1440px) {
-    width: 1344px;
-    padding-left: 227px;
+    ////////////////////
+    display: flex;
+    flex-direction: row-reverse;
+    ///////////////////////
+
+    /* width: 1344px; */
+    /* padding-left: 227px; */
+    margin-left: 227px; //////////////////////////
+    width: 1117px; ///////////////////////
 
     .swiper-scrollbar-drag:last-child {
       display: none;
