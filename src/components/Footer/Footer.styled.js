@@ -6,21 +6,19 @@ const { fontSizes, fontWeights, colors, fonts } = theme;
 
 export const FooterContainer = styled.footer`
   padding: 24px 50px;
-  margin-top: 36px;
+  margin: 0 8px;
   margin-bottom: 16px;
   border-radius: 16px;
   background: ${colors.gradientMain};
   box-shadow: 4px 8px 25px 0px rgba(176, 193, 243, 0.15);
 `;
 export const FooterSocialMediaContainer = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-margin-bottom: 40px;
-
-
-`
-export const FooterSocialMediaLinks = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+`;
+export const FooterSocialMediaLinks = styled.ul`
   color: ${colors.secondaryFont};
   display: flex;
   flex-direction: row;
@@ -42,7 +40,6 @@ export const FooterList = styled.ul`
   font-size: ${fontSizes.xs};
   font-weight: ${fontWeights.regular};
   color: ${colors.secondaryFont};
-
 `;
 export const FooterSubList = styled.ul`
   display: grid;
@@ -53,13 +50,9 @@ export const FooterSubList = styled.ul`
   font-weight: ${fontWeights.regular};
   color: ${colors.secondaryFont};
   font-family: ${fonts.regular};
-  `
+`;
 
-
-
-export const FooterSubLinks = styled(HashLink)`
-
-`
+export const FooterSubLinks = styled(HashLink)``;
 
 export const FooterTel = styled.p`
   margin-top: 40px;

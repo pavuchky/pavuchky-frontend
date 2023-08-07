@@ -12,8 +12,8 @@ import {
   FooterTabTel,
   FooteTabAllReserved,
   FooterTabSubList,
-  FooterTabSubLinks, 
-  FooterTabListWrapper
+  FooterTabSubLinks,
+  FooterTabListWrapper,
 } from './TabletDesctopFooter.styled';
 
 const TabletDesctopFoter = () => {
@@ -29,30 +29,30 @@ const TabletDesctopFoter = () => {
     { href: '/order', value: t('header.order') },
     { href: '/reporting', value: t('header.reporting') },
     { href: '/gallery/photos', value: t('header.gallery') },
- 
   ];
   return (
     <FooterTabContainer>
       <>
         <FooterTabListWrapper>
-        <FooterTabList>
-          {footerItems.map((i, index) => (
-            <li key={index}>
-              <NavLink
-                to={i.href}
-                dangerouslySetInnerHTML={{ __html: i.value }}
-              />
+          <FooterTabList>
+            {footerItems.map((i, index) => (
+              <li key={index}>
+                <NavLink
+                  to={i.href}
+                  dangerouslySetInnerHTML={{ __html: i.value }}
+                />
+              </li>
+            ))}
+          </FooterTabList>
+          <FooterTabSubList>
+            <li>
+              <FooterTabSubLinks to="/#donation">Задонатити</FooterTabSubLinks>
             </li>
-          ))}
-        </FooterTabList>
-         <FooterTabSubList>
-          <li>
-            <FooterTabSubLinks  to="/#donation">Задонатити</FooterTabSubLinks>
-          </li>
-          <li>
-            <FooterTabSubLinks  to="/#contacts">Плести</FooterTabSubLinks>
-          </li>
-        </FooterTabSubList></FooterTabListWrapper>
+            <li>
+              <FooterTabSubLinks to="/#contacts">Плести</FooterTabSubLinks>
+            </li>
+          </FooterTabSubList>
+        </FooterTabListWrapper>
         <FooterTabTel>
           <a href="tel:+380635693058" target="_blank" rel="noreferrer">
             +380635693058
@@ -62,23 +62,29 @@ const TabletDesctopFoter = () => {
       <FooterSocialTabContainer>
         <FooterTabSocialTitle>Слідкуй за нами тут:</FooterTabSocialTitle>
         <FooterSocialTabLinks>
-          <a
-            href="https://www.facebook.com/PavuchkyBorschahinky"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <IconFooterSocial name="facebook" size={36} />
-          </a>
-          <a href="tel:+380635693058" target="_blank" rel="noreferrer">
-            <IconFooterSocial name="telegram" size={36} />
-          </a>
-          <a
-            href="https://www.youtube.com/@user-mb3bs9jv1h"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <IconFooterSocial name="youtube" size={36} />
-          </a>
+          <li>
+            <a
+              href="https://www.facebook.com/PavuchkyBorschahinky"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <IconFooterSocial name="facebook" size={36} />
+            </a>
+          </li>
+          <li>
+            <a href="tel:+380635693058" target="_blank" rel="noreferrer">
+              <IconFooterSocial name="telegram" size={36} />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.youtube.com/@user-mb3bs9jv1h"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <IconFooterSocial name="youtube" size={36} />
+            </a>
+          </li>
         </FooterSocialTabLinks>
       </FooterSocialTabContainer>
       <FooteTabAllReserved>&#64;All right reserved</FooteTabAllReserved>

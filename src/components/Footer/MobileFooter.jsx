@@ -15,7 +15,6 @@ import {
   FooterSubList,
 } from './Footer.styled';
 
-
 const MobFooter = () => {
   const IconFooterSocial = ({ name, color, size }) => (
     <svg className={`icon-${name}`} fill={color} width={size} height={size}>
@@ -23,32 +22,34 @@ const MobFooter = () => {
     </svg>
   );
 
- 
-
-
-
   return (
     <FooterContainer>
       <FooterSocialMediaContainer>
         <FooterSocialTitle>Слідкуй за нами тут:</FooterSocialTitle>
         <FooterSocialMediaLinks>
-          <a
-            href="https://www.facebook.com/PavuchkyBorschahinky"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <IconFooterSocial name="facebook" size={36} />
-          </a>
-          <a href="tel:+380635693058" target="_blank" rel="noreferrer">
-            <IconFooterSocial name="telegram" size={36} />
-          </a>
-          <a
-            href="https://www.youtube.com/@user-mb3bs9jv1h"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <IconFooterSocial name="youtube" size={36} />
-          </a>
+          <li>
+            <a
+              href="https://www.facebook.com/PavuchkyBorschahinky"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <IconFooterSocial name="facebook" size={36} />
+            </a>
+          </li>
+          <li>
+            <a href="tel:+380635693058" target="_blank" rel="noreferrer">
+              <IconFooterSocial name="telegram" size={36} />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.youtube.com/@user-mb3bs9jv1h"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <IconFooterSocial name="youtube" size={36} />
+            </a>
+          </li>
         </FooterSocialMediaLinks>
       </FooterSocialMediaContainer>
       <div>
@@ -56,18 +57,21 @@ const MobFooter = () => {
           <li>
             <NavLink to="/gallery/photos">Галерея</NavLink>
           </li>
-          <li> <NavLink to="/about">Про нас</NavLink>
-          </li><li>
+          <li>
+            <NavLink to="/about">Про нас</NavLink>
+          </li>
+          <li>
             <FooterSubLinks to="/#donation">Задонатити</FooterSubLinks>
           </li>
-          <li> <NavLink to="/order">Замовити</NavLink></li>
           <li>
-            <FooterSubLinks  to="/#contacts">Плести</FooterSubLinks>
+            <NavLink to="/order">Замовити</NavLink>
           </li>
-          <li> <NavLink to="reporting">Звітність</NavLink></li>
-          
-          
-         
+          <li>
+            <FooterSubLinks to="/#contacts">Плести</FooterSubLinks>
+          </li>
+          <li>
+            <NavLink to="reporting">Звітність</NavLink>
+          </li>
         </FooterSubList>
         <FooterTel>
           <a href="tel:+380635693058" target="_blank" rel="noreferrer">

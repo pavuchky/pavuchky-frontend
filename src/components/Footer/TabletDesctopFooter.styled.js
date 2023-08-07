@@ -4,20 +4,20 @@ import { HashLink } from 'react-router-hash-link';
 
 const { fontSizes, fontWeights, colors, fonts } = theme;
 
-
 export const FooterTabContainer = styled.footer`
+  margin: 0 24px;
   border-radius: 20px;
   background: ${colors.gradientMain};
   box-shadow: 4px 8px 25px 0px rgba(176, 193, 243, 0.15);
 
   @media (min-width: 768px) {
-    margin-top: 44px;
     margin-bottom: 24px;
     padding: 32px 47px;
   }
   @media (min-width: 1440px) {
-
     padding: 44px;
+    margin: 0 16px;
+    margin-bottom: 16px;
     border-radius: 25px;
     font-size: ${fontSizes.m};
   }
@@ -28,16 +28,14 @@ export const FooterSocialTabContainer = styled.div`
   align-items: center;
   margin-bottom: 24px;
   @media (min-width: 1440px) {
-    
     margin-bottom: 36px;
   }
 `;
-export const FooterSocialTabLinks = styled.div`
+export const FooterSocialTabLinks = styled.ul`
   color: ${colors.secondaryFont};
   display: flex;
   flex-direction: row;
   gap: 28px;
-
 `;
 export const FooterTabSocialTitle = styled.p`
   margin-bottom: 15px;
@@ -49,6 +47,8 @@ export const FooterTabSocialTitle = styled.p`
   font-family: ${fonts.regular};
   @media (min-width: 1440px) {
     font-size: ${fontSizes.s};
+    font-family: ${fonts.light};
+    font-weight: ${fontWeights.light};
     margin-bottom: 10px;
   }
 `;
@@ -58,7 +58,7 @@ export const FooterTabListWrapper = styled.div`
   align-items: center;
   margin-bottom: 24px;
   @media (min-width: 1440px) {
-  justify-content:center;
+    justify-content: center;
     margin-bottom: 36px;
   }
 `;
@@ -74,6 +74,8 @@ export const FooterTabList = styled.ul`
   font-family: ${fonts.regular};
   @media (min-width: 1440px) {
     font-size: ${fontSizes.s};
+    font-family: ${fonts.light};
+    font-weight: ${fontWeights.light};
   }
 `;
 export const FooterTabSubList = styled.ul`
@@ -89,12 +91,13 @@ export const FooterTabSubList = styled.ul`
   font-family: ${fonts.regular};
   @media (min-width: 1440px) {
     font-size: ${fontSizes.s};
+    font-family: ${fonts.light};
+    font-weight: ${fontWeights.light};
   }
 `;
 
 export const FooterTabSubLinks = styled(HashLink)`
   margin-top: 0px;
- 
 `;
 
 export const FooterTabTel = styled.p`
@@ -106,6 +109,8 @@ export const FooterTabTel = styled.p`
   font-family: ${fonts.regular};
   @media (min-width: 1440px) {
     font-size: ${fontSizes.s};
+    font-family: ${fonts.light};
+    font-weight: ${fontWeights.light};
     margin-bottom: 36px;
   }
 `;
