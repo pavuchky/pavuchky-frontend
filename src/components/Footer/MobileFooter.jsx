@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+
 import Icons from '../../assets/images/sprite.svg';
 
 import {
@@ -8,7 +8,7 @@ import {
   FooterSocialMediaContainer,
   FooterSocialMediaLinks,
   FooterSocialTitle,
-  FooterList,
+  // FooterList,
   FooterTel,
   FooterAllReserved,
   FooterSubLinks,
@@ -23,14 +23,9 @@ const MobFooter = () => {
     </svg>
   );
 
-  const { t } = useTranslation();
+ 
 
-  const footerItems = [
-    { href: '/gallery/photos', value: t('header.gallery') },
-    { href: '/about', value: t('header.about') },
-    { href: '/order', value: t('header.order') },
-    { href: '/reporting', value: t('header.reporting') },
-  ];
+
 
   return (
     <FooterContainer>
@@ -57,23 +52,22 @@ const MobFooter = () => {
         </FooterSocialMediaLinks>
       </FooterSocialMediaContainer>
       <div>
-        <FooterList>
-          {footerItems.map((item, index) => (
-            <li key={index}>
-              <NavLink
-                to={item.href}
-                dangerouslySetInnerHTML={{ __html: item.value }}
-              />
-            </li>
-          ))}
-        </FooterList>
         <FooterSubList>
           <li>
-            <FooterSubLinks  to="/#donation">Задонатити</FooterSubLinks>
+            <NavLink to="/gallery/photos">Галерея</NavLink>
           </li>
+          <li> <NavLink to="/about">Про нас</NavLink>
+          </li><li>
+            <FooterSubLinks to="/#donation">Задонатити</FooterSubLinks>
+          </li>
+          <li> <NavLink to="/order">Замовити</NavLink></li>
           <li>
             <FooterSubLinks  to="/#contacts">Плести</FooterSubLinks>
           </li>
+          <li> <NavLink to="reporting">Звітність</NavLink></li>
+          
+          
+         
         </FooterSubList>
         <FooterTel>
           <a href="tel:+380635693058" target="_blank" rel="noreferrer">

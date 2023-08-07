@@ -17,7 +17,7 @@ export const FooterTabContainer = styled.footer`
   }
   @media (min-width: 1440px) {
 
-    padding: 44px 44px 32px;
+    padding: 44px;
     border-radius: 25px;
     font-size: ${fontSizes.m};
   }
@@ -46,6 +46,7 @@ export const FooterTabSocialTitle = styled.p`
   font-style: normal;
   font-weight: ${fontWeights.light};
   color: ${colors.secondaryFont};
+  font-family: ${fonts.regular};
   @media (min-width: 1440px) {
     font-size: ${fontSizes.s};
     margin-bottom: 10px;
@@ -70,9 +71,9 @@ export const FooterTabList = styled.ul`
   color: ${colors.secondaryFont};
   align-items: center;
   justify-content: center;
+  font-family: ${fonts.regular};
   @media (min-width: 1440px) {
     font-size: ${fontSizes.m};
-
   }
 `;
 export const FooterTabSubList = styled.ul`
@@ -83,10 +84,11 @@ export const FooterTabSubList = styled.ul`
   font-weight: ${fontWeights.regular};
   color: ${colors.secondaryFont};
   align-items: center;
-  justify-content: center; 
-  margin-left:28px;
+  justify-content: center;
+  margin-left: 28px;
+  font-family: ${fonts.regular};
   @media (min-width: 1440px) {
-    font-size: ${fontSizes.m};
+    font-size: ${fontSizes.s};
   }
 `;
 
@@ -98,11 +100,12 @@ export const FooterTabSubLinks = styled(HashLink)`
 export const FooterTabTel = styled.p`
   margin-bottom: 24px;
   font-size: ${fontSizes.xs};
-  font-weight: ${fontWeights.regular};
+  font-weight: ${fontWeights.light};
   color: ${colors.secondaryFont};
   text-align: center;
+  font-family: ${fonts.regular};
   @media (min-width: 1440px) {
-    font-size: ${fontSizes.m};
+    font-size: ${fontSizes.s};
     margin-bottom: 36px;
   }
 `;

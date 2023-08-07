@@ -51,12 +51,14 @@ export const FooterSubList = styled.ul`
   row-gap: 16px;
   font-size: ${fontSizes.xs};
   font-weight: ${fontWeights.regular};
-  color: ${colors.secondaryFont};`
+  color: ${colors.secondaryFont};
+  font-family: ${fonts.regular};
+  `
 
 
 
 export const FooterSubLinks = styled(HashLink)`
- margin-top: 16px;
+
 `
 
 export const FooterTel = styled.p`
