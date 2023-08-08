@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/pavuchky-frontend/static/css/main.2a8afa69.css",
-    "main.js": "/pavuchky-frontend/static/js/main.ad04f156.js",
+    "main.js": "/pavuchky-frontend/static/js/main.c1fa77f8.js",
     "static/js/643.4e757ae5.chunk.js": "/pavuchky-frontend/static/js/643.4e757ae5.chunk.js",
     "static/js/101.200faca9.chunk.js": "/pavuchky-frontend/static/js/101.200faca9.chunk.js",
     "static/js/177.1ee0f5aa.chunk.js": "/pavuchky-frontend/static/js/177.1ee0f5aa.chunk.js",
@@ -22,8 +22,14 @@
     "static/media/warrior_tablet.png": "/pavuchky-frontend/static/media/warrior_tablet.d9cc2df9a66da0f2c7cb.png",
     "static/media/weaving_desk.png": "/pavuchky-frontend/static/media/weaving_desk.013c2e50d677e9437e7d.png",
     "static/media/weaving_tablet@2x.png": "/pavuchky-frontend/static/media/weaving_tablet@2x.9bdada9bd25eb2567b77.png",
+    "static/media/gallery_img5.jpg": "/pavuchky-frontend/static/media/gallery_img5.681fca301bbde7beb058.jpg",
+    "static/media/gallery_img4.jpg": "/pavuchky-frontend/static/media/gallery_img4.78e742774c8505614947.jpg",
+    "static/media/gallery_img1.jpg": "/pavuchky-frontend/static/media/gallery_img1.12affb531ffe892dff3d.jpg",
     "static/media/weaving_mob@2x.png": "/pavuchky-frontend/static/media/weaving_mob@2x.ca530bfcb348d5a086d8.png",
+    "static/media/gallery_img2.jpg": "/pavuchky-frontend/static/media/gallery_img2.e0cf89a6ef2c44acb57f.jpg",
     "static/media/warrior_mob.png": "/pavuchky-frontend/static/media/warrior_mob.c9da130051c7a8faa355.png",
+    "static/media/gallery_img3.jpg": "/pavuchky-frontend/static/media/gallery_img3.5381f5f1c84928416630.jpg",
+    "static/media/gallery_img6.jpg": "/pavuchky-frontend/static/media/gallery_img6.ed725b8ee113ac984ab3.jpg",
     "static/media/weaving_tablet.png": "/pavuchky-frontend/static/media/weaving_tablet.11b8176c2862e40f567c.png",
     "static/media/e-UkraineHead-Regular.otf": "/pavuchky-frontend/static/media/e-UkraineHead-Regular.4e9dc7df09b113ce919f.otf",
     "static/media/e-UkraineHead-Medium.otf": "/pavuchky-frontend/static/media/e-UkraineHead-Medium.b86fdf0f27a162dd685a.otf",
@@ -42,7 +48,7 @@
     "index.html": "/pavuchky-frontend/index.html",
     "static/media/getFetch.cjs": "/pavuchky-frontend/static/media/getFetch.40f37ddea2378391108f.cjs",
     "main.2a8afa69.css.map": "/pavuchky-frontend/static/css/main.2a8afa69.css.map",
-    "main.ad04f156.js.map": "/pavuchky-frontend/static/js/main.ad04f156.js.map",
+    "main.c1fa77f8.js.map": "/pavuchky-frontend/static/js/main.c1fa77f8.js.map",
     "643.4e757ae5.chunk.js.map": "/pavuchky-frontend/static/js/643.4e757ae5.chunk.js.map",
     "101.200faca9.chunk.js.map": "/pavuchky-frontend/static/js/101.200faca9.chunk.js.map",
     "177.1ee0f5aa.chunk.js.map": "/pavuchky-frontend/static/js/177.1ee0f5aa.chunk.js.map",
@@ -55,6 +61,6 @@
   },
   "entrypoints": [
     "static/css/main.2a8afa69.css",
-    "static/js/main.ad04f156.js"
+    "static/js/main.c1fa77f8.js"
   ]
 }
