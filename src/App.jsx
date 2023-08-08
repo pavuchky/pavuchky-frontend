@@ -20,7 +20,7 @@ const ReviewsPage = lazy(() => import('pages/ReviewsPage/ReviewsPage'));
 const ReviewPage = lazy(() => import('pages/ReviewPage/ReviewPage'));
 
 export const App = () => {
-  const { data } = useFetch('partners');
+  const { data } = useFetch("reviews");
 
   console.log('data', data);
   return (

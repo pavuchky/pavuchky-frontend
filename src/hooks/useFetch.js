@@ -34,38 +34,37 @@ const useFetch = (type = 'posts') => {
     partners: partnersFormattedFn,
   }[type];
 
+  const errorMessage = `Invalid prop ${type} passed to useFetch. Expected a valid type and name of param. You can pass only ${JSON.stringify(
+    Object.keys(objectOfPropsAndRoutes)
+  )}`;
+
   useEffect(() => {
     const query = `*[_type == "${type}"]`;
 
     setLoading(true);
 
-    // try {
-    // } catch (err) {
-    // } finally {
-    // }
+    async function fetchData() {
+      try {
+        if (
+          !Object.keys(objectOfPropsAndRoutes).some(el => el === type) ||
+          !(typeof type === "string")
+        ) {
+          throw new TypeError(errorMessage);
+        }
 
-    client
-      .fetch(query)
-      .then(data => {
+        const data = await client.fetch(query);
         const formattedData = data.map(fnsForFormat);
         setData(formattedData[0]);
-      })
-      .catch(error => {
+      } catch (err) {
         setLoading(false);
-      })
-      .finally(() => {
+        console.log(err.message);
+      } finally {
         setLoading(false);
-      });
-  }, []);
+      }
+    }
 
-  if (
-    !Object.keys(objectOfPropsAndRoutes).some(el => el === type) &&
-    typeof type !== 'string'
-  ) {
-    return new Error(
-      `Invalid prop ${type} passed to useFetch. Expected a valid type and name of param. You can pass only ['history', 'band', 'contacts', 'music', 'releases', 'video']`
-    );
-  }
+    fetchData();
+  }, []);
 
   return { isLoading, data };
 };
