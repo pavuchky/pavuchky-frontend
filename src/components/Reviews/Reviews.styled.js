@@ -10,7 +10,7 @@ export const ReviewsSection = styled.section`
   flex-direction: column;
   justify-content: center;
 
-  gap: 20px;
+  gap: 23px;
 
   border-radius: 16px;
   width: 359px;
@@ -23,7 +23,7 @@ export const ReviewsSection = styled.section`
     width: 720px;
     overflow: hidden;
     border-radius: ${radii.m};
-    gap: 35px;
+    gap: 24px;
     margin-bottom: 44px;
   }
 
@@ -58,9 +58,9 @@ export const ReviewsTitle = styled.h3`
 export const ReviewsTitlePartContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-right: 64px;
 
   @media (min-width: 1440px) {
     padding-left: 11px;
+    padding-right: 64px;
   }
 `;

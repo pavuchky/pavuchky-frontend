@@ -68,7 +68,7 @@ export const ReviewsSwiperContainer = styled(Swiper)`
     flex-direction: row-reverse;
 
     width: 1117px;
-
+    padding-right: 48px;
     .swiper-scrollbar-drag:last-child {
       display: none;
     }

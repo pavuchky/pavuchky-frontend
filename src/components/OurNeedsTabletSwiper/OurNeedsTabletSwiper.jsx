@@ -19,7 +19,7 @@ const OurNeedsTabletSwiper = () => {
   return (
     <SwiperContainer
       spaceBetween={24}
-      slidesPerView={2.1}
+      slidesPerView={2.03}
       modules={[Scrollbar]}
       scrollbar={{ draggable: true }}
     >

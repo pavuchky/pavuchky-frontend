@@ -13,16 +13,11 @@ export const OurNeedsItemLi = styled.li`
 
   padding: 16px 12px;
 
-  @media (min-width: 768px) {
-    padding: 14px;
-    min-height: 178px;
-  }
-
   @media (min-width: 1440) {
     padding: 16px;
     padding-bottom: 46px;
     min-width: 409px;
-    min-height: 332px;
+    height: 332px;
     border-radius: ${radii.s};
   }
 `;
