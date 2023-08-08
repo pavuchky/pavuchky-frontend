@@ -8,12 +8,14 @@ import { Hero } from 'components/Hero/Hero';
 import GallerySection from 'components/GallerySection/GallerySection';
 import { Statistics } from 'components/Statistics/Statistics';
 import { Partners } from 'components/Partners/Partners';
+import { OurWork } from 'components/OurWork/OurWork';
 
 const HomePage = () => {
   return (
     <>
       <Hero />
       <AboutUs />
+      <OurWork />
       <Statistics />
       <Contribution />
       <OurNeeds />
