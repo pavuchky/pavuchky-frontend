@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/pavuchky-frontend/static/css/main.2a8afa69.css",
-    "main.js": "/pavuchky-frontend/static/js/main.ec3ad2c3.js",
+    "main.js": "/pavuchky-frontend/static/js/main.e74fc1dd.js",
     "static/js/643.4e757ae5.chunk.js": "/pavuchky-frontend/static/js/643.4e757ae5.chunk.js",
     "static/js/101.200faca9.chunk.js": "/pavuchky-frontend/static/js/101.200faca9.chunk.js",
     "static/js/177.1ee0f5aa.chunk.js": "/pavuchky-frontend/static/js/177.1ee0f5aa.chunk.js",
@@ -31,24 +31,30 @@
     "static/media/gallery_img3.jpg": "/pavuchky-frontend/static/media/gallery_img3.5381f5f1c84928416630.jpg",
     "static/media/gallery_img6.jpg": "/pavuchky-frontend/static/media/gallery_img6.ed725b8ee113ac984ab3.jpg",
     "static/media/weaving_tablet.png": "/pavuchky-frontend/static/media/weaving_tablet.11b8176c2862e40f567c.png",
+    "static/media/net@2x.jpg": "/pavuchky-frontend/static/media/net@2x.f391e5f19f0377d958b5.jpg",
     "static/media/e-UkraineHead-Regular.otf": "/pavuchky-frontend/static/media/e-UkraineHead-Regular.4e9dc7df09b113ce919f.otf",
     "static/media/e-UkraineHead-Medium.otf": "/pavuchky-frontend/static/media/e-UkraineHead-Medium.b86fdf0f27a162dd685a.otf",
     "static/media/e-UkraineHead-Light.otf": "/pavuchky-frontend/static/media/e-UkraineHead-Light.a4b8d387036a575cfb4e.otf",
+    "static/media/military@2x.jpg": "/pavuchky-frontend/static/media/military@2x.f1f301bf3e34acebec78.jpg",
+    "static/media/picture@2x.jpg": "/pavuchky-frontend/static/media/picture@2x.1fce455f703ba5b14626.jpg",
     "static/media/e-Ukraine-Medium.otf": "/pavuchky-frontend/static/media/e-Ukraine-Medium.768e3644ab7db178be11.otf",
     "static/media/e-Ukraine-Regular.otf": "/pavuchky-frontend/static/media/e-Ukraine-Regular.38805a5a6a103eb1aa7d.otf",
     "static/media/e-Ukraine-Light.otf": "/pavuchky-frontend/static/media/e-Ukraine-Light.051230eeb9d14f5e4305.otf",
     "static/media/location_s_mob_@.png.jpeg": "/pavuchky-frontend/static/media/location_s_mob_@.png.52cfc9f6a19297df19ce.jpeg",
     "static/media/weaving_mob.png": "/pavuchky-frontend/static/media/weaving_mob.03361a1cb7d78317752a.png",
     "static/media/skk@2x.jpg": "/pavuchky-frontend/static/media/skk@2x.33c628bddb810ef731b4.jpg",
+    "static/media/net.jpg": "/pavuchky-frontend/static/media/net.66709f77eb4210cfcb90.jpg",
     "static/media/u_kv@2x.jpg": "/pavuchky-frontend/static/media/u_kv@2x.aa9e51e34db95a8debb6.jpg",
     "static/media/goit@2x.jpg": "/pavuchky-frontend/static/media/goit@2x.0c14716ef5ab40924a86.jpg",
+    "static/media/picture.jpg": "/pavuchky-frontend/static/media/picture.6b7fe248d6dacadf46d2.jpg",
+    "static/media/military.jpg": "/pavuchky-frontend/static/media/military.c8b19e578305cff0b5c9.jpg",
     "static/media/skk.jpg": "/pavuchky-frontend/static/media/skk.43a6b14955a81da4ffec.jpg",
     "static/media/u_kv.jpg": "/pavuchky-frontend/static/media/u_kv.3d282bbed79b0e667b9e.jpg",
     "static/media/goit.jpg": "/pavuchky-frontend/static/media/goit.d2113ccb82ee5ff44be0.jpg",
     "index.html": "/pavuchky-frontend/index.html",
     "static/media/getFetch.cjs": "/pavuchky-frontend/static/media/getFetch.40f37ddea2378391108f.cjs",
     "main.2a8afa69.css.map": "/pavuchky-frontend/static/css/main.2a8afa69.css.map",
-    "main.ec3ad2c3.js.map": "/pavuchky-frontend/static/js/main.ec3ad2c3.js.map",
+    "main.e74fc1dd.js.map": "/pavuchky-frontend/static/js/main.e74fc1dd.js.map",
     "643.4e757ae5.chunk.js.map": "/pavuchky-frontend/static/js/643.4e757ae5.chunk.js.map",
     "101.200faca9.chunk.js.map": "/pavuchky-frontend/static/js/101.200faca9.chunk.js.map",
     "177.1ee0f5aa.chunk.js.map": "/pavuchky-frontend/static/js/177.1ee0f5aa.chunk.js.map",
@@ -61,6 +67,6 @@
   },
   "entrypoints": [
     "static/css/main.2a8afa69.css",
-    "static/js/main.ec3ad2c3.js"
+    "static/js/main.e74fc1dd.js"
   ]
 }
