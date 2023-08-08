@@ -59,7 +59,13 @@ export const FacebookBtn = styled.a`
     stroke: ${({ theme }) => theme.colors.blue};
   }
 
+  @media (min-width: 768px) {
+    font-family: ${({ theme }) => theme.fonts.light};
+    font-weight: ${({ theme }) => theme.fontWeights.light};
+  }
+
   @media screen and (min-width: 1440px) {
+    font-family: ${({ theme }) => theme.fonts.regular};
     font-size: ${({ theme }) => theme.fontSizes.xs};
     font-weight: ${({ theme }) => theme.fontWeights.regular};
     line-height: ${({ theme }) => theme.lineHeights.secondary};

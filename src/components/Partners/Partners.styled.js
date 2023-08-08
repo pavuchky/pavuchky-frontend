@@ -5,7 +5,7 @@ export const PartnersContainer = styled.section`
   padding: 28px 16px 30px 16px;
   margin-bottom: 36px;
   border-radius: 16px;
-  background: ${({ theme }) => theme.colors.gradientBackground};
+  background: ${({ theme }) => theme.colors.gradientReversed};
 
   @media (min-width: 768px) {
     padding: 32px;
@@ -13,11 +13,6 @@ export const PartnersContainer = styled.section`
 
   @media (min-width: 1440px) {
     padding: 44px 64px;
-    background: linear-gradient(
-      140deg,
-      rgba(189, 211, 242, 0.3) 0%,
-      rgba(255, 255, 255, 0) 63%
-    );
   }
 `;
 

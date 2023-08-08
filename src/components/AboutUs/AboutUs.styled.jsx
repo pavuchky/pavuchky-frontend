@@ -56,9 +56,9 @@ export const AboutUSButton = styled(HashLink)`
   background-color: transparent;
   cursor: pointer;
 
-  font-family: ${({ theme }) => theme.fonts.light};
-  font-size: 16px;
-  font-weight: 300;
+  font-family: ${({ theme }) => theme.fonts.regular};
+  font-size: 14px;
+  font-weight: ${({ theme }) => theme.fontWeights.regular};
   color: ${({ theme }) => theme.colors.secondaryFont};
 
   &:hover,
@@ -68,12 +68,14 @@ export const AboutUSButton = styled(HashLink)`
   }
 
   @media screen and (min-width: 768px) {
-    font-size: 14px;
+    font-family: ${({ theme }) => theme.fonts.light};
+    font-weight: ${({ theme }) => theme.fontWeights.light};
   }
   @media screen and (min-width: 1440px) {
     font-size: 16px;
+    font-family: ${({ theme }) => theme.fonts.regular};
     font-weight: 400;
-    line-height: 30px;
+    line-height: ${({ theme }) => theme.lineHeights.secondary};
   }
 `;
 
@@ -131,7 +133,7 @@ export const DescriptionWrapper = styled.div`
 
 export const AboutUsDescription = styled.p`
   display: block;
-  font-family: ${({ theme }) => theme.fonts.regular};
+  font-family: ${({ theme }) => theme.fonts.light};
   font-size: 16px;
   font-weight: 300;
 

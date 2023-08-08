@@ -9,7 +9,7 @@ export const FooterContainer = styled.footer`
   margin: 0 8px;
   margin-bottom: 16px;
   border-radius: 16px;
-  background: ${colors.gradientMain};
+  background: ${colors.gradientFooter};
   box-shadow: 4px 8px 25px 0px rgba(176, 193, 243, 0.15);
 `;
 export const FooterSocialMediaContainer = styled.div`

@@ -55,10 +55,10 @@ export const FooterTabSocialTitle = styled.p`
 export const FooterTabListWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
   margin-bottom: 24px;
   @media (min-width: 1440px) {
-    justify-content: center;
     margin-bottom: 36px;
   }
 `;

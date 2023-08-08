@@ -12,8 +12,11 @@ export const theme = {
     photoBg: 'rgba(0, 0, 0, 0.2)',
     backdrop: 'rgba(0, 0, 0, 0.23)',
     gradientMain: 'linear-gradient(224deg, #8A90F6 0%, #BDD4F2 100%)',
+    gradientFooter: 'linear-gradient(137deg, #8A90F6 0%, #BDD4F2 100%)',
     gradientBackground:
       'linear-gradient(320deg, rgba(189, 211, 242, 0.3) 0%, rgba(255, 255, 255, 0.00) 100%)',
+    gradientReversed:
+      'linear-gradient(100deg, rgba(189, 211, 242, 0.3) 0%, rgba(255, 255, 255, 0.00) 100%)',
   },
 
   spacing: value => `${4 * value}px`,

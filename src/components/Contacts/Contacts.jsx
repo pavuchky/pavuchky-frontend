@@ -54,7 +54,9 @@ const Contacts = () => {
           <li>
             <ContactsSubTitle>Контактні дані</ContactsSubTitle>
             <ContactPerson>Адміністратор: Ольга Кузакова </ContactPerson>
-            <ContactNumber>+380635693058</ContactNumber>
+            <ContactNumber href="tel:+380635693058">
+              +380635693058
+            </ContactNumber>
           </li>
         </ContactsList>
         <LocationContainer>
