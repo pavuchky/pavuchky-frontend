@@ -19,17 +19,17 @@ export const WorkContainer = styled.section`
 export const WorkBlockTitle = styled.div`
   margin-bottom: 24px;
   display: flex;
-  gap: 110px;
+  gap: 73px;
   align-items: baseline;
 
   @media (min-width: 768px) {
     align-items: center;
-    gap: 210px;
+    gap: 213px;
   }
 
   @media (min-width: 1440px) {
     margin-bottom: 45px;
-    gap: 585px;
+    gap: 628px;
   }
 `;
 
@@ -54,7 +54,7 @@ export const FacebookBtn = styled.a`
   display: flex;
   align-items: center;
   gap: 13px;
-  font-size: 16px;
+  font-size: 14px;
   background-color: transparent;
   color: ${({ theme }) => theme.colors.secondaryFont};
 
@@ -62,10 +62,6 @@ export const FacebookBtn = styled.a`
   &:focus {
     color: ${({ theme }) => theme.colors.blue};
     stroke: ${({ theme }) => theme.colors.blue};
-  }
-
-  @media screen and (min-width: 768px) {
-    font-size: 14px;
   }
 
   @media screen and (min-width: 1440px) {

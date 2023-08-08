@@ -61,7 +61,7 @@ export const OurWork = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {isMobile ? '' : 'Переглянути усе'}
+          {isMobile ? 'Усе' : 'Переглянути усе'}
           <svg width="11px" height="13px">
             <use href={svg + '#arrow'}></use>
           </svg>
