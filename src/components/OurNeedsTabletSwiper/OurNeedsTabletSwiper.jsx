@@ -19,7 +19,7 @@ const OurNeedsTabletSwiper = () => {
   return (
     <SwiperContainer
       spaceBetween={24}
-      slidesPerView={2.1}
+      slidesPerView={2.03}
       modules={[Scrollbar]}
       scrollbar={{ draggable: true }}
     >
@@ -29,7 +29,7 @@ const OurNeedsTabletSwiper = () => {
             <Location>Київ</Location>
           </LocationAndNeedTypeContainer>
 
-          <NeedsItemTitel>Потребумо пластик,капрон</NeedsItemTitel>
+          <NeedsItemTitel>Потребуємо пластик,капрон</NeedsItemTitel>
           <NeedsItemDeccription>
             {`Пластикова сітка розмір клітинки 3x3,5 см,\nкапронова сітка - розмір клітинки 5x5 см`}
           </NeedsItemDeccription>

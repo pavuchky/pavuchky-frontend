@@ -6,7 +6,7 @@ const { colors, borders, fontWeights, fonts, fontSizes, radii } = theme;
 export const ReviewsSwiperItemContainer = styled.div`
   position: relative;
   width: 327px;
-  min-height: 263px;
+  height: 263px;
   padding: 12px;
   padding-top: 44px;
 
@@ -17,7 +17,7 @@ export const ReviewsSwiperItemContainer = styled.div`
 
   @media (min-width: 768px) {
     width: 316px;
-    min-height: 369px;
+    height: 369px;
     padding: 18px;
     padding-top: 68px;
     padding-bottom: 24px;
@@ -26,7 +26,7 @@ export const ReviewsSwiperItemContainer = styled.div`
 
   @media (min-width: 1440px) {
     width: 409px;
-    min-height: 554px;
+    height: 554px;
     padding: 16px;
     padding-top: 86px;
   }
@@ -37,19 +37,45 @@ export const ReviewsSwiperItemParagraph = styled.p`
   font-weight: ${fontWeights.light};
   font-family: ${fonts.light};
   color: ${colors.secondaryFont};
-  margin-bottom: 12px;
+
+  height: 42px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 8px;
+
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${colors.blue};
+    border-radius: 2px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: ${colors.grey};
+    border-radius: 2px;
+  }
 
   @media (min-width: 768px) {
-    margin-bottom: 42px;
     font-weight: ${fontWeights.regular};
     font-family: ${fonts.regular};
+
+    height: 75px;
+    margin-bottom: 5px;
   }
 
   @media (min-width: 1440px) {
     font-size: ${fontSizes.s};
     font-weight: ${fontWeights.light};
     font-family: ${fonts.light};
-    margin-bottom: 84px;
+
+    height: 124px;
+    margin-bottom: 8px;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
   }
 `;
 

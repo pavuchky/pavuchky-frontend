@@ -6,7 +6,7 @@ const { colors, borders } = theme;
 
 export const OurNeedsItemDiv = styled.div`
   width: 316px;
-  min-height: 178px;
+  height: 178px;
   border: ${borders.normal};
   border-color: ${colors.blue};
   border-radius: 10px;
@@ -23,6 +23,7 @@ export const SwiperSlideContainer = styled(SwiperSlide)`
 
 export const SwiperContainer = styled(Swiper)`
   width: 688px;
+  padding-right: 24px;
 
   .swiper-scrollbar {
     background-color: ${colors.grey};
