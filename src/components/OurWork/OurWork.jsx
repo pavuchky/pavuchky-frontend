@@ -69,8 +69,8 @@ export const OurWork = () => {
       </WorkBlockTitle>
 
       <WorkList>
-        {tabletWork.map(item => (
-          <WorkItem>
+        {tabletWork.map((item, index) => (
+          <WorkItem key={index}>
             <WorkImg srcSet={item.srcSet} src={item.src} alt={item.alt} />
             <WorkBlock>
               <WorkText>{item.text}</WorkText>
