@@ -127,6 +127,12 @@ export const PartnersBtn = styled(Link)`
   font-size: ${({ theme }) => theme.fontSizes.xs};
   background-color: ${({ theme }) => theme.colors.white};
 
+  &:hover,
+  &:focus {
+    background-color: ${({ theme }) => theme.colors.blue};
+    color: ${({ theme }) => theme.colors.white};
+  }
+
   @media (min-width: 768px) {
     width: 287px;
     height: 48px;
