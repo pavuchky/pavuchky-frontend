@@ -12,7 +12,7 @@ export const WorkContainer = styled.section`
 
   @media (min-width: 1440px) {
     padding: 44px 63px 44px 64px;
-    border-radius: 25px;
+    border-radius: ${({ theme }) => theme.radii.xl};
   }
 `;
 
@@ -65,9 +65,9 @@ export const FacebookBtn = styled.a`
   }
 
   @media screen and (min-width: 1440px) {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 30px;
+    font-size: ${({ theme }) => theme.fontSizes.xs};
+    font-weight: ${({ theme }) => theme.fontWeights.regular};
+    line-height: ${({ theme }) => theme.lineHeights.secondary};
   }
 `;
 
@@ -88,7 +88,7 @@ export const WorkItem = styled.li`
   border: 1px solid ${({ theme }) => theme.colors.blue};
 
   @media (min-width: 768px) {
-    border-radius: 10px;
+    border-radius: ${({ theme }) => theme.radii.s};
     flex-direction: column;
     overflow: hidden;
   }
@@ -135,7 +135,7 @@ export const WorkText = styled.p`
   @media (min-width: 768px) {
     width: 284px;
     margin-bottom: 20px;
-    font-size: 20px;
+    font-size: ${({ theme }) => theme.fontSizes.s};
   }
 
   @media (min-width: 1440px) {
@@ -162,11 +162,11 @@ export const WorkItemBtn = styled.a`
     display: block;
     width: 284px;
     padding: 12px 10px;
-    border-radius: 10px;
-    border: 1px solid var(--blue-100100, #0069b5);
+    border-radius: ${({ theme }) => theme.radii.s};
+    border: 1px solid ${({ theme }) => theme.colors.blue};
     text-align: center;
-    font-size: 20px;
-    color: var(--text-100100, #2b2b2b);
+    font-size: ${({ theme }) => theme.fontSizes.s};
+    color: ${({ theme }) => theme.colors.primaryFont};
     background-color: ${({ theme }) => theme.colors.white};
 
     &:hover,
