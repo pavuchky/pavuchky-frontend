@@ -11,7 +11,7 @@ export const WorkContainer = styled.section`
   }
 
   @media (min-width: 1440px) {
-    padding: 44px 63px 44px 64px;
+    padding: 44px 64px;
     border-radius: ${({ theme }) => theme.radii.xl};
   }
 `;
@@ -19,17 +19,11 @@ export const WorkContainer = styled.section`
 export const WorkBlockTitle = styled.div`
   margin-bottom: 24px;
   display: flex;
-  gap: 73px;
-  align-items: baseline;
-
-  @media (min-width: 768px) {
-    align-items: center;
-    gap: 213px;
-  }
+  justify-content: space-between;
+  align-items: center;
 
   @media (min-width: 1440px) {
     margin-bottom: 45px;
-    gap: 628px;
   }
 `;
 
@@ -54,6 +48,7 @@ export const FacebookBtn = styled.a`
   display: flex;
   align-items: center;
   gap: 13px;
+  font-family: ${({ theme }) => theme.fonts.regular};
   font-size: 14px;
   background-color: transparent;
   color: ${({ theme }) => theme.colors.secondaryFont};
@@ -86,6 +81,7 @@ export const WorkItem = styled.li`
   display: flex;
   border-radius: 8px;
   border: 1px solid ${({ theme }) => theme.colors.blue};
+  background-color: ${({ theme }) => theme.colors.white};
 
   @media (min-width: 768px) {
     border-radius: ${({ theme }) => theme.radii.s};
@@ -96,7 +92,6 @@ export const WorkItem = styled.li`
 
 export const WorkImg = styled.img`
   width: 100px;
-  height: 112px;
   border-radius: 7px 0px 0px 7px;
 
   @media (min-width: 375px) {
@@ -105,13 +100,11 @@ export const WorkImg = styled.img`
 
   @media (min-width: 768px) {
     width: 316px;
-    height: 221px;
     border-radius: 9px 9px 0px 0px;
   }
 
   @media (min-width: 1440px) {
     width: 409px;
-    height: 221px;
   }
 `;
 
