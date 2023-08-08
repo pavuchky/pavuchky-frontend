@@ -5,6 +5,7 @@ export const GallerySectionWrapper = styled.section`
   position: relative;
   padding: 28px 16px 28px 16px;
   margin: 0px auto;
+  margin-bottom: 36px;
   width: 100%;
   border-radius: 16px;
 
@@ -12,7 +13,7 @@ export const GallerySectionWrapper = styled.section`
 
   @media only screen and (min-width: 768px) {
     padding: ${({ theme }) => theme.spacing(8)};
-    margin-bottom: 44 px;
+    margin-bottom: 44px;
     border-radius: 20px;
   }
   @media only screen and (min-width: 1440px) {
@@ -56,9 +57,9 @@ export const GalleryButton = styled(HashLink)`
   background-color: transparent;
   cursor: pointer;
 
-  font-family: ${({ theme }) => theme.fonts.light};
-  font-size: 16px;
-  font-weight: 300;
+  font-family: ${({ theme }) => theme.fonts.regular};
+  font-size: 14px;
+  font-weight: ${({ theme }) => theme.fontWeights.regular};
   color: ${({ theme }) => theme.colors.secondaryFont};
 
   &:hover,
@@ -68,13 +69,14 @@ export const GalleryButton = styled(HashLink)`
   }
 
   @media screen and (min-width: 768px) {
-    font-size: 14px;
+    font-family: ${({ theme }) => theme.fonts.light};
+    font-weight: ${({ theme }) => theme.fontWeights.light};
   }
   @media screen and (min-width: 1440px) {
     font-family: ${({ theme }) => theme.fonts.regular};
     font-size: 16px;
     font-weight: 400;
-    line-height: 30px;
+    line-height: ${({ theme }) => theme.lineHeights.secondary};
   }
 `;
 

@@ -6,7 +6,7 @@ export const StatisticsSection = styled.section`
   padding-left: ${({ theme }) => theme.spacing(4)};
   padding-right: ${({ theme }) => theme.spacing(4)};
 
-  background: ${({ theme }) => theme.colors.gradientBackground};
+  background: ${({ theme }) => theme.colors.gradientReversed};
   border-radius: 16px;
 
   @media only screen and (min-width: 768px) {

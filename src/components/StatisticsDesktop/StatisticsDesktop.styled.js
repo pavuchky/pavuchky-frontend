@@ -28,7 +28,7 @@ export const StatisticsDescr = styled.p`
   font-family: ${({ theme }) => theme.fonts.regular};
   font-size: ${({ theme }) => theme.fontSizes.xs};
   font-weight: ${({ theme }) => theme.fontWeights.regular};
-  line-height: 1.88;
+  line-height: ${({ theme }) => theme.lineHeights.secondary};
   color: ${({ theme }) => theme.colors.secondaryFont};
 `;
 
