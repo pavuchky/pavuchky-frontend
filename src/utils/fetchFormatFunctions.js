@@ -1,14 +1,27 @@
 import { urlFor } from 'client';
 
-export const contactsFormattedFn = ({ phone, socialMediaList, _id }) => {
+export const contactsFormattedFn = ({
+  phone,
+  socialMediaList,
+  streetList,
+  _id,
+}) => {
   return {
     id: _id,
     phone: !!phone ? phone : null,
     socialMediaList: socialMediaList
-      ? socialMediaList.map(({ link, name, _key }) => {
+      ? socialMediaList.map(({ socialMediaLink, socialMediaName, _key }) => {
           return {
-            link: !!link ? link : null,
-            name: !!name ? name : null,
+            socialMediaLink: !!socialMediaLink ? socialMediaLink : null,
+            socialMediaName: !!socialMediaName ? socialMediaName : null,
+            id: _key,
+          };
+        })
+      : null,
+    streetList: streetList
+      ? streetList.map(({ street, _key }) => {
+          return {
+            street: !!street ? street[0]?.children[0]?.text : null,
             id: _key,
           };
         })
@@ -70,43 +83,6 @@ export const partnersFormattedFn = ({ partnersList, _id }) => {
             id: _key,
           };
         })
-      : null,
-  };
-};
-
-// ===
-
-export const musicFormattedFn = ({ title, description, _id, musicList }) => {
-  return {
-    id: _id,
-    title: !!title ? { en: title.en, ua: title.ua } : null,
-    description: !!description
-      ? { en: description.en, ua: description.ua }
-      : null,
-    musicList: musicList
-      ? musicList.map(
-          ({
-            songImage,
-            description,
-            name,
-            lyrics,
-            _key,
-            songLink,
-            songDownloadLink,
-          }) => {
-            return {
-              id: _key,
-              name: !!name ? { en: name.en, ua: name.ua } : null,
-              description: !!description
-                ? { en: description.en, ua: description.ua }
-                : null,
-              songImage: songImage?.asset ? urlFor(songImage?.asset) : null,
-              songLink: !!songLink ? songLink : null,
-              songDownloadLink: !!songDownloadLink ? songDownloadLink : null,
-              lyrics: !!lyrics ? lyrics[0]?.children[0]?.text : null,
-            };
-          }
-        )
       : null,
   };
 };

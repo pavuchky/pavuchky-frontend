@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { SharedLayout } from 'components/SharedLayout/SharedLayout';
 import HomePage from 'pages/HomePage/HomePage';
 
+import useFetch from 'hooks/useFetch';
 
 const AboutPage = lazy(() => import('pages/AboutPage/AboutPage'));
 const OrderPage = lazy(() => import('pages/OrderPage/OrderPage'));
@@ -19,13 +20,16 @@ const ReviewsPage = lazy(() => import('pages/ReviewsPage/ReviewsPage'));
 const ReviewPage = lazy(() => import('pages/ReviewPage/ReviewPage'));
 
 export const App = () => {
+  const { data } = useFetch('partners');
+
+  console.log('data', data);
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<HomePage />} />
         <Route path="about" element={<AboutPage />} />
         <Route path="order" element={<OrderPage />} />
-        <Route path="partners" element={<PartnersPage />}/>
+        <Route path="partners" element={<PartnersPage />} />
         <Route path="gallery" element={<GalleryPage />}>
           <Route path="photos" element={<GalleryPhotos />} />
           <Route path="videos" element={<GalleryVideos />} />

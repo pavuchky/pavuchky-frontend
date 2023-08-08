@@ -10,7 +10,7 @@ import {
   partnersFormattedFn,
 } from '../utils/fetchFormatFunctions';
 
-// перелік доступних пропсів
+// available props
 const objectOfPropsAndRoutes = {
   posts: 'posts',
   contacts: 'contacts',
@@ -19,7 +19,10 @@ const objectOfPropsAndRoutes = {
   partners: 'partners',
 };
 
-const useFetch = (type = 'history') => {
+// usage
+// const {isLoading, data} = useFetch("contacts")
+
+const useFetch = (type = 'posts') => {
   const [data, setData] = useState(null);
   const { isLoading, setLoading } = useLoader();
 
@@ -35,6 +38,11 @@ const useFetch = (type = 'history') => {
     const query = `*[_type == "${type}"]`;
 
     setLoading(true);
+
+    // try {
+    // } catch (err) {
+    // } finally {
+    // }
 
     client
       .fetch(query)
