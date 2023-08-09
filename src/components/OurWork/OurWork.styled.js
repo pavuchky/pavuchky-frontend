@@ -85,6 +85,7 @@ export const WorkList = styled.ul`
 
 export const WorkItem = styled.li`
   display: flex;
+  justify-content: space-between;
   border-radius: 8px;
   border: 1px solid ${({ theme }) => theme.colors.blue};
   background-color: ${({ theme }) => theme.colors.white};
@@ -99,6 +100,7 @@ export const WorkItem = styled.li`
 export const WorkImg = styled.img`
   width: 100px;
   border-radius: 7px 0px 0px 7px;
+  background-color: ${({ theme }) => theme.colors.secondaryFont};
 
   @media (min-width: 375px) {
     width: 155px;

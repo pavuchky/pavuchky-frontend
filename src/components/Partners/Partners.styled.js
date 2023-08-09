@@ -51,6 +51,11 @@ export const PartnersList = styled.ul`
 `;
 
 export const PartnersImg = styled.img`
+  width: 95px;
+  height: 95px;
+  border-radius: 8px;
+  border: 1px solid ${({ theme }) => theme.colors.blue};
+
   @media (min-width: 768px) {
     width: 202px;
     height: 157px;
