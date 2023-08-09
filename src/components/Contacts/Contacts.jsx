@@ -1,5 +1,5 @@
 import React from 'react';
-import location from './ImgLocation/location_s_mob_@.png.jpeg';
+
 import { useMediaQuery } from 'react-responsive';
 import Icons from '../../assets/images/sprite.svg';
 import {
@@ -14,12 +14,14 @@ import {
   SocialMediaContainer,
   SocialMediaTitle,
   SocialMediaLinks,
-  ImgLocRad,
   ContactsList,
   ContactNumber,
   ContactsSecondAddressSpan,
   ContactsWrapper,
 } from './Contacts.styled';
+
+
+import MapComponent from './MapContacts/MapContacts';
 
 const IconSocial = ({ name, color, size }) => (
   <svg className={`icon-${name}`} fill={color} width={size} height={size}>
@@ -60,7 +62,7 @@ const Contacts = () => {
           </li>
         </ContactsList>
         <LocationContainer>
-          <ImgLocRad src={location} alt="Location" width="327" />
+          <MapComponent />
         </LocationContainer>
       </ContactsWrapper>
       <SocialMediaContainer>

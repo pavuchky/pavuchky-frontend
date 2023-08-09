@@ -5,6 +5,8 @@ export const NavList = styled.ul`
   gap: 65px;
 
   li {
+    transition: color ${({ theme }) => theme.transitions.regular};
+
     &:hover {
       color: ${({ theme }) => theme.colors.blue};
     }

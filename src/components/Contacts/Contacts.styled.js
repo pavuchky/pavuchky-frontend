@@ -28,7 +28,7 @@ export const ContactsWrapper = styled.div`
     display: flex;
   }
   @media (min-width: 1440px) {
-    margin-bottom: 44px;
+    margin-bottom: 0px;
   }
 `;
 export const ContactsList = styled.ul`
@@ -38,13 +38,12 @@ export const ContactsList = styled.ul`
   gap: 24px;
   margin-bottom: 24px;
   @media (min-width: 768px) {
-    flex-direction: row;
-    flex-wrap: wrap;
     gap: 16px;
     margin-bottom: 0;
   }
   @media (min-width: 1440px) {
     gap: 24px;
+    margin-bottom: 0;
   }
 `;
 export const ContactsTitle = styled.h3`
@@ -63,7 +62,7 @@ export const ContactsTitle = styled.h3`
   }
   @media (min-width: 1440px) {
     font-size: ${fontSizes.xl};
-    margin-bottom: 44px;
+    margin-bottom: 0px;
   }
 `;
 export const ContactsSubTitle = styled.h4`
@@ -147,25 +146,18 @@ export const ContactNumber = styled.a`
 `;
 export const LocationContainer = styled.div`
   border-radius: 10px;
-  @media (min-width: 768px) {
-    width: 100%;
-    margin-top: 30px;
-  }
-  @media (min-width: 1440px) {
-    margin-top: -94px;
-    margin-left: auto;
-  }
-`;
-export const ImgLocRad = styled.img`
-  border-radius: 10px;
-  width: 327px;
+  width: 316px;
+  height: 218px;
   @media (min-width: 768px) {
     width: 316px;
+    height: 220px;
     margin-left: auto;
+ 
   }
   @media (min-width: 1440px) {
+   
     width: 500px;
-    margin-top: 90px;
+    height: 402px;
   }
 `;
 export const SocialMediaContainer = styled.div`
@@ -176,6 +168,7 @@ export const SocialMediaContainer = styled.div`
     position: absolute;
     bottom: 10%;
     right: 32px;
+    top:274px;
   }
   @media (min-width: 1440px) {
     position: static;
@@ -198,6 +191,7 @@ export const SocialMediaTitle = styled.p`
     font-size: ${fontSizes.s};
     justify-content: flex-start;
     margin-bottom: 10px;
+    margin-top: 24px;
   }
 `;
 

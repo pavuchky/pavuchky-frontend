@@ -6,6 +6,7 @@ export const MenuBtn = styled.button`
   border-radius: 10px;
   font-size: 14px;
   background-color: ${({ theme }) => theme.colors.lightGrey};
+  transition: color ${({ theme }) => theme.transitions.regular};
 
   &:hover {
     color: ${({ theme }) => theme.colors.blue};
@@ -43,6 +44,8 @@ export const MenuList = styled.ul`
   transition: opacity 0.3s ease-in-out;
 
   li {
+    transition: color ${({ theme }) => theme.transitions.regular};
+
     &:hover {
       color: ${({ theme }) => theme.colors.blue};
     }
