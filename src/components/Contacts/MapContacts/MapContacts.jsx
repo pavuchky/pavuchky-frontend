@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { MapContainer, TileLayer, Popup, Marker } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import Icon from '../../../assets/images/ImgLocation/marker-icon.png';
+import Icon from '../../../assets/images/marker-icon.png';
 
 
 const customIcon = new L.Icon({
