@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/pavuchky-frontend/static/css/main.5f6809f2.css",
-    "main.js": "/pavuchky-frontend/static/js/main.a1cb7eeb.js",
+    "main.css": "/pavuchky-frontend/static/css/main.aa60a9c0.css",
+    "main.js": "/pavuchky-frontend/static/js/main.17d66483.js",
     "static/js/643.4e757ae5.chunk.js": "/pavuchky-frontend/static/js/643.4e757ae5.chunk.js",
     "static/js/101.200faca9.chunk.js": "/pavuchky-frontend/static/js/101.200faca9.chunk.js",
     "static/js/177.1ee0f5aa.chunk.js": "/pavuchky-frontend/static/js/177.1ee0f5aa.chunk.js",
@@ -41,8 +41,8 @@
     "static/media/weaving_mob.png": "/pavuchky-frontend/static/media/weaving_mob.03361a1cb7d78317752a.png",
     "index.html": "/pavuchky-frontend/index.html",
     "static/media/getFetch.cjs": "/pavuchky-frontend/static/media/getFetch.40f37ddea2378391108f.cjs",
-    "main.5f6809f2.css.map": "/pavuchky-frontend/static/css/main.5f6809f2.css.map",
-    "main.a1cb7eeb.js.map": "/pavuchky-frontend/static/js/main.a1cb7eeb.js.map",
+    "main.aa60a9c0.css.map": "/pavuchky-frontend/static/css/main.aa60a9c0.css.map",
+    "main.17d66483.js.map": "/pavuchky-frontend/static/js/main.17d66483.js.map",
     "643.4e757ae5.chunk.js.map": "/pavuchky-frontend/static/js/643.4e757ae5.chunk.js.map",
     "101.200faca9.chunk.js.map": "/pavuchky-frontend/static/js/101.200faca9.chunk.js.map",
     "177.1ee0f5aa.chunk.js.map": "/pavuchky-frontend/static/js/177.1ee0f5aa.chunk.js.map",
@@ -55,7 +55,7 @@
     "726.19048958.chunk.js.map": "/pavuchky-frontend/static/js/726.19048958.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5f6809f2.css",
-    "static/js/main.a1cb7eeb.js"
+    "static/css/main.aa60a9c0.css",
+    "static/js/main.17d66483.js"
   ]
 }
