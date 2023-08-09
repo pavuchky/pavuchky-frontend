@@ -1,4 +1,5 @@
 import { useMediaQuery } from 'react-responsive';
+import useFetch from 'hooks/useFetch';
 import {
   AchievementsList,
   AchievementsListItem,
@@ -9,6 +10,8 @@ import {
 import { StatisticsDesktop } from 'components/StatisticsDesktop/StatisticsDesktop';
 
 export const Statistics = () => {
+  const { data } = useFetch('statistic');
+
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 
   return (
@@ -23,21 +26,24 @@ export const Statistics = () => {
               Висока якість матеріалів
             </AchievementsListItem>
             <AchievementsListItem>
-              <AchievementsNumber>150&#43;</AchievementsNumber> днів у справі
+              <AchievementsNumber>{data?.days}&#43;</AchievementsNumber> днів у
+              справі
             </AchievementsListItem>
             <AchievementsListItem>
               Підбір матеріалів та кольорової гами
             </AchievementsListItem>
             <AchievementsListItem>
-              <AchievementsNumber>3500 кв.м &#43;</AchievementsNumber> сітки
-              сплетено
+              <AchievementsNumber>
+                {data?.gridFootage} кв.м &#43;
+              </AchievementsNumber>
+              сітки сплетено
             </AchievementsListItem>
             <AchievementsListItem>
               Вдосконалення технологій
             </AchievementsListItem>
             <AchievementsListItem>
-              <AchievementsNumber>50&#43;</AchievementsNumber> учасників
-              ініціативи
+              <AchievementsNumber>{data?.members}&#43;</AchievementsNumber>{' '}
+              учасників ініціативи
             </AchievementsListItem>
           </AchievementsList>
         </>

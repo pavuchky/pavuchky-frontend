@@ -1,3 +1,4 @@
+import useFetch from 'hooks/useFetch';
 import {
   AdvantagesList,
   AdvantagesListItem,
@@ -11,6 +12,8 @@ import {
 } from './StatisticsDesktop.styled';
 
 export const StatisticsDesktop = () => {
+  const { data } = useFetch('statistic');
+
   return (
     <>
       <AdvantagesWrapper>
@@ -33,13 +36,15 @@ export const StatisticsDesktop = () => {
       </StatisticsWrapper>
       <StatisticsList>
         <StatisticsListItem>
-          <StatisticsNumber>150&#43;</StatisticsNumber> Днів у справі
+          <StatisticsNumber>{data?.days}&#43;</StatisticsNumber> Днів у справі
         </StatisticsListItem>
         <StatisticsListItem>
-          <StatisticsNumber>3500м&#178;&#43;</StatisticsNumber> Сітки сплетено
+          <StatisticsNumber>{data?.gridFootage}м&#178;&#43;</StatisticsNumber>{' '}
+          Сітки сплетено
         </StatisticsListItem>
         <StatisticsListItem>
-          <StatisticsNumber>50&#43;</StatisticsNumber> Учасників ініціативи
+          <StatisticsNumber>{data?.members}&#43;</StatisticsNumber> Учасників
+          ініціативи
         </StatisticsListItem>
       </StatisticsList>
     </>
