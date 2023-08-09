@@ -66,6 +66,7 @@ export const ReviewsSwiperItemParagraph = styled.p`
     font-family: ${fonts.regular};
 
     min-height: 75px; //////////////////
+
     margin-bottom: 5px;
   }
 
@@ -113,7 +114,7 @@ export const ReviewsSwiperItemImageContainer = styled.div`
 
 export const ReviewsSwiperItemImage = styled.img`
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   border-radius: ${radii.s};
 
   @media (min-width: 768px) {
