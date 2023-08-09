@@ -46,17 +46,18 @@ export const ReviewsSwiperContainer = styled(Swiper)`
 
   .swiper-scrollbar-drag:last-child {
     background-color: ${colors.blue};
-    max-width: 60px;
-    margin-left: 48px;
+    /* max-width: 60px; */
+    /* margin-left: 48px; */
+
     min-height: 2px;
   }
 
   @media (min-width: 768px) {
     width: 656px;
 
-    .swiper-scrollbar-drag:last-child {
+    /* .swiper-scrollbar-drag:last-child {
       max-width: 127px;
-    }
+    } */
 
     .swiper-scrollbar {
       width: 656px;

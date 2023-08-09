@@ -44,7 +44,7 @@ const OurNeedsTabletSwiper = () => {
 
           <NeedsItemTitel>Щільна темна тканина</NeedsItemTitel>
           <NeedsItemDeccription>
-            Щільна темна тканини (для оверлоку сіток та петель)
+            Щільна темна тканина (для оверлоку сіток та петель)
           </NeedsItemDeccription>
         </OurNeedsItemDiv>
       </SwiperSlideContainer>

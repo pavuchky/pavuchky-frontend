@@ -10,6 +10,7 @@ import { useMediaQuery } from 'react-responsive';
 
 const Reviews = () => {
   const isTabletScreen = useMediaQuery({ minWidth: 768 });
+
   return (
     <ReviewsSection>
       <ReviewsTitlePartContainer>
