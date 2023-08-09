@@ -2,13 +2,17 @@ import styled from 'styled-components';
 
 export const MenuBtn = styled.button`
   padding: 12px 8px;
-  margin-left: 16px;
+  margin-left: 10px;
   border-radius: 10px;
   font-size: 14px;
   background-color: ${({ theme }) => theme.colors.lightGrey};
 
   &:hover {
     color: ${({ theme }) => theme.colors.blue};
+  }
+
+  @media (min-width: 375px) {
+    margin-left: 16px;
   }
 
   @media (min-width: 768px) {

@@ -32,7 +32,9 @@ export const Statistics = () => {
               <AchievementsNumber>3500 кв.м &#43;</AchievementsNumber> сітки
               сплетено
             </AchievementsListItem>
-            <AchievementsListItem>Вдоконалення технологій</AchievementsListItem>
+            <AchievementsListItem>
+              Вдосконалення технологій
+            </AchievementsListItem>
             <AchievementsListItem>
               <AchievementsNumber>50&#43;</AchievementsNumber> учасників
               ініціативи

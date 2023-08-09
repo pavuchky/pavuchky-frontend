@@ -35,7 +35,10 @@ export const NavBar = styled.nav`
 export const Logo = styled.svg`
   width: 68px;
   height: 34px;
-  margin-right: 47px;
+
+  @media (min-width: 375px) {
+    margin-right: 47px;
+  }
 
   @media (min-width: 768px) {
     width: 92px;
@@ -108,7 +111,7 @@ export const LangList = styled.ul`
 export const DonateBtn = styled(HashLink)`
   min-width: 107px;
   padding: 12px 5px 12px 10px;
-  margin-left: 16px;
+  margin-left: 10px;
   border-radius: 10px;
   text-align: center;
   font-size: 14px;
@@ -116,6 +119,10 @@ export const DonateBtn = styled(HashLink)`
 
   &:hover {
     color: ${({ theme }) => theme.colors.blue};
+  }
+
+  @media (min-width: 375px) {
+    margin-left: 16px;
   }
 
   @media (min-width: 768px) {

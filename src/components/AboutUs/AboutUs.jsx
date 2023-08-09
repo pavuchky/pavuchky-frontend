@@ -20,7 +20,7 @@ import {
 
 const AboutUs = () => {
   const isDesktop = useMediaQuery({
-    query: '(min-width: 1280px)',
+    query: '(min-width: 1439px)',
   });
 
   return (

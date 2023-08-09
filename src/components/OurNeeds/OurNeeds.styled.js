@@ -31,7 +31,7 @@ export const OurNeedsSection = styled.section`
   gap: 20px;
 
   border-radius: 16px;
-  background: ${colors.gradientBackground};
+  background: ${colors.gradientReversed};
 
   @media (min-width: 768px) {
     padding: 32px;

@@ -5,7 +5,7 @@ export const PartnersContainer = styled.section`
   padding: 28px 16px 30px 16px;
   margin-bottom: 36px;
   border-radius: 16px;
-  background: ${({ theme }) => theme.colors.gradientBackground};
+  background: ${({ theme }) => theme.colors.gradientReversed};
 
   @media (min-width: 768px) {
     padding: 32px;
@@ -13,11 +13,6 @@ export const PartnersContainer = styled.section`
 
   @media (min-width: 1440px) {
     padding: 44px 64px;
-    background: linear-gradient(
-      140deg,
-      rgba(189, 211, 242, 0.3) 0%,
-      rgba(255, 255, 255, 0) 63%
-    );
   }
 `;
 
@@ -56,6 +51,11 @@ export const PartnersList = styled.ul`
 `;
 
 export const PartnersImg = styled.img`
+  width: 95px;
+  height: 95px;
+  border-radius: 8px;
+  border: 1px solid ${({ theme }) => theme.colors.blue};
+
   @media (min-width: 768px) {
     width: 202px;
     height: 157px;
@@ -126,6 +126,12 @@ export const PartnersBtn = styled(Link)`
   border: 1px solid ${({ theme }) => theme.colors.blue};
   font-size: ${({ theme }) => theme.fontSizes.xs};
   background-color: ${({ theme }) => theme.colors.white};
+
+  &:hover,
+  &:focus {
+    background-color: ${({ theme }) => theme.colors.blue};
+    color: ${({ theme }) => theme.colors.white};
+  }
 
   @media (min-width: 768px) {
     width: 287px;

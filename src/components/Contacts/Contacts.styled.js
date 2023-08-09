@@ -105,14 +105,11 @@ export const ContactsFirstAddressList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 8px;
-  font-family: ${fonts.regular};
+  font-family: ${fonts.light};
   font-size: 14px;
   font-weight: ${fontWeights.light};
-  list-style: disc inside;
-  margin-left: 8px;
   margin-bottom: 8px;
   @media (min-width: 1440px) {
-    margin-left: 35px;
     font-size: ${fontSizes.s};
   }
 `;
@@ -139,9 +136,14 @@ export const ContactPerson = styled.p`
     font-size: ${fontSizes.s};
   }
 `;
-export const ContactNumber = styled.p`
+export const ContactNumber = styled.a`
   font-size: ${fontSizes.xs};
   font-weight: ${fontWeights.light};
+  cursor: pointer;
+
+  @media (min-width: 1440px) {
+    font-size: ${fontSizes.s};
+  }
 `;
 export const LocationContainer = styled.div`
   border-radius: 10px;
