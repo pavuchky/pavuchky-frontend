@@ -5,7 +5,7 @@ import { HashLink } from 'react-router-hash-link';
 const { fontSizes, fontWeights, colors, fonts } = theme;
 
 export const FooterContainer = styled.footer`
-  max-width: 375px;
+  max-width: 359px;
   padding: 24px 50px;
   margin: 0 auto;
   margin-bottom: 16px;

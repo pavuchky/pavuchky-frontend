@@ -10,13 +10,13 @@ export const FooterTabContainer = styled.footer`
   box-shadow: 4px 8px 25px 0px rgba(176, 193, 243, 0.15);
 
   @media (min-width: 768px) {
-    max-width: 768px;
+    max-width: 720px;
     margin-bottom: 24px;
     padding: 32px 47px;
     margin: 0 auto;
   }
   @media (min-width: 1440px) {
-    max-width: 1440px;
+    max-width: 1408px;
     padding: 44px;
     margin: 0 16px;
     margin-bottom: 16px;
