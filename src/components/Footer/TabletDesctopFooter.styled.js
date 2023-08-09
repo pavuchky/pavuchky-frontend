@@ -5,16 +5,18 @@ import { HashLink } from 'react-router-hash-link';
 const { fontSizes, fontWeights, colors, fonts } = theme;
 
 export const FooterTabContainer = styled.footer`
-  margin: 0 24px;
+  margin: 0 auto;
   border-radius: 20px;
   background: ${colors.gradientMain};
   box-shadow: 4px 8px 25px 0px rgba(176, 193, 243, 0.15);
 
   @media (min-width: 768px) {
+    max-width: 768px;
     margin-bottom: 24px;
     padding: 32px 47px;
   }
   @media (min-width: 1440px) {
+    max-width: 1440px;
     padding: 44px;
     margin: 0 16px;
     margin-bottom: 16px;

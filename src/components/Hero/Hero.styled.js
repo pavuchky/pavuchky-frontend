@@ -144,6 +144,7 @@ export const HeroLink = styled(HashLink)`
   padding: 10px;
   text-align: center;
   background-color: ${({ theme }) => theme.colors.white};
+  transition: color ${({ theme }) => theme.transitions.regular};
 
   &:hover,
   &:focus {

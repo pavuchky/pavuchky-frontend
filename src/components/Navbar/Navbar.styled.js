@@ -116,6 +116,7 @@ export const DonateBtn = styled(HashLink)`
   text-align: center;
   font-size: 14px;
   background-color: ${({ theme }) => theme.colors.yellow};
+  transition: color ${({ theme }) => theme.transitions.regular};
 
   &:hover {
     color: ${({ theme }) => theme.colors.blue};
