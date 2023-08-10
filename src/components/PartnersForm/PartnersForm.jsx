@@ -1,6 +1,6 @@
 import React from 'react';
 import { useFormik } from 'formik';
-import * as Yup from 'yup';
+import { partnerValidationSchema } from '../../utils/validationSchema';
 import heart from '../../assets/images/heart.png';
 import {
   FormBtn,
@@ -17,17 +17,6 @@ import { useMediaQuery } from 'react-responsive';
 export const PartnersForm = () => {
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 
-  const validationSchema = Yup.object().shape({
-    name: Yup.string().required('Please enter your name.'),
-    company: Yup.string().required('Please enter your company.'),
-    email: Yup.string()
-      .email('Incorrect email address.')
-      .required('Please enter your email.'),
-    phone: Yup.string()
-      .required('Please enter your phone number.')
-      .matches(/^\+?[\d\s-]+$/, 'Invalid phone number'),
-  });
-
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -36,7 +25,7 @@ export const PartnersForm = () => {
       phone: '',
       comment: '',
     },
-    validationSchema: validationSchema,
+    validationSchema: partnerValidationSchema,
     onSubmit: values => {
       console.log(values);
     },
