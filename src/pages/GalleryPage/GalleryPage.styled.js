@@ -12,7 +12,7 @@ export const GallerySection = styled.section`
 
   @media (min-width: 768px) {
     margin-bottom: 44px;
-    padding: 32px 32px 28px 32px;
+    padding: 32px;
     border-radius: 20px;
   }
   @media (min-width: 1440px) {
@@ -42,15 +42,17 @@ export const GlleryTabLinks = styled(Link)`
   padding: 8px 12px 8px 12px;
 
   text-decoration: none;
-  color: black;
+  color: ${colors.grey};
 
   &.active {
     border-bottom: 2px solid rgba(43, 43, 43, 1);
+    
   }
 
   &:hover,
   &:focus {
     text-decoration: none;
     border-bottom: 2px solid rgba(43, 43, 43, 1);
+    color: ${colors.black};
   }
 `;
