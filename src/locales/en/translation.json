@@ -9,5 +9,14 @@
     "donate": "Donate",
     "weave": "Weave",
     "menu": "Menu"
+  },
+  "pages": {
+    "about-us": "Who we are",
+    "ordering": "Order form",
+    "partnership": "Become a partner",
+    "reviews": "Reviews",
+    "feedback": "Leave a review",
+    "photos": "Photos",
+    "videos": "Videos"
   }
 }
