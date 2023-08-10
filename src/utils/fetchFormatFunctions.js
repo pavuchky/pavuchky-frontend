@@ -86,3 +86,25 @@ export const partnersFormattedFn = ({ partnersList, _id }) => {
       : null,
   };
 };
+
+export const aboutFormattedFn = ({ aboutShort, aboutFull, _id }) => {
+  return {
+    id: _id,
+    aboutShort: !!aboutShort ? aboutShort[0]?.children[0]?.text : null,
+    aboutFull: !!aboutFull ? aboutFull[0]?.children[0]?.text : null,
+  };
+};
+
+const BASE_PHOTO_URL = 'https://drive.google.com/uc?export=view&id=';
+export const galleryPhotoFormattedFn = ({ galleryPhotoList, _id }) => {
+  return {
+    id: _id,
+    galleryPhotoList: galleryPhotoList
+      ? galleryPhotoList.map(({ photoLink }) => {
+          return {
+            photoLink: !!photoLink ? BASE_PHOTO_URL + photoLink : null,
+          };
+        })
+      : null,
+  };
+};
