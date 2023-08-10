@@ -15,7 +15,7 @@ import {
 } from './GalleryPhotos.styled';
 
 import { Gallery} from 'react-photoswipe-gallery';
-// import GalleryTabPhotos from './GalleryPhotoTablet';
+import GalleryTabPhotos from './GalleryPhotoTablet';
 
 const GalleryPhotos = () => {
   const imgArrayMobile = [
@@ -92,6 +92,7 @@ const GalleryPhotos = () => {
         }))}
         index={selectedImageIndex}
       />
+      <GalleryTabPhotos/>
     </div>
   );
 };

@@ -6,6 +6,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { PathDisplayer } from 'components/PathDisplayer/PathDisplayer';
 
+
 const GalleryPage = () => {
   const { t } = useTranslation();
 
@@ -19,27 +20,25 @@ const GalleryPage = () => {
       : t('pages.videos');
 
   return (
-    <><GallerySection>
-      <GalleryTitle>Галерея</GalleryTitle>
-      <GalleryTabs>
-        <GlleryTabLinks to="/gallery/photos">Фото</GlleryTabLinks>
-        <GlleryTabLinks to="/gallery/videos">Відео</GlleryTabLinks>
-      </GalleryTabs>
+    <>
+      <PathDisplayer
+      current={{
+        path: location?.pathname,
+        name: t('header.gallery'),
+        galleryType,
+      }}
+        isGallery />
+      <GallerySection>
+        <GalleryTitle>Галерея</GalleryTitle>
+        <GalleryTabs>
+          <GlleryTabLinks to="/gallery/photos">Фото</GlleryTabLinks>
+          <GlleryTabLinks to="/gallery/videos">Відео</GlleryTabLinks>
+        </GalleryTabs>
+      </GallerySection>
       <Suspense fallback={null}>
         <Outlet />
-      </Suspense>
-    </GallerySection><>
-        <PathDisplayer
-          current={{
-            path: location?.pathname,
-            name: t('header.gallery'),
-            galleryType,
-          }}
-          isGallery />
-        <Suspense fallback={null}>
-          <Outlet />
-        </Suspense>
-      </></>
+      </Suspense></>
+      
   );
 };
 
