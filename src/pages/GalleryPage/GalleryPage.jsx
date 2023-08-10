@@ -1,21 +1,22 @@
 import { Suspense } from 'react';
-import { NavLink } from 'react-router-dom';
+
 import { Outlet } from 'react-router-dom';
+import { GalleryTitle, GallerySection, GalleryTabs, GlleryTabLinks } from './GalleryPage.styled';
+
+
 
 const GalleryPage = () => {
   return (
-    <>
-      <h3>Галерея</h3>
-      <div>
-        <NavLink to={"/photos"}>Фото</NavLink>
-       <NavLink to={"/videos"}>Відео</NavLink>
-       
-      </div>
-     
-    <Suspense fallback={null}>
-      <Outlet />
+    <GallerySection>
+      <GalleryTitle>Галерея</GalleryTitle>
+      <GalleryTabs>
+        <GlleryTabLinks to="/gallery/photos">Фото</GlleryTabLinks>
+        <GlleryTabLinks to="/gallery/videos">Відео</GlleryTabLinks>
+      </GalleryTabs>
+      <Suspense fallback={null}>
+        <Outlet />
       </Suspense>
-    </>
+    </GallerySection>
   );
 };
 
