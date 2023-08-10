@@ -1,6 +1,7 @@
 import React from 'react';
-
 import { useMediaQuery } from 'react-responsive';
+import useFetch from '../../hooks/useFetch';
+import MapComponent from './MapContacts/MapContacts';
 import Icons from '../../assets/images/sprite.svg';
 import {
   ContactsContainer,
@@ -19,9 +20,6 @@ import {
   ContactsListWrapper,
 } from './Contacts.styled';
 
-import MapComponent from './MapContacts/MapContacts';
-import useFetch from '../../hooks/useFetch';
-
 const IconSocial = ({ name, color, size }) => (
   <svg className={`icon-${name}`} fill={color} width={size} height={size}>
     <use xlinkHref={`${Icons}#icon-${name}`} />
@@ -31,6 +29,11 @@ const IconSocial = ({ name, color, size }) => (
 const Contacts = () => {
   const { data } = useFetch('contacts');
   const isLargeScreen = useMediaQuery({ minWidth: 1440 });
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+
+  const telegramLink = data?.socialMediaList.find(
+    link => link.socialMediaName === 'Telegram'
+  )?.socialMediaLink;
 
   return (
     <ContactsContainer id="contacts">
@@ -44,11 +47,9 @@ const Contacts = () => {
             ))}
           </ContactsList>
           <ContactsAdminTitle>Контактні дані</ContactsAdminTitle>
-          <ContactPerson>
-            Адміністратор: Ольга Кузакова
-          </ContactPerson>
+          <ContactPerson>Адміністратор: Ольга Кузакова</ContactPerson>
           <ContactNumber
-            href={`tel:${data?.phone}`}
+            href={isMobile ? `tel:${data?.phone}` : telegramLink}
             target="_blank"
             rel="noreferrer"
           >

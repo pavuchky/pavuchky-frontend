@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { theme } from '../../stylesheet/theme';
 import { HashLink } from 'react-router-hash-link';
 
-const { fontSizes, fontWeights, colors, fonts } = theme;
+const { fontSizes, fontWeights, colors, fonts, transitions } = theme;
 
 export const FooterTabContainer = styled.footer`
   border-radius: 20px;
@@ -39,6 +39,15 @@ export const FooterSocialTabLinks = styled.ul`
   display: flex;
   flex-direction: row;
   gap: 28px;
+
+  a {
+    transition: transform ${transitions.regular};
+  }
+
+  a:hover,
+  a:focus {
+    transform: scale(1.07);
+  }
 `;
 export const FooterTabSocialTitle = styled.p`
   margin-bottom: 15px;
@@ -75,10 +84,20 @@ export const FooterTabList = styled.ul`
   align-items: center;
   justify-content: center;
   font-family: ${fonts.regular};
+
   @media (min-width: 1440px) {
     font-size: ${fontSizes.s};
     font-family: ${fonts.light};
     font-weight: ${fontWeights.light};
+  }
+
+  a {
+    transition: color ${transitions.regular};
+  }
+
+  a:hover,
+  a:focus {
+    color: ${colors.yellow};
   }
 `;
 export const FooterTabSubList = styled.ul`
@@ -92,10 +111,20 @@ export const FooterTabSubList = styled.ul`
   justify-content: center;
   margin-left: 28px;
   font-family: ${fonts.regular};
+
   @media (min-width: 1440px) {
     font-size: ${fontSizes.s};
     font-family: ${fonts.light};
     font-weight: ${fontWeights.light};
+  }
+
+  a {
+    transition: color ${transitions.regular};
+  }
+
+  a:hover,
+  a:focus {
+    color: ${colors.yellow};
   }
 `;
 
@@ -116,8 +145,17 @@ export const FooterTabTel = styled.p`
     font-weight: ${fontWeights.light};
     margin-bottom: 36px;
   }
+
+  a {
+    transition: color ${transitions.regular};
+  }
+
+  a:hover,
+  a:focus {
+    color: ${colors.yellow};
+  }
 `;
-export const FooteTabAllReserved = styled.div`
+export const FooterTabAllReserved = styled.div`
   font-size: 14px;
   font-weight: ${fontWeights.light};
   color: ${colors.secondaryFont};

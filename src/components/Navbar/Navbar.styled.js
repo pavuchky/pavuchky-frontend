@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import styled from 'styled-components';
 
@@ -29,6 +30,17 @@ export const NavBar = styled.nav`
     @media (min-width: 1440px) {
       height: 69px;
     }
+  }
+`;
+
+export const LogoLink = styled(Link)`
+  svg {
+    transition: transform ${({ theme }) => theme.transitions.regular};
+  }
+
+  &:hover svg,
+  &:focus svg {
+    transform: scale(1.07);
   }
 `;
 
