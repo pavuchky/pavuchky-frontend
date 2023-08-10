@@ -1,5 +1,11 @@
+import { OrderForm } from 'components/OrderForm/OrderForm';
+
 const OrderPage = () => {
-  return <div>OrderPage</div>;
+  return (
+    <>
+      <OrderForm />
+    </>
+  );
 };
 
 export default OrderPage;
