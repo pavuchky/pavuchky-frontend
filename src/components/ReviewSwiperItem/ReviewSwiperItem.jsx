@@ -22,6 +22,7 @@ const ReviewSwiperItem = ({ review, reviewImage }) => {
         <use xlinkHref={`${Icons}#review`} />
       </ReviewsSvg>
       <ReviewsSwiperItemParagraph>{review}</ReviewsSwiperItemParagraph>
+
       {reviewImage && (
         <ReviewsSwiperItemImageContainer>
           <ReviewsSwiperItemImage

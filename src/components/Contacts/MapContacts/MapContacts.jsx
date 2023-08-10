@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { MapContainer, TileLayer, Popup, Marker } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import Icon from '../ImgLocation/marker-icon.png';
-import { useMediaQuery } from 'react-responsive';
+import Icon from '../../../assets/images/marker-icon.png';
+
 
 const customIcon = new L.Icon({
   iconUrl: Icon,
@@ -18,10 +18,8 @@ const firstOffice = [50.408089, 30.339429];
 const secondOffice = [50.398478, 30.342186];
 
 const MapComponent = () => {
-  const isDesctop = useMediaQuery({ minWidth: 1440 });
-  console.log(isDesctop);
   const [activeMarker, setActiveMarker] = useState(null);
-
+  
   return (
     <MapContainer
       center={center}
@@ -60,7 +58,7 @@ const MapComponent = () => {
           <div>
             <img
               src="https://res.cloudinary.com/dsw7lnmcv/image/upload/v1691147447/photo_5362087646685415699_y_nkgwqu.jpg"
-              style={{ width: '200px', height: '100%', borderRadius: '10px' }}
+              style={{ borderRadius: '10px' }}
               alt="entrance"
             />
             <h3 style={{ fontSize: '14px', margin: 0 }}>

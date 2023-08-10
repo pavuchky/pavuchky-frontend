@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import useFetch from 'hooks/useFetch';
 import Icons from '../../assets/images/sprite.svg';
 
 import {
@@ -15,19 +16,8 @@ import {
   FooterTabSubLinks,
   FooterTabListWrapper,
 } from './TabletDesktopFooter.styled';
-import useFetch from 'hooks/useFetch';
 
 const TabletDesktopFooter = () => {
-  const { data } = useFetch('contacts');
-
-  const getSocialMediaLink = name => {
-    const socialMedia = data?.socialMediaList.find(
-      link => link.socialMediaName === name
-    );
-    const socialMediaLink = socialMedia?.socialMediaLink;
-    return socialMediaLink;
-  };
-
   const IconFooterSocial = ({ name, color, size }) => (
     <svg
       className={`icon-${name}`}
@@ -40,6 +30,8 @@ const TabletDesktopFooter = () => {
     </svg>
   );
   const { t } = useTranslation();
+
+  const { data } = useFetch('contacts');
 
   const footerItems = [
     { href: '/about', value: t('header.about') },
@@ -72,41 +64,28 @@ const TabletDesktopFooter = () => {
           </FooterTabSubList>
         </FooterTabListWrapper>
         <FooterTabTel>
-          <a href="tel:+380635693058" target="_blank" rel="noreferrer">
-            +380635693058
+          <a href={`tel:${data?.phone}`} target="_blank" rel="noreferrer">
+            {data?.phone}
           </a>
         </FooterTabTel>
       </>
       <FooterSocialTabContainer>
         <FooterTabSocialTitle>Слідкуй за нами тут:</FooterTabSocialTitle>
         <FooterSocialTabLinks>
-          <li>
-            <a
-              href={getSocialMediaLink('Facebook')}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <IconFooterSocial name="facebook" size={36} />
-            </a>
-          </li>
-          <li>
-            <a
-              href={getSocialMediaLink('Telegram')}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <IconFooterSocial name="telegram" size={36} />
-            </a>
-          </li>
-          <li>
-            <a
-              href={getSocialMediaLink('YouTube')}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <IconFooterSocial name="youtube" size={36} />
-            </a>
-          </li>
+          {data?.socialMediaList?.map(
+            ({ id, socialMediaLink, socialMediaName }) => (
+              <li key={id}>
+                <a href={socialMediaLink}>
+                  <IconFooterSocial
+                    name={socialMediaName}
+                    size={36}
+                    target="_blank"
+                    rel="noreferrer"
+                  />
+                </a>
+              </li>
+            )
+          )}
         </FooterSocialTabLinks>
       </FooterSocialTabContainer>
       <FooteTabAllReserved>&#64;All right reserved</FooteTabAllReserved>

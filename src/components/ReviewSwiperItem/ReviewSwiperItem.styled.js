@@ -4,6 +4,9 @@ import { theme } from 'stylesheet/theme';
 const { colors, borders, fontWeights, fonts, fontSizes, radii } = theme;
 
 export const ReviewsSwiperItemContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
   position: relative;
   width: 327px;
   height: 263px;
@@ -38,7 +41,8 @@ export const ReviewsSwiperItemParagraph = styled.p`
   font-family: ${fonts.light};
   color: ${colors.secondaryFont};
 
-  height: 42px;
+  min-height: 42px; //////////////////
+
   overflow-y: auto;
   overflow-x: hidden;
   margin-bottom: 8px;
@@ -61,7 +65,8 @@ export const ReviewsSwiperItemParagraph = styled.p`
     font-weight: ${fontWeights.regular};
     font-family: ${fonts.regular};
 
-    height: 75px;
+    min-height: 75px; //////////////////
+
     margin-bottom: 5px;
   }
 
@@ -70,7 +75,8 @@ export const ReviewsSwiperItemParagraph = styled.p`
     font-weight: ${fontWeights.light};
     font-family: ${fonts.light};
 
-    height: 124px;
+    min-height: 124px; //////////////////////////
+
     margin-bottom: 8px;
 
     &::-webkit-scrollbar {
@@ -81,13 +87,18 @@ export const ReviewsSwiperItemParagraph = styled.p`
 
 export const ReviewsSwiperItemImageContainer = styled.div`
   width: 303px;
-  height: 157px;
+  min-height: 157px;
+  max-height: 157px;
   overflow: hidden;
   border-radius: ${radii.s};
+  display: flex;
+  flex-direction: column;
 
   @media (min-width: 768px) {
     width: 280px;
-    height: 197px;
+
+    min-height: 197px;
+    max-height: 197px;
     padding-left: 6px;
     padding-right: 6px;
   }
@@ -95,13 +106,15 @@ export const ReviewsSwiperItemImageContainer = styled.div`
   @media (min-width: 1440px) {
     padding: 0;
     width: 377px;
-    height: 320px;
+
+    min-height: 320px;
+    max-height: 320px;
   }
 `;
 
 export const ReviewsSwiperItemImage = styled.img`
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   border-radius: ${radii.s};
 
   @media (min-width: 768px) {
@@ -120,4 +133,11 @@ export const ReviewsSvg = styled.svg`
     top: 24px;
     right: 24px;
   }
+`;
+
+export const Test = styled.div`
+  //////////////
+  width: 50px;
+  height: 100%;
+  background-color: red;
 `;
