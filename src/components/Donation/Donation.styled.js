@@ -41,11 +41,12 @@ export const DonationWrapper = styled.div`
 
 export const DonationQRWrapper = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: ${({ theme }) => theme.spacing(6)};
 
   @media only screen and (min-width: 1440px) {
-    flex-direction: column;
     gap: ${({ theme }) => theme.spacing(3.25)};
     max-width: 514px;
   }
@@ -179,9 +180,21 @@ export const DonationDescr = styled.p`
   }
 
   @media only screen and (min-width: 1440px) {
+    margin-bottom: ${({ theme }) => theme.spacing(11)};
+
     font-family: ${({ theme }) => theme.fonts.light};
     font-weight: ${({ theme }) => theme.fontWeights.light};
     font-size: 26px;
+  }
+`;
+
+export const DonationDescrText = styled.p`
+  font-family: ${({ theme }) => theme.fonts.regular};
+  font-weight: ${({ theme }) => theme.fontWeights.regular};
+  font-size: 14px;
+
+  @media only screen and (min-width: 768px) {
+    font-size: ${({ theme }) => theme.fontSizes.s};
   }
 `;
 

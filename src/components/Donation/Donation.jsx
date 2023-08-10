@@ -7,6 +7,7 @@ import {
   CopyButton,
   CopyIcon,
   DonationDescr,
+  DonationDescrText,
   DonationQRWrapper,
   DonationSection,
   DonationText,
@@ -26,6 +27,9 @@ export const Donation = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+  const isTablet = useMediaQuery({
+    query: '(min-width: 768px) and (max-width: 1439px)',
+  });
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 
   const handleCopyClick = async () => {
@@ -72,6 +76,13 @@ export const Donation = () => {
             Монобанку
           </BankLink>
         </DonationDescr>
+
+        {(isMobile || isDesktop) && (
+          <DonationDescrText>
+            Щоб дізнатися інші реквізити &#8220;Павучків&#8221;, зверніться до
+            адміністратора ініціативи
+          </DonationDescrText>
+        )}
       </DonationWrapper>
 
       {!isMobile && (
@@ -85,6 +96,12 @@ export const Donation = () => {
           <QRIcon>
             <use href={sprite + '#qr'}></use>
           </QRIcon>
+          {isTablet && (
+            <DonationDescrText>
+              Щоб дізнатися інші реквізити &#8220;Павучків&#8221;, зверніться до
+              адміністратора ініціативи
+            </DonationDescrText>
+          )}
         </DonationQRWrapper>
       )}
 
