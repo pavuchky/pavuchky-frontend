@@ -6,7 +6,7 @@ const AboutPage = () => {
 
   return (
     <>
-      <PathDisplayer current={{ path: '/about', name: t('header.about') }} />
+      <PathDisplayer current={{ path: '/about', name: t('pages.about-us') }} />
     </>
   );
 };

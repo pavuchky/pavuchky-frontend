@@ -1,5 +1,16 @@
+import { useTranslation } from 'react-i18next';
+import { PathDisplayer } from 'components/PathDisplayer/PathDisplayer';
+
 const ReportingPage = () => {
-  return <div>ReportingPage</div>;
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <PathDisplayer
+        current={{ path: '/reporting', name: t('header.reporting') }}
+      />
+    </>
+  );
 };
 
 export default ReportingPage;
