@@ -1840,5 +1840,12 @@
       <symbol id="next-icon" >
      <path fill="none"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2.051" d="m1.162 30.531 14.53-14.53-14.53-14.53"/>
     </symbol>
+    <symbol id="icon-down" viewBox="0 0 53 32">
+    <path d="M26.667 32l-23.094-32h46.188l-23.094 32z"></path>
+    </symbol>
+    <symbol id="icon-check" viewBox="0 0 32 32">
+    <path fill="none" stroke="#0069b5" style="stroke: var(--color1, #0069b5)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="1.3333" d="M5.333 0.667h21.333c2.577 0 4.667 2.089 4.667 4.667v21.333c0 2.577-2.089 4.667-4.667 4.667h-21.333c-2.577 0-4.667-2.089-4.667-4.667v-21.333c0-2.577 2.089-4.667 4.667-4.667z"></path>
+    <path fill="#0069b5" style="fill: var(--color1, #0069b5)" d="M9.333 5.333h13.333c2.209 0 4 1.791 4 4v13.333c0 2.209-1.791 4-4 4h-13.333c-2.209 0-4-1.791-4-4v-13.333c0-2.209 1.791-4 4-4z"></path>
+    </symbol>
 </defs>
 </svg>
