@@ -1840,6 +1840,9 @@
       <symbol id="next-icon" >
      <path fill="none"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2.051" d="m1.162 30.531 14.53-14.53-14.53-14.53"/>
     </symbol>
+    <symbol id="path-arrow" viewBox="0 0 21 32">
+    <path fill="none" stroke="#b8b6b7" style="stroke: var(--color1, #b8b6b7)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="5.3333" d="M4 29.333l13.333-13.333-13.333-13.333"></path>
+    </symbol>    
     <symbol id="icon-down" viewBox="0 0 53 32">
     <path d="M26.667 32l-23.094-32h46.188l-23.094 32z"></path>
     </symbol>
