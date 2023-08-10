@@ -1,5 +1,11 @@
+import { PartnersForm } from 'components/PartnersForm/PartnersForm';
+
 const PartnersPage = () => {
-  return <div>PartnersPage</div>;
+  return (
+    <>
+      <PartnersForm />
+    </>
+  );
 };
 
 export default PartnersPage;
