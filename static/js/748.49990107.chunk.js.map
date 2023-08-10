@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/748.49990107.chunk.js","mappings":"+IAIA,UAJoB,WAClB,OAAO,yBAAK,eACb,C","sources":["pages/ReviewsPage/ReviewsPage.jsx"],"sourcesContent":["const ReviewsPage = () => {\n  return <div>ReviewsPage</div>;\n};\n\nexport default ReviewsPage;\n"],"names":[],"sourceRoot":""}
