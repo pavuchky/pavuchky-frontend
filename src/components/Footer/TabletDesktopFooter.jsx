@@ -14,11 +14,28 @@ import {
   FooterTabSubList,
   FooterTabSubLinks,
   FooterTabListWrapper,
-} from './TabletDesctopFooter.styled';
+} from './TabletDesktopFooter.styled';
+import useFetch from 'hooks/useFetch';
 
-const TabletDesctopFoter = () => {
+const TabletDesktopFooter = () => {
+  const { data } = useFetch('contacts');
+
+  const getSocialMediaLink = name => {
+    const socialMedia = data?.socialMediaList.find(
+      link => link.socialMediaName === name
+    );
+    const socialMediaLink = socialMedia?.socialMediaLink;
+    return socialMediaLink;
+  };
+
   const IconFooterSocial = ({ name, color, size }) => (
-    <svg className={`icon-${name}`} fill={color} width={size} height={size}>
+    <svg
+      className={`icon-${name}`}
+      fill={color}
+      width={size}
+      height={size}
+      aria-label={name}
+    >
       <use xlinkHref={`${Icons}#icon-${name}`} />
     </svg>
   );
@@ -30,6 +47,7 @@ const TabletDesctopFoter = () => {
     { href: '/reporting', value: t('header.reporting') },
     { href: '/gallery/photos', value: t('header.gallery') },
   ];
+
   return (
     <FooterTabContainer>
       <>
@@ -64,7 +82,7 @@ const TabletDesctopFoter = () => {
         <FooterSocialTabLinks>
           <li>
             <a
-              href="https://www.facebook.com/PavuchkyBorschahinky"
+              href={getSocialMediaLink('Facebook')}
               target="_blank"
               rel="noreferrer"
             >
@@ -72,13 +90,17 @@ const TabletDesctopFoter = () => {
             </a>
           </li>
           <li>
-            <a href="tel:+380635693058" target="_blank" rel="noreferrer">
+            <a
+              href={getSocialMediaLink('Telegram')}
+              target="_blank"
+              rel="noreferrer"
+            >
               <IconFooterSocial name="telegram" size={36} />
             </a>
           </li>
           <li>
             <a
-              href="https://www.youtube.com/@user-mb3bs9jv1h"
+              href={getSocialMediaLink('YouTube')}
               target="_blank"
               rel="noreferrer"
             >
@@ -92,4 +114,4 @@ const TabletDesctopFoter = () => {
   );
 };
 
-export default TabletDesctopFoter;
+export default TabletDesktopFooter;

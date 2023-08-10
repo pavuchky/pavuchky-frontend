@@ -1,11 +1,11 @@
 import MobFooter from './MobileFooter';
 import { useMediaQuery } from 'react-responsive';
-import TabletDesctopFoter from './TabletDesctopFoter';
+import TabletDesktopFooter from './TabletDesktopFooter';
 
 const Footer = () => {
   const isTabletScreen = useMediaQuery({ minWidth: 768 });
 
-  return <>{!isTabletScreen ? <MobFooter /> : <TabletDesctopFoter />}</>;
+  return <>{!isTabletScreen ? <MobFooter /> : <TabletDesktopFooter />}</>;
 };
 
 export default Footer;

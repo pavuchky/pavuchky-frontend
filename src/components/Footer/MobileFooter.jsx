@@ -74,9 +74,7 @@ const MobFooter = () => {
           </li>
         </FooterSubList>
         <FooterTel>
-          <a href="tel:+380635693058" target="_blank" rel="noreferrer">
-            +380635693058
-          </a>
+          <a href="tel:+380635693058">+380635693058</a>
         </FooterTel>
       </div>
       <FooterAllReserved>&#64;All right reserved</FooterAllReserved>
