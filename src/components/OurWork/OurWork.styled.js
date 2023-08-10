@@ -52,6 +52,8 @@ export const FacebookBtn = styled.a`
   font-size: 14px;
   background-color: transparent;
   color: ${({ theme }) => theme.colors.secondaryFont};
+  transition: color ${({ theme }) => theme.transitions.regular},
+    stroke ${({ theme }) => theme.transitions.regular};
 
   &:hover,
   &:focus {
@@ -152,6 +154,8 @@ export const WorkItemBtn = styled.a`
   gap: 10px;
   font-size: ${({ theme }) => theme.fontSizes.xs};
   color: ${({ theme }) => theme.colors.secondaryFont};
+  transition: color ${({ theme }) => theme.transitions.regular},
+    stroke ${({ theme }) => theme.transitions.regular};
 
   &:hover,
   &:focus {
@@ -169,6 +173,8 @@ export const WorkItemBtn = styled.a`
     font-size: ${({ theme }) => theme.fontSizes.s};
     color: ${({ theme }) => theme.colors.primaryFont};
     background-color: ${({ theme }) => theme.colors.white};
+    transition: color ${({ theme }) => theme.transitions.regular},
+      background-color ${({ theme }) => theme.transitions.regular};
 
     &:hover,
     &:focus {

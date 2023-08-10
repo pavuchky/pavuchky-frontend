@@ -1,24 +1,23 @@
 import React from 'react';
-import location from './ImgLocation/location_s_mob_@.png.jpeg';
 import { useMediaQuery } from 'react-responsive';
+import useFetch from '../../hooks/useFetch';
+import MapComponent from './MapContacts/MapContacts';
 import Icons from '../../assets/images/sprite.svg';
 import {
   ContactsContainer,
   ContactsTitle,
   ContactsSubTitle,
   ContactsFirstAddress,
-  ContactsFirstAddressList,
-  ContactsSecondAddress,
+  ContactsAdminTitle,
   ContactPerson,
   LocationContainer,
   SocialMediaContainer,
   SocialMediaTitle,
   SocialMediaLinks,
-  ImgLocRad,
   ContactsList,
   ContactNumber,
-  ContactsSecondAddressSpan,
   ContactsWrapper,
+  ContactsListWrapper,
 } from './Contacts.styled';
 
 const IconSocial = ({ name, color, size }) => (
@@ -28,67 +27,56 @@ const IconSocial = ({ name, color, size }) => (
 );
 
 const Contacts = () => {
+  const { data } = useFetch('contacts');
   const isLargeScreen = useMediaQuery({ minWidth: 1440 });
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+
+  const telegramLink = data?.socialMediaList.find(
+    link => link.socialMediaName === 'Telegram'
+  )?.socialMediaLink;
+
   return (
     <ContactsContainer id="contacts">
       <ContactsTitle>Де нас знайти</ContactsTitle>
       <ContactsWrapper>
-        <ContactsList>
-          <li>
-            <ContactsSubTitle>Локація плетіння</ContactsSubTitle>
-            <ContactsFirstAddress>
-              c. Софіївська Борщагівка:
-              <br /> ЖК &#8220;Софіївський квартал&#8221;
-            </ContactsFirstAddress>
-            <ContactsFirstAddressList>
-              <li>вул.Шалімова, 65 (підвал будинку)</li>
-              <li>вул.Шалімова, 63a</li>
-            </ContactsFirstAddressList>
-            <ContactsSecondAddress>
-              ЖК &#8220;Уютний квартал&#8221;
-              <ContactsSecondAddressSpan>
-                пр-т Героїв Небесної Сотні, 16/22
-              </ContactsSecondAddressSpan>
-            </ContactsSecondAddress>
-          </li>
-          <li>
-            <ContactsSubTitle>Контактні дані</ContactsSubTitle>
-            <ContactPerson>Адміністратор: Ольга Кузакова </ContactPerson>
-            <ContactNumber href="tel:+380635693058">
-              +380635693058
-            </ContactNumber>
-          </li>
-        </ContactsList>
+        <ContactsListWrapper>
+          <ContactsSubTitle>Локація плетіння</ContactsSubTitle>
+          <ContactsList>
+            {data?.streetList?.map(({ id, street }) => (
+              <ContactsFirstAddress key={id}>{street}</ContactsFirstAddress>
+            ))}
+          </ContactsList>
+          <ContactsAdminTitle>Контактні дані</ContactsAdminTitle>
+          <ContactPerson>Адміністратор: Ольга Кузакова</ContactPerson>
+          <ContactNumber
+            href={isMobile ? `tel:${data?.phone}` : telegramLink}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {data?.phone}
+          </ContactNumber>
+        </ContactsListWrapper>
         <LocationContainer>
-          <ImgLocRad src={location} alt="Location" width="327" />
+          <MapComponent />
         </LocationContainer>
       </ContactsWrapper>
       <SocialMediaContainer>
         <SocialMediaTitle>Слідкуй за нами тут:</SocialMediaTitle>
         <SocialMediaLinks>
-          <li>
-            <a
-              href="https://www.facebook.com/PavuchkyBorschahinky"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <IconSocial name="facebook" size={isLargeScreen ? 36 : 24} />
-            </a>
-          </li>
-          <li>
-            <a href="tel:+380635693058" target="_blank" rel="noreferrer">
-              <IconSocial name="telegram" size={isLargeScreen ? 36 : 24} />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.youtube.com/@user-mb3bs9jv1h"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <IconSocial name="youtube" size={isLargeScreen ? 36 : 24} />
-            </a>
-          </li>
+          {data?.socialMediaList?.map(
+            ({ id, socialMediaLink, socialMediaName }) => (
+              <li key={id}>
+                <a href={socialMediaLink}>
+                  <IconSocial
+                    name={socialMediaName}
+                    size={isLargeScreen ? 36 : 24}
+                    target="_blank"
+                    rel="noreferrer"
+                  />
+                </a>
+              </li>
+            )
+          )}
         </SocialMediaLinks>
       </SocialMediaContainer>
     </ContactsContainer>

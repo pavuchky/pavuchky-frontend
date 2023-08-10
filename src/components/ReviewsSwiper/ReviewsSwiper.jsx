@@ -13,26 +13,11 @@ import {
 import ReviewSwiperItem from 'components/ReviewSwiperItem/ReviewSwiperItem';
 import ReviewsSwiperCustomButtons from 'components/ReviewsSwiperCustomButtons/ReviewsSwiperCustomButtons';
 
-const ReviewsData = [
-  {
-    id: '1',
-    review: 'Щиро дякуємо за маскування. Наші бійці в повній безпеці',
-    image:
-      'https://images.prom.ua/4369088704_w640_h640_setka-maskirovochnaya-takticheskaya.jpg',
-  },
-  {
-    id: '2',
-    review: 'Щиро дякуємо за маскування. Наші бійці в повній безпеці',
-    image: '',
-  },
-  {
-    id: '3',
-    review: 'Щиро дякуємо за маскування. Наші бійці в повній безпеці',
-    image: '',
-  },
-];
+import useFetch from 'hooks/useFetch';
 
 const ReviewsSwiper = () => {
+  const { data } = useFetch('reviews');
+
   const isTabletScreen = useMediaQuery({ minWidth: 768 });
   const isDesktopScreen = useMediaQuery({ minWidth: 1440 });
 
@@ -50,11 +35,13 @@ const ReviewsSwiper = () => {
           prevEl: '.swiper-prev-btn',
         }}
       >
-        {ReviewsData.map(({ id, review, image }) => (
-          <ReviewsSwiperSlideContainer key={id}>
-            <ReviewSwiperItem review={review} reviewImage={image} />
-          </ReviewsSwiperSlideContainer>
-        ))}
+        {data?.reviewList?.map(
+          ({ id, review, image, reviewDesc, reviewImage }) => (
+            <ReviewsSwiperSlideContainer key={id}>
+              <ReviewSwiperItem review={reviewDesc} reviewImage={reviewImage} />
+            </ReviewsSwiperSlideContainer>
+          )
+        )}
       </ReviewsSwiperContainer>
     </ReviewSwiperWrapper>
   );

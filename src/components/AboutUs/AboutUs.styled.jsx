@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 
 export const AboutUsSectionWrapper = styled.section`
   position: relative;
@@ -48,7 +48,7 @@ export const AboutUsTitle = styled.h3`
   }
 `;
 
-export const AboutUSButton = styled(HashLink)`
+export const AboutUSButton = styled(Link)`
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -60,6 +60,8 @@ export const AboutUSButton = styled(HashLink)`
   font-size: 14px;
   font-weight: ${({ theme }) => theme.fontWeights.regular};
   color: ${({ theme }) => theme.colors.secondaryFont};
+  transition: color ${({ theme }) => theme.transitions.regular},
+    stroke ${({ theme }) => theme.transitions.regular};
 
   &:hover,
   &:focus {
@@ -81,6 +83,8 @@ export const AboutUSButton = styled(HashLink)`
 
 export const AboutUsIcon = styled.svg`
   margin-left: 13px;
+  transition: stroke ${({ theme }) => theme.transitions.regular};
+
   &:hover,
   &:focus {
     stroke: ${({ theme }) => theme.colors.blue};
@@ -193,7 +197,7 @@ export const AboutUsMap = styled.img`
   }
 `;
 
-export const LearnMoreStyledLink = styled(HashLink)`
+export const LearnMoreStyledLink = styled(Link)`
   min-width: 100%;
   border-radius: 12px;
   overflow: hidden;

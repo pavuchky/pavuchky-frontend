@@ -126,6 +126,8 @@ export const PartnersBtn = styled(Link)`
   border: 1px solid ${({ theme }) => theme.colors.blue};
   font-size: ${({ theme }) => theme.fontSizes.xs};
   background-color: ${({ theme }) => theme.colors.white};
+  transition: color ${({ theme }) => theme.transitions.regular},
+    background-color ${({ theme }) => theme.transitions.regular};
 
   &:hover,
   &:focus {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import useFetch from 'hooks/useFetch';
 import Icons from '../../assets/images/sprite.svg';
 
 import {
@@ -10,15 +11,27 @@ import {
   FooterTabSocialTitle,
   FooterTabList,
   FooterTabTel,
-  FooteTabAllReserved,
+  FooterTabAllReserved,
   FooterTabSubList,
   FooterTabSubLinks,
   FooterTabListWrapper,
-} from './TabletDesctopFooter.styled';
+} from './TabletDesktopFooter.styled';
 
-const TabletDesctopFoter = () => {
+const TabletDesktopFooter = () => {
+  const { data } = useFetch('contacts');
+
+  const telegramLink = data?.socialMediaList.find(
+    link => link.socialMediaName === 'Telegram'
+  )?.socialMediaLink;
+
   const IconFooterSocial = ({ name, color, size }) => (
-    <svg className={`icon-${name}`} fill={color} width={size} height={size}>
+    <svg
+      className={`icon-${name}`}
+      fill={color}
+      width={size}
+      height={size}
+      aria-label={name}
+    >
       <use xlinkHref={`${Icons}#icon-${name}`} />
     </svg>
   );
@@ -30,6 +43,7 @@ const TabletDesctopFoter = () => {
     { href: '/reporting', value: t('header.reporting') },
     { href: '/gallery/photos', value: t('header.gallery') },
   ];
+
   return (
     <FooterTabContainer>
       <>
@@ -54,42 +68,33 @@ const TabletDesctopFoter = () => {
           </FooterTabSubList>
         </FooterTabListWrapper>
         <FooterTabTel>
-          <a href="tel:+380635693058" target="_blank" rel="noreferrer">
-            +380635693058
+          <a href={telegramLink} target="_blank" rel="noreferrer">
+            {data?.phone}
           </a>
         </FooterTabTel>
       </>
       <FooterSocialTabContainer>
         <FooterTabSocialTitle>Слідкуй за нами тут:</FooterTabSocialTitle>
         <FooterSocialTabLinks>
-          <li>
-            <a
-              href="https://www.facebook.com/PavuchkyBorschahinky"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <IconFooterSocial name="facebook" size={36} />
-            </a>
-          </li>
-          <li>
-            <a href="tel:+380635693058" target="_blank" rel="noreferrer">
-              <IconFooterSocial name="telegram" size={36} />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.youtube.com/@user-mb3bs9jv1h"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <IconFooterSocial name="youtube" size={36} />
-            </a>
-          </li>
+          {data?.socialMediaList?.map(
+            ({ id, socialMediaLink, socialMediaName }) => (
+              <li key={id}>
+                <a href={socialMediaLink}>
+                  <IconFooterSocial
+                    name={socialMediaName}
+                    size={36}
+                    target="_blank"
+                    rel="noreferrer"
+                  />
+                </a>
+              </li>
+            )
+          )}
         </FooterSocialTabLinks>
       </FooterSocialTabContainer>
-      <FooteTabAllReserved>&#64;All right reserved</FooteTabAllReserved>
+      <FooterTabAllReserved>&#64;All right reserved</FooterTabAllReserved>
     </FooterTabContainer>
   );
 };
 
-export default TabletDesctopFoter;
+export default TabletDesktopFooter;

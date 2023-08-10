@@ -15,6 +15,8 @@ import {
   FooterSubList,
 } from './Footer.styled';
 
+import useFetch from '../../hooks/useFetch';
+
 const MobFooter = () => {
   const IconFooterSocial = ({ name, color, size }) => (
     <svg className={`icon-${name}`} fill={color} width={size} height={size}>
@@ -22,34 +24,27 @@ const MobFooter = () => {
     </svg>
   );
 
+ const { data } = useFetch('contacts');
+
   return (
     <FooterContainer>
       <FooterSocialMediaContainer>
         <FooterSocialTitle>Слідкуй за нами тут:</FooterSocialTitle>
         <FooterSocialMediaLinks>
-          <li>
-            <a
-              href="https://www.facebook.com/PavuchkyBorschahinky"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <IconFooterSocial name="facebook" size={36} />
-            </a>
-          </li>
-          <li>
-            <a href="tel:+380635693058" target="_blank" rel="noreferrer">
-              <IconFooterSocial name="telegram" size={36} />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.youtube.com/@user-mb3bs9jv1h"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <IconFooterSocial name="youtube" size={36} />
-            </a>
-          </li>
+          {data?.socialMediaList?.map(
+            ({ id, socialMediaLink, socialMediaName }) => (
+              <li key={id}>
+                <a href={socialMediaLink}>
+                  <IconFooterSocial
+                    name={socialMediaName}
+                    size={36}
+                    target="_blank"
+                    rel="noreferrer"
+                  />
+                </a>
+              </li>
+            )
+          )}
         </FooterSocialMediaLinks>
       </FooterSocialMediaContainer>
       <div>
@@ -74,9 +69,7 @@ const MobFooter = () => {
           </li>
         </FooterSubList>
         <FooterTel>
-          <a href="tel:+380635693058" target="_blank" rel="noreferrer">
-            +380635693058
-          </a>
+          <a href="tel:+380635693058">+380635693058</a>
         </FooterTel>
       </div>
       <FooterAllReserved>&#64;All right reserved</FooterAllReserved>

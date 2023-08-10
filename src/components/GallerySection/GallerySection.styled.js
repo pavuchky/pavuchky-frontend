@@ -61,6 +61,8 @@ export const GalleryButton = styled(HashLink)`
   font-size: 14px;
   font-weight: ${({ theme }) => theme.fontWeights.regular};
   color: ${({ theme }) => theme.colors.secondaryFont};
+  transition: color ${({ theme }) => theme.transitions.regular},
+    stroke ${({ theme }) => theme.transitions.regular};
 
   &:hover,
   &:focus {
@@ -82,6 +84,8 @@ export const GalleryButton = styled(HashLink)`
 
 export const GalleryIcon = styled.svg`
   margin-left: 13px;
+  transition: stroke ${({ theme }) => theme.transitions.regular};
+
   &:hover,
   &:focus {
     stroke: ${({ theme }) => theme.colors.blue};

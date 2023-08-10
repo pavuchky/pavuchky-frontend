@@ -33,8 +33,8 @@ export const SwiperContainer = styled(Swiper)`
 
   .swiper-scrollbar-drag:last-child {
     background-color: ${colors.blue};
-    max-width: 127px;
-    margin-left: 38px;
+    /* max-width: 127px; */
+    /* margin-left: 38px; */
     min-height: 2px;
   }
   /* .swiper-scrollbar-drag:first-child {
