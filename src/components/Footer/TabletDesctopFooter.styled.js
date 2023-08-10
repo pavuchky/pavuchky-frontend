@@ -5,7 +5,6 @@ import { HashLink } from 'react-router-hash-link';
 const { fontSizes, fontWeights, colors, fonts } = theme;
 
 export const FooterTabContainer = styled.footer`
-  margin: 0 auto;
   border-radius: 20px;
   background: ${colors.gradientMain};
   box-shadow: 4px 8px 25px 0px rgba(176, 193, 243, 0.15);
@@ -14,6 +13,7 @@ export const FooterTabContainer = styled.footer`
     max-width: 720px;
     margin-bottom: 24px;
     padding: 32px 47px;
+    margin: 0 auto;
   }
   @media (min-width: 1440px) {
     max-width: 1408px;
@@ -22,6 +22,7 @@ export const FooterTabContainer = styled.footer`
     margin-bottom: 16px;
     border-radius: 25px;
     font-size: ${fontSizes.m};
+    margin: 0 auto;
   }
 `;
 export const FooterSocialTabContainer = styled.div`
