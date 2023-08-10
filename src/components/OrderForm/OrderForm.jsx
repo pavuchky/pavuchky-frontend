@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
-import * as Yup from 'yup';
 import Select from 'react-select';
+import { orderValidationSchema } from '../../utils/validationSchema';
 import Icon from '../../assets/images/sprite.svg';
 import {
   FormBlocks,
@@ -33,20 +33,6 @@ export const OrderForm = () => {
     { value: 'Спанбонд', label: 'Спанбонд' },
   ];
 
-  const validationSchema = Yup.object().shape({
-    name: Yup.string().required('Please enter your name.'),
-    position: Yup.string().required('Please enter your position.'),
-    militaryUnit: Yup.string().required('Please enter your military unit.'),
-    phone: Yup.string()
-      .required('Please enter your phone number.')
-      .matches(/^\+?[\d\s-]+$/, 'Invalid phone number'),
-    gridSize: Yup.string().required('Please enter grid size.'),
-    typeBase: Yup.string().required('Please enter type base.'),
-    material: Yup.string().required('Please enter material.'),
-    color: Yup.string().required('Please enter color.'),
-    loops: Yup.string().required('Please enter loops.'),
-  });
-
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -60,7 +46,7 @@ export const OrderForm = () => {
       color: '',
       loops: '',
     },
-    validationSchema: validationSchema,
+    validationSchema: orderValidationSchema,
     onSubmit: values => {
       console.log(values);
     },
