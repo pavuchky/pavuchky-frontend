@@ -36,6 +36,7 @@ export const GalleryTabs = styled.div`
 display: flex;
 flex-direction: row;
 gap: 75px;
+margin-bottom: 22px;
 `
 export const GlleryTabLinks = styled(Link)`
   padding: 8px 12px 8px 12px;
