@@ -155,7 +155,7 @@ export const FooterTabTel = styled.p`
     color: ${colors.yellow};
   }
 `;
-export const FooteTabAllReserved = styled.div`
+export const FooterTabAllReserved = styled.div`
   font-size: 14px;
   font-weight: ${fontWeights.light};
   color: ${colors.secondaryFont};

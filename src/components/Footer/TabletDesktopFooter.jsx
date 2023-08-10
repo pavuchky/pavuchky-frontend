@@ -11,13 +11,19 @@ import {
   FooterTabSocialTitle,
   FooterTabList,
   FooterTabTel,
-  FooteTabAllReserved,
+  FooterTabAllReserved,
   FooterTabSubList,
   FooterTabSubLinks,
   FooterTabListWrapper,
 } from './TabletDesktopFooter.styled';
 
 const TabletDesktopFooter = () => {
+  const { data } = useFetch('contacts');
+
+  const telegramLink = data?.socialMediaList.find(
+    link => link.socialMediaName === 'Telegram'
+  )?.socialMediaLink;
+
   const IconFooterSocial = ({ name, color, size }) => (
     <svg
       className={`icon-${name}`}
@@ -30,8 +36,6 @@ const TabletDesktopFooter = () => {
     </svg>
   );
   const { t } = useTranslation();
-
-  const { data } = useFetch('contacts');
 
   const footerItems = [
     { href: '/about', value: t('header.about') },
@@ -64,7 +68,7 @@ const TabletDesktopFooter = () => {
           </FooterTabSubList>
         </FooterTabListWrapper>
         <FooterTabTel>
-          <a href={`tel:${data?.phone}`} target="_blank" rel="noreferrer">
+          <a href={telegramLink} target="_blank" rel="noreferrer">
             {data?.phone}
           </a>
         </FooterTabTel>
@@ -88,7 +92,7 @@ const TabletDesktopFooter = () => {
           )}
         </FooterSocialTabLinks>
       </FooterSocialTabContainer>
-      <FooteTabAllReserved>&#64;All right reserved</FooteTabAllReserved>
+      <FooterTabAllReserved>&#64;All right reserved</FooterTabAllReserved>
     </FooterTabContainer>
   );
 };

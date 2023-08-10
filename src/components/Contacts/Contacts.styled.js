@@ -45,17 +45,19 @@ export const ContactsListWrapper = styled.div`
 `;
 
 export const ContactsList = styled.ul`
-  color: #4c4c4c;
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin-bottom: 24px;
-  
+  max-width: 250px;
+  color: ${colors.secondaryFont};
+
   @media (min-width: 768px) {
     gap: 37px;
     margin-bottom: 16px;
   }
   @media (min-width: 1440px) {
+    max-width: 350px;
     gap: 24px;
     margin-bottom: 24px;
   }
@@ -130,7 +132,6 @@ export const ContactsFirstAddress = styled.li`
   line-height: normal;
 
   @media (min-width: 1440px) {
-    
     font-size: ${fontSizes.s};
   }
 `;
@@ -153,6 +154,7 @@ export const ContactPerson = styled.p`
     margin-top: 8px;
   }
   @media (min-width: 1440px) {
+    max-width: 230px;
     font-size: ${fontSizes.s};
     margin-bottom: 10px;
   }
@@ -165,20 +167,24 @@ export const ContactNumber = styled.a`
 
   @media (min-width: 1440px) {
     font-size: ${fontSizes.s};
-    margin-bottom: 24px;
+    margin-bottom: 0;
   }
 `;
 export const LocationContainer = styled.div`
-  border-radius: 10px;
-  width: 316px;
+  width: 100%;
+  max-width: 327px;
   height: 218px;
+  border-radius: 10px;
+  overflow: hidden;
+
   @media (min-width: 768px) {
-    width: 316px;
+    max-width: 316px;
     height: 220px;
-  margin-top: 28px;
+    margin-top: 28px;
   }
+
   @media (min-width: 1440px) {
-    width: 500px;
+    max-width: 500px;
     height: 402px;
     margin-top: 0;
   }
@@ -189,13 +195,14 @@ export const SocialMediaContainer = styled.div`
   align-items: center;
   @media (min-width: 768px) {
     position: relative;
-    bottom: 46px;
+    bottom: 25px;
     margin-top: 0;
     justify-content: flex-end;
   }
   @media (min-width: 1440px) {
+    margin-top: 44px;
     flex-direction: column;
-   bottom: 0px;
+    bottom: 0px;
     justify-content: flex-start;
     align-items: flex-start;
   }
@@ -212,7 +219,6 @@ export const SocialMediaTitle = styled.p`
     font-size: ${fontSizes.s};
     justify-content: flex-start;
     margin-bottom: 10px;
-    margin-top: 24px;
   }
 `;
 
