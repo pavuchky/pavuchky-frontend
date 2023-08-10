@@ -47,7 +47,7 @@ export const OurWork = () => {
             <WorkItem key={id}>
               <WorkImg src={postImage} alt="picture" />
               <WorkBlock>
-                <WorkText>{postDesc}</WorkText>
+                <WorkText>{postDesc['ua']}</WorkText>
                 <WorkItemBtn
                   href={postLink}
                   target="_blank"
