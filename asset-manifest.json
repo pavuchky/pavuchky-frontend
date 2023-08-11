@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/pavuchky-frontend/static/css/main.aa60a9c0.css",
-    "main.js": "/pavuchky-frontend/static/js/main.4c93a008.js",
+    "main.js": "/pavuchky-frontend/static/js/main.221070dc.js",
     "static/js/643.f53410e6.chunk.js": "/pavuchky-frontend/static/js/643.f53410e6.chunk.js",
     "static/js/13.29e5a211.chunk.js": "/pavuchky-frontend/static/js/13.29e5a211.chunk.js",
     "static/js/969.f5cd7596.chunk.js": "/pavuchky-frontend/static/js/969.f5cd7596.chunk.js",
-    "static/js/760.c104d922.chunk.js": "/pavuchky-frontend/static/js/760.c104d922.chunk.js",
+    "static/js/760.761f63c7.chunk.js": "/pavuchky-frontend/static/js/760.761f63c7.chunk.js",
     "static/js/640.0d024249.chunk.js": "/pavuchky-frontend/static/js/640.0d024249.chunk.js",
     "static/js/252.bc0b52a0.chunk.js": "/pavuchky-frontend/static/js/252.bc0b52a0.chunk.js",
     "static/js/533.6563547e.chunk.js": "/pavuchky-frontend/static/js/533.6563547e.chunk.js",
@@ -45,11 +45,11 @@
     "index.html": "/pavuchky-frontend/index.html",
     "static/media/getFetch.cjs": "/pavuchky-frontend/static/media/getFetch.40f37ddea2378391108f.cjs",
     "main.aa60a9c0.css.map": "/pavuchky-frontend/static/css/main.aa60a9c0.css.map",
-    "main.4c93a008.js.map": "/pavuchky-frontend/static/js/main.4c93a008.js.map",
+    "main.221070dc.js.map": "/pavuchky-frontend/static/js/main.221070dc.js.map",
     "643.f53410e6.chunk.js.map": "/pavuchky-frontend/static/js/643.f53410e6.chunk.js.map",
     "13.29e5a211.chunk.js.map": "/pavuchky-frontend/static/js/13.29e5a211.chunk.js.map",
     "969.f5cd7596.chunk.js.map": "/pavuchky-frontend/static/js/969.f5cd7596.chunk.js.map",
-    "760.c104d922.chunk.js.map": "/pavuchky-frontend/static/js/760.c104d922.chunk.js.map",
+    "760.761f63c7.chunk.js.map": "/pavuchky-frontend/static/js/760.761f63c7.chunk.js.map",
     "640.0d024249.chunk.js.map": "/pavuchky-frontend/static/js/640.0d024249.chunk.js.map",
     "252.bc0b52a0.chunk.js.map": "/pavuchky-frontend/static/js/252.bc0b52a0.chunk.js.map",
     "533.6563547e.chunk.js.map": "/pavuchky-frontend/static/js/533.6563547e.chunk.js.map",
@@ -61,6 +61,6 @@
   },
   "entrypoints": [
     "static/css/main.aa60a9c0.css",
-    "static/js/main.4c93a008.js"
+    "static/js/main.221070dc.js"
   ]
 }
