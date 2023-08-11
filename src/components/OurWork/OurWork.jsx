@@ -17,7 +17,7 @@ import {
 
 export const OurWork = () => {
   const { data } = useFetch('posts');
-
+  console.log(data);
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
   const isTablet = useMediaQuery({
     query: '(min-width: 768px) and (max-width: 1439px)',
@@ -47,7 +47,7 @@ export const OurWork = () => {
             <WorkItem key={id}>
               <WorkImg src={postImage} alt="picture" />
               <WorkBlock>
-                <WorkText>{postDesc}</WorkText>
+                <WorkText>{postDesc['ua']}</WorkText>
                 <WorkItemBtn
                   href={postLink}
                   target="_blank"
