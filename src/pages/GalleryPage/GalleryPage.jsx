@@ -1,11 +1,15 @@
 import { Suspense } from 'react';
 
-import { GalleryTitle, GallerySection, GalleryTabs, GlleryTabLinks } from './GalleryPage.styled';
+import {
+  GalleryTitle,
+  GallerySection,
+  GalleryTabs,
+  GlleryTabLinks,
+} from './GalleryPage.styled';
 
 import { Outlet, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { PathDisplayer } from 'components/PathDisplayer/PathDisplayer';
-
 
 const GalleryPage = () => {
   const { t } = useTranslation();
@@ -22,23 +26,24 @@ const GalleryPage = () => {
   return (
     <>
       <PathDisplayer
-      current={{
-        path: location?.pathname,
-        name: t('header.gallery'),
-        galleryType,
-      }}
-        isGallery />
+        current={{
+          path: location?.pathname,
+          name: t('header.gallery'),
+          galleryType,
+        }}
+        isGallery
+      />
       <GallerySection>
         <GalleryTitle>Галерея</GalleryTitle>
         <GalleryTabs>
           <GlleryTabLinks to="/gallery/photos">Фото</GlleryTabLinks>
           <GlleryTabLinks to="/gallery/videos">Відео</GlleryTabLinks>
         </GalleryTabs>
+        <Suspense fallback={null}>
+          <Outlet />
+        </Suspense>
       </GallerySection>
-      <Suspense fallback={null}>
-        <Outlet />
-      </Suspense></>
-      
+    </>
   );
 };
 
