@@ -4,11 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { PathDisplayer } from 'components/PathDisplayer/PathDisplayer';
 
 const GalleryPage = () => {
-  const { t } = useTranslation();
-
   const location = useLocation();
-
-  console.log(location);
+  const { t } = useTranslation();
 
   const galleryType =
     location?.pathname === '/gallery/photos'
