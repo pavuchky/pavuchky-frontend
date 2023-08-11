@@ -1,39 +1,30 @@
 import React, { useState } from 'react';
-import galleryImg1 from '../../assets/images/gallery/gallery_img1.jpg';
-import galleryImg2 from '../../assets/images/gallery/gallery_img2.jpg';
-import galleryImg3 from '../../assets/images/gallery/gallery_img3.jpg';
-import galleryImg4 from '../../assets/images/gallery/gallery_img4.jpg';
-import galleryImg5 from '../../assets/images/gallery/gallery_img5.jpg';
-import galleryImg6 from '../../assets/images/gallery/gallery_img6.jpg';
+
 
 import { GalleryTabGridContainer, GalleryTabButton, GalleryTabImg} from './GalleryPhotoTablet.styled';
-
+import  useFetch  from "../../hooks/useFetch";
 const GalleryTabPhotos = () => {
-  const imgArrayTablet = [
-    galleryImg1,
-    galleryImg2,
-    galleryImg3,
-    galleryImg4,
-    galleryImg5,
-    galleryImg6,
-  ];
+ 
+  const { data } = useFetch("galleryPhoto");
 
-  const [visibleImages, setVisibleImages] = useState(4); 
+  const [visibleImages, setVisibleImages] = useState(2);
 
   const loadMoreImages = () => {
-    setVisibleImages(prevVisibleImages => prevVisibleImages + 4);
+    setVisibleImages(prevVisibleImages => prevVisibleImages + 2);
   };
   return (
     <>
       <div>
         <GalleryTabGridContainer>
-          {imgArrayTablet.slice(0, visibleImages).map((image, index) => (
-            <GalleryTabImg key={index} src={image} alt="Varior" />
-          ))}
+          {data?.galleryPhotoList?.slice(0, visibleImages).map((photoLink, index) => {
+            
+           return  <GalleryTabImg key={index} src={photoLink.photoLink} alt="Varior" />
+          })}
+          
         </GalleryTabGridContainer>
       </div>
       <div>
-        {visibleImages < imgArrayTablet.length && (
+        {visibleImages < data?.galleryPhotoList.length && (
           <GalleryTabButton onClick={loadMoreImages}>Переглянути більше</GalleryTabButton>
         )}
       </div>
@@ -42,3 +33,56 @@ const GalleryTabPhotos = () => {
 };
 
 export default GalleryTabPhotos;
+
+
+// import React, { useState } from 'react';
+
+
+// import { GalleryTabGridContainer, GalleryTabButton, GalleryTabImg } from './GalleryPhotoTablet.styled';
+
+// import  useFetch  from "../../hooks/useFetch";
+
+// const GalleryTabPhotos = () => {
+//   const imagesPerPage = 2; 
+ 
+//   const { data} = useFetch('galleryPhoto');
+//   console.log(data);
+
+//   const [currentPage, setCurrentPage] = useState(1);
+
+//   // Розрахунок діапазону індексів для поточної сторінки
+//   const startIndex = (currentPage - 1) * imagesPerPage;
+//   const endIndex = startIndex + imagesPerPage;
+
+//   // Витягуємо підмасив зображень для поточної сторінки
+//   const imagesToDisplay = data?.galleryPhotoList?.slice(startIndex, endIndex);
+
+//   return (
+//     <>
+//       <div>
+//         <GalleryTabGridContainer>
+//           {data?.galleryPhotoList?.map(( id, photoLink) => (
+//             <GalleryTabImg key={photoLink} src={photoLink} alt="Varior" />
+//           ))}
+//         </GalleryTabGridContainer>
+//       </div>
+//       <div>
+//         {/* Кнопки пагінації */}
+//         <GalleryTabButton
+//           disabled={currentPage === 1}
+//           onClick={() => setCurrentPage(currentPage - 1)}
+//         >
+//           Попередня сторінка
+//         </GalleryTabButton>
+//         <GalleryTabButton
+//           disabled={endIndex >= data?.galleryPhotoList?.length}
+//           onClick={() => setCurrentPage(currentPage + 1)}
+//         >
+//           Наступна сторінка
+//         </GalleryTabButton>
+//       </div>
+//     </>
+//   );
+// };
+
+// export default GalleryTabPhotos;

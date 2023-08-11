@@ -8,7 +8,7 @@ const { fontSizes, fontWeights, colors, fonts } = theme;
 export const GalleryTabGridContainer = styled.div`
 display: grid;
 grid-template-columns: 50% 50%;
-gap:20px;
+gap:13px;
 margin-top: 45px;
 margin-bottom: 32px;
 `
@@ -17,6 +17,7 @@ width: 316px;
 height: 398px;
 margin:0;
 padding: 0;
+border-radius: 10px;
 
 `
 

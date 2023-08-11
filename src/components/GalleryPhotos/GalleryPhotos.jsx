@@ -1,61 +1,24 @@
 import React, { useState } from 'react';
+import  useFetch  from "../../hooks/useFetch";
 
-import galleryImg1 from '../../assets/images/gallery/gallery_img1.jpg';
-import galleryImg2 from '../../assets/images/gallery/gallery_img2.jpg';
-import galleryImg3 from '../../assets/images/gallery/gallery_img3.jpg';
-import galleryImg4 from '../../assets/images/gallery/gallery_img4.jpg';
-import galleryImg5 from '../../assets/images/gallery/gallery_img5.jpg';
-import galleryImg6 from '../../assets/images/gallery/gallery_img6.jpg';
 
 import 'swiper/css/bundle';
 import { Scrollbar } from 'swiper';
 import {
   GallerySwiperSlideContainer,
   GallerySwiperContainer,
+  SwiperImg
 } from './GalleryPhotos.styled';
 
-import { Gallery} from 'react-photoswipe-gallery';
+import ImageModal from './ImageModal';
 import GalleryTabPhotos from './GalleryPhotoTablet';
 
+
+
+
 const GalleryPhotos = () => {
-  const imgArrayMobile = [
-    {
-      original: galleryImg1,
-      thumbnail: galleryImg1,
-      width: 254,
-      height: 300,
-    },
-    {
-      original: galleryImg2,
-      thumbnail: galleryImg2,
-      width: 254,
-      height: 300,
-    },
-    {
-      original: galleryImg3,
-      thumbnail: galleryImg3,
-      width: 254,
-      height: 300,
-    },
-    {
-      original: galleryImg4,
-      thumbnail: galleryImg4,
-      width: 254,
-      height: 300,
-    },
-    {
-      original: galleryImg5,
-      thumbnail: galleryImg5,
-      width: 254,
-      height: 300,
-    },
-    {
-      original: galleryImg6,
-      thumbnail: galleryImg6,
-      width: 254,
-      height: 300,
-    },
-  ];
+
+   const { data } = useFetch("galleryPhoto");
    const [lightboxOpen, setLightboxOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
@@ -71,28 +34,27 @@ const GalleryPhotos = () => {
   return (
     <div>
       <GallerySwiperContainer
-        spaceBetween={16} slidesPerView={1.3}
+        spaceBetween={16}
+        slidesPerView={1.3}
         scrollbar={{ draggable: false }}
          modules={[Scrollbar]}
       >
-        {imgArrayMobile.map((img, index) => (
-          <GallerySwiperSlideContainer key={index} onClick={() => openLightbox(index)}>
-            <img src={img.thumbnail} alt={`Gallery ${index + 1}`} />
-          </GallerySwiperSlideContainer>
-        ))}
+       
+          {data?.galleryPhotoList?.map((photoLink, index) => {
+         return   <GallerySwiperSlideContainer key={index} onClick={() => openLightbox(index)}>
+            <SwiperImg src={photoLink.photoLink} alt="Varior" />
+              </GallerySwiperSlideContainer>
+           
+          })}
       </GallerySwiperContainer>
 
-      <Gallery
+       <ImageModal
         isOpen={lightboxOpen}
+        images={data?.galleryPhotoList?.photoLink}
+        selectedImageIndex={selectedImageIndex}
         onClose={closeLightbox}
-        items={imgArrayMobile.map((img) => ({
-          src: img.original,
-          w: img.width,
-          h: img.height,
-        }))}
-        index={selectedImageIndex}
       />
-      <GalleryTabPhotos/>
+      {/* <GalleryTabPhotos/> */}
     </div>
   );
 };
