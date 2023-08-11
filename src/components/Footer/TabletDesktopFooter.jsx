@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import useFetch from 'hooks/useFetch';
 import Icons from '../../assets/images/sprite.svg';
 
 import {
@@ -10,23 +11,31 @@ import {
   FooterTabSocialTitle,
   FooterTabList,
   FooterTabTel,
-  FooteTabAllReserved,
+  FooterTabAllReserved,
   FooterTabSubList,
   FooterTabSubLinks,
   FooterTabListWrapper,
-} from './TabletDesctopFooter.styled';
+} from './TabletDesktopFooter.styled';
 
-import useFetch from '../../hooks/useFetch';
+const TabletDesktopFooter = () => {
+  const { data } = useFetch('contacts');
 
-const TabletDesctopFoter = () => {
+  const telegramLink = data?.socialMediaList.find(
+    link => link.socialMediaName === 'Telegram'
+  )?.socialMediaLink;
+
   const IconFooterSocial = ({ name, color, size }) => (
-    <svg className={`icon-${name}`} fill={color} width={size} height={size}>
+    <svg
+      className={`icon-${name}`}
+      fill={color}
+      width={size}
+      height={size}
+      aria-label={name}
+    >
       <use xlinkHref={`${Icons}#icon-${name}`} />
     </svg>
   );
   const { t } = useTranslation();
-
-  const { data } = useFetch('contacts');
 
   const footerItems = [
     { href: '/about', value: t('header.about') },
@@ -34,6 +43,7 @@ const TabletDesctopFoter = () => {
     { href: '/reporting', value: t('header.reporting') },
     { href: '/gallery/photos', value: t('header.gallery') },
   ];
+
   return (
     <FooterTabContainer>
       <>
@@ -58,7 +68,7 @@ const TabletDesctopFoter = () => {
           </FooterTabSubList>
         </FooterTabListWrapper>
         <FooterTabTel>
-          <a href={`tel:${data?.phone}`} target="_blank" rel="noreferrer">
+          <a href={telegramLink} target="_blank" rel="noreferrer">
             {data?.phone}
           </a>
         </FooterTabTel>
@@ -66,7 +76,7 @@ const TabletDesctopFoter = () => {
       <FooterSocialTabContainer>
         <FooterTabSocialTitle>Слідкуй за нами тут:</FooterTabSocialTitle>
         <FooterSocialTabLinks>
-           {data?.socialMediaList?.map(
+          {data?.socialMediaList?.map(
             ({ id, socialMediaLink, socialMediaName }) => (
               <li key={id}>
                 <a href={socialMediaLink}>
@@ -82,9 +92,9 @@ const TabletDesctopFoter = () => {
           )}
         </FooterSocialTabLinks>
       </FooterSocialTabContainer>
-      <FooteTabAllReserved>&#64;All right reserved</FooteTabAllReserved>
+      <FooterTabAllReserved>&#64;All right reserved</FooterTabAllReserved>
     </FooterTabContainer>
   );
 };
 
-export default TabletDesctopFoter;
+export default TabletDesktopFooter;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MenuBtn, MenuList } from './MobileMenu.styled';
 import { useTranslation } from 'react-i18next';
@@ -6,6 +6,7 @@ import { HashLink } from 'react-router-hash-link';
 
 export const MobileMenu = () => {
   const [showMenu, setShowMenu] = useState(false);
+
   const { t } = useTranslation();
 
   const items = [

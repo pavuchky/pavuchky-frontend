@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import i18n from 'i18n';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import Icon from '../../assets/images/sprite.svg';
 import {
   DonateBtn,
@@ -10,6 +9,7 @@ import {
   LangList,
   LangSelect,
   Logo,
+  LogoLink,
   NavBar,
 } from './Navbar.styled';
 import { MobileMenu } from 'components/MobileMenu/MobileMenu';
@@ -39,11 +39,11 @@ export const Navbar = () => {
   return (
     <Header>
       <NavBar>
-        <Link to="/">
+        <LogoLink to="/">
           <Logo>
             <use href={Icon + '#logo'}></use>
           </Logo>
-        </Link>
+        </LogoLink>
         {isDesktop && <DesktopNav />}
 
         <LangContainer>

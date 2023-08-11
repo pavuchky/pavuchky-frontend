@@ -8,15 +8,19 @@ import {
   reviewsFormattedFn,
   statisticFormattedFn,
   partnersFormattedFn,
+  aboutFormattedFn,
+  galleryPhotoFormattedFn,
 } from '../utils/fetchFormatFunctions';
 
 // available props
 const objectOfPropsAndRoutes = {
+  about: 'about',
   posts: 'posts',
   contacts: 'contacts',
   reviews: 'reviews',
   statistic: 'statistic',
   partners: 'partners',
+  galleryPhoto: 'galleryPhoto',
 };
 
 // usage
@@ -29,6 +33,8 @@ const useFetch = (type = 'posts') => {
   const fnsForFormat = {
     contacts: contactsFormattedFn,
     posts: postsFormattedFn,
+    about: aboutFormattedFn,
+    galleryPhoto: galleryPhotoFormattedFn,
     reviews: reviewsFormattedFn,
     statistic: statisticFormattedFn,
     partners: partnersFormattedFn,
@@ -47,7 +53,7 @@ const useFetch = (type = 'posts') => {
       try {
         if (
           !Object.keys(objectOfPropsAndRoutes).some(el => el === type) ||
-          !(typeof type === "string")
+          !(typeof type === 'string')
         ) {
           throw new TypeError(errorMessage);
         }
