@@ -20,6 +20,7 @@ import {
 } from './Donation.styled';
 import { useState } from 'react';
 import { DonationModal } from 'components/DonationModal/DonationModal';
+import { toast } from 'react-toastify';
 
 const cardNumber = '5375 4112 0306 8395';
 
@@ -35,7 +36,10 @@ export const Donation = () => {
   const handleCopyClick = async () => {
     try {
       await navigator.clipboard.writeText(cardNumber);
-    } catch (error) {}
+      toast.success('Card number copied successfully.');
+    } catch (error) {
+      toast.error('Unable to copy the card number. Please try again later.');
+    }
   };
 
   const handleModalBtnClick = () => {
