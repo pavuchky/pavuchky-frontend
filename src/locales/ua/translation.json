@@ -23,6 +23,10 @@
     "photos": "Фото",
     "videos": "Відео"
   },
+  "buttons": {
+    "toHome": "На головну",
+    "learnMore": "Дізнатись більше"
+  },
   "hero": {
     "protection": "Забезпечуємо захист від ворожого ока!",
     "title": "ПАВУЧКИ",
@@ -31,7 +35,7 @@
   },
   "aboutUs": {
     "whoWeAre": "Хто ми",
-    "whatWeDo": "Що ми робимо "
+    "whatWeDo": "Що ми робимо"
   },
   "statistics": {
     "advantages": "Переваги",
