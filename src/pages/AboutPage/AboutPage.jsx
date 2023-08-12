@@ -1,5 +1,7 @@
+import { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
+import { LanguageContext } from 'utils/LanguageContext';
 import useFetch from 'hooks/useFetch';
 import sprite from 'assets/images/sprite.svg';
 import mapImg from 'assets/images/map.svg';
@@ -15,6 +17,7 @@ import {
 } from './AboutPage.styled';
 
 const AboutPage = () => {
+  const { lang } = useContext(LanguageContext);
   const { data } = useFetch('about');
   const { t } = useTranslation();
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
@@ -32,7 +35,7 @@ const AboutPage = () => {
           </AboutUsTop>
         )}
 
-        <AboutUsPageText>{data?.aboutFull}</AboutUsPageText>
+        <AboutUsPageText>{data?.aboutFull[lang]}</AboutUsPageText>
         <AboutLogoIcon>
           <use href={sprite + '#logo'}></use>
         </AboutLogoIcon>

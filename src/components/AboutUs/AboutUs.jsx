@@ -1,3 +1,6 @@
+import { useContext } from 'react';
+import { LanguageContext } from 'utils/LanguageContext';
+import useFetch from 'hooks/useFetch';
 import Map from '../../assets/images/map.svg';
 import { ViewAll } from 'components/ViewAll/ViewAll';
 import {
@@ -9,12 +12,14 @@ import {
   DescriptionContainer,
   DescriptionWrapper,
   TitleWrapper,
-  AboutUsDescriptionShort,
-  AboutUsDescriptionDesktop,
+  // AboutUsDescriptionShort,
+  // AboutUsDescriptionDesktop,
   LearnMoreStyledLink,
 } from './AboutUs.styled';
 
 const AboutUs = () => {
+  const { lang } = useContext(LanguageContext);
+  const { data } = useFetch('about');
   return (
     <AboutUsSectionWrapper>
       <TitleWrapper>
@@ -29,7 +34,7 @@ const AboutUs = () => {
       <AboutUsMainContentWrapper>
         <DescriptionContainer>
           <DescriptionWrapper>
-            <AboutUsDescription>
+            {/* <AboutUsDescription>
               Повномасштабне вторгнення росії змусило кожного українця
               замислитися про те, що він чи вона може зробити для допомоги своїй
               країні, армії, співгромадянам.
@@ -43,7 +48,8 @@ const AboutUs = () => {
               Кожен з нас долучався до різних волонтерських акцій і рухів, шукав
               шляхи бути корисним країні й народу та віддячити нашим героїчним
               захисникам і захисницям.
-            </AboutUsDescriptionDesktop>
+            </AboutUsDescriptionDesktop> */}
+            <AboutUsDescription>{data?.aboutShort[lang]}</AboutUsDescription>
           </DescriptionWrapper>
           <AboutUsMap src={Map} alt="Ukraine map" />
         </DescriptionContainer>
