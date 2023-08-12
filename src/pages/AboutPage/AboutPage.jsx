@@ -9,12 +9,12 @@ import { PathDisplayer } from 'components/PathDisplayer/PathDisplayer';
 import {
   AboutLogoIcon,
   AboutMapImg,
-  AboutUsHomeLink,
   AboutUsPageText,
   AboutUsPageTitle,
   AboutUsSection,
   AboutUsTop,
 } from './AboutPage.styled';
+import { CustomLink } from 'components/CustomLink/CustomLink';
 
 const AboutPage = () => {
   const { lang } = useContext(LanguageContext);
@@ -39,7 +39,12 @@ const AboutPage = () => {
         <AboutLogoIcon>
           <use href={sprite + '#logo'}></use>
         </AboutLogoIcon>
-        <AboutUsHomeLink to="/">На головну</AboutUsHomeLink>
+        <CustomLink
+          type="link"
+          text={t('buttons.toHome')}
+          path="/"
+          variant="blue"
+        />
       </AboutUsSection>
     </>
   );

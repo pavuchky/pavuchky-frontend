@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
 
 import warriorBgImgMob from '../../assets/images/contribution/warrior_mob.png';
 import warriorBgImgMobRetina from '../../assets/images/contribution/warrior_mob@2x.png';
@@ -181,59 +179,5 @@ export const LinksListItem = styled.li`
   @media only screen and (min-width: 1440px) {
     min-width: 520px;
     border-radius: ${({ theme }) => theme.radii.l};
-  }
-`;
-
-export const DonateStyledLink = styled(HashLink)`
-  padding: 10.5px;
-
-  font-family: ${({ theme }) => theme.fonts.regular};
-  font-size: ${({ theme }) => theme.fontSizes.xs};
-  font-weight: ${({ theme }) => theme.fontWeights.regular};
-  text-align: center;
-  color: ${({ theme }) => theme.colors.white};
-
-  background-color: ${({ theme }) => theme.colors.blue};
-  transition: color ${({ theme }) => theme.transitions.regular};
-
-  &:hover,
-  &:focus {
-    color: ${({ theme }) => theme.colors.yellow};
-  }
-
-  @media only screen and (min-width: 768px) {
-    padding: 9.5px;
-    font-size: ${({ theme }) => theme.fontSizes.m};
-  }
-
-  @media only screen and (min-width: 1440px) {
-    padding: 17.5px;
-  }
-`;
-
-export const OrderStyledLink = styled(Link)`
-  padding: 10.5px;
-
-  font-family: ${({ theme }) => theme.fonts.regular};
-  font-size: ${({ theme }) => theme.fontSizes.xs};
-  font-weight: ${({ theme }) => theme.fontWeights.regular};
-  text-align: center;
-  color: ${({ theme }) => theme.colors.primaryFont};
-
-  background-color: ${({ theme }) => theme.colors.yellow};
-  transition: color ${({ theme }) => theme.transitions.regular};
-
-  &:hover,
-  &:focus {
-    color: ${({ theme }) => theme.colors.blue};
-  }
-
-  @media only screen and (min-width: 768px) {
-    padding: 9.5px;
-    font-size: ${({ theme }) => theme.fontSizes.m};
-  }
-
-  @media only screen and (min-width: 1440px) {
-    padding: 17.5px;
   }
 `;

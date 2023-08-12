@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 export const AboutUsSectionWrapper = styled.section`
   position: relative;
@@ -162,41 +161,5 @@ export const AboutUsMap = styled.img`
     width: 605px;
     height: 404px;
     margin-top: 28px;
-  }
-`;
-
-export const LearnMoreStyledLink = styled(Link)`
-  min-width: 100%;
-  border-radius: 12px;
-  overflow: hidden;
-  padding: 10.5px;
-
-  font-family: ${({ theme }) => theme.fonts.regular};
-  font-size: ${({ theme }) => theme.fontSizes.xs};
-  font-weight: ${({ theme }) => theme.fontWeights.regular};
-  text-align: center;
-  color: ${({ theme }) => theme.colors.white};
-
-  background-color: ${({ theme }) => theme.colors.blue};
-  transition: color ${({ theme }) => theme.transitions.regular};
-
-  &:hover,
-  &:focus {
-    color: ${({ theme }) => theme.colors.yellow};
-  }
-
-  @media only screen and (min-width: 768px) {
-    border-radius: 16px;
-    padding: 9.5px;
-    font-size: ${({ theme }) => theme.fontSizes.m};
-  }
-
-  @media only screen and (min-width: 1440px) {
-    min-width: 520px;
-    border-radius: ${({ theme }) => theme.radii.l};
-    padding: 17.5px;
-    position: absolute !important;
-    top: 78% !important;
-    right: 9% !important;
   }
 `;
