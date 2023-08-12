@@ -1,10 +1,7 @@
-import sprite from '../../assets/images/sprite.svg';
 import {
   GallerySectionWrapper,
   TitleWrapper,
   GalleryTitle,
-  GalleryButton,
-  GalleryIcon,
   GalleryMainWrapper,
   GalleryItem1,
   GalleryItem2,
@@ -23,6 +20,7 @@ import galleryImg3 from '../../assets/images/gallery/gallery_img3.jpg';
 import galleryImg4 from '../../assets/images/gallery/gallery_img4.jpg';
 import galleryImg5 from '../../assets/images/gallery/gallery_img5.jpg';
 import galleryImg6 from '../../assets/images/gallery/gallery_img6.jpg';
+import { ViewAll } from 'components/ViewAll/ViewAll';
 
 const imgArrayDesktop = [
   galleryImg1,
@@ -56,12 +54,12 @@ const GallerySection = () => {
     <GallerySectionWrapper>
       <TitleWrapper>
         <GalleryTitle>Галерея</GalleryTitle>
-        <GalleryButton to="/gallery">
-          {isDesktop ? 'Переглянути усе' : 'Переглянути'}
-          <GalleryIcon width="11px" height="13px">
-            <use xlinkHref={`${sprite}#arrow`} />
-          </GalleryIcon>
-        </GalleryButton>
+        <ViewAll
+          shortText="Переглянути"
+          longText="Переглянути усе"
+          changeable
+          path="/gallery/photos"
+        />
       </TitleWrapper>
       <GalleryMainWrapper>
         <GalleryContainer>

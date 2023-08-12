@@ -1,9 +1,6 @@
 import Map from '../../assets/images/map.svg';
-import sprite from '../../assets/images/sprite.svg';
-import { useMediaQuery } from 'react-responsive';
-
+import { ViewAll } from 'components/ViewAll/ViewAll';
 import {
-  AboutUSButton,
   AboutUsDescription,
   AboutUsMainContentWrapper,
   AboutUsMap,
@@ -12,27 +9,22 @@ import {
   DescriptionContainer,
   DescriptionWrapper,
   TitleWrapper,
-  AboutUsIcon,
   AboutUsDescriptionShort,
   AboutUsDescriptionDesktop,
   LearnMoreStyledLink,
 } from './AboutUs.styled';
 
 const AboutUs = () => {
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1439px)',
-  });
-
   return (
     <AboutUsSectionWrapper>
       <TitleWrapper>
         <AboutUsTitle>Хто ми</AboutUsTitle>
-        <AboutUSButton to="/about">
-          {isDesktop ? 'Переглянути усе' : 'Про нас'}
-          <AboutUsIcon width="11px" height="13px">
-            <use xlinkHref={`${sprite}#arrow`} />
-          </AboutUsIcon>
-        </AboutUSButton>
+        <ViewAll
+          shortText="Про нас"
+          longText="Переглянути усе"
+          changeable
+          path="/about"
+        />
       </TitleWrapper>
       <AboutUsMainContentWrapper>
         <DescriptionContainer>
@@ -55,7 +47,6 @@ const AboutUs = () => {
           </DescriptionWrapper>
           <AboutUsMap src={Map} alt="Ukraine map" />
         </DescriptionContainer>
-        {/* <ButtonLearnMore variant="contained">Дізнатись більше</ButtonLearnMore> */}
         <LearnMoreStyledLink to="/about">Дізнатись більше</LearnMoreStyledLink>
       </AboutUsMainContentWrapper>
     </AboutUsSectionWrapper>
