@@ -46,3 +46,29 @@ export const GalleryTabButton = styled.button`
     color: ${colors.yellow};
   }
 `;
+
+
+/**==============StylesForDesktop======================== */
+
+
+export const GalleryDesctopGridContainer = styled.div`
+  display: grid;
+  grid-template-columns: 409px 409px 409px;
+  gap: 26px;
+  margin-top: 44px;
+  margin-bottom: 44px;
+`;
+export const GalleryDestopImg = styled.img`
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 10px;
+`;
+
+export const GalleryPaginationContainer = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+
+`

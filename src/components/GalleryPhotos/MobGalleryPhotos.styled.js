@@ -2,6 +2,9 @@ import styled from 'styled-components';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { theme } from 'stylesheet/theme';
+import { createGlobalStyle } from 'styled-components';
+
+
 const { colors } = theme;
 
 export const GallerySwiperWrapper = styled.div`
@@ -36,20 +39,6 @@ export const GallerySwiperContainer = styled(Swiper)`
   }
 `;
 
-export const LightBoxImg = styled.img`
-  width: 273px;
-  height: 344px;
-  border-radius: 16px;
-  opacity: 1;
-  @media (min-width: 768px) {
-    width: 550px;
-    height: 690px;
-    border-radius: 10px;
-    opacity: 1;
-  }
-`;
-
-
 export const SwiperImg = styled.img`
   width: 254px;
   height: 300px;
@@ -60,7 +49,7 @@ export const SwiperImg = styled.img`
 
 export const ImageModalOverlay = styled.div`
   position: fixed;
-  top: 116px;
+  top: -65px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -88,4 +77,24 @@ export const ImageModalCloseBtn = styled.button`
   border: none;
   background-color: transparent;
   cursor: pointer;
+`;
+export const LightBoxImg = styled.img`
+  width: 273px;
+  height: 344px;
+  border-radius: 16px;
+
+  @media (min-width: 768px) {
+    width: 550px;
+    height: 690px;
+  }
+  @media (min-width: 1440px) {
+    width: 1024px;
+    height: 673px;
+  }
+`;
+
+export const GlobalStyles = createGlobalStyle`
+  body.modal-open {
+    overflow: hidden;
+  }
 `;
