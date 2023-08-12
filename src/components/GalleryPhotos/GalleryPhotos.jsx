@@ -32,7 +32,7 @@ const GalleryPhotos = () => {
   };
 
   return (
-    <div>
+    <div id='gallery/photos'>
       <GallerySwiperContainer
         spaceBetween={16}
         slidesPerView={1.3}
@@ -54,7 +54,7 @@ const GalleryPhotos = () => {
         selectedImageIndex={selectedImageIndex}
         onClose={closeLightbox}
       />
-      {/* <GalleryTabPhotos/> */}
+     <GalleryTabPhotos/> 
     </div>
   );
 };

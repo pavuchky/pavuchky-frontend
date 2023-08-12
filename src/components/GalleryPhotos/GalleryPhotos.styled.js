@@ -40,6 +40,13 @@ export const LightBoxImg = styled.img`
   width: 273px;
   height: 344px;
   border-radius: 16px;
+  opacity: 1;
+  @media (min-width: 768px) {
+    width: 550px;
+    height: 690px;
+    border-radius: 10px;
+    opacity: 1;
+  }
 `;
 
 
@@ -63,4 +70,22 @@ export const ImageModalOverlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+export const ImageModalContent = styled.div`
+  padding: 20px;
+  border-radius: 4px;
+  max-width: 80%;
+  max-height: 80%;
+  overflow: auto;
+  position: fixed;
+`;
+
+export const ImageModalCloseBtn = styled.button`
+  position: absolute;
+  top: 0;
+  right: 1px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 `;

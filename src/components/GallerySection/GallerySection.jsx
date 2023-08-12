@@ -56,7 +56,7 @@ const GallerySection = () => {
     <GallerySectionWrapper>
       <TitleWrapper>
         <GalleryTitle>Галерея</GalleryTitle>
-        <GalleryButton to="/gallery">
+        <GalleryButton to="/gallery/photos">
           {isDesktop ? 'Переглянути усе' : 'Переглянути'}
           <GalleryIcon width="11px" height="13px">
             <use xlinkHref={`${sprite}#arrow`} />
