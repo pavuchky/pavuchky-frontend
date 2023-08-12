@@ -1,5 +1,7 @@
+import { useTranslation } from 'react-i18next';
 import Map from '../../assets/images/map.svg';
 import { ViewAll } from 'components/ViewAll/ViewAll';
+import { CustomLink } from 'components/CustomLink/CustomLink';
 import {
   AboutUsDescription,
   AboutUsMainContentWrapper,
@@ -11,10 +13,11 @@ import {
   TitleWrapper,
   AboutUsDescriptionShort,
   AboutUsDescriptionDesktop,
-  LearnMoreStyledLink,
 } from './AboutUs.styled';
 
 const AboutUs = () => {
+  const { t } = useTranslation();
+
   return (
     <AboutUsSectionWrapper>
       <TitleWrapper>
@@ -47,7 +50,12 @@ const AboutUs = () => {
           </DescriptionWrapper>
           <AboutUsMap src={Map} alt="Ukraine map" />
         </DescriptionContainer>
-        <LearnMoreStyledLink to="/about">Дізнатись більше</LearnMoreStyledLink>
+        <CustomLink
+          type="link"
+          text={t('buttons.learnMore')}
+          path="/about"
+          variant="about"
+        />
       </AboutUsMainContentWrapper>
     </AboutUsSectionWrapper>
   );
