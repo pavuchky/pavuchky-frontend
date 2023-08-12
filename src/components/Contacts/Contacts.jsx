@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { LanguageContext } from 'utils/LanguageContext';
 import useFetch from '../../hooks/useFetch';
 import MapComponent from './MapContacts/MapContacts';
 import Icons from '../../assets/images/sprite.svg';
@@ -27,6 +28,7 @@ const IconSocial = ({ name, color, size }) => (
 );
 
 const Contacts = () => {
+  const { lang } = useContext(LanguageContext);
   const { data } = useFetch('contacts');
   const isLargeScreen = useMediaQuery({ minWidth: 1440 });
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -43,7 +45,9 @@ const Contacts = () => {
           <ContactsSubTitle>Локація плетіння</ContactsSubTitle>
           <ContactsList>
             {data?.streetList?.map(({ id, street }) => (
-              <ContactsFirstAddress key={id}>{street}</ContactsFirstAddress>
+              <ContactsFirstAddress key={id}>
+                {street[lang]}
+              </ContactsFirstAddress>
             ))}
           </ContactsList>
           <ContactsAdminTitle>Контактні дані</ContactsAdminTitle>

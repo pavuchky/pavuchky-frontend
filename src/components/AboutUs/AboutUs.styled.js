@@ -80,12 +80,23 @@ export const DescriptionContainer = styled.div`
 export const DescriptionWrapper = styled.div`
   height: 210px;
 
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  /* display: flex;
+  flex-direction: column; */
+  /* gap: 12px; */
   overflow: hidden;
 
+  display: -webkit-box;
+  -webkit-line-clamp: 11;
+  -webkit-box-orient: vertical;
+  white-space: break-spaces;
+
+  @media screen and (min-width: 768px) {
+    height: 215px;
+    -webkit-line-clamp: 10;
+  }
+
   @media screen and (min-width: 1440px) {
+    display: block;
     height: 322px;
     gap: 16px;
   }
