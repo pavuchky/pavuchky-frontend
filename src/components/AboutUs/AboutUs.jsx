@@ -19,9 +19,7 @@ import {
 } from './AboutUs.styled';
 
 const AboutUs = () => {
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1439px)',
-  });
+  const isDesktop = useMediaQuery({ query: '(min-width: 1439px)' });
 
   return (
     <AboutUsSectionWrapper>
