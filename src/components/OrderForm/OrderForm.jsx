@@ -89,7 +89,7 @@ export const OrderForm = () => {
           <FormTitle>Вкажіть ваші дані</FormTitle>
           <FormList onSubmit={formik.handleSubmit}>
             <FormBlocks>
-              <div>
+              <label>
                 <FormText>ПІБ</FormText>
                 <FormInput
                   type="text"
@@ -103,8 +103,8 @@ export const OrderForm = () => {
                 {formik.touched.name && formik.errors.name ? (
                   <FormValidation>{formik.errors.name}</FormValidation>
                 ) : null}
-              </div>
-              <div>
+              </label>
+              <label>
                 <FormText>Ваша посада</FormText>
                 <FormInput
                   type="text"
@@ -117,8 +117,8 @@ export const OrderForm = () => {
                 {formik.touched.position && formik.errors.position ? (
                   <FormValidation>{formik.errors.position}</FormValidation>
                 ) : null}
-              </div>
-              <div>
+              </label>
+              <label>
                 <FormText>Номер військової частини/бригади</FormText>
                 <FormInput
                   type="text"
@@ -131,8 +131,8 @@ export const OrderForm = () => {
                 {formik.touched.militaryUnit && formik.errors.militaryUnit ? (
                   <FormValidation>{formik.errors.militaryUnit}</FormValidation>
                 ) : null}
-              </div>
-              <div>
+              </label>
+              <label>
                 <FormText>Ваш номер телефону</FormText>
                 <FormInput
                   type="text"
@@ -146,8 +146,8 @@ export const OrderForm = () => {
                 {formik.touched.phone && formik.errors.phone ? (
                   <FormValidation>{formik.errors.phone}</FormValidation>
                 ) : null}
-              </div>
-              <div>
+              </label>
+              <label>
                 <FormText>Додаткові коментарі</FormText>
                 <FormInput
                   type="text"
@@ -158,11 +158,11 @@ export const OrderForm = () => {
                   onChange={formik.handleChange}
                   hasValue={comment.length > 0}
                 />
-              </div>
+              </label>
             </FormBlocks>
 
             <FormBlocks>
-              <div>
+              <label>
                 <FormText>Розмір сітки</FormText>
                 <FormInput
                   type="text"
@@ -175,7 +175,7 @@ export const OrderForm = () => {
                 {formik.touched.gridSize && formik.errors.gridSize ? (
                   <FormValidation>{formik.errors.gridSize}</FormValidation>
                 ) : null}
-              </div>
+              </label>
 
               <div>
                 <FormText>Вид основи</FormText>
@@ -212,7 +212,7 @@ export const OrderForm = () => {
                 ) : null}
               </div>
 
-              <div>
+              <label>
                 <FormText>Колір сітки</FormText>
                 <FormInput
                   type="text"
@@ -225,7 +225,7 @@ export const OrderForm = () => {
                 {formik.touched.color && formik.errors.color ? (
                   <FormValidation>{formik.errors.color}</FormValidation>
                 ) : null}
-              </div>
+              </label>
 
               <div>
                 <FormText>Петлі для кріплення</FormText>

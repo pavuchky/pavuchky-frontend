@@ -58,7 +58,7 @@ export const PartnersForm = () => {
           <div>
             <FormTitle>Вкажіть ваші дані</FormTitle>
             <FormList onSubmit={formik.handleSubmit}>
-              <div>
+              <label>
                 <FormText>ПІБ</FormText>
                 <FormInput
                   type="text"
@@ -72,8 +72,8 @@ export const PartnersForm = () => {
                 {formik.touched.name && formik.errors.name ? (
                   <FormValidation>{formik.errors.name}</FormValidation>
                 ) : null}
-              </div>
-              <div>
+              </label>
+              <label>
                 <FormText>Чим ви займаєтесь</FormText>
                 <FormInput
                   type="text"
@@ -86,8 +86,8 @@ export const PartnersForm = () => {
                 {formik.touched.company && formik.errors.company ? (
                   <FormValidation>{formik.errors.company}</FormValidation>
                 ) : null}
-              </div>
-              <div>
+              </label>
+              <label>
                 <FormText>E-mail</FormText>
                 <FormInput
                   type="email"
@@ -101,8 +101,8 @@ export const PartnersForm = () => {
                 {formik.touched.email && formik.errors.email ? (
                   <FormValidation>{formik.errors.email}</FormValidation>
                 ) : null}
-              </div>
-              <div>
+              </label>
+              <label>
                 <FormText>Ваш номер телефону</FormText>
                 <FormInput
                   type="text"
@@ -116,8 +116,8 @@ export const PartnersForm = () => {
                 {formik.touched.phone && formik.errors.phone ? (
                   <FormValidation>{formik.errors.phone}</FormValidation>
                 ) : null}
-              </div>
-              <div>
+              </label>
+              <label>
                 <FormText>Додаткові коментарі</FormText>
                 <FormInput
                   type="text"
@@ -128,7 +128,7 @@ export const PartnersForm = () => {
                   onChange={formik.handleChange}
                   hasValue={comment.length > 0}
                 />
-              </div>
+              </label>
               <FormBtn type="submit">Подати заявку</FormBtn>
             </FormList>
           </div>
