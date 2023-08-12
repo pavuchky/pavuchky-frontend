@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import Icons from '../../assets/images/sprite.svg';
 
@@ -24,12 +25,13 @@ const MobFooter = () => {
     </svg>
   );
 
- const { data } = useFetch('contacts');
+  const { data } = useFetch('contacts');
+  const { t } = useTranslation();
 
   return (
     <FooterContainer>
       <FooterSocialMediaContainer>
-        <FooterSocialTitle>Слідкуй за нами тут:</FooterSocialTitle>
+        <FooterSocialTitle>{t('contacts.follow')}</FooterSocialTitle>
         <FooterSocialMediaLinks>
           {data?.socialMediaList?.map(
             ({ id, socialMediaLink, socialMediaName }) => (
@@ -50,22 +52,22 @@ const MobFooter = () => {
       <div>
         <FooterSubList>
           <li>
-            <NavLink to="/gallery/photos">Галерея</NavLink>
+            <NavLink to="/gallery/photos">{t('nav.gallery')}</NavLink>
           </li>
           <li>
-            <NavLink to="/about">Про нас</NavLink>
+            <NavLink to="/about">{t('nav.aboutUs')}</NavLink>
           </li>
           <li>
-            <FooterSubLinks to="/#donation">Задонатити</FooterSubLinks>
+            <FooterSubLinks to="/#donation">{t('nav.donate')}</FooterSubLinks>
           </li>
           <li>
-            <NavLink to="/order">Замовити</NavLink>
+            <NavLink to="/order">{t('nav.order')}</NavLink>
           </li>
           <li>
-            <FooterSubLinks to="/#contacts">Плести</FooterSubLinks>
+            <FooterSubLinks to="/#contacts">{t('nav.weave')}</FooterSubLinks>
           </li>
           <li>
-            <NavLink to="reporting">Звітність</NavLink>
+            <NavLink to="reporting">{t('nav.reporting')}</NavLink>
           </li>
         </FooterSubList>
         <FooterTel>

@@ -86,6 +86,10 @@ export const FormInput = styled.input`
   background-color: inherit;
   border-bottom: 1px solid ${({ theme }) => theme.colors.primaryFont};
 
+  ::placeholder {
+    color: #d6d6d6;
+  }
+
   ${({ hasValue }) =>
     hasValue &&
     css`
@@ -115,28 +119,6 @@ export const FormValidation = styled.p`
   position: absolute;
   font-size: 14px;
   color: ${({ theme }) => theme.colors.pink};
-`;
-
-export const IconContainer = styled.div`
-  position: relative;
-`;
-
-export const SelectIcon = styled.svg`
-  position: absolute;
-  top: 12px;
-  left: 317px;
-  width: 10px;
-  height: 8px;
-
-  @media (min-width: 768px) {
-    top: 16px;
-    left: 645px;
-  }
-
-  @media (min-width: 1440px) {
-    top: 17px;
-    left: 515px;
-  }
 `;
 
 export const FormBtn = styled.button`

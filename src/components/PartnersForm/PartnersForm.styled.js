@@ -73,6 +73,10 @@ export const FormInput = styled.input`
   background-color: inherit;
   border-bottom: 1px solid ${({ theme }) => theme.colors.primaryFont};
 
+  ::placeholder {
+    color: #d6d6d6;
+  }
+
   ${({ hasValue }) =>
     hasValue &&
     css`

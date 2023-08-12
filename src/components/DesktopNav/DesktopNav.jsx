@@ -7,10 +7,10 @@ export const DesktopNav = () => {
   const { t } = useTranslation();
 
   const items = [
-    { href: '/about', value: t('header.about') },
-    { href: '/order', value: t('header.order') },
-    { href: '/reporting', value: t('header.reporting') },
-    { href: '/gallery/photos', value: t('header.gallery') },
+    { href: '/about', value: t('nav.about') },
+    { href: '/order', value: t('nav.order') },
+    { href: '/reporting', value: t('nav.reporting') },
+    { href: '/gallery/photos', value: t('nav.gallery') },
   ];
 
   return (
@@ -21,7 +21,7 @@ export const DesktopNav = () => {
         </li>
       ))}
       <li>
-        <HashLink to="/#contacts">{t('header.contacts')}</HashLink>
+        <HashLink to="/#contacts">{t('nav.contacts')}</HashLink>
       </li>
     </NavList>
   );
