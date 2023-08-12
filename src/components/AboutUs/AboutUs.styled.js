@@ -48,49 +48,6 @@ export const AboutUsTitle = styled.h3`
   }
 `;
 
-export const AboutUSButton = styled(Link)`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-
-  font-family: ${({ theme }) => theme.fonts.regular};
-  font-size: 14px;
-  font-weight: ${({ theme }) => theme.fontWeights.regular};
-  color: ${({ theme }) => theme.colors.secondaryFont};
-  transition: color ${({ theme }) => theme.transitions.regular},
-    stroke ${({ theme }) => theme.transitions.regular};
-
-  &:hover,
-  &:focus {
-    color: ${({ theme }) => theme.colors.blue};
-    stroke: ${({ theme }) => theme.colors.blue};
-  }
-
-  @media screen and (min-width: 768px) {
-    font-family: ${({ theme }) => theme.fonts.light};
-    font-weight: ${({ theme }) => theme.fontWeights.light};
-  }
-  @media screen and (min-width: 1440px) {
-    font-size: 16px;
-    font-family: ${({ theme }) => theme.fonts.regular};
-    font-weight: 400;
-    line-height: ${({ theme }) => theme.lineHeights.secondary};
-  }
-`;
-
-export const AboutUsIcon = styled.svg`
-  margin-left: 13px;
-  transition: stroke ${({ theme }) => theme.transitions.regular};
-
-  &:hover,
-  &:focus {
-    stroke: ${({ theme }) => theme.colors.blue};
-  }
-`;
-
 export const AboutUsMainContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
