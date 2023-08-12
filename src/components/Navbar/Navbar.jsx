@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import i18n from 'i18n';
+import { useMediaQuery } from 'react-responsive';
 import { useTranslation } from 'react-i18next';
 import Icon from '../../assets/images/sprite.svg';
+import { LanguageContext } from 'utils/LanguageContext';
+import { MobileMenu } from 'components/MobileMenu/MobileMenu';
+import { DesktopNav } from 'components/DesktopNav/DesktopNav';
 import {
   DonateBtn,
   Header,
@@ -12,13 +16,11 @@ import {
   LogoLink,
   NavBar,
 } from './Navbar.styled';
-import { MobileMenu } from 'components/MobileMenu/MobileMenu';
-import { useMediaQuery } from 'react-responsive';
-import { DesktopNav } from 'components/DesktopNav/DesktopNav';
 
 export const Navbar = () => {
   const locales = { ua: { title: 'UA' }, en: { title: 'EN' } };
   const { t } = useTranslation();
+  const { changeLanguage } = useContext(LanguageContext);
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -28,6 +30,7 @@ export const Navbar = () => {
 
   const handleLanguageChange = locale => {
     i18n.changeLanguage(locale);
+    changeLanguage(locale);
     setIsOpen(false);
   };
 
@@ -63,7 +66,7 @@ export const Navbar = () => {
           )}
         </LangContainer>
 
-        <DonateBtn to="/#donation">{t('header.donate')}</DonateBtn>
+        <DonateBtn to="/#donation">{t('nav.donate')}</DonateBtn>
         {isTabletOrMobile && <MobileMenu />}
       </NavBar>
     </Header>

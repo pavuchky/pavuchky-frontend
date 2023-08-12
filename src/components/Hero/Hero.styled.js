@@ -58,6 +58,8 @@ export const HeroListTitle = styled.h1`
 `;
 
 export const HeroTitle = styled.span`
+  z-index: 1;
+  position: relative;
   font-family: ${({ theme }) => theme.fonts.headLight};
   font-weight: ${({ theme }) => theme.fontWeights.light};
   font-size: 32px;

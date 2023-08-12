@@ -1,14 +1,18 @@
 {
-  "header": {
+  "nav": {
     "main": "Home",
     "about": "About&nbsp;us",
+    "aboutUs": "About us",
     "order": "Order",
     "reporting": "Reporting",
     "gallery": "Gallery",
     "contacts": "Contacts",
     "donate": "Donate",
     "weave": "Weave",
-    "menu": "Menu"
+    "menu": "Menu",
+    "viewAll": "View all",
+    "viewMore": "View more ",
+    "all": "All"
   },
   "pages": {
     "about-us": "Who we are",
@@ -18,5 +22,62 @@
     "feedback": "Leave a review",
     "photos": "Photos",
     "videos": "Videos"
+  },
+  "hero": {
+    "protection": "We offer protection against enemy  observation!",
+    "title": "Borshchahivka",
+    "subTitle": "SPIDERS",
+    "joinWeaving": "Join the weaving"
+  },
+  "aboutUs": {
+    "whoWeAre": "Who we are",
+    "whatWeDo": "What we do"
+  },
+  "statistics": {
+    "advantages": "Advantages",
+    "whyUs": "Why us?",
+    "qualityMaterials": "High quality materials",
+    "individualSelection": "Individual selection of materials and colors",
+    "feedback": "Taking feedback into consideration and improving the weaving technology",
+    "inFigures": "Our work in figures",
+    "achievements": "Our achievements",
+    "days": "Days being engaged in weaving",
+    "woven": "of nets woven",
+    "participants": "initiative participants"
+  },
+  "contribution": {
+    "donation": "Make a donation to camouflage nets",
+    "order": "Order a net"
+  },
+  "ourNeeds": {
+    "whatWeNeed": "What we need"
+  },
+  "reviews": {
+    "reviews": "Reviews"
+  },
+  "donation": {
+    "victory": "Donate to the victory",
+    "protect": "Each donation helps protect our soldiers and brings Ukraine closer to victory!",
+    "transfer": "You can transfer funds to our Monobank card"
+  },
+  "partners": {
+    "partners": "Partners",
+    "become": "Become a partner",
+    "team": "Help us fight against enemy eyes. Join the team!",
+    "help": "Help us fight against enemy eyes.",
+    "apply": "Apply"
+  },
+  "contacts": {
+    "whereFind": "Where to find us",
+    "locations": "Weaving locations",
+    "details": "Contact details",
+    "admin": "Administrator",
+    "follow": "Follow us here:"
+  },
+  "forms": {
+    "plastic": "plastic",
+    "kapron": "kapron",
+    "cotton": "cotton",
+    "spunbond": "spunbond"
   }
 }
