@@ -2,24 +2,22 @@ import styled from 'styled-components';
 
 import { theme } from '../../stylesheet/theme';
 
-const { fontSizes, fontWeights, colors, fonts } = theme;
-
+const { fontSizes, fontWeights, colors, fonts, borders, radii } = theme;
 
 export const GalleryTabGridContainer = styled.div`
-display: grid;
-grid-template-columns: 50% 50%;
-gap:13px;
-margin-top: 45px;
-margin-bottom: 32px;
-`
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 13px;
+  margin-top: 45px;
+  margin-bottom: 32px;
+`;
 export const GalleryTabImg = styled.img`
-width: 316px;
-height: 398px;
-margin:0;
-padding: 0;
-border-radius: 10px;
-
-`
+  width: 316px;
+  height: 398px;
+  margin: 0;
+  padding: 0;
+  border-radius: 10px;
+`;
 
 export const GalleryTabButton = styled.button`
   width: 656px;
@@ -47,9 +45,7 @@ export const GalleryTabButton = styled.button`
   }
 `;
 
-
 /**==============StylesForDesktop======================== */
-
 
 export const GalleryDesctopGridContainer = styled.div`
   display: grid;
@@ -67,8 +63,33 @@ export const GalleryDestopImg = styled.img`
 `;
 
 export const GalleryPaginationContainer = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+export const GalleryFirstSvgButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85px;
+  height: 85px;
+  border: ${borders.normal};
+  color: ${colors.blue};
+  border-radius: ${radii.round};
+  position: relative;
+`;
 
-`
+export const GallerySecondSvgButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85px;
+  height: 85px;
+  border: ${borders.normal};
+  color: ${colors.blue};
+  border-radius: ${radii.round};
+`;
+
+export const GalleryDesctopSvg = styled.svg`
+  stroke: ${colors.blue};
+`;

@@ -1,15 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import useFetch from '../../hooks/useFetch';
-import { GlobalStyles } from './MobGalleryPhotos.styled';
+
 
 import {
   ImageModalOverlay,
   ImageModalContent,
-  LightBoxImg,
+  LightBoxImg, GlobalStyles
 } from './MobGalleryPhotos.styled';
+
+import {GalleryFirstSvgButton, GallerySecondSvgButton, GalleryDesctopSvg} from './GalleryPhotoTablet.styled'
+
+import { useMediaQuery } from 'react-responsive';
+
+import sprite from '../../assets/images/sprite.svg';
 
 const ImageModal = ({
   isOpen,
@@ -18,6 +24,10 @@ const ImageModal = ({
   setSelectedImageIndex,
 }) => {
   const { data } = useFetch('galleryPhoto');
+
+  const isDesktopScreen = useMediaQuery({ minWidth: 1440 });
+ 
+
 
   useEffect(() => {
     if (isOpen) {
@@ -35,6 +45,7 @@ const ImageModal = ({
     }
   };
 
+   
   return ReactDOM.createPortal(
     <>
       <GlobalStyles />
@@ -45,11 +56,29 @@ const ImageModal = ({
             showThumbs={false}
             showStatus={false}
             showIndicators={false}
-            showArrows={false}
+            showArrows={true}
             dynamicHeight={true}
             infiniteLoop={true}
             onChange={setSelectedImageIndex}
             onCloseClick={onClose}
+            renderArrowPrev={(onClickHandler, hasPrev) =>
+                hasPrev && (
+                    <GalleryFirstSvgButton type="button" onClick={onClickHandler}>
+                  <GalleryDesctopSvg width="17px" height="32px">
+                    <use  xlinkHref={`${sprite}#prew-icon`}></use>
+                        </GalleryDesctopSvg>
+                    </GalleryFirstSvgButton>
+                )
+            }
+             renderArrowNext={(onClickHandler, hasNext) =>
+                hasNext && (
+                    <GallerySecondSvgButton type="button" onClick={onClickHandler}>
+                        <GalleryDesctopSvg width="17px" height="32px">
+                    <use  xlinkHref={`${sprite}#next-icon`}></use>
+                        </GalleryDesctopSvg>
+                    </GallerySecondSvgButton>
+                )
+            }
           >
             {data?.galleryPhotoList?.map((photoLink, index) => {
               return (
