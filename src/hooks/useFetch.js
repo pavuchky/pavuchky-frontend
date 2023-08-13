@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 import { client } from '../client';
 import useLoader from './useLoader';
 import {
@@ -63,7 +64,7 @@ const useFetch = (type = 'posts') => {
         setData(formattedData[0]);
       } catch (err) {
         setLoading(false);
-        console.log(err.message);
+        toast.error(err.message);
       } finally {
         setLoading(false);
       }

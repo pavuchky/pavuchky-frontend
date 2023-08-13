@@ -42,7 +42,7 @@ export const FormTitle = styled.h3`
 export const FormList = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 30px;
 
   @media (min-width: 768px) {
     gap: 36px;
@@ -65,7 +65,7 @@ export const FormText = styled.p`
 
 export const FormInput = styled.input`
   position: relative;
-  width: 270px;
+  width: 100%;
   height: 23px;
   padding-bottom: 6px;
   font-size: 14px;
@@ -73,15 +73,19 @@ export const FormInput = styled.input`
   background-color: inherit;
   border-bottom: 1px solid ${({ theme }) => theme.colors.primaryFont};
 
+  ::placeholder {
+    color: #d6d6d6;
+  }
+
+  &:focus {
+    outline-color: ${({ theme }) => theme.colors.blue};
+  }
+
   ${({ hasValue }) =>
     hasValue &&
     css`
       background-color: rgb(232, 240, 254);
     `}
-
-  @media (min-width: 375px) {
-    width: 327px;
-  }
 
   @media (min-width: 768px) {
     width: 656px;
@@ -107,7 +111,7 @@ export const FormValidation = styled.p`
 
 export const FormBtn = styled.button`
   margin-top: 4px;
-  width: 270px;
+  width: 100%;
   height: 40px;
   padding: 10px;
   text-align: center;
@@ -121,10 +125,6 @@ export const FormBtn = styled.button`
   &:hover,
   &:focus {
     color: ${({ theme }) => theme.colors.yellow};
-  }
-
-  @media (min-width: 375px) {
-    width: 327px;
   }
 
   @media (min-width: 768px) {

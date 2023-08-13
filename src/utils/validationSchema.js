@@ -1,14 +1,17 @@
 import * as Yup from 'yup';
 
+const PHONE_REGEXP = /^\+380\d{9}$|^\+380\d{2}\s?\d{3}\s?\d{2}\s?\d{2}$/;
+const EMAIL_REGEXP = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+
 export const partnerValidationSchema = Yup.object().shape({
   name: Yup.string().required('Please enter your name.'),
   company: Yup.string().required('Please enter your company.'),
   email: Yup.string()
-    .email('Incorrect email address.')
+    .matches(EMAIL_REGEXP, 'Incorrect email address.')
     .required('Please enter your email.'),
   phone: Yup.string()
     .required('Please enter your phone number.')
-    .matches(/^\+?[\d\s-]+$/, 'Invalid phone number'),
+    .matches(PHONE_REGEXP, 'Invalid phone number'),
 });
 
 export const orderValidationSchema = Yup.object().shape({
@@ -17,7 +20,7 @@ export const orderValidationSchema = Yup.object().shape({
   militaryUnit: Yup.string().required('Please enter your military unit.'),
   phone: Yup.string()
     .required('Please enter your phone number.')
-    .matches(/^\+?[\d\s-]+$/, 'Invalid phone number'),
+    .matches(PHONE_REGEXP, 'Invalid phone number'),
   gridSize: Yup.string().required('Please enter grid size.'),
   typeBase: Yup.string().required('Please enter type base.'),
   material: Yup.string().required('Please enter material.'),

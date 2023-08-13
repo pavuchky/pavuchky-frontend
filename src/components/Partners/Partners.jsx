@@ -1,5 +1,6 @@
 import React from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { useTranslation } from 'react-i18next';
 import useFetch from 'hooks/useFetch';
 import {
   PartnersBtn,
@@ -14,12 +15,13 @@ import {
 
 export const Partners = () => {
   const { data } = useFetch('partners');
+  const { t } = useTranslation();
 
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 
   return (
     <PartnersContainer>
-      <PartnersTitle>Партнери</PartnersTitle>
+      <PartnersTitle>{t('partners.partners')}</PartnersTitle>
       <PartnersList>
         {data?.partnersList.map(({ id, partnerImage, partnerLink }) => (
           <li key={id}>
@@ -31,16 +33,14 @@ export const Partners = () => {
       </PartnersList>
       <PartnersTablet>
         <div>
-          <PartnersSubTitle>Стати партнером</PartnersSubTitle>
+          <PartnersSubTitle>{t('partners.become')}</PartnersSubTitle>
           {isDesktop ? (
-            <PartnersText>
-              Допомагай нам боротись з ворожим оком. Приєднуйся в команду!
-            </PartnersText>
+            <PartnersText>{t('partners.team')}</PartnersText>
           ) : (
-            <PartnersText>Допомагай нам боротись з ворожим оком.</PartnersText>
+            <PartnersText>{t('partners.help')}</PartnersText>
           )}
         </div>
-        <PartnersBtn to="/partners">Подати заявку</PartnersBtn>
+        <PartnersBtn to="/partners">{t('partners.apply')}</PartnersBtn>
       </PartnersTablet>
     </PartnersContainer>
   );

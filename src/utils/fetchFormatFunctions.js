@@ -1,4 +1,5 @@
 import { urlFor } from 'client';
+import formatTextSanity from './formatTextSanity';
 
 export const contactsFormattedFn = ({
   phone,
@@ -19,9 +20,16 @@ export const contactsFormattedFn = ({
         })
       : null,
     streetList: streetList
-      ? streetList.map(({ street, _key }) => {
+      ? streetList.map(({ streetEn, streetUa, _key }) => {
           return {
-            street: !!street ? street[0]?.children[0]?.text : null,
+            street:
+              !!streetEn && !!streetUa
+                ? {
+                    en: !!streetEn ? formatTextSanity(streetEn) : null,
+                    ua: !!streetUa ? formatTextSanity(streetUa) : null,
+                  }
+                : null,
+
             id: _key,
           };
         })
@@ -87,11 +95,30 @@ export const partnersFormattedFn = ({ partnersList, _id }) => {
   };
 };
 
-export const aboutFormattedFn = ({ aboutShort, aboutFull, _id }) => {
+export const aboutFormattedFn = ({
+  aboutShortEn,
+  aboutShortUa,
+  aboutFullEn,
+  aboutFullUa,
+  _id,
+}) => {
   return {
     id: _id,
-    aboutShort: !!aboutShort ? aboutShort[0]?.children[0]?.text : null,
-    aboutFull: !!aboutFull ? aboutFull[0]?.children[0]?.text : null,
+    aboutShort:
+      !!aboutShortEn && !!aboutShortUa
+        ? {
+            en: !!aboutShortEn ? formatTextSanity(aboutShortEn) : null,
+            ua: !!aboutShortUa ? formatTextSanity(aboutShortUa) : null,
+          }
+        : null,
+
+    aboutFull:
+      !!aboutFullEn && !!aboutFullUa
+        ? {
+            en: !!aboutFullEn ? formatTextSanity(aboutFullEn) : null,
+            ua: !!aboutFullUa ? formatTextSanity(aboutFullUa) : null,
+          }
+        : null,
   };
 };
 

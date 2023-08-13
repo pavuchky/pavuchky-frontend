@@ -9,7 +9,7 @@ const ReportingPage = () => {
   return (
     <>
       <PathDisplayer
-        current={{ path: '/reporting', name: t('header.reporting') }}
+        current={{ path: '/reporting', name: t('nav.reporting') }}
       />
       <Reports />
     </>

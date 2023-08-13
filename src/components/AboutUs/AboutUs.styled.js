@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 export const AboutUsSectionWrapper = styled.section`
   position: relative;
@@ -48,49 +47,6 @@ export const AboutUsTitle = styled.h3`
   }
 `;
 
-export const AboutUSButton = styled(Link)`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-
-  font-family: ${({ theme }) => theme.fonts.regular};
-  font-size: 14px;
-  font-weight: ${({ theme }) => theme.fontWeights.regular};
-  color: ${({ theme }) => theme.colors.secondaryFont};
-  transition: color ${({ theme }) => theme.transitions.regular},
-    stroke ${({ theme }) => theme.transitions.regular};
-
-  &:hover,
-  &:focus {
-    color: ${({ theme }) => theme.colors.blue};
-    stroke: ${({ theme }) => theme.colors.blue};
-  }
-
-  @media screen and (min-width: 768px) {
-    font-family: ${({ theme }) => theme.fonts.light};
-    font-weight: ${({ theme }) => theme.fontWeights.light};
-  }
-  @media screen and (min-width: 1440px) {
-    font-size: 16px;
-    font-family: ${({ theme }) => theme.fonts.regular};
-    font-weight: 400;
-    line-height: ${({ theme }) => theme.lineHeights.secondary};
-  }
-`;
-
-export const AboutUsIcon = styled.svg`
-  margin-left: 13px;
-  transition: stroke ${({ theme }) => theme.transitions.regular};
-
-  &:hover,
-  &:focus {
-    stroke: ${({ theme }) => theme.colors.blue};
-  }
-`;
-
 export const AboutUsMainContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -124,12 +80,23 @@ export const DescriptionContainer = styled.div`
 export const DescriptionWrapper = styled.div`
   height: 210px;
 
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  /* display: flex;
+  flex-direction: column; */
+  /* gap: 12px; */
   overflow: hidden;
 
+  display: -webkit-box;
+  -webkit-line-clamp: 11;
+  -webkit-box-orient: vertical;
+  white-space: break-spaces;
+
+  @media screen and (min-width: 768px) {
+    height: 215px;
+    -webkit-line-clamp: 10;
+  }
+
   @media screen and (min-width: 1440px) {
+    display: block;
     height: 322px;
     gap: 16px;
   }
@@ -195,41 +162,5 @@ export const AboutUsMap = styled.img`
     width: 605px;
     height: 404px;
     margin-top: 28px;
-  }
-`;
-
-export const LearnMoreStyledLink = styled(Link)`
-  min-width: 100%;
-  border-radius: 12px;
-  overflow: hidden;
-  padding: 10.5px;
-
-  font-family: ${({ theme }) => theme.fonts.regular};
-  font-size: ${({ theme }) => theme.fontSizes.xs};
-  font-weight: ${({ theme }) => theme.fontWeights.regular};
-  text-align: center;
-  color: ${({ theme }) => theme.colors.white};
-
-  background-color: ${({ theme }) => theme.colors.blue};
-  transition: color ${({ theme }) => theme.transitions.regular};
-
-  &:hover,
-  &:focus {
-    color: ${({ theme }) => theme.colors.yellow};
-  }
-
-  @media only screen and (min-width: 768px) {
-    border-radius: 16px;
-    padding: 9.5px;
-    font-size: ${({ theme }) => theme.fontSizes.m};
-  }
-
-  @media only screen and (min-width: 1440px) {
-    min-width: 520px;
-    border-radius: ${({ theme }) => theme.radii.l};
-    padding: 17.5px;
-    position: absolute !important;
-    top: 78% !important;
-    right: 9% !important;
   }
 `;
