@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import sprite from '../../assets/images/sprite.svg';
 import {
   CollapseIconArrow,
@@ -17,6 +17,9 @@ import {
   ReportsWrapper,
 } from './Reports.styled';
 import PDFReader from './PDFReader/PDFReader';
+import { LanguageContext } from 'utils/LanguageContext';
+import useFetch from 'hooks/useFetch';
+import { useTranslation } from 'react-i18next';
 
 const reportsArr = [
   { id: '1', month: 'Лютий 2023' },
@@ -46,6 +49,12 @@ const Reports = () => {
   // const [openPDF, setOpenPDF] = useState(false);
   // console.log(PDFReader);
   // console.log(openPDF);
+
+  const { lang } = useContext(LanguageContext);
+  const { data } = useFetch('reporting');
+  const { t } = useTranslation();
+
+  console.log('reporting', data);
 
   const handleLoadMore = () => {
     setNextNumber(nextNumber + rowsToShow);
