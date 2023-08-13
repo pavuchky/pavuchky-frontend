@@ -145,7 +145,7 @@ export const ReportsWrapper = styled.div`
   }
 `;
 
-export const ReportsButtonWrapper = styled.button`
+export const ReportsButtonWrapper = styled.a`
   display: flex;
   justify-content: space-between;
   align-items: center;

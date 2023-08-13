@@ -43,9 +43,9 @@ const Reports = () => {
   const rowsToShow = 6;
   const [nextNumber, setNextNumber] = useState(rowsToShow);
 
-  const [openPDF, setOpenPDF] = useState(false);
-  console.log(PDFReader);
-  console.log(openPDF);
+  // const [openPDF, setOpenPDF] = useState(false);
+  // console.log(PDFReader);
+  // console.log(openPDF);
 
   const handleLoadMore = () => {
     setNextNumber(nextNumber + rowsToShow);
@@ -55,9 +55,9 @@ const Reports = () => {
     setNextNumber(nextNumber - rowsToShow);
   };
 
-  const handleOpenPDF = () => {
-    setOpenPDF(true);
-  };
+  // const handleOpenPDF = () => {
+  //   setOpenPDF(true);
+  // };
 
   return (
     <>
@@ -82,13 +82,13 @@ const Reports = () => {
                 </ReportsButtonWrapper>
               </ReportsWrapper>
               <ReportsWrapper>
-                <ReportsButtonWrapper type="button" onclick={handleOpenPDF}>
+                <ReportsButtonWrapper>
                   <ReportName>Звіт про результати</ReportName>
                   <ReportIconArrow>
                     <use href={`${sprite}#arrow-up-blue`}></use>
                   </ReportIconArrow>
                 </ReportsButtonWrapper>
-                {openPDF && <PDFReader />}
+                {/* {openPDF && <PDFReader />} */}
               </ReportsWrapper>
             </ReportsListItem>
           ))}

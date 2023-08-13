@@ -28,10 +28,11 @@ const PDFReader = () => {
           numPages={numPages}
           pageNumber={pageNumber}
           setPageNumber={setPageNumber}
-          file="/assets/docs/file-sample.pdf"
+          file="https://mon.gov.ua/storage/app/media/finansovi-zvity/2021/12.03/Zvit%20pro%20finansovi%20rezultaty%20aparatu%20MON%20za%202020%20rik_12_03_compressed.pdf"
         />
         <Document
-          file="/assets/docs/file-sample.pdf"
+          externalLinkRel="_blank"
+          file="https://mon.gov.ua/storage/app/media/finansovi-zvity/2021/12.03/Zvit%20pro%20finansovi%20rezultaty%20aparatu%20MON%20za%202020%20rik_12_03_compressed.pdf"
           onLoadSuccess={onDocumentLoadSuccess}
         >
           <Page pageNumber={pageNumber} scale={scale} />
