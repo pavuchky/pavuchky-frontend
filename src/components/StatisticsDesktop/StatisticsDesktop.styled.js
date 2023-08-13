@@ -62,8 +62,10 @@ export const StatisticsListItem = styled.li`
   justify-content: center;
   align-items: center;
   gap: ${({ theme }) => theme.spacing(2)};
+  max-width: 350px;
 
   font-size: 26px;
+  text-align: center;
   color: ${({ theme }) => theme.colors.secondaryFont};
 `;
 
