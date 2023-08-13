@@ -2,12 +2,15 @@ import { useMediaQuery } from 'react-responsive';
 import { useEffect, useState } from 'react';
 
 import useFetch from 'hooks/useFetch';
-import sprite from '../../assets/images/sprite.svg';
 import ReviewSwiperItem from 'components/ReviewSwiperItem/ReviewSwiperItem';
 import {
   PaginationContainer,
   ReviewsPaginationList,
 } from './ReviewsPagination.styled';
+
+import SvgIcon from '@mui/material/SvgIcon';
+
+import PaginationItem from '@mui/material/PaginationItem';
 
 const ReviewsPagination = () => {
   const [page, setPage] = useState(1);
@@ -70,6 +73,15 @@ const ReviewsPagination = () => {
         count={count}
         boundaryCount={isTabletScreen ? 1 : 1}
         siblingCount={isTabletScreen ? 0 : -1}
+        renderItem={item => (
+          <PaginationItem
+            slots={{
+              previous: SvgIcon,
+              next: SvgIcon,
+            }}
+            {...item}
+          />
+        )}
       />
     </>
   );

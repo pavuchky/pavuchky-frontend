@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { theme } from 'stylesheet/theme';
-const { colors, radii, fonts, fontWeights, fontSizes } = theme;
+const { colors, radii } = theme;
 
 export const ReviewsPageSection = styled.section`
   display: inline-flex;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Pagination } from '@mui/material';
 
 import { theme } from 'stylesheet/theme';
-const { colors, radii, fonts, fontWeights, fontSizes, borders } = theme;
+const { colors, radii, borders } = theme;
 
 export const PaginationContainer = styled(Pagination)`
   width: 320px;
@@ -13,12 +13,22 @@ export const PaginationContainer = styled(Pagination)`
   display: flex;
   justify-content: space-around;
 
+  .MuiPaginationItem-root {
+    margin: 0px;
+  }
+
   & .Mui-selected {
     color: ${colors.blue};
     border-color: ${colors.blue} !important;
     background-color: transparent !important;
   }
 
+  .MuiPagination-ul {
+    gap: 16px;
+    @media (min-width: 1440px) {
+      gap: 24px;
+    }
+  }
   .MuiPaginationItem-page {
     background-color: transparent;
     width: 40px;
@@ -33,10 +43,13 @@ export const PaginationContainer = styled(Pagination)`
     width: 40px;
     height: 40px;
     border: ${borders.normal};
-    border-color: ${colors.grey};
+    border-color: ${colors.blue} !important;
     border-radius: ${radii.round};
   }
 
+  .Mui-disabled {
+    border-color: ${colors.grey} !important;
+  }
   .MuiPaginationItem-ellipsis {
     width: 40px;
     height: 40px;
