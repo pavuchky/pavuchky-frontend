@@ -8,10 +8,11 @@ import {
   StatisticsSection,
 } from './Statistics.styled';
 import { StatisticsDesktop } from 'components/StatisticsDesktop/StatisticsDesktop';
+import { useTranslation } from 'react-i18next';
 
 export const Statistics = () => {
   const { data } = useFetch('statistic');
-
+  const { t } = useTranslation();
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 
   return (
@@ -20,30 +21,30 @@ export const Statistics = () => {
         <StatisticsDesktop />
       ) : (
         <>
-          <AchievementsTitle>Наші досягнення</AchievementsTitle>
+          <AchievementsTitle>{t('statistics.achievements')}</AchievementsTitle>
           <AchievementsList>
             <AchievementsListItem>
-              Висока якість матеріалів
+              {t('statistics.qualityMaterials')}
             </AchievementsListItem>
             <AchievementsListItem>
-              <AchievementsNumber>{data?.days}&#43;</AchievementsNumber> днів у
-              справі
+              <AchievementsNumber>{data?.days}&#43;</AchievementsNumber>
+              {t('statistics.days')}
             </AchievementsListItem>
             <AchievementsListItem>
-              Підбір матеріалів та кольорової гами
+              {t('statistics.selection')}
             </AchievementsListItem>
             <AchievementsListItem>
               <AchievementsNumber>
-                {data?.gridFootage} кв.м &#43;
+                {data?.gridFootage} {t('statistics.squared')} &#43;
               </AchievementsNumber>
-              сітки сплетено
+              {t('statistics.woven')}
             </AchievementsListItem>
             <AchievementsListItem>
-              Вдосконалення технологій
+              {t('statistics.technologies')}
             </AchievementsListItem>
             <AchievementsListItem>
-              <AchievementsNumber>{data?.members}&#43;</AchievementsNumber>{' '}
-              учасників ініціативи
+              <AchievementsNumber>{data?.members}&#43;</AchievementsNumber>
+              {t('statistics.participants')}
             </AchievementsListItem>
           </AchievementsList>
         </>

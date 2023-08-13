@@ -1,34 +1,46 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Icon from '../../assets/images/tank.svg';
 import {
   HeroBtnList,
   HeroContainer,
-  HeroDonate,
   HeroItem,
-  HeroLink,
   HeroListTitle,
   HeroSubTitle,
   HeroText,
   HeroTitle,
   IconTank,
 } from './Hero.styled';
+import { CustomLink } from 'components/CustomLink/CustomLink';
 
 export const Hero = () => {
+  const { t } = useTranslation();
+
   return (
     <HeroContainer>
-      <HeroText>Забезпечуємо захист від ворожого ока!</HeroText>
+      <HeroText>{t('hero.protection')}</HeroText>
       <HeroListTitle>
-        <HeroTitle>ПАВУЧКИ</HeroTitle>
+        <HeroTitle>{t('hero.title')}</HeroTitle>
         <br />
-        <HeroSubTitle>БОРЩАГІВКИ</HeroSubTitle>
+        <HeroSubTitle>{t('hero.subTitle')}</HeroSubTitle>
       </HeroListTitle>
       <IconTank src={Icon} />
       <HeroBtnList>
         <HeroItem>
-          <HeroLink to="/#contacts">Долучитись до плетіння</HeroLink>
+          <CustomLink
+            type="hashLink"
+            text={t('hero.joinWeaving')}
+            path="/#contacts"
+            variant="white"
+          />
         </HeroItem>
         <HeroItem>
-          <HeroDonate to="/#donation">Задонатити</HeroDonate>
+          <CustomLink
+            type="hashLink"
+            text={t('nav.donate')}
+            path="/#donation"
+            variant="blue"
+          />
         </HeroItem>
       </HeroBtnList>
     </HeroContainer>

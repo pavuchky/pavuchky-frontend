@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import useFetch from 'hooks/useFetch';
 import {
   AdvantagesList,
@@ -13,38 +14,42 @@ import {
 
 export const StatisticsDesktop = () => {
   const { data } = useFetch('statistic');
+  const { t } = useTranslation();
 
   return (
     <>
       <AdvantagesWrapper>
-        <StatisticsTitle>Переваги</StatisticsTitle>
-        <StatisticsDescr>Чому саме ми?</StatisticsDescr>
+        <StatisticsTitle>{t('statistics.advantages')}</StatisticsTitle>
+        <StatisticsDescr>{t('statistics.whyUs')}</StatisticsDescr>
       </AdvantagesWrapper>
       <AdvantagesList>
-        <AdvantagesListItem>Висока якість матеріалів</AdvantagesListItem>
         <AdvantagesListItem>
-          Індивідуальний підбір матеріалів та кольорової гами
+          {t('statistics.qualityMaterials')}
         </AdvantagesListItem>
         <AdvantagesListItem>
-          Врахування зворотнього зв&#39;язку та вдосконалення технології
-          плетіння
+          {t('statistics.individualSelection')}
         </AdvantagesListItem>
+        <AdvantagesListItem>{t('statistics.feedback')}</AdvantagesListItem>
       </AdvantagesList>
       <StatisticsWrapper>
-        <StatisticsTitle>Ми в цифрах</StatisticsTitle>
-        <StatisticsDescr>Наші досягнення</StatisticsDescr>
+        <StatisticsTitle>{t('statistics.inFigures')}</StatisticsTitle>
+        <StatisticsDescr>{t('statistics.achievements')}</StatisticsDescr>
       </StatisticsWrapper>
       <StatisticsList>
         <StatisticsListItem>
-          <StatisticsNumber>{data?.days}&#43;</StatisticsNumber> Днів у справі
+          <StatisticsNumber>{data?.days}&#43;</StatisticsNumber>
+          {t('statistics.days')}
         </StatisticsListItem>
         <StatisticsListItem>
-          <StatisticsNumber>{data?.gridFootage}м&#178;&#43;</StatisticsNumber>{' '}
-          Сітки сплетено
+          <StatisticsNumber>
+            {data?.gridFootage}
+            {t('statistics.metres')}&#178;&#43;
+          </StatisticsNumber>
+          {t('statistics.woven')}
         </StatisticsListItem>
         <StatisticsListItem>
-          <StatisticsNumber>{data?.members}&#43;</StatisticsNumber> Учасників
-          ініціативи
+          <StatisticsNumber>{data?.members}&#43;</StatisticsNumber>{' '}
+          {t('statistics.participants')}
         </StatisticsListItem>
       </StatisticsList>
     </>

@@ -1,4 +1,5 @@
 import { useMediaQuery } from 'react-responsive';
+import { useTranslation } from 'react-i18next';
 
 import {
   OurNeedsHeading,
@@ -11,11 +12,14 @@ import OurNeedsTabletSwiper from 'components/OurNeedsTabletSwiper/OurNeedsTablet
 const OurNeeds = () => {
   const isTabletScreen = useMediaQuery({ minWidth: 768 });
   const isDesctopScreen = useMediaQuery({ minWidth: 1440 });
+  const { t } = useTranslation();
 
   return (
     <OurNeedsSection>
       <OurNeedsHeading>
-        {isTabletScreen ? 'Що ми потребуємо' : 'Ми потребуємо'}
+        {isTabletScreen
+          ? `${t('ourNeeds.whatWeNeed')}`
+          : `${t('ourNeeds.weNeed')}`}
       </OurNeedsHeading>
       {isTabletScreen && !isDesctopScreen ? (
         <OurNeedsTabletSwiper />

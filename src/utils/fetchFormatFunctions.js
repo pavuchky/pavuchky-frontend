@@ -1,4 +1,6 @@
 import { urlFor } from 'client';
+import formatTextSanity from './formatTextSanity';
+import formatFileSanity from './formatFileSanity';
 
 export const contactsFormattedFn = ({
   phone,
@@ -19,9 +21,16 @@ export const contactsFormattedFn = ({
         })
       : null,
     streetList: streetList
-      ? streetList.map(({ street, _key }) => {
+      ? streetList.map(({ streetEn, streetUa, _key }) => {
           return {
-            street: !!street ? street[0]?.children[0]?.text : null,
+            street:
+              !!streetEn && !!streetUa
+                ? {
+                    en: !!streetEn ? formatTextSanity(streetEn) : null,
+                    ua: !!streetUa ? formatTextSanity(streetUa) : null,
+                  }
+                : null,
+
             id: _key,
           };
         })
@@ -87,11 +96,30 @@ export const partnersFormattedFn = ({ partnersList, _id }) => {
   };
 };
 
-export const aboutFormattedFn = ({ aboutShort, aboutFull, _id }) => {
+export const aboutFormattedFn = ({
+  aboutShortEn,
+  aboutShortUa,
+  aboutFullEn,
+  aboutFullUa,
+  _id,
+}) => {
   return {
     id: _id,
-    aboutShort: !!aboutShort ? aboutShort[0]?.children[0]?.text : null,
-    aboutFull: !!aboutFull ? aboutFull[0]?.children[0]?.text : null,
+    aboutShort:
+      !!aboutShortEn && !!aboutShortUa
+        ? {
+            en: !!aboutShortEn ? formatTextSanity(aboutShortEn) : null,
+            ua: !!aboutShortUa ? formatTextSanity(aboutShortUa) : null,
+          }
+        : null,
+
+    aboutFull:
+      !!aboutFullEn && !!aboutFullUa
+        ? {
+            en: !!aboutFullEn ? formatTextSanity(aboutFullEn) : null,
+            ua: !!aboutFullUa ? formatTextSanity(aboutFullUa) : null,
+          }
+        : null,
   };
 };
 
@@ -105,6 +133,43 @@ export const galleryPhotoFormattedFn = ({ galleryPhotoList, _id }) => {
             photoLink: !!photoLink ? BASE_PHOTO_URL + photoLink : null,
           };
         })
+      : null,
+  };
+};
+
+export const galleryVideoFormattedFn = ({ galleryVideoList, _id }) => {
+  return {
+    id: _id,
+    galleryVideoList: galleryVideoList
+      ? galleryVideoList.map(({ videoLink }) => {
+          return {
+            videoLink: !!videoLink ? videoLink : null,
+          };
+        })
+      : null,
+  };
+};
+
+export const reportingFormattedFn = ({ reportingList, _id }) => {
+  return {
+    id: _id,
+    reportingList: reportingList
+      ? reportingList.map(
+          ({ reportingMonth, financialReport, resultsReport, _key }) => {
+            return {
+              id: _key,
+              reportingMonth: !!reportingMonth
+                ? { en: reportingMonth.en, ua: reportingMonth.ua }
+                : null,
+              financialReport: !!financialReport
+                ? formatFileSanity(financialReport)
+                : null,
+              resultsReport: !!resultsReport
+                ? formatFileSanity(resultsReport)
+                : null,
+            };
+          }
+        )
       : null,
   };
 };

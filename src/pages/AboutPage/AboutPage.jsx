@@ -1,5 +1,7 @@
+import { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
+import { LanguageContext } from 'utils/LanguageContext';
 import useFetch from 'hooks/useFetch';
 import sprite from 'assets/images/sprite.svg';
 import mapImg from 'assets/images/map.svg';
@@ -7,14 +9,15 @@ import { PathDisplayer } from 'components/PathDisplayer/PathDisplayer';
 import {
   AboutLogoIcon,
   AboutMapImg,
-  AboutUsHomeLink,
   AboutUsPageText,
   AboutUsPageTitle,
   AboutUsSection,
   AboutUsTop,
 } from './AboutPage.styled';
+import { CustomLink } from 'components/CustomLink/CustomLink';
 
 const AboutPage = () => {
+  const { lang } = useContext(LanguageContext);
   const { data } = useFetch('about');
   const { t } = useTranslation();
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
@@ -32,11 +35,16 @@ const AboutPage = () => {
           </AboutUsTop>
         )}
 
-        <AboutUsPageText>{data?.aboutFull}</AboutUsPageText>
+        <AboutUsPageText>{data?.aboutFull[lang]}</AboutUsPageText>
         <AboutLogoIcon>
           <use href={sprite + '#logo'}></use>
         </AboutLogoIcon>
-        <AboutUsHomeLink to="/">На головну</AboutUsHomeLink>
+        <CustomLink
+          type="link"
+          text={t('buttons.toHome')}
+          path="/"
+          variant="blue"
+        />
       </AboutUsSection>
     </>
   );

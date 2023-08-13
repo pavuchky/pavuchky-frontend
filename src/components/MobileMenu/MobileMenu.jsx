@@ -10,18 +10,16 @@ export const MobileMenu = () => {
   const { t } = useTranslation();
 
   const items = [
-    { href: '/', value: t('header.main') },
-    { href: '/about', value: t('header.about') },
-    { href: '/order', value: t('header.order') },
-    { href: '/reporting', value: t('header.reporting') },
-    { href: '/gallery/photos', value: t('header.gallery') },
+    { href: '/', value: t('nav.main') },
+    { href: '/about', value: t('nav.about') },
+    { href: '/order', value: t('nav.order') },
+    { href: '/reporting', value: t('nav.reporting') },
+    { href: '/gallery/photos', value: t('nav.gallery') },
   ];
 
   return (
     <>
-      <MenuBtn onClick={() => setShowMenu(!showMenu)}>
-        {t('header.menu')}
-      </MenuBtn>
+      <MenuBtn onClick={() => setShowMenu(!showMenu)}>{t('nav.menu')}</MenuBtn>
       <MenuList showMenu={showMenu}>
         {items.map((i, index) => (
           <li key={index} onClick={() => setShowMenu(false)}>
@@ -29,10 +27,10 @@ export const MobileMenu = () => {
           </li>
         ))}
         <li onClick={() => setShowMenu(false)}>
-          <HashLink to="/#donation"> {t('header.donate')}</HashLink>
+          <HashLink to="/#donation"> {t('nav.donate')}</HashLink>
         </li>
         <li onClick={() => setShowMenu(false)}>
-          <HashLink to="/#contacts">{t('header.weave')}</HashLink>
+          <HashLink to="/#contacts">{t('nav.weave')}</HashLink>
         </li>
       </MenuList>
     </>

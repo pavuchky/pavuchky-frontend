@@ -4,7 +4,7 @@ import sprite from 'assets/images/sprite.svg';
 
 export const PathDisplayer = ({ current, isGallery, galleryType }) => {
   const { t } = useTranslation();
-  const homePage = { path: '/', name: t('header.main') };
+  const homePage = { path: '/', name: t('nav.main') };
 
   return (
     <PathWrapper>

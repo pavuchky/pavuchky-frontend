@@ -1,4 +1,3 @@
-import { HashLink } from 'react-router-hash-link';
 import styled from 'styled-components';
 
 export const HeroContainer = styled.section`
@@ -58,6 +57,8 @@ export const HeroListTitle = styled.h1`
 `;
 
 export const HeroTitle = styled.span`
+  z-index: 1;
+  position: relative;
   font-family: ${({ theme }) => theme.fonts.headLight};
   font-weight: ${({ theme }) => theme.fontWeights.light};
   font-size: 32px;
@@ -137,46 +138,5 @@ export const HeroItem = styled.li`
   @media only screen and (min-width: 1440px) {
     min-width: 519px;
     border-radius: 24px;
-  }
-`;
-
-export const HeroLink = styled(HashLink)`
-  padding: 10px;
-  text-align: center;
-  background-color: ${({ theme }) => theme.colors.white};
-  transition: color ${({ theme }) => theme.transitions.regular};
-
-  &:hover,
-  &:focus {
-    color: #004b81;
-  }
-
-  @media only screen and (min-width: 768px) {
-    padding: 9.5px;
-  }
-
-  @media only screen and (min-width: 1440px) {
-    padding: 17.5px;
-  }
-`;
-
-export const HeroDonate = styled(HashLink)`
-  padding: 10px;
-  text-align: center;
-  color: ${({ theme }) => theme.colors.white};
-  background-color: ${({ theme }) => theme.colors.blue};
-  transition: color ${({ theme }) => theme.transitions.regular};
-
-  &:hover,
-  &:focus {
-    color: ${({ theme }) => theme.colors.yellow};
-  }
-
-  @media only screen and (min-width: 768px) {
-    padding: 9.5px;
-  }
-
-  @media only screen and (min-width: 1440px) {
-    padding: 17.5px;
   }
 `;

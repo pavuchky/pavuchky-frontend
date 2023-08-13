@@ -1,3 +1,6 @@
+import { RiArrowDownSFill } from 'react-icons/ri';
+import styled from 'styled-components';
+
 export const customStyles = {
   option: (provided, state) => {
     return {
@@ -101,7 +104,7 @@ export const customStyles = {
     fontFamily: 'e-Ukraine-Light, sans-serif',
     fontSize: '14px',
     fontWeight: '300',
-    color: 'gray',
+    color: '#d6d6d6',
 
     '@media (min-width: 768px)': {
       fontFamily: 'e-Ukraine-Regular, sans-serif',
@@ -118,6 +121,13 @@ export const customStyles = {
       cursor: 'pointer',
     };
   },
+
+  dropdownIndicator: (styles, state) => ({
+    ...styles,
+    padding: '0',
+    transition: 'transform 250ms cubic-bezier(0.4, 0, 0.2, 1)',
+    transform: state.selectProps.menuIsOpen ? 'rotate(180deg)' : null,
+  }),
 
   input: provided => ({
     ...provided,
@@ -149,3 +159,9 @@ export const customStyles = {
     },
   }),
 };
+
+export const SelectIcon = styled(RiArrowDownSFill)`
+  color: ${({ theme }) => theme.colors.primaryFont};
+  width: 15px;
+  height: 15px;
+`;
