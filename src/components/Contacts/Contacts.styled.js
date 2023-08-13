@@ -153,7 +153,7 @@ export const ContactPerson = styled.p`
     margin-top: 8px;
   }
   @media (min-width: 1440px) {
-    max-width: 230px;
+    max-width: 210px;
     font-size: ${fontSizes.s};
     margin-bottom: 10px;
   }

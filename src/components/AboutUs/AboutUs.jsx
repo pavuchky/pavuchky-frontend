@@ -26,10 +26,10 @@ const AboutUs = () => {
   return (
     <AboutUsSectionWrapper>
       <TitleWrapper>
-        <AboutUsTitle>Хто ми</AboutUsTitle>
+        <AboutUsTitle>{t('pages.about-us')}</AboutUsTitle>
         <ViewAll
-          shortText="Про нас"
-          longText="Переглянути усе"
+          shortText={t('nav.aboutUs')}
+          longText={t('nav.viewAll')}
           changeable
           path="/about"
         />

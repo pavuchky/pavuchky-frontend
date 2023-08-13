@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import ReviewsSwiper from 'components/ReviewsSwiper/ReviewsSwiper';
 import { ViewAll } from 'components/ViewAll/ViewAll';
 import {
@@ -7,13 +8,15 @@ import {
 } from './Reviews.styled';
 
 const Reviews = () => {
+  const { t } = useTranslation();
+
   return (
     <ReviewsSection>
       <ReviewsTitlePartContainer>
-        <ReviewsTitle>Відгуки</ReviewsTitle>
+        <ReviewsTitle>{t('pages.reviews')}</ReviewsTitle>
         <ViewAll
-          shortText="Переглянути"
-          longText="Переглянути усе"
+          shortText={t('nav.viewMore')}
+          longText={t('nav.viewAll')}
           changeable
           path="/reviews"
         />

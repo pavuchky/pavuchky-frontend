@@ -41,20 +41,26 @@
     "advantages": "Advantages",
     "whyUs": "Why us?",
     "qualityMaterials": "High quality materials",
+    "selection": "Selection of materials and colors",
     "individualSelection": "Individual selection of materials and colors",
     "feedback": "Taking feedback into consideration and improving the weaving technology",
+    "technologies": "Improvement of technologies",
     "inFigures": "Our work in figures",
     "achievements": "Our achievements",
     "days": "Days being engaged in weaving",
     "woven": "of nets woven",
-    "participants": "initiative participants"
+    "participants": "initiative participants",
+    "squared": "sq. m",
+    "metres": "m"
   },
   "contribution": {
     "donation": "Make a donation to camouflage nets",
-    "order": "Order a net"
+    "order": "Order a net",
+    "save": "Save the lives of our defenders"
   },
   "ourNeeds": {
-    "whatWeNeed": "What we need"
+    "whatWeNeed": "What we need",
+    "weNeed": "We need"
   },
   "reviews": {
     "reviews": "Reviews"
@@ -62,7 +68,9 @@
   "donation": {
     "victory": "Donate to the victory",
     "protect": "Each donation helps protect our soldiers and brings Ukraine closer to victory!",
-    "transfer": "You can transfer funds to our Monobank card"
+    "transfer": "You can transfer funds to ",
+    "monobank": "our Monobank card",
+    "initiativeDetails": "To find out other details of the Spiders, please contact the initiative administrator"
   },
   "partners": {
     "partners": "Partners",
@@ -75,7 +83,7 @@
     "whereFind": "Where to find us",
     "locations": "Weaving locations",
     "details": "Contact details",
-    "admin": "Administrator",
+    "admin": "Administrator: Olha Kuzakova",
     "follow": "Follow us here:"
   },
   "forms": {
