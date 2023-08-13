@@ -32,7 +32,7 @@ export const GallerySwiperContainer = styled(Swiper)`
   }
   .swiper-scrollbar-drag:last-child {
     background-color: ${colors.blue};
-    height: 3px;
+    height: 2px;
   }
   .swiper-scrollbar-drag {
     background-color: rgba(184, 182, 183, 1);
@@ -70,25 +70,32 @@ export const ImageModalContent = styled.div`
   position: fixed;
 `;
 
-export const ImageModalCloseBtn = styled.button`
-  position: absolute;
-  top: 0;
-  right: 1px;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-`;
+
 export const LightBoxImg = styled.img`
-  width: 273px;
+  border-radius: 16px;
+
+  @media (min-width: 768px) {
+ 
+    height: 690px;
+  }
+  @media (min-width: 1440px) {
+    
+    height: 673px;
+  }
+`; 
+
+export const LightBoxImgContainer = styled.div`
+  width: 258px;
   height: 344px;
   border-radius: 16px;
+  margin: 0 auto;
 
   @media (min-width: 768px) {
     width: 550px;
     height: 690px;
   }
   @media (min-width: 1440px) {
-    width: 1024px;
+    width: 915px;
     height: 673px;
   }
 `;

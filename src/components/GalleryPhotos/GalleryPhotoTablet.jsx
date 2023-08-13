@@ -1,19 +1,33 @@
 import React, { useState } from 'react';
 import useFetch from '../../hooks/useFetch';
 import ImageModal from './ImageModal';
-import GalleryDesctopPhotos from './GalleryPhotoDesctop';
+
 import {
   GalleryTabGridContainer,
   GalleryTabButton,
   GalleryTabImg,
+  GalleryDestopImg,
+  GalleryPaginationContainer,
 } from './GalleryPhotoTablet.styled';
+
+import { useMediaQuery } from 'react-responsive';
+
+import { Pagination } from '@mui/material';
 
 const GalleryTabPhotos = () => {
   const { data } = useFetch('galleryPhoto');
 
+  const [currentPage, setCurrentPage] = useState(1);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [visibleImages, setVisibleImages] = useState(6);
+  // const [visibleDesctopImg, setVisibleDesctopImg] = useState(9);
+  const itemsPerPage = 9;
+  const isDesktopScreen = useMediaQuery({ minWidth: 1440 });
+    const isTabletScreen = useMediaQuery({ minWidth: 768 });
+  // const downloadMoreForDesctop = () => {
+  //   setVisibleDesctopImg(prevVisibleDesctopImg => prevVisibleDesctopImg + 9);
+  // };
 
   const loadMoreImages = () => {
     setVisibleImages(prevVisibleImages => prevVisibleImages + 6);
@@ -27,10 +41,20 @@ const GalleryTabPhotos = () => {
   const closeLightbox = () => {
     setLightboxOpen(false);
   };
+  
 
+ 
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const showingImages = data?.galleryPhotoList?.slice(
+    startIndex,
+    startIndex + itemsPerPage
+  );
+  const onPageChange = (event, newPage) => {
+    setCurrentPage(newPage);
+  };
   return (
     <>
-      <div>
+      {!isDesktopScreen && isTabletScreen && (<><div>
         <GalleryTabGridContainer>
           {data?.galleryPhotoList
             ?.slice(0, visibleImages)
@@ -40,29 +64,65 @@ const GalleryTabPhotos = () => {
                   key={index}
                   src={photoLink.photoLink}
                   alt="Varior"
-                  onClick={() => openLightbox(index)}
-                />
+                  onClick={() => openLightbox(index)} />
               );
             })}
         </GalleryTabGridContainer>
-       
+
         <ImageModal
           isOpen={lightboxOpen}
           images={data}
           selectedImageIndex={selectedImageIndex}
-          onClose={closeLightbox}
-        />
-      </div>
-      <div>
-        {visibleImages < data?.galleryPhotoList.length && (
-          <GalleryTabButton onClick={loadMoreImages}>
-            Переглянути більше
-          </GalleryTabButton>
+          onClose={closeLightbox} />
+      </div><div>
+          {visibleImages < data?.galleryPhotoList.length && (
+            <GalleryTabButton onClick={loadMoreImages}>
+              Переглянути більше
+            </GalleryTabButton>
+          )}
+        </div></>
+)}
+      
+      <>
+        {isDesktopScreen && (
+          <>
+            <div>
+              <GalleryTabGridContainer>
+                {showingImages?.map((photoLink, index) => {
+                  return (
+                    <div>
+                      <GalleryDestopImg
+                        key={index}
+                        src={photoLink.photoLink}
+                        alt="Varior"
+                        onClick={() => openLightbox(index)}
+                      />
+                    </div>
+                  );
+                })}
+              </GalleryTabGridContainer>
+
+              <ImageModal
+                isOpen={lightboxOpen}
+                images={data}
+                selectedImageIndex={selectedImageIndex}
+                onClose={closeLightbox}
+              />
+            </div>
+            <GalleryPaginationContainer>
+              <Pagination
+                count={Math.ceil(
+                  (data?.galleryPhotoList?.length || 0) / itemsPerPage
+                )}
+                page={currentPage}
+                onChange={onPageChange}
+                color="primary"
+                variant="outlined"
+              />
+            </GalleryPaginationContainer>
+          </>
         )}
-      </div>
-      <div>
-        <GalleryDesctopPhotos/>
-      </div>
+      </>
     </>
   );
 };

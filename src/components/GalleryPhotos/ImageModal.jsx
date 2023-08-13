@@ -8,12 +8,12 @@ import useFetch from '../../hooks/useFetch';
 import {
   ImageModalOverlay,
   ImageModalContent,
-  LightBoxImg, GlobalStyles
+   GlobalStyles, LightBoxImgContainer, LightBoxImg
 } from './MobGalleryPhotos.styled';
 
 import {GalleryFirstSvgButton, GallerySecondSvgButton, GalleryDesctopSvg} from './GalleryPhotoTablet.styled'
 
-import { useMediaQuery } from 'react-responsive';
+
 
 import sprite from '../../assets/images/sprite.svg';
 
@@ -25,7 +25,7 @@ const ImageModal = ({
 }) => {
   const { data } = useFetch('galleryPhoto');
 
-  const isDesktopScreen = useMediaQuery({ minWidth: 1440 });
+
  
 
 
@@ -82,9 +82,9 @@ const ImageModal = ({
           >
             {data?.galleryPhotoList?.map((photoLink, index) => {
               return (
-                <div key={index}>
+                <LightBoxImgContainer key={index}>
                   <LightBoxImg src={photoLink.photoLink} alt="varior" />
-                </div>
+                </LightBoxImgContainer>
               );
             })}
           </Carousel>

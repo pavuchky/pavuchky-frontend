@@ -6,10 +6,17 @@ const { fontSizes, fontWeights, colors, fonts, borders, radii } = theme;
 
 export const GalleryTabGridContainer = styled.div`
   display: grid;
-  grid-template-columns: 50% 50%;
-  gap: 13px;
+  grid-template-columns: 316px 316px;
+  gap: 24px;
   margin-top: 45px;
   margin-bottom: 32px;
+  @media (min-width: 1440px) {
+    grid-template-columns: 409px 409px 409px;
+    gap: 26px;
+    margin-top: 44px;
+    margin-bottom: 44px;
+   
+  }
 `;
 export const GalleryTabImg = styled.img`
   width: 316px;
@@ -17,6 +24,10 @@ export const GalleryTabImg = styled.img`
   margin: 0;
   padding: 0;
   border-radius: 10px;
+  @media (min-width: 1440px) {
+    width: 409px;
+    height: 543px;
+  }
 `;
 
 export const GalleryTabButton = styled.button`
@@ -43,6 +54,9 @@ export const GalleryTabButton = styled.button`
     outline: transparent;
     color: ${colors.yellow};
   }
+   @media (min-width: 1440px) {
+    display: none;
+   }
 `;
 
 /**==============StylesForDesktop======================== */
@@ -68,26 +82,53 @@ export const GalleryPaginationContainer = styled.div`
   align-items: center;
 `;
 export const GalleryFirstSvgButton = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 85px;
-  height: 85px;
-  border: ${borders.normal};
-  color: ${colors.blue};
-  border-radius: ${radii.round};
-  position: relative;
+    @media (min-width: 375px) {
+    display: none;
+  }
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  @media (min-width: 1440px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85px;
+    height: 85px;
+    border: ${borders.normal};
+    color: ${colors.blue};
+    border-radius: ${radii.round};
+    position: relative;
+    top: 368px;
+    left: 1px;
+    
+    z-index: 99999999;
+  }
 `;
 
 export const GallerySecondSvgButton = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 85px;
-  height: 85px;
-  border: ${borders.normal};
-  color: ${colors.blue};
-  border-radius: ${radii.round};
+  @media (min-width: 375px) {
+    display: none;
+  }
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  @media (min-width: 1440px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85px;
+    height: 85px;
+    border: ${borders.normal};
+    color: ${colors.blue};
+    border-radius: ${radii.round};
+    position: relative;
+    top:-391px;
+    left: 1024px;
+  
+    z-index: 99999999;
+  }
 `;
 
 export const GalleryDesctopSvg = styled.svg`
