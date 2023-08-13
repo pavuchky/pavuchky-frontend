@@ -1,5 +1,6 @@
 import { urlFor } from 'client';
 import formatTextSanity from './formatTextSanity';
+import formatFileSanity from './formatFileSanity';
 
 export const contactsFormattedFn = ({
   phone,
@@ -132,6 +133,43 @@ export const galleryPhotoFormattedFn = ({ galleryPhotoList, _id }) => {
             photoLink: !!photoLink ? BASE_PHOTO_URL + photoLink : null,
           };
         })
+      : null,
+  };
+};
+
+export const galleryVideoFormattedFn = ({ galleryVideoList, _id }) => {
+  return {
+    id: _id,
+    galleryVideoList: galleryVideoList
+      ? galleryVideoList.map(({ videoLink }) => {
+          return {
+            videoLink: !!videoLink ? videoLink : null,
+          };
+        })
+      : null,
+  };
+};
+
+export const reportingFormattedFn = ({ reportingList, _id }) => {
+  return {
+    id: _id,
+    reportingList: reportingList
+      ? reportingList.map(
+          ({ reportingMonth, financialReport, resultsReport, _key }) => {
+            return {
+              id: _key,
+              reportingMonth: !!reportingMonth
+                ? { en: reportingMonth.en, ua: reportingMonth.ua }
+                : null,
+              financialReport: !!financialReport
+                ? formatFileSanity(financialReport)
+                : null,
+              resultsReport: !!resultsReport
+                ? formatFileSanity(resultsReport)
+                : null,
+            };
+          }
+        )
       : null,
   };
 };
