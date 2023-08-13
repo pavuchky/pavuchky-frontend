@@ -15,6 +15,11 @@ export const PaginationContainer = styled(Pagination)`
 
   .MuiPaginationItem-root {
     margin: 0px;
+    color: ${colors.grey};
+
+    .MuiPaginationItem-icon {
+      fill: ${colors.blue};
+    }
   }
 
   & .Mui-selected {
@@ -49,6 +54,10 @@ export const PaginationContainer = styled(Pagination)`
 
   .Mui-disabled {
     border-color: ${colors.grey} !important;
+
+    .MuiPaginationItem-icon {
+      fill: ${colors.grey};
+    }
   }
   .MuiPaginationItem-ellipsis {
     width: 40px;

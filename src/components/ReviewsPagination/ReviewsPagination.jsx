@@ -8,7 +8,7 @@ import {
   ReviewsPaginationList,
 } from './ReviewsPagination.styled';
 
-import SvgIcon from '@mui/material/SvgIcon';
+import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
 
 import PaginationItem from '@mui/material/PaginationItem';
 
@@ -21,19 +21,6 @@ const ReviewsPagination = () => {
 
   const { data } = useFetch('reviews');
 
-  //////////////////////////
-  useEffect(() => {
-    for (let i = 1; i < 126; i++) {
-      data?.reviewList.push({
-        id: i,
-        reviewImage: null,
-        reviewDesc: 'Щиро дякуємо за маскування.  Наші бійці в повній безпеці',
-      });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data?.reviewList]);
-  //////////////////////////
-
   useEffect(() => {
     const mobileAndDesktopCeil = Math.ceil(data?.reviewList.length / 3) || 1;
     const tabletCeil = Math.ceil(data?.reviewList.length / 6) || 1;
@@ -41,8 +28,7 @@ const ReviewsPagination = () => {
     const isTablet = isTabletScreen && !isDesktopScreen;
 
     isTablet ? setCount(tabletCeil) : setCount(mobileAndDesktopCeil);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isDesktopScreen, isTabletScreen]);
+  }, [data?.reviewList.length, isDesktopScreen, isTabletScreen]);
 
   const handleChange = (_, selectedPage) => {
     setPage(selectedPage);
@@ -76,8 +62,8 @@ const ReviewsPagination = () => {
         renderItem={item => (
           <PaginationItem
             slots={{
-              previous: SvgIcon,
-              next: SvgIcon,
+              previous: SlArrowLeft,
+              next: SlArrowRight,
             }}
             {...item}
           />
