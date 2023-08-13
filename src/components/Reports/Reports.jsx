@@ -1,4 +1,6 @@
-import { useContext, useState } from 'react';
+import { useState, useContext } from 'react';
+import useFetch from 'hooks/useFetch';
+import { LanguageContext } from 'utils/LanguageContext';
 import sprite from '../../assets/images/sprite.svg';
 import {
   CollapseIconArrow,
@@ -16,10 +18,6 @@ import {
   ReportsSection,
   ReportsWrapper,
 } from './Reports.styled';
-import PDFReader from './PDFReader/PDFReader';
-import { LanguageContext } from 'utils/LanguageContext';
-import useFetch from 'hooks/useFetch';
-import { useTranslation } from 'react-i18next';
 
 const reportsArr = [
   { id: '1', month: 'Лютий 2023' },
@@ -46,15 +44,8 @@ const Reports = () => {
   const rowsToShow = 6;
   const [nextNumber, setNextNumber] = useState(rowsToShow);
 
-  // const [openPDF, setOpenPDF] = useState(false);
-  // console.log(PDFReader);
-  // console.log(openPDF);
-
   const { lang } = useContext(LanguageContext);
   const { data } = useFetch('reporting');
-  const { t } = useTranslation();
-
-  console.log('reporting', data);
 
   const handleLoadMore = () => {
     setNextNumber(nextNumber + rowsToShow);
@@ -63,10 +54,6 @@ const Reports = () => {
   const handleCollapse = () => {
     setNextNumber(nextNumber - rowsToShow);
   };
-
-  // const handleOpenPDF = () => {
-  //   setOpenPDF(true);
-  // };
 
   return (
     <>
@@ -79,11 +66,16 @@ const Reports = () => {
           </ReportText>
         </ReportTextWrapper>
         <ReportsList>
-          {reportsArr.slice(0, nextNumber).map(el => (
-            <ReportsListItem key={el.id}>
-              <ReportsListItemTitle>{el.month}</ReportsListItemTitle>
+          {data?.reportingList?.slice(0, nextNumber).map(el => (
+            <ReportsListItem key={el?.id}>
+              <ReportsListItemTitle>
+                {el?.reportingMonth[lang]}
+              </ReportsListItemTitle>
               <ReportsWrapper>
-                <ReportsButtonWrapper>
+                <ReportsButtonWrapper
+                  href={el?.financialReport}
+                  target="_blank"
+                >
                   <ReportName>Фінансовий звіт</ReportName>
                   <ReportIconArrow>
                     <use href={`${sprite}#arrow-up-blue`}></use>
@@ -91,115 +83,48 @@ const Reports = () => {
                 </ReportsButtonWrapper>
               </ReportsWrapper>
               <ReportsWrapper>
-                <ReportsButtonWrapper>
+                <ReportsButtonWrapper href={el?.resultsReport} target="_blank">
                   <ReportName>Звіт про результати</ReportName>
                   <ReportIconArrow>
                     <use href={`${sprite}#arrow-up-blue`}></use>
                   </ReportIconArrow>
                 </ReportsButtonWrapper>
-                {/* {openPDF && <PDFReader />} */}
               </ReportsWrapper>
             </ReportsListItem>
           ))}
 
-          {/* <ReportsListItem>
-            <ReportsListItemTitle>Лютий 2023</ReportsListItemTitle>
-            <ReportsWrapper>
-              <ReportsButtonWrapper href="..." target="_blank">
-                <ReportName>Фінансовий звіт</ReportName>
-                <ReportIconArrow>
-                  <use href={`${sprite}#arrow-up-blue`}></use>
-                </ReportIconArrow>
-              </ReportsButtonWrapper>
-            </ReportsWrapper>
-            <ReportsWrapper>
-              <ReportsButtonWrapper href="..." target="_blank">
-                <ReportName>Звіт про результати</ReportName>
-                <ReportIconArrow>
-                  <use href={`${sprite}#arrow-up-blue`}></use>
-                </ReportIconArrow>
-              </ReportsButtonWrapper>
-            </ReportsWrapper>
-          </ReportsListItem>
-          <ReportsListItem>
-            <ReportsListItemTitle>Січень 2023</ReportsListItemTitle>
-            <ReportsWrapper>
-              <ReportsButtonWrapper href="..." target="_blank">
-                <ReportName>Фінансовий звіт</ReportName>
-                <ReportIconArrow>
-                  <use href={`${sprite}#arrow-up-blue`}></use>
-                </ReportIconArrow>
-              </ReportsButtonWrapper>
-            </ReportsWrapper>
-            <ReportsWrapper>
-              <ReportsButtonWrapper href="..." target="_blank">
-                <ReportName>Звіт про результати</ReportName>
-                <ReportIconArrow>
-                  <use href={`${sprite}#arrow-up-blue`}></use>
-                </ReportIconArrow>
-              </ReportsButtonWrapper>
-            </ReportsWrapper>
-          </ReportsListItem>
-          <ReportsListItem>
-            <ReportsListItemTitle>Грудень 2022</ReportsListItemTitle>
-            <ReportsWrapper>
-              <ReportsButtonWrapper href="..." target="_blank">
-                <ReportName>Фінансовий звіт</ReportName>
-                <ReportIconArrow>
-                  <use href={`${sprite}#arrow-up-blue`}></use>
-                </ReportIconArrow>
-              </ReportsButtonWrapper>
-            </ReportsWrapper>
-            <ReportsWrapper>
-              <ReportsButtonWrapper href="..." target="_blank">
-                <ReportName>Звіт про результати</ReportName>
-                <ReportIconArrow>
-                  <use href={`${sprite}#arrow-up-blue`}></use>
-                </ReportIconArrow>
-              </ReportsButtonWrapper>
-            </ReportsWrapper>
-          </ReportsListItem>
-          <ReportsListItem>
-            <ReportsListItemTitle>Листопад 2022</ReportsListItemTitle>
-            <ReportsWrapper>
-              <ReportsButtonWrapper href="..." target="_blank">
-                <ReportName>Фінансовий звіт</ReportName>
-                <ReportIconArrow>
-                  <use href={`${sprite}#arrow-up-blue`}></use>
-                </ReportIconArrow>
-              </ReportsButtonWrapper>
-            </ReportsWrapper>
-            <ReportsWrapper>
-              <ReportsButtonWrapper href="..." target="_blank">
-                <ReportName>Звіт про результати</ReportName>
-                <ReportIconArrow>
-                  <use href={`${sprite}#arrow-up-blue`}></use>
-                </ReportIconArrow>
-              </ReportsButtonWrapper>
-            </ReportsWrapper>
-          </ReportsListItem>
-          <ReportsListItem>
-            <ReportsListItemTitle>Жовтень 2022</ReportsListItemTitle>
-            <ReportsWrapper>
-              <ReportsButtonWrapper href="..." target="_blank">
-                <ReportName>Фінансовий звіт</ReportName>
-                <ReportIconArrow>
-                  <use href={`${sprite}#arrow-up-blue`}></use>
-                </ReportIconArrow>
-              </ReportsButtonWrapper>
-            </ReportsWrapper>
-            <ReportsWrapper>
-              <ReportsButtonWrapper href="..." target="_blank">
-                <ReportName>Звіт про результати</ReportName>
-                <ReportIconArrow>
-                  <use href={`${sprite}#arrow-up-blue`}></use>
-                </ReportIconArrow>
-              </ReportsButtonWrapper>
-            </ReportsWrapper>
-          </ReportsListItem> */}
+          {/* this line is only for testing purposes */}
+          {reportsArr?.slice(0, nextNumber).map(el => (
+            <ReportsListItem key={el.id}>
+              <ReportsListItemTitle>{el?.month}</ReportsListItemTitle>
+              <ReportsWrapper>
+                <ReportsButtonWrapper
+                  href={data?.reportingList[0]?.financialReport}
+                  target="_blank"
+                >
+                  <ReportName>Фінансовий звіт</ReportName>
+                  <ReportIconArrow>
+                    <use href={`${sprite}#arrow-up-blue`}></use>
+                  </ReportIconArrow>
+                </ReportsButtonWrapper>
+              </ReportsWrapper>
+              <ReportsWrapper>
+                <ReportsButtonWrapper
+                  href={data?.reportingList[0]?.resultsReport}
+                  target="_blank"
+                >
+                  <ReportName>Звіт про результати</ReportName>
+                  <ReportIconArrow>
+                    <use href={`${sprite}#arrow-up-blue`}></use>
+                  </ReportIconArrow>
+                </ReportsButtonWrapper>
+              </ReportsWrapper>
+            </ReportsListItem>
+          ))}
         </ReportsList>
         <LoadMoreWrapper>
-          {nextNumber < reportsArr.length && (
+          {(nextNumber < data?.reportingList.length ||
+            nextNumber < reportsArr.length) && (
             <button type="button" onClick={handleLoadMore}>
               <LoadIconArrow>
                 <use href={`${sprite}#arrow-up-blue`}></use>
