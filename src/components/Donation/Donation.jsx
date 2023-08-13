@@ -1,4 +1,8 @@
+import { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { toast } from 'react-toastify';
+import { useTranslation } from 'react-i18next';
+import { DonationModal } from 'components/DonationModal/DonationModal';
 import sprite from '../../assets/images/sprite.svg';
 import {
   BankLink,
@@ -18,14 +22,13 @@ import {
   QRIcon,
   QRText,
 } from './Donation.styled';
-import { useState } from 'react';
-import { DonationModal } from 'components/DonationModal/DonationModal';
-import { toast } from 'react-toastify';
 
 const cardNumber = '5375 4112 0306 8395';
 
 export const Donation = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const { t } = useTranslation();
 
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
   const isTablet = useMediaQuery({
@@ -50,7 +53,7 @@ export const Donation = () => {
   return (
     <DonationSection id="donation">
       <DonationWrapper>
-        <DonationTitle>Донать на перемогу</DonationTitle>
+        <DonationTitle>{t('donation.victory')}</DonationTitle>
 
         <CardLabel>
           <CardInput type="text" value={cardNumber} readOnly />
@@ -71,39 +74,32 @@ export const Donation = () => {
         )}
 
         <DonationDescr>
-          Ви можете переказати кошти на
+          {t('donation.transfer')}
           <BankLink
             href="https://send.monobank.ua/jar/9f3sWL2CAq"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Монобанку
+            {t('donation.monobank')}
           </BankLink>
         </DonationDescr>
 
         {(isMobile || isDesktop) && (
           <DonationDescrText>
-            Щоб дізнатися інші реквізити &#8220;Павучків&#8221;, зверніться до
-            адміністратора ініціативи
+            {t('donation.initiativeDetails')}
           </DonationDescrText>
         )}
       </DonationWrapper>
 
       {!isMobile && (
         <DonationQRWrapper>
-          {isDesktop && (
-            <DonationText>
-              Кожен донат допомагає захистити наших воїнів та наближає Україну
-              до перемоги!
-            </DonationText>
-          )}
+          {isDesktop && <DonationText>{t('donation.protect')}</DonationText>}
           <QRIcon>
             <use href={sprite + '#qr'}></use>
           </QRIcon>
           {isTablet && (
             <DonationDescrText>
-              Щоб дізнатися інші реквізити &#8220;Павучків&#8221;, зверніться до
-              адміністратора ініціативи
+              {t('donation.initiativeDetails')}
             </DonationDescrText>
           )}
         </DonationQRWrapper>

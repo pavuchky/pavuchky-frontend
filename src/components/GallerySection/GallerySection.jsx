@@ -1,3 +1,6 @@
+import { useMediaQuery } from 'react-responsive';
+import { useTranslation } from 'react-i18next';
+import { ViewAll } from 'components/ViewAll/ViewAll';
 import {
   GallerySectionWrapper,
   TitleWrapper,
@@ -12,7 +15,6 @@ import {
   GalleryItem5,
   GalleryItem6,
 } from './GallerySection.styled';
-import { useMediaQuery } from 'react-responsive';
 
 import galleryImg1 from '../../assets/images/gallery/gallery_img1.jpg';
 import galleryImg2 from '../../assets/images/gallery/gallery_img2.jpg';
@@ -20,7 +22,6 @@ import galleryImg3 from '../../assets/images/gallery/gallery_img3.jpg';
 import galleryImg4 from '../../assets/images/gallery/gallery_img4.jpg';
 import galleryImg5 from '../../assets/images/gallery/gallery_img5.jpg';
 import galleryImg6 from '../../assets/images/gallery/gallery_img6.jpg';
-import { ViewAll } from 'components/ViewAll/ViewAll';
 
 const imgArrayDesktop = [
   galleryImg1,
@@ -36,6 +37,8 @@ const imgArrayTablet = [galleryImg1, galleryImg3, galleryImg4, galleryImg2];
 const imgArrayMobile = [galleryImg1, galleryImg3];
 
 const GallerySection = () => {
+  const { t } = useTranslation();
+
   const isDesktop = useMediaQuery({
     query: '(min-width: 1439px)',
   });
@@ -53,10 +56,10 @@ const GallerySection = () => {
   return (
     <GallerySectionWrapper>
       <TitleWrapper>
-        <GalleryTitle>Галерея</GalleryTitle>
+        <GalleryTitle>{t('nav.gallery')}</GalleryTitle>
         <ViewAll
-          shortText="Переглянути"
-          longText="Переглянути усе"
+          shortText={t('nav.viewMore')}
+          longText={t('nav.viewAll')}
           changeable
           path="/gallery/photos"
         />

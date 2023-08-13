@@ -18,21 +18,15 @@ export const Contribution = () => {
     <ContributeSection>
       <TextWrapper>
         {isMobile ? (
-          <ContributeDescr>Збережи життя захисників</ContributeDescr>
+          <ContributeDescr>{t('contribution.save')}</ContributeDescr>
         ) : (
-          <ContributeTitle>
-            Зроби внесок <br />
-            на маскувальні сітки
-          </ContributeTitle>
+          <ContributeTitle>{t('contribution.donation')}</ContributeTitle>
         )}
 
         {isMobile ? (
-          <ContributeTitle>
-            Зроби внесок <br />
-            на маскувальні сітки
-          </ContributeTitle>
+          <ContributeTitle>{t('contribution.donation')}</ContributeTitle>
         ) : (
-          <ContributeDescr>Збережи життя захисників</ContributeDescr>
+          <ContributeDescr>{t('contribution.save')}</ContributeDescr>
         )}
       </TextWrapper>
 

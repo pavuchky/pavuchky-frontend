@@ -11,6 +11,8 @@ import {
   partnersFormattedFn,
   aboutFormattedFn,
   galleryPhotoFormattedFn,
+  galleryVideoFormattedFn,
+  reportingFormattedFn,
 } from '../utils/fetchFormatFunctions';
 
 // available props
@@ -22,6 +24,8 @@ const objectOfPropsAndRoutes = {
   statistic: 'statistic',
   partners: 'partners',
   galleryPhoto: 'galleryPhoto',
+  galleryVideo: 'galleryVideo',
+  reporting: 'reporting',
 };
 
 // usage
@@ -36,9 +40,11 @@ const useFetch = (type = 'posts') => {
     posts: postsFormattedFn,
     about: aboutFormattedFn,
     galleryPhoto: galleryPhotoFormattedFn,
+    galleryVideo: galleryVideoFormattedFn,
     reviews: reviewsFormattedFn,
     statistic: statisticFormattedFn,
     partners: partnersFormattedFn,
+    reporting: reportingFormattedFn,
   }[type];
 
   const errorMessage = `Invalid prop ${type} passed to useFetch. Expected a valid type and name of param. You can pass only ${JSON.stringify(

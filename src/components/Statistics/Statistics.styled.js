@@ -77,6 +77,7 @@ export const AchievementsListItem = styled.li`
   &:nth-child(2n) {
     flex-direction: column;
     gap: ${({ theme }) => theme.spacing(2)};
+    text-transform: lowercase;
 
     border-left: 1px solid ${({ theme }) => theme.colors.black};
     border-bottom: 1px solid ${({ theme }) => theme.colors.black};
