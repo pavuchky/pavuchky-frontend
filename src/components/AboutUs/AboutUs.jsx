@@ -1,3 +1,4 @@
+import useFetch from '../../hooks/useFetch';
 import Map from '../../assets/images/map.svg';
 import sprite from '../../assets/images/sprite.svg';
 import { useMediaQuery } from 'react-responsive';
@@ -23,6 +24,9 @@ const AboutUs = () => {
     query: '(min-width: 1439px)',
   });
 
+  const { data } = useFetch('about');
+  console.log('about', data);
+
   return (
     <AboutUsSectionWrapper>
       <TitleWrapper>
@@ -38,6 +42,7 @@ const AboutUs = () => {
         <DescriptionContainer>
           <DescriptionWrapper>
             <AboutUsDescription>
+              {/* {data.aboutShort} */}
               Повномасштабне вторгнення росії змусило кожного українця
               замислитися про те, що він чи вона може зробити для допомоги своїй
               країні, армії, співгромадянам.

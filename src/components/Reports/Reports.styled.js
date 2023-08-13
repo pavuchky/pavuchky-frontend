@@ -119,7 +119,7 @@ export const ReportsListItemTitle = styled.h4`
   font-weight: 400;
   @media only screen and (min-width: 768px) {
     &:first-child {
-      width: 30%;
+      width: 27%;
     }
 
     font-size: 18px;
@@ -128,7 +128,7 @@ export const ReportsListItemTitle = styled.h4`
 
   @media only screen and (min-width: 1440px) {
     &:first-child {
-      width: 55%;
+      width: 50%;
     }
     font-family: ${({ theme }) => theme.fonts.light};
     font-size: 26px;
@@ -145,15 +145,28 @@ export const ReportsWrapper = styled.div`
   }
 `;
 
-export const ReportsButtonWrapper = styled.a`
+export const ReportsButtonWrapper = styled.button`
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 16px;
+  transition: color 0.3s ease;
+  transition: stroke 0.3s ease;
 
-  &:hover {
+  &:hover > p {
+    color: ${({ theme }) => theme.colors.yellow};
+    text-shadow: -0 -1px 0 #d3cdcd, 0 -1px 0 #d3cdcd, -0 1px 0 #d3cdcd,
+      0 1px 0 #d3cdcd, -1px -0 0 #d3cdcd, 1px -0 0 #d3cdcd, -1px 0 0 #d3cdcd,
+      1px 0 0 #d3cdcd, -1px -1px 0 #d3cdcd, 1px -1px 0 #d3cdcd,
+      -1px 1px 0 #d3cdcd, 1px 1px 0 #d3cdcd, -1px -1px 0 #d3cdcd,
+      1px -1px 0 #d3cdcd, -1px 1px 0 #d3cdcd, 1px 1px 0 #d3cdcd;
+  }
+
+  &:hover > svg {
     stroke: ${({ theme }) => theme.colors.yellow};
     color: ${({ theme }) => theme.colors.yellow};
+    stroke: #ffed00;
+    color: #ffed00;
   }
 `;
 
@@ -163,6 +176,8 @@ export const ReportName = styled.p`
   font-family: ${({ theme }) => theme.fonts.light};
   font-size: 14px;
   font-weight: 300;
+
+  transition: color 0.3s ease;
   @media only screen and (min-width: 768px) {
     width: auto;
 
@@ -179,10 +194,53 @@ export const ReportName = styled.p`
     font-size: 20px;
     font-weight: 300;
   }
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.yellow};
+  }
 `;
 
 export const ReportIconArrow = styled.svg`
   display: inline-block;
   width: 24px;
   height: 24px;
+  stroke: ${({ theme }) => theme.colors.blue};
+  transition: stroke 0.3s ease;
+
+  &:hover {
+    stroke: ${({ theme }) => theme.colors.yellow};
+  }
+`;
+
+export const LoadMoreWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+`;
+
+export const LoadIconArrow = styled.svg`
+  display: inline-block;
+  width: 65px;
+  height: 65px;
+  transform: rotate(90deg);
+  stroke: ${({ theme }) => theme.colors.blue};
+  transition: stroke 0.3s ease;
+
+  &:hover {
+    stroke: ${({ theme }) => theme.colors.yellow};
+  }
+`;
+
+export const CollapseIconArrow = styled.svg`
+  display: inline-block;
+  width: 65px;
+  height: 65px;
+  margin-left: 15px;
+  transform: rotate(-90deg);
+  stroke: ${({ theme }) => theme.colors.blue};
+  transition: stroke 0.3s ease;
+
+  &:hover {
+    stroke: ${({ theme }) => theme.colors.yellow};
+  }
 `;

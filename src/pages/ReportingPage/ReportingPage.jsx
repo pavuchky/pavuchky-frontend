@@ -11,6 +11,7 @@ const ReportingPage = () => {
       <PathDisplayer
         current={{ path: '/reporting', name: t('header.reporting') }}
       />
+      <Reports />
     </>
   );
 };
