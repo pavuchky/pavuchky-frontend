@@ -57,8 +57,6 @@ export const HeroListTitle = styled.h1`
 `;
 
 export const HeroTitle = styled.span`
-  z-index: 1;
-  position: relative;
   font-family: ${({ theme }) => theme.fonts.headLight};
   font-weight: ${({ theme }) => theme.fontWeights.light};
   font-size: 32px;
@@ -71,7 +69,7 @@ export const HeroTitle = styled.span`
 
   @media only screen and (min-width: 1440px) {
     font-size: 100px;
-    letter-spacing: -3.2px;
+    letter-spacing: -4px;
   }
 `;
 
@@ -91,7 +89,7 @@ export const HeroSubTitle = styled.span`
   }
 
   @media only screen and (min-width: 1440px) {
-    padding-left: 217px;
+    padding-left: 210px;
     font-size: 60px;
     text-align: start;
     letter-spacing: -2.4px;
@@ -105,7 +103,7 @@ export const IconTank = styled.img`
     display: block;
     position: absolute;
     top: 140px;
-    left: 663px;
+    left: 700px;
     width: 584px;
     height: 247px;
   }
