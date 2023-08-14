@@ -41,11 +41,11 @@ export const ReviewsSwiperItemParagraph = styled.p`
   font-family: ${fonts.light};
   color: ${colors.secondaryFont};
 
-  min-height: 42px; //////////////////
+  min-height: 38px; //////////////////
 
   overflow-y: auto;
   overflow-x: hidden;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 
   &::-webkit-scrollbar {
     width: 3px;
@@ -75,9 +75,9 @@ export const ReviewsSwiperItemParagraph = styled.p`
     font-weight: ${fontWeights.light};
     font-family: ${fonts.light};
 
-    min-height: 124px; //////////////////////////
+    min-height: 120px; //////////////////////////
 
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 
     &::-webkit-scrollbar {
       width: 4px;

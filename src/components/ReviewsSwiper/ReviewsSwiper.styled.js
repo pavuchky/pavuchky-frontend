@@ -52,6 +52,9 @@ export const ReviewsSwiperContainer = styled(Swiper)`
     min-height: 2px;
   }
 
+  .swiper-scrollbar-drag:not(:last-child) {
+    display: none;
+  }
   @media (min-width: 768px) {
     width: 656px;
 
