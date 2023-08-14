@@ -121,6 +121,7 @@ const GalleryTabPhotos = () => {
                 onChange={onPageChange}
                 color="primary"
                 variant="outlined"
+                
               />
             </GalleryPaginationContainer>
           </>
