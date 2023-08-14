@@ -20,7 +20,7 @@ const MobGalleryVideos = () => {
           >
               {data?.galleryVideoList?.map(({ id, index, videoLink }) => (
                   <SwiperSlide key={id} >
-                     <ReactPlayer key={id} url={videoLink} />
+                  <ReactPlayer key={id} url={videoLink} width={327} height={427} controls={true} />
                   </SwiperSlide>))}
       </Swiper>
     </div>
