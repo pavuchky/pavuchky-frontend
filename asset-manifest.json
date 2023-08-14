@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/pavuchky-frontend/static/css/main.aa60a9c0.css",
-    "main.js": "/pavuchky-frontend/static/js/main.830c0ab0.js",
+    "main.js": "/pavuchky-frontend/static/js/main.afb7a6f9.js",
     "static/js/434.97455be2.chunk.js": "/pavuchky-frontend/static/js/434.97455be2.chunk.js",
     "static/js/350.51821c45.chunk.js": "/pavuchky-frontend/static/js/350.51821c45.chunk.js",
     "static/js/969.b3dbcce4.chunk.js": "/pavuchky-frontend/static/js/969.b3dbcce4.chunk.js",
     "static/js/760.3a60e742.chunk.js": "/pavuchky-frontend/static/js/760.3a60e742.chunk.js",
     "static/js/640.0d024249.chunk.js": "/pavuchky-frontend/static/js/640.0d024249.chunk.js",
     "static/js/252.bc0b52a0.chunk.js": "/pavuchky-frontend/static/js/252.bc0b52a0.chunk.js",
-    "static/js/533.a539a3ce.chunk.js": "/pavuchky-frontend/static/js/533.a539a3ce.chunk.js",
+    "static/js/703.7501e0e0.chunk.js": "/pavuchky-frontend/static/js/703.7501e0e0.chunk.js",
     "static/js/764.2004346e.chunk.js": "/pavuchky-frontend/static/js/764.2004346e.chunk.js",
     "static/js/783.cfa4e802.chunk.js": "/pavuchky-frontend/static/js/783.cfa4e802.chunk.js",
     "static/js/726.19048958.chunk.js": "/pavuchky-frontend/static/js/726.19048958.chunk.js",
@@ -21,7 +21,7 @@
     "static/media/map.svg": "/pavuchky-frontend/static/media/map.29ead2906e6141cbdeb9941af14ab323.svg",
     "static/media/warrior_tablet@2x.png": "/pavuchky-frontend/static/media/warrior_tablet@2x.63003035cc03b8840cf9.png",
     "static/media/warrior_desk.png": "/pavuchky-frontend/static/media/warrior_desk.5a315f62a97e5ea56f26.png",
-    "static/media/sprite.svg": "/pavuchky-frontend/static/media/sprite.f92d2dc531dedd0ca40c9d2de2b3a679.svg",
+    "static/media/sprite.svg": "/pavuchky-frontend/static/media/sprite.c1fac4dc65016ea77d8c90f3f0136f0b.svg",
     "static/media/tank.svg": "/pavuchky-frontend/static/media/tank.dee9c0ceb25e9833c99216753bedf5a9.svg",
     "static/media/weaving_desk@2x.png": "/pavuchky-frontend/static/media/weaving_desk@2x.4fa89f3bde88074b3983.png",
     "static/media/warrior_mob@2x.png": "/pavuchky-frontend/static/media/warrior_mob@2x.eb6587239e79f05d6f00.png",
@@ -51,14 +51,14 @@
     "index.html": "/pavuchky-frontend/index.html",
     "static/media/getFetch.cjs": "/pavuchky-frontend/static/media/getFetch.40f37ddea2378391108f.cjs",
     "main.aa60a9c0.css.map": "/pavuchky-frontend/static/css/main.aa60a9c0.css.map",
-    "main.830c0ab0.js.map": "/pavuchky-frontend/static/js/main.830c0ab0.js.map",
+    "main.afb7a6f9.js.map": "/pavuchky-frontend/static/js/main.afb7a6f9.js.map",
     "434.97455be2.chunk.js.map": "/pavuchky-frontend/static/js/434.97455be2.chunk.js.map",
     "350.51821c45.chunk.js.map": "/pavuchky-frontend/static/js/350.51821c45.chunk.js.map",
     "969.b3dbcce4.chunk.js.map": "/pavuchky-frontend/static/js/969.b3dbcce4.chunk.js.map",
     "760.3a60e742.chunk.js.map": "/pavuchky-frontend/static/js/760.3a60e742.chunk.js.map",
     "640.0d024249.chunk.js.map": "/pavuchky-frontend/static/js/640.0d024249.chunk.js.map",
     "252.bc0b52a0.chunk.js.map": "/pavuchky-frontend/static/js/252.bc0b52a0.chunk.js.map",
-    "533.a539a3ce.chunk.js.map": "/pavuchky-frontend/static/js/533.a539a3ce.chunk.js.map",
+    "703.7501e0e0.chunk.js.map": "/pavuchky-frontend/static/js/703.7501e0e0.chunk.js.map",
     "764.2004346e.chunk.js.map": "/pavuchky-frontend/static/js/764.2004346e.chunk.js.map",
     "783.cfa4e802.chunk.js.map": "/pavuchky-frontend/static/js/783.cfa4e802.chunk.js.map",
     "726.19048958.chunk.js.map": "/pavuchky-frontend/static/js/726.19048958.chunk.js.map",
@@ -70,6 +70,6 @@
   },
   "entrypoints": [
     "static/css/main.aa60a9c0.css",
-    "static/js/main.830c0ab0.js"
+    "static/js/main.afb7a6f9.js"
   ]
 }
