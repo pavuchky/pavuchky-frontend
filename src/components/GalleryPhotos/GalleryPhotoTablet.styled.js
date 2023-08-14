@@ -17,6 +17,7 @@ export const GalleryTabGridContainer = styled.div`
     margin-bottom: 44px;
    
   }
+ 
 `;
 export const GalleryTabImg = styled.img`
   width: 316px;
