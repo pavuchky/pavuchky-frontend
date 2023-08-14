@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
 export const ReportsSection = styled.section`
-  padding: 28px 24px 24px;
+  padding: 28px 16px 24px;
   margin-bottom: 36px;
   border-radius: 16px;
   background: ${({ theme }) => theme.colors.gradientBackground};
   @media only screen and (min-width: 768px) {
     padding: 32px;
+    margin-bottom: 44px;
   }
   @media only screen and (min-width: 1440px) {
     padding: 44px 64px;
@@ -31,9 +32,10 @@ export const ReportTextWrapper = styled.div`
 export const ReportTitle = styled.h3`
   display: inline-block;
   margin-bottom: 24px;
-  color: ${({ theme }) => theme.colors.secondaryFont};
+  color: ${({ theme }) => theme.colors.primaryFont};
   font-family: ${({ theme }) => theme.fonts.regular};
   font-size: 24px;
+  font-weight: 400;
   @media only screen and (min-width: 768px) {
     color: ${({ theme }) => theme.colors.primaryFont};
     font-family: ${({ theme }) => theme.fonts.headRegular};
@@ -83,7 +85,7 @@ export const ReportsListItem = styled.li`
   gap: 15.5px;
   padding-bottom: 24px;
   color: ${({ theme }) => theme.colors.primaryFont};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.secondaryFontFont};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.secondaryFont};
 
   &:last-child {
     border-bottom: none;
@@ -91,23 +93,26 @@ export const ReportsListItem = styled.li`
   }
 
   @media only screen and (min-width: 768px) {
-    height: 46px;
+    padding: 12px 0;
     flex-direction: row;
     gap: 0px;
-    padding-bottom: 0px;
     align-items: center;
     justify-content: space-between;
+
+    &:first-child {
+      border-top: 1px solid ${({ theme }) => theme.colors.secondaryFont};
+    }
     &:last-child {
-      border-bottom: 1px solid ${({ theme }) => theme.colors.secondaryFontFont};
-      padding-bottom: 0px;
+      border-bottom: 1px solid ${({ theme }) => theme.colors.secondaryFont};
+      padding: 12px 0;
     }
   }
 
   @media only screen and (min-width: 1440px) {
     gap: 44px;
-    height: 79px;
+    padding: 24px 0;
     &:first-child {
-      border-top: 1px solid ${({ theme }) => theme.colors.secondaryFontFont};
+      border-top: 1px solid ${({ theme }) => theme.colors.secondaryFont};
     }
   }
 `;
@@ -155,11 +160,11 @@ export const ReportsButtonWrapper = styled.a`
 
   &:hover > p {
     color: ${({ theme }) => theme.colors.yellow};
-    text-shadow: -0 -1px 0 #d3cdcd, 0 -1px 0 #d3cdcd, -0 1px 0 #d3cdcd,
-      0 1px 0 #d3cdcd, -1px -0 0 #d3cdcd, 1px -0 0 #d3cdcd, -1px 0 0 #d3cdcd,
-      1px 0 0 #d3cdcd, -1px -1px 0 #d3cdcd, 1px -1px 0 #d3cdcd,
-      -1px 1px 0 #d3cdcd, 1px 1px 0 #d3cdcd, -1px -1px 0 #d3cdcd,
-      1px -1px 0 #d3cdcd, -1px 1px 0 #d3cdcd, 1px 1px 0 #d3cdcd;
+    text-shadow: -0 -1px 0 #7c7575, 0 -1px 0 #7c7575, -0 1px 0 #7c7575,
+      0 1px 0 #7c7575, -1px -0 0 #7c7575, 1px -0 0 #7c7575, -1px 0 0 #7c7575,
+      1px 0 0 #7c7575, -1px -1px 0 #7c7575, 1px -1px 0 #7c7575,
+      -1px 1px 0 #7c7575, 1px 1px 0 #7c7575, -1px -1px 0 #7c7575,
+      1px -1px 0 #7c7575, -1px 1px 0 #7c7575, 1px 1px 0 #7c7575;
   }
 
   &:hover > svg {
@@ -215,19 +220,24 @@ export const ReportIconArrow = styled.svg`
 export const LoadMoreWrapper = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 25px;
+  margin-top: 24px;
 `;
 
 export const LoadIconArrow = styled.svg`
   display: inline-block;
-  width: 65px;
-  height: 65px;
+  width: 50px;
+  height: 50px;
   transform: rotate(90deg);
   stroke: ${({ theme }) => theme.colors.blue};
   transition: stroke 0.3s ease;
 
   &:hover {
     stroke: ${({ theme }) => theme.colors.yellow};
+  }
+
+  @media only screen and (min-width: 768px) {
+    width: 65px;
+    height: 65px;
   }
 `;
 
