@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { HashLink } from 'react-router-hash-link';
 
 export const GallerySectionWrapper = styled.section`
   position: relative;
@@ -46,49 +45,6 @@ export const GalleryTitle = styled.h3`
     font-family: ${({ theme }) => theme.fonts.headRegular};
     font-size: 60px;
     letter-spacing: -2.4px;
-  }
-`;
-
-export const GalleryButton = styled(HashLink)`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-
-  font-family: ${({ theme }) => theme.fonts.regular};
-  font-size: 14px;
-  font-weight: ${({ theme }) => theme.fontWeights.regular};
-  color: ${({ theme }) => theme.colors.secondaryFont};
-  transition: color ${({ theme }) => theme.transitions.regular},
-    stroke ${({ theme }) => theme.transitions.regular};
-
-  &:hover,
-  &:focus {
-    color: ${({ theme }) => theme.colors.blue};
-    stroke: ${({ theme }) => theme.colors.blue};
-  }
-
-  @media screen and (min-width: 768px) {
-    font-family: ${({ theme }) => theme.fonts.light};
-    font-weight: ${({ theme }) => theme.fontWeights.light};
-  }
-  @media screen and (min-width: 1440px) {
-    font-family: ${({ theme }) => theme.fonts.regular};
-    font-size: 16px;
-    font-weight: 400;
-    line-height: ${({ theme }) => theme.lineHeights.secondary};
-  }
-`;
-
-export const GalleryIcon = styled.svg`
-  margin-left: 13px;
-  transition: stroke ${({ theme }) => theme.transitions.regular};
-
-  &:hover,
-  &:focus {
-    stroke: ${({ theme }) => theme.colors.blue};
   }
 `;
 

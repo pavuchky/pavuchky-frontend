@@ -1,14 +1,18 @@
 {
-  "header": {
+  "nav": {
     "main": "Home",
     "about": "About&nbsp;us",
+    "aboutUs": "About us",
     "order": "Order",
     "reporting": "Reporting",
     "gallery": "Gallery",
     "contacts": "Contacts",
     "donate": "Donate",
     "weave": "Weave",
-    "menu": "Menu"
+    "menu": "Menu",
+    "viewAll": "View all",
+    "viewMore": "View more ",
+    "all": "All"
   },
   "pages": {
     "about-us": "Who we are",
@@ -18,5 +22,74 @@
     "feedback": "Leave a review",
     "photos": "Photos",
     "videos": "Videos"
+  },
+  "buttons": {
+    "toHome": "Go to homepage",
+    "learnMore": "Learn more"
+  },
+  "hero": {
+    "protection": "We offer protection against enemy  observation!",
+    "title": "SPIDERS OF",
+    "subTitle": "BORSHCHAHIVKA",
+    "joinWeaving": "Join the weaving"
+  },
+  "aboutUs": {
+    "whoWeAre": "Who we are",
+    "whatWeDo": "What we do"
+  },
+  "statistics": {
+    "advantages": "Advantages",
+    "whyUs": "Why us?",
+    "qualityMaterials": "High quality materials",
+    "selection": "Selection of materials and colors",
+    "individualSelection": "Individual selection of materials and colors",
+    "feedback": "Taking feedback into consideration and improving the weaving technology",
+    "technologies": "Improvement of technologies",
+    "inFigures": "Our work in figures",
+    "achievements": "Our achievements",
+    "days": "Days being engaged in weaving",
+    "woven": "of nets woven",
+    "participants": "initiative participants",
+    "squared": "sq. m",
+    "metres": "m"
+  },
+  "contribution": {
+    "donation": "Make a donation to camouflage nets",
+    "order": "Order a net",
+    "save": "Save the lives of our defenders"
+  },
+  "ourNeeds": {
+    "whatWeNeed": "What we need",
+    "weNeed": "We need"
+  },
+  "reviews": {
+    "reviews": "Reviews"
+  },
+  "donation": {
+    "victory": "Donate to the victory",
+    "protect": "Each donation helps protect our soldiers and brings Ukraine closer to victory!",
+    "transfer": "You can transfer funds to ",
+    "monobank": "our Monobank card",
+    "initiativeDetails": "To find out other details of the Spiders, please contact the initiative administrator"
+  },
+  "partners": {
+    "partners": "Partners",
+    "become": "Become a partner",
+    "team": "Help us fight against enemy eyes. Join the team!",
+    "help": "Help us fight against enemy eyes.",
+    "apply": "Apply"
+  },
+  "contacts": {
+    "whereFind": "Where to find us",
+    "locations": "Weaving locations",
+    "details": "Contact details",
+    "admin": "Administrator: Olha Kuzakova",
+    "follow": "Follow us here:"
+  },
+  "forms": {
+    "plastic": "plastic",
+    "kapron": "kapron",
+    "cotton": "cotton",
+    "spunbond": "spunbond"
   }
 }

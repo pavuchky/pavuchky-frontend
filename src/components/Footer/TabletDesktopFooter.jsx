@@ -38,10 +38,10 @@ const TabletDesktopFooter = () => {
   const { t } = useTranslation();
 
   const footerItems = [
-    { href: '/about', value: t('header.about') },
-    { href: '/order', value: t('header.order') },
-    { href: '/reporting', value: t('header.reporting') },
-    { href: '/gallery/photos', value: t('header.gallery') },
+    { href: '/about', value: t('nav.about') },
+    { href: '/order', value: t('nav.order') },
+    { href: '/reporting', value: t('nav.reporting') },
+    { href: '/gallery/photos', value: t('nav.gallery') },
   ];
 
   return (
@@ -60,10 +60,14 @@ const TabletDesktopFooter = () => {
           </FooterTabList>
           <FooterTabSubList>
             <li>
-              <FooterTabSubLinks to="/#donation">Задонатити</FooterTabSubLinks>
+              <FooterTabSubLinks to="/#donation">
+                {t('nav.donate')}
+              </FooterTabSubLinks>
             </li>
             <li>
-              <FooterTabSubLinks to="/#contacts">Плести</FooterTabSubLinks>
+              <FooterTabSubLinks to="/#contacts">
+                {t('nav.weave')}
+              </FooterTabSubLinks>
             </li>
           </FooterTabSubList>
         </FooterTabListWrapper>
@@ -74,7 +78,7 @@ const TabletDesktopFooter = () => {
         </FooterTabTel>
       </>
       <FooterSocialTabContainer>
-        <FooterTabSocialTitle>Слідкуй за нами тут:</FooterTabSocialTitle>
+        <FooterTabSocialTitle>{t('contacts.follow')}</FooterTabSocialTitle>
         <FooterSocialTabLinks>
           {data?.socialMediaList?.map(
             ({ id, socialMediaLink, socialMediaName }) => (

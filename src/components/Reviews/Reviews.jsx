@@ -1,26 +1,25 @@
+import { useTranslation } from 'react-i18next';
 import ReviewsSwiper from 'components/ReviewsSwiper/ReviewsSwiper';
+import { ViewAll } from 'components/ViewAll/ViewAll';
 import {
   ReviewsSection,
   ReviewsTitle,
   ReviewsTitlePartContainer,
 } from './Reviews.styled';
-import { AboutUSButton, AboutUsIcon } from 'components/AboutUs/AboutUs.styled';
-import sprite from '../../assets/images/sprite.svg';
-import { useMediaQuery } from 'react-responsive';
 
 const Reviews = () => {
-  const isTabletScreen = useMediaQuery({ minWidth: 768 });
+  const { t } = useTranslation();
 
   return (
     <ReviewsSection>
       <ReviewsTitlePartContainer>
-        <ReviewsTitle>Відгуки</ReviewsTitle>
-        <AboutUSButton to="/reviews">
-          {isTabletScreen ? 'Переглянути усе' : 'Переглянути'}
-          <AboutUsIcon width="11px" height="13px">
-            <use xlinkHref={`${sprite}#arrow`} />
-          </AboutUsIcon>
-        </AboutUSButton>
+        <ReviewsTitle>{t('pages.reviews')}</ReviewsTitle>
+        <ViewAll
+          shortText={t('nav.viewMore')}
+          longText={t('nav.viewAll')}
+          changeable
+          path="/reviews"
+        />
       </ReviewsTitlePartContainer>
       <ReviewsSwiper />
     </ReviewsSection>

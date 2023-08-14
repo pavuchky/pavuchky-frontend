@@ -49,7 +49,7 @@ export const ContactsList = styled.ul`
   flex-direction: column;
   gap: 10px;
   margin-bottom: 24px;
-  white-space: break-spaces;
+  white-space: pre;
   color: ${colors.secondaryFont};
 
   @media (min-width: 768px) {
@@ -153,7 +153,7 @@ export const ContactPerson = styled.p`
     margin-top: 8px;
   }
   @media (min-width: 1440px) {
-    max-width: 230px;
+    max-width: 210px;
     font-size: ${fontSizes.s};
     margin-bottom: 10px;
   }

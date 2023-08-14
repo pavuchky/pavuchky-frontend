@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { LanguageContext } from 'utils/LanguageContext';
 import useFetch from '../../hooks/useFetch';
 import MapComponent from './MapContacts/MapContacts';
 import Icons from '../../assets/images/sprite.svg';
@@ -19,6 +20,7 @@ import {
   ContactsWrapper,
   ContactsListWrapper,
 } from './Contacts.styled';
+import { useTranslation } from 'react-i18next';
 
 const IconSocial = ({ name, color, size }) => (
   <svg className={`icon-${name}`} fill={color} width={size} height={size}>
@@ -27,7 +29,9 @@ const IconSocial = ({ name, color, size }) => (
 );
 
 const Contacts = () => {
+  const { lang } = useContext(LanguageContext);
   const { data } = useFetch('contacts');
+  const { t } = useTranslation();
   const isLargeScreen = useMediaQuery({ minWidth: 1440 });
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
@@ -37,17 +41,19 @@ const Contacts = () => {
 
   return (
     <ContactsContainer id="contacts">
-      <ContactsTitle>Де нас знайти</ContactsTitle>
+      <ContactsTitle>{t('contacts.whereFind')}</ContactsTitle>
       <ContactsWrapper>
         <ContactsListWrapper>
-          <ContactsSubTitle>Локація плетіння</ContactsSubTitle>
+          <ContactsSubTitle>{t('contacts.locations')}</ContactsSubTitle>
           <ContactsList>
             {data?.streetList?.map(({ id, street }) => (
-              <ContactsFirstAddress key={id}>{street}</ContactsFirstAddress>
+              <ContactsFirstAddress key={id}>
+                {street[lang]}
+              </ContactsFirstAddress>
             ))}
           </ContactsList>
-          <ContactsAdminTitle>Контактні дані</ContactsAdminTitle>
-          <ContactPerson>Адміністратор: Ольга Кузакова</ContactPerson>
+          <ContactsAdminTitle>{t('contacts.details')}</ContactsAdminTitle>
+          <ContactPerson>{t('contacts.admin')}</ContactPerson>
           <ContactNumber
             href={isMobile ? `tel:${data?.phone}` : telegramLink}
             target="_blank"
@@ -61,7 +67,7 @@ const Contacts = () => {
         </LocationContainer>
       </ContactsWrapper>
       <SocialMediaContainer>
-        <SocialMediaTitle>Слідкуй за нами тут:</SocialMediaTitle>
+        <SocialMediaTitle>{t('contacts.follow')}</SocialMediaTitle>
         <SocialMediaLinks>
           {data?.socialMediaList?.map(
             ({ id, socialMediaLink, socialMediaName }) => (

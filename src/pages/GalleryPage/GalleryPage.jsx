@@ -25,7 +25,7 @@ const GalleryPage = () => {
       <PathDisplayer
         current={{
           path: location?.pathname,
-          name: t('header.gallery'),
+          name: t('nav.gallery'),
           galleryType,
         }}
         isGallery

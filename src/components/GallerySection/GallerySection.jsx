@@ -1,10 +1,10 @@
-import sprite from '../../assets/images/sprite.svg';
+import { useMediaQuery } from 'react-responsive';
+import { useTranslation } from 'react-i18next';
+import { ViewAll } from 'components/ViewAll/ViewAll';
 import {
   GallerySectionWrapper,
   TitleWrapper,
   GalleryTitle,
-  GalleryButton,
-  GalleryIcon,
   GalleryMainWrapper,
   GalleryItem1,
   GalleryItem2,
@@ -15,7 +15,6 @@ import {
   GalleryItem5,
   GalleryItem6,
 } from './GallerySection.styled';
-import { useMediaQuery } from 'react-responsive';
 
 import galleryImg1 from '../../assets/images/gallery/gallery_img1.jpg';
 import galleryImg2 from '../../assets/images/gallery/gallery_img2.jpg';
@@ -38,6 +37,8 @@ const imgArrayTablet = [galleryImg1, galleryImg3, galleryImg4, galleryImg2];
 const imgArrayMobile = [galleryImg1, galleryImg3];
 
 const GallerySection = () => {
+  const { t } = useTranslation();
+
   const isDesktop = useMediaQuery({
     query: '(min-width: 1439px)',
   });
@@ -55,13 +56,13 @@ const GallerySection = () => {
   return (
     <GallerySectionWrapper>
       <TitleWrapper>
-        <GalleryTitle>Галерея</GalleryTitle>
-        <GalleryButton to="/gallery/photos">
-          {isDesktop ? 'Переглянути усе' : 'Переглянути'}
-          <GalleryIcon width="11px" height="13px">
-            <use xlinkHref={`${sprite}#arrow`} />
-          </GalleryIcon>
-        </GalleryButton>
+        <GalleryTitle>{t('nav.gallery')}</GalleryTitle>
+        <ViewAll
+          shortText={t('nav.viewMore')}
+          longText={t('nav.viewAll')}
+          changeable
+          path="/gallery/photos"
+        />
       </TitleWrapper>
       <GalleryMainWrapper>
         <GalleryContainer>

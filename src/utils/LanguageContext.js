@@ -4,7 +4,7 @@ import React, { createContext, useEffect, useState } from 'react';
 export const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
-  const [currentLanguage, setCurrentLanguage] = useState(() => {
+  const [lang, setLang] = useState(() => {
     const selectedLanguage = localStorage.getItem('selectedLanguage');
     if (selectedLanguage) {
       return selectedLanguage;
@@ -14,21 +14,20 @@ export const LanguageProvider = ({ children }) => {
   });
 
   const changeLanguage = lang => {
-    setCurrentLanguage(lang);
+    setLang(lang);
     i18n.changeLanguage(lang);
-
-    localStorage.setItem('selectedLanguage', lang);
   };
 
   useEffect(() => {
     const selectedLanguage = localStorage.getItem('selectedLanguage');
     if (selectedLanguage) {
+      setLang(selectedLanguage);
       i18n.changeLanguage(selectedLanguage);
     }
   }, []);
 
   return (
-    <LanguageContext.Provider value={{ currentLanguage, changeLanguage }}>
+    <LanguageContext.Provider value={{ lang, changeLanguage }}>
       {children}
     </LanguageContext.Provider>
   );

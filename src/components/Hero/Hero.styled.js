@@ -1,4 +1,3 @@
-import { HashLink } from 'react-router-hash-link';
 import styled from 'styled-components';
 
 export const HeroContainer = styled.section`
@@ -70,7 +69,7 @@ export const HeroTitle = styled.span`
 
   @media only screen and (min-width: 1440px) {
     font-size: 100px;
-    letter-spacing: -3.2px;
+    letter-spacing: -4px;
   }
 `;
 
@@ -90,7 +89,7 @@ export const HeroSubTitle = styled.span`
   }
 
   @media only screen and (min-width: 1440px) {
-    padding-left: 217px;
+    padding-left: 210px;
     font-size: 60px;
     text-align: start;
     letter-spacing: -2.4px;
@@ -104,7 +103,7 @@ export const IconTank = styled.img`
     display: block;
     position: absolute;
     top: 140px;
-    left: 663px;
+    left: 700px;
     width: 584px;
     height: 247px;
   }
@@ -137,46 +136,5 @@ export const HeroItem = styled.li`
   @media only screen and (min-width: 1440px) {
     min-width: 519px;
     border-radius: 24px;
-  }
-`;
-
-export const HeroLink = styled(HashLink)`
-  padding: 10px;
-  text-align: center;
-  background-color: ${({ theme }) => theme.colors.white};
-  transition: color ${({ theme }) => theme.transitions.regular};
-
-  &:hover,
-  &:focus {
-    color: #004b81;
-  }
-
-  @media only screen and (min-width: 768px) {
-    padding: 9.5px;
-  }
-
-  @media only screen and (min-width: 1440px) {
-    padding: 17.5px;
-  }
-`;
-
-export const HeroDonate = styled(HashLink)`
-  padding: 10px;
-  text-align: center;
-  color: ${({ theme }) => theme.colors.white};
-  background-color: ${({ theme }) => theme.colors.blue};
-  transition: color ${({ theme }) => theme.transitions.regular};
-
-  &:hover,
-  &:focus {
-    color: ${({ theme }) => theme.colors.yellow};
-  }
-
-  @media only screen and (min-width: 768px) {
-    padding: 9.5px;
-  }
-
-  @media only screen and (min-width: 1440px) {
-    padding: 17.5px;
   }
 `;
