@@ -7,11 +7,11 @@ import { orderValidationSchema } from '../../utils/validationSchema';
 import Icon from '../../assets/images/sprite.svg';
 import { CustomSelect } from 'components/CustomSelect/CustomSelect';
 import { Gratitude } from 'components/Gratitude/Gratitude';
+import { CustomInput } from 'components/CustomInput/CustomInput';
 import {
   FormBlocks,
   FormBtn,
   FormContainer,
-  FormInput,
   FormList,
   FormText,
   FormTitle,
@@ -25,15 +25,17 @@ import {
 
 export const OrderForm = () => {
   const [submitted, setSubmitted] = useState(false);
+
   const { t } = useTranslation();
+
   const typeBaseOptions = [
-    { value: t('forms.kapron'), label: t('forms.kapron') },
-    { value: t('forms.plastic'), label: t('forms.plastic') },
+    { value: t('orderForm.kapron'), label: t('orderForm.kapron') },
+    { value: t('orderForm.plastic'), label: t('orderForm.plastic') },
   ];
 
   const materialOptions = [
-    { value: t('forms.cotton'), label: t('forms.cotton') },
-    { value: t('forms.spunbond'), label: t('forms.spunbond') },
+    { value: t('orderForm.cotton'), label: t('orderForm.cotton') },
+    { value: t('orderForm.spunbond'), label: t('orderForm.spunbond') },
   ];
 
   const formik = useFormik({
@@ -54,12 +56,10 @@ export const OrderForm = () => {
       try {
         await addOrder(values);
         setSubmitted(true);
-        toast.success('Дані успішно відправлені!');
+        toast.success(t('forms.success'));
       } catch (error) {
         setSubmitted(false);
-        toast.error(
-          'Виникла помилка під час відправки форми. Спробуйте ще раз.'
-        );
+        toast.error(t('forms.error'));
       }
     },
   });
@@ -80,61 +80,60 @@ export const OrderForm = () => {
     <>
       {submitted ? (
         <Gratitude
-          title="Дякуємо, що обрали саме нас!"
-          text="Ми зв’яжемось з вами у найближчий час"
+          title={t('orderForm.thank')}
+          text={t('forms.contact')}
           variant="primary"
         />
       ) : (
         <FormContainer>
-          <FormTitle>Вкажіть ваші дані</FormTitle>
+          <FormTitle>{t('forms.data')}</FormTitle>
           <FormList onSubmit={formik.handleSubmit}>
             <FormBlocks>
               <label>
-                <FormText>ПІБ</FormText>
-                <FormInput
+                <CustomInput
+                  title={t('forms.name')}
                   type="text"
                   name="name"
-                  placeholder="Іващук Іван Петрович"
+                  placeholder={t('forms.namePl')}
                   autoComplete="username"
                   value={name}
                   onChange={formik.handleChange}
                   hasValue={name.length > 0}
+                  touched={formik.touched.name}
+                  error={formik.errors.name}
                 />
-                {formik.touched.name && formik.errors.name ? (
-                  <FormValidation>{formik.errors.name}</FormValidation>
-                ) : null}
               </label>
               <label>
-                <FormText>Ваша посада</FormText>
-                <FormInput
+                <CustomInput
+                  title={t('orderForm.position')}
                   type="text"
                   name="position"
-                  placeholder="Молодший лейтинант"
+                  placeholder={t('orderForm.positionPl')}
+                  autoComplete="off"
                   value={position}
                   onChange={formik.handleChange}
                   hasValue={position.length > 0}
+                  touched={formik.touched.position}
+                  error={formik.errors.position}
                 />
-                {formik.touched.position && formik.errors.position ? (
-                  <FormValidation>{formik.errors.position}</FormValidation>
-                ) : null}
               </label>
               <label>
-                <FormText>Номер військової частини/бригади</FormText>
-                <FormInput
+                <CustomInput
+                  title={t('orderForm.militaryUnit')}
                   type="text"
                   name="militaryUnit"
-                  placeholder="3 Окрема мотострілкова бригада"
+                  placeholder={t('orderForm.militaryUnitPl')}
+                  autoComplete="off"
                   value={militaryUnit}
                   onChange={formik.handleChange}
                   hasValue={militaryUnit.length > 0}
+                  touched={formik.touched.militaryUnit}
+                  error={formik.errors.militaryUnit}
                 />
-                {formik.touched.militaryUnit && formik.errors.militaryUnit ? (
-                  <FormValidation>{formik.errors.militaryUnit}</FormValidation>
-                ) : null}
               </label>
               <label>
-                <FormText>Ваш номер телефону</FormText>
-                <FormInput
+                <CustomInput
+                  title={t('forms.number')}
                   type="text"
                   name="phone"
                   placeholder="+380 98 200 77 49"
@@ -142,17 +141,16 @@ export const OrderForm = () => {
                   value={phone}
                   onChange={formik.handleChange}
                   hasValue={phone.length > 0}
+                  touched={formik.touched.phone}
+                  error={formik.errors.phone}
                 />
-                {formik.touched.phone && formik.errors.phone ? (
-                  <FormValidation>{formik.errors.phone}</FormValidation>
-                ) : null}
               </label>
               <label>
-                <FormText>Додаткові коментарі</FormText>
-                <FormInput
+                <CustomInput
+                  title={t('forms.comments')}
                   type="text"
                   name="comment"
-                  placeholder="Якщо потрібно"
+                  placeholder={t('forms.commentsPl')}
                   autoComplete="off"
                   value={comment}
                   onChange={formik.handleChange}
@@ -163,25 +161,25 @@ export const OrderForm = () => {
 
             <FormBlocks>
               <label>
-                <FormText>Розмір сітки</FormText>
-                <FormInput
+                <CustomInput
+                  title={t('orderForm.size')}
                   type="text"
                   name="gridSize"
-                  placeholder="8х4м"
+                  placeholder={t('orderForm.sizePl')}
+                  autoComplete="off"
                   value={gridSize}
                   onChange={formik.handleChange}
                   hasValue={gridSize.length > 0}
+                  touched={formik.touched.gridSize}
+                  error={formik.errors.gridSize}
                 />
-                {formik.touched.gridSize && formik.errors.gridSize ? (
-                  <FormValidation>{formik.errors.gridSize}</FormValidation>
-                ) : null}
               </label>
 
               <div>
-                <FormText>Вид основи</FormText>
+                <FormText>{t('orderForm.type')}</FormText>
                 <CustomSelect
                   name="typeBase"
-                  placeholder="Виберіть вид основи сітки"
+                  placeholder={t('orderForm.typePl')}
                   options={typeBaseOptions}
                   value={typeBaseOptions.find(
                     option => option.value === typeBase
@@ -195,10 +193,10 @@ export const OrderForm = () => {
                 ) : null}
               </div>
               <div>
-                <FormText>Матеріал</FormText>
+                <FormText>{t('orderForm.fabric')}</FormText>
                 <CustomSelect
                   name="material"
-                  placeholder="Виберіть матеріал"
+                  placeholder={t('orderForm.fabricPl')}
                   options={materialOptions}
                   value={materialOptions.find(
                     option => option.value === material
@@ -213,22 +211,22 @@ export const OrderForm = () => {
               </div>
 
               <label>
-                <FormText>Колір сітки</FormText>
-                <FormInput
+                <CustomInput
+                  title={t('orderForm.color')}
                   type="text"
                   name="color"
-                  placeholder="30% зелені 70% суха трава"
+                  placeholder={t('orderForm.colorPl')}
+                  autoComplete="off"
                   value={color}
                   onChange={formik.handleChange}
                   hasValue={color.length > 0}
+                  touched={formik.touched.color}
+                  error={formik.errors.color}
                 />
-                {formik.touched.color && formik.errors.color ? (
-                  <FormValidation>{formik.errors.color}</FormValidation>
-                ) : null}
               </label>
 
               <div>
-                <FormText>Петлі для кріплення</FormText>
+                <FormText>{t('orderForm.loops')}</FormText>
                 <RadioButtons>
                   <RadioContainer>
                     <HiddenRadio
@@ -242,7 +240,7 @@ export const OrderForm = () => {
                         <use href={Icon + '#icon-check'}></use>
                       </svg>
                     </SquareRadio>
-                    <RadioLabel>Так</RadioLabel>
+                    <RadioLabel>{t('orderForm.yes')}</RadioLabel>
                   </RadioContainer>
                   <RadioContainer>
                     <HiddenRadio
@@ -256,7 +254,7 @@ export const OrderForm = () => {
                         <use href={Icon + '#icon-check'}></use>
                       </svg>
                     </SquareRadio>
-                    <RadioLabel>Ні</RadioLabel>
+                    <RadioLabel>{t('orderForm.no')}</RadioLabel>
                   </RadioContainer>
                 </RadioButtons>
                 {formik.touched.loops && formik.errors.loops ? (
@@ -265,7 +263,7 @@ export const OrderForm = () => {
               </div>
             </FormBlocks>
 
-            <FormBtn type="submit">Замовити</FormBtn>
+            <FormBtn type="submit">{t('orderForm.submit')}</FormBtn>
           </FormList>
         </FormContainer>
       )}
