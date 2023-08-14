@@ -31,10 +31,10 @@ const GalleryPage = () => {
         isGallery
       />
       <GallerySection>
-        <GalleryTitle>Галерея</GalleryTitle>
+        <GalleryTitle>{t('nav.gallery')}</GalleryTitle>
         <GalleryTabs>
-          <GlleryTabLinks to="/gallery/photos">Фото</GlleryTabLinks>
-          <GlleryTabLinks to="/gallery/videos">Відео</GlleryTabLinks>
+          <GlleryTabLinks to="/gallery/photos">{t('pages.photos')}</GlleryTabLinks>
+          <GlleryTabLinks to="/gallery/videos">{t('pages.videos')}</GlleryTabLinks>
         </GalleryTabs>
         <Suspense fallback={null}>
           <Outlet />
