@@ -6,7 +6,6 @@ import { Pagination } from '@mui/material';
 const { fontSizes, fontWeights, colors, fonts, borders, radii} = theme;
 
 export const GalleryPagnation = styled(Pagination)`
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,31 +24,28 @@ export const GalleryPagnation = styled(Pagination)`
     padding: 0;
 
     .MuiPaginationItem-icon {
-      stroke: ${colors.blue};
-      /* width: 63px;
-      height: 63px; */
       fill: ${colors.blue};
-      stroke-width: 1px;
     }
   }
 
   & .Mui-Selected {
-    
+    color: ${colors.blue};
+    border-color: ${colors.blue} !important;
+    background-color: transparent !important;
+
     .Mui-disabled {
       border-color: ${colors.grey} !important;
-      .MuiPaginationItem-icon {
+      .MuiPaginationItem-root.MuiPaginationItem-icon.Mui-disabled {
         fill: ${colors.grey} !important;
-        stroke: ${colors.grey}  !important;
       }
     }
-    .MuiPaginationItem-ellipsis {
-    
+    /* .MuiPaginationItem-ellipsis {
       border: ${borders.normal};
       border-color: ${colors.grey};
       border-radius: ${radii.round};
       display: flex;
       justify-content: center;
       align-items: center;
-    }
+    } */
   }
 `;
