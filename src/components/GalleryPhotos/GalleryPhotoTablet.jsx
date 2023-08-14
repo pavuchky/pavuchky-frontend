@@ -27,6 +27,7 @@ const GalleryTabPhotos = () => {
   const isDesktopScreen = useMediaQuery({ minWidth: 1440 });
   const isTabletScreen = useMediaQuery({ minWidth: 768 });
 
+  const { t } = useTranslation();
   const loadMoreImages = () => {
     setVisibleImages(prevVisibleImages => prevVisibleImages + 6);
   };
@@ -78,7 +79,7 @@ const GalleryTabPhotos = () => {
           <div>
             {visibleImages < data?.galleryPhotoList.length && (
               <GalleryTabButton onClick={loadMoreImages}>
-                Переглянути більше
+               {t('buttons.viewMore')}
               </GalleryTabButton>
             )}
           </div>
