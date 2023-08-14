@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { theme } from '../../stylesheet/theme';
 import { Pagination } from '@mui/material';
 
-const { fontSizes, fontWeights, colors, fonts, borders, radii} = theme;
+const { fontSizes, fontWeights, colors, fonts, } = theme;
 
 export const GalleryPagnation = styled(Pagination)`
   display: flex;
@@ -39,13 +39,5 @@ export const GalleryPagnation = styled(Pagination)`
         fill: ${colors.grey} !important;
       }
     }
-    /* .MuiPaginationItem-ellipsis {
-      border: ${borders.normal};
-      border-color: ${colors.grey};
-      border-radius: ${radii.round};
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    } */
   }
 `;

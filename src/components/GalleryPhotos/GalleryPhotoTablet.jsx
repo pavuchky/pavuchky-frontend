@@ -14,7 +14,7 @@ import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
 
 import { useMediaQuery } from 'react-responsive';
 import { PaginationItem } from '@mui/material';
-
+import { useTranslation } from 'react-i18next';
 const GalleryTabPhotos = () => {
   const { data } = useFetch('galleryPhoto');
 
