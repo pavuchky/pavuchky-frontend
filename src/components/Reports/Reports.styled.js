@@ -243,8 +243,8 @@ export const LoadIconArrow = styled.svg`
 
 export const CollapseIconArrow = styled.svg`
   display: inline-block;
-  width: 65px;
-  height: 65px;
+  width: 50px;
+  height: 50px;
   margin-left: 15px;
   transform: rotate(-90deg);
   stroke: ${({ theme }) => theme.colors.blue};
@@ -252,5 +252,10 @@ export const CollapseIconArrow = styled.svg`
 
   &:hover {
     stroke: ${({ theme }) => theme.colors.yellow};
+  }
+
+  @media only screen and (min-width: 768px) {
+    width: 65px;
+    height: 65px;
   }
 `;

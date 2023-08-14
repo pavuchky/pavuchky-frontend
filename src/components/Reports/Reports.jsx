@@ -94,7 +94,7 @@ const Reports = () => {
           ))}
 
           {/* this line is only for testing purposes */}
-          {reportsArr?.slice(0, nextNumber).map(el => (
+          {reportsArr?.slice(0, nextNumber - 1).map(el => (
             <ReportsListItem key={el.id}>
               <ReportsListItemTitle>{el?.month}</ReportsListItemTitle>
               <ReportsWrapper>
