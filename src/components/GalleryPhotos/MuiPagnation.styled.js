@@ -10,6 +10,7 @@ export const GalleryPagnation = styled(Pagination)`
   display: flex;
   justify-content: center;
   align-items: center;
+  
   .MuiPaginationItem-root {
     margin: 0px 24px;
     width: 64px;
