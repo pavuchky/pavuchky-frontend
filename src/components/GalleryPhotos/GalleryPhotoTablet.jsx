@@ -6,14 +6,12 @@ import {
   GalleryTabGridContainer,
   GalleryTabButton,
   GalleryTabImg,
-  GalleryDestopImg, GalleryPaginationContainer
+  GalleryDestopImg,
+  GalleryPaginationContainer,
 } from './GalleryPhotoTablet.styled';
-import {GalleryPagnation} from './MuiPagnation.styled'
+import { GalleryPagnation } from './MuiPagnation.styled';
 
 import { useMediaQuery } from 'react-responsive';
-
-
-
 
 const GalleryTabPhotos = () => {
   const { data } = useFetch('galleryPhoto');
@@ -26,7 +24,6 @@ const GalleryTabPhotos = () => {
   const itemsPerPage = 9;
   const isDesktopScreen = useMediaQuery({ minWidth: 1440 });
   const isTabletScreen = useMediaQuery({ minWidth: 768 });
-
 
   const loadMoreImages = () => {
     setVisibleImages(prevVisibleImages => prevVisibleImages + 6);
@@ -121,6 +118,8 @@ const GalleryTabPhotos = () => {
                 onChange={onPageChange}
                 color="primary"
                 variant="outlined"
+                boundaryCount={1}
+                siblingCount={0}
                 
               />
             </GalleryPaginationContainer>
