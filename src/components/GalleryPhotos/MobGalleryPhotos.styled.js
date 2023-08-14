@@ -43,6 +43,8 @@ export const SwiperImg = styled.img`
   height: 300px;
   border-radius: 16px;
 `;
+
+
 /**==============Styles For Light Box================== */
 
 
@@ -74,11 +76,9 @@ export const LightBoxImg = styled.img`
   border-radius: 16px;
 
   @media (min-width: 768px) {
- 
     height: 690px;
   }
   @media (min-width: 1440px) {
-    
     height: 673px;
   }
 `; 
