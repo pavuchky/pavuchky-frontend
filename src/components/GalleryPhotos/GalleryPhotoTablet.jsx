@@ -7,7 +7,7 @@ import {
   GalleryTabButton,
   GalleryTabImg,
   GalleryDestopImg,
-  GalleryPaginationContainer,
+  GalleryPaginationContainer, GalleryDesctopGridContainer
 } from './GalleryPhotoTablet.styled';
 import { GalleryPagnation } from './MuiPagnation.styled';
 import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
@@ -90,7 +90,7 @@ const GalleryTabPhotos = () => {
         {isDesktopScreen && (
           <>
             <div>
-              <GalleryTabGridContainer>
+              <GalleryDesctopGridContainer>
                 {showingImages?.map((photoLink, index) => {
                   return (
                     <div>
@@ -103,7 +103,7 @@ const GalleryTabPhotos = () => {
                     </div>
                   );
                 })}
-              </GalleryTabGridContainer>
+              </GalleryDesctopGridContainer>
 
               <ImageModal
                 isOpen={lightboxOpen}

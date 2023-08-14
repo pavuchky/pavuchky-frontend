@@ -67,13 +67,14 @@ export const GalleryDesctopGridContainer = styled.div`
   gap: 26px;
   margin-top: 44px;
   margin-bottom: 44px;
+  
 `;
 export const GalleryDestopImg = styled.img`
   width: 100%;
-  height: 100%;
   margin: 0;
   padding: 0;
   border-radius: 10px;
+  height: 543px;
 `;
 
 export const GalleryPaginationContainer = styled.div`
@@ -93,15 +94,14 @@ export const GalleryFirstSvgButton = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 85px;
-    height: 85px;
+    width: 84px;
+    height: 84px;
     border: ${borders.normal};
     color: ${colors.blue};
     border-radius: ${radii.round};
     position: relative;
     top: 368px;
     left: 1px;
-    
     z-index: 99999999;
   }
 `;
@@ -118,15 +118,14 @@ export const GallerySecondSvgButton = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 85px;
-    height: 85px;
+    width: 84px;
+    height: 84px;
     border: ${borders.normal};
     color: ${colors.blue};
     border-radius: ${radii.round};
     position: relative;
     top:-391px;
-    left: 1024px;
-  
+    left: 1066px;
     z-index: 99999999;
   }
 `;

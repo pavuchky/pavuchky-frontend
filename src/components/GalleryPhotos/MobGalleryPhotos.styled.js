@@ -54,8 +54,7 @@ export const ImageModalOverlay = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 1);
-  opacity: 0.9;
+  background-color: rgb(255 255 255 / 90%);
   z-index: 9999;
   display: flex;
   justify-content: center;
@@ -63,12 +62,13 @@ export const ImageModalOverlay = styled.div`
 `;
 
 export const ImageModalContent = styled.div`
-  padding: 20px;
+
   border-radius: 4px;
   max-width: 80%;
   max-height: 80%;
   overflow: auto;
   position: fixed;
+ 
 `;
 
 
