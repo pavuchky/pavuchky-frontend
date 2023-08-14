@@ -10,8 +10,10 @@ import {
   GalleryPaginationContainer,
 } from './GalleryPhotoTablet.styled';
 import { GalleryPagnation } from './MuiPagnation.styled';
+import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
 
 import { useMediaQuery } from 'react-responsive';
+import { PaginationItem } from '@mui/material';
 
 const GalleryTabPhotos = () => {
   const { data } = useFetch('galleryPhoto');
@@ -120,7 +122,15 @@ const GalleryTabPhotos = () => {
                 variant="outlined"
                 boundaryCount={1}
                 siblingCount={0}
-                
+                renderItem={item => (
+          <PaginationItem
+            slots={{
+              previous: SlArrowLeft,
+              next: SlArrowRight,
+            }}
+            {...item}
+          />
+        )}
               />
             </GalleryPaginationContainer>
           </>
