@@ -24,18 +24,17 @@ export const GallerySwiperContainer = styled(Swiper)`
   overflow: hidden;
 
   .swiper-scrollbar {
-    width: 327px;
+    background-color: ${colors.grey};
+    height: 2px;
   }
 
-  .swiper-scrollbar.swiper-scrollbar-horizontal {
-    height: 2px;
-  }
   .swiper-scrollbar-drag:last-child {
     background-color: ${colors.blue};
-    height: 2px;
+    min-height: 2px;
   }
-  .swiper-scrollbar-drag {
-    background-color: rgba(184, 182, 183, 1);
+
+  .swiper-scrollbar-drag:not(:last-child) {
+    display: none;
   }
 `;
 

@@ -15,6 +15,7 @@ import ImageModal from './ImageModal';
 
 const MobGalleryPhotos = () => {
   const { data } = useFetch('galleryPhoto');
+  console.log(data);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
