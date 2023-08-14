@@ -114,6 +114,10 @@ export const ReportsListItem = styled.li`
     &:first-child {
       border-top: 1px solid ${({ theme }) => theme.colors.secondaryFont};
     }
+
+    &:last-child {
+      padding: 24px 0;
+    }
   }
 `;
 
