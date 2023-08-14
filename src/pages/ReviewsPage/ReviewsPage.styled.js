@@ -10,7 +10,7 @@ export const ReviewsPageSection = styled.section`
   }
 
   @media (min-width: 1440px) {
-    margin-bottom: 84px;
+    margin-bottom: 64px;
   }
 `;
 export const ReviewsPageGradientContainer = styled.div`
@@ -23,12 +23,12 @@ export const ReviewsPageGradientContainer = styled.div`
   gap: 24px;
 
   border-radius: 16px;
-  width: 359px;
+
   background: ${colors.gradientBackground};
 
   margin-bottom: 34px;
   @media (min-width: 768px) {
-    padding: 32px 26px;
+    padding: 32px;
 
     width: 720px;
     overflow: hidden;
