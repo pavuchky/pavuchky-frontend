@@ -120,6 +120,7 @@ export const AboutUsDescriptionShort = styled(AboutUsDescription)`
   max-height: 84px;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
