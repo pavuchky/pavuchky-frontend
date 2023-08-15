@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const FormContainer = styled.div`
   padding: 28px 16px;
-  margin-bottom: 36px;
+  margin-bottom: 44px;
   border-radius: 16px;
   background: ${({ theme }) => theme.colors.gradientBackground};
 
@@ -13,20 +13,25 @@ export const FormContainer = styled.div`
 
   @media (min-width: 1440px) {
     padding: 44px 64px;
+    margin-bottom: 64px;
     border-radius: ${({ theme }) => theme.radii.xl};
   }
 `;
 
 export const TitleContainer = styled.div`
   @media (min-width: 768px) {
+    margin-bottom: 24px;
     display: flex;
     justify-content: space-between;
     p {
       width: 316px;
       font-size: ${({ theme }) => theme.fontSizes.s};
+      color: ${({ theme }) => theme.colors.secondaryFont};
     }
   }
   @media (min-width: 1440px) {
+    margin-bottom: 44px;
+    align-items: center;
     p {
       width: 515px;
       font-size: 26px;
@@ -41,13 +46,13 @@ export const FormTitle = styled.h3`
   font-weight: ${({ theme }) => theme.fontWeights.regular};
 
   @media (min-width: 768px) {
+    margin-bottom: 0;
     font-family: ${({ theme }) => theme.fonts.headRegular};
     font-size: ${({ theme }) => theme.fontSizes.l};
     letter-spacing: -1.44px;
   }
 
   @media (min-width: 1440px) {
-    margin-bottom: 44px;
     font-size: ${({ theme }) => theme.fontSizes.xl};
     letter-spacing: -2.4px;
   }
@@ -88,13 +93,12 @@ export const FormBtn = styled.button`
   margin-top: 4px;
   width: 100%;
   height: 40px;
-  padding: 10px;
+  padding: 10.5px;
   text-align: center;
-  border-radius: 12px;
-  font-family: ${({ theme }) => theme.fonts.regular};
+  border-radius: 8px;
   font-size: ${({ theme }) => theme.fontSizes.xs};
-  font-weight: ${({ theme }) => theme.fontWeights.regular};
   border: 1px solid ${({ theme }) => theme.colors.blue};
+  background-color: ${({ theme }) => theme.colors.white};
 
   &:hover,
   &:focus {
@@ -105,17 +109,18 @@ export const FormBtn = styled.button`
   @media (min-width: 768px) {
     width: 656px;
     height: 48px;
-    padding: 10px;
-    margin-top: 32px;
-    border-radius: 16px;
-    font-size: ${({ theme }) => theme.fontSizes.m};
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 10px;
+    font-size: ${({ theme }) => theme.fontSizes.s};
   }
 
   @media (min-width: 1440px) {
-    width: 519px;
+    width: 440px;
     height: 64px;
+    padding: 26px;
     margin-top: 0;
-    border-radius: ${({ theme }) => theme.radii.m};
+    border-radius: 25px;
   }
 `;
 
@@ -131,22 +136,25 @@ export const FormPhoto = styled.label`
   margin-top: 12px;
 
   @media (min-width: 768px) {
+    padding: 24px;
     margin-top: 24px;
+    border-radius: 10px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background-color: ${({ theme }) => theme.colors.white};
   }
 
   @media (min-width: 1440px) {
     margin: 0 100px 0 0;
     width: 413px;
     height: 402px;
+    padding: 24px 16px 58px 16px;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     gap: 62px;
     border-radius: 10px;
-    background-color: ${({ theme }) => theme.colors.white};
   }
 `;
 
@@ -181,7 +189,9 @@ export const PhotoText = styled.p`
   }
 
   @media (min-width: 1440px) {
+    font-family: ${({ theme }) => theme.fonts.regular};
     font-size: 18px;
+    font-weight: ${({ theme }) => theme.fontWeights.regular};
   }
 `;
 
@@ -191,7 +201,7 @@ export const PhotoContainer = styled.div`
   overflow: hidden;
   text-align: center;
   border-radius: 9px;
-  background: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.white};
   border: 1px solid
     ${({ theme, isDragging }) =>
       isDragging ? theme.colors.yellow : theme.colors.blue};
@@ -223,10 +233,11 @@ export const PhotoContainer = styled.div`
 
   @media (min-width: 1440px) {
     width: 195px;
-
     svg {
       width: 157px;
       height: 157px;
+      stroke: none;
+
       fill: ${({ theme, isDragging }) =>
         isDragging ? theme.colors.yellow : theme.colors.blue};
     }
