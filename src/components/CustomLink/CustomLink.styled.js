@@ -12,7 +12,9 @@ export const StyledLink = styled(Link)`
   text-align: center;
 
   border-radius: 12px;
-  transition: color ${({ theme }) => theme.transitions.regular};
+  transition: color ${({ theme }) => theme.transitions.regular},
+    background-color ${({ theme }) => theme.transitions.regular},
+    border-color ${({ theme }) => theme.transitions.regular};
 
   @media only screen and (min-width: 768px) {
     padding: 9.5px;
@@ -30,24 +32,24 @@ export const StyledLink = styled(Link)`
   ${({ variant }) =>
     variant === 'blue' &&
     css`
-      color: ${({ theme }) => theme.colors.white};
+      color: ${({ theme }) => theme.colors.yellow};
       background-color: ${({ theme }) => theme.colors.blue};
 
       &:hover,
       &:focus {
-        color: ${({ theme }) => theme.colors.yellow};
+        color: ${({ theme }) => theme.colors.white};
       }
     `}
 
   ${({ variant }) =>
     variant === 'yellow' &&
     css`
-      color: ${({ theme }) => theme.colors.primaryFont};
+      color: ${({ theme }) => theme.colors.blue};
       background-color: ${({ theme }) => theme.colors.yellow};
 
       &:hover,
       &:focus {
-        color: ${({ theme }) => theme.colors.blue};
+        color: ${({ theme }) => theme.colors.primaryFont};
       }
     `}
 
@@ -67,12 +69,15 @@ export const StyledLink = styled(Link)`
   ${({ variant }) =>
     variant === 'about' &&
     css`
-      color: ${({ theme }) => theme.colors.white};
+      color: ${({ theme }) => theme.colors.yellow};
       background-color: ${({ theme }) => theme.colors.blue};
+      border: 1px solid transparent;
 
       &:hover,
       &:focus {
-        color: ${({ theme }) => theme.colors.yellow};
+        color: ${({ theme }) => theme.colors.blue};
+        background-color: ${({ theme }) => theme.colors.white};
+        border-color: ${({ theme }) => theme.colors.blue};
       }
 
       @media only screen and (min-width: 1440px) {
@@ -96,7 +101,8 @@ export const StyledHashLink = styled(HashLink)`
   background-color: ${({ theme }) => theme.colors.blue};
   border-radius: 12px;
 
-  transition: color ${({ theme }) => theme.transitions.regular};
+  transition: transform ${({ theme }) => theme.transitions.regular},
+    color ${({ theme }) => theme.transitions.regular};
 
   &:hover,
   &:focus {
@@ -119,24 +125,24 @@ export const StyledHashLink = styled(HashLink)`
   ${({ variant }) =>
     variant === 'blue' &&
     css`
-      color: ${({ theme }) => theme.colors.white};
+      color: ${({ theme }) => theme.colors.yellow};
       background-color: ${({ theme }) => theme.colors.blue};
 
       &:hover,
       &:focus {
-        color: ${({ theme }) => theme.colors.yellow};
+        color: ${({ theme }) => theme.colors.white};
       }
     `}
 
   ${({ variant }) =>
     variant === 'yellow' &&
     css`
-      color: ${({ theme }) => theme.colors.primaryFont};
+      color: ${({ theme }) => theme.colors.blue};
       background-color: ${({ theme }) => theme.colors.yellow};
 
       &:hover,
       &:focus {
-        color: ${({ theme }) => theme.colors.blue};
+        color: ${({ theme }) => theme.colors.primaryFont};
       }
     `}
 
