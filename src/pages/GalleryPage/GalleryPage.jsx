@@ -1,4 +1,12 @@
 import { Suspense } from 'react';
+
+import {
+  GalleryTitle,
+  GallerySection,
+  GalleryTabs,
+  GlleryTabLinks,
+} from './GalleryPage.styled';
+
 import { Outlet, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { PathDisplayer } from 'components/PathDisplayer/PathDisplayer';
@@ -22,9 +30,16 @@ const GalleryPage = () => {
         }}
         isGallery
       />
-      <Suspense fallback={null}>
-        <Outlet />
-      </Suspense>
+      <GallerySection>
+        <GalleryTitle>{t('nav.gallery')}</GalleryTitle>
+        <GalleryTabs>
+          <GlleryTabLinks to="/gallery/photos">{t('pages.photos')}</GlleryTabLinks>
+          <GlleryTabLinks to="/gallery/videos">{t('pages.videos')}</GlleryTabLinks>
+        </GalleryTabs>
+        <Suspense fallback={null}>
+          <Outlet />
+        </Suspense>
+      </GallerySection>
     </>
   );
 };
