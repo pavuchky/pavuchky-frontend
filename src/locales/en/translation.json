@@ -143,5 +143,11 @@
     "here": " here",
     "submit": "Submit a feedback",
     "thank": "Thank you for your feedback!"
+  },
+  "reporting": {
+    "reports": "Reports of the Spiders",
+    "trust": "You can trust us because we have a common goal – to help our defenders",
+    "finances": "Financial report",
+    "results": "Results report"
   }
 }
