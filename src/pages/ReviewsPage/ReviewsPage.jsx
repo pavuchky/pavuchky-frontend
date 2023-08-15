@@ -32,20 +32,20 @@ const ReviewsPage = () => {
   const ContactUs = (
     <ContactUsContainer>
       <ContactUsTextContainer>
-        <ContactUsHeader>Напиши нам</ContactUsHeader>
+        <ContactUsHeader>{t('reviews.write')}</ContactUsHeader>
         <ContactUsParagraph>
           {isTabletScreen
             ? isDesktopScreen
-              ? 'Для нас дуже важлива ваша думка. Завдяки вам ми стаємо кращі! '
-              : 'Дякуємо! Завдяки вам ми стаємо кращі! '
-            : 'Завдяки вам ми стаємо кращі!'}
+              ? t('reviews.desktopThanksText')
+              : t('reviews.tabletThanksText')
+            : t('reviews.mobileThanksText')}
         </ContactUsParagraph>
       </ContactUsTextContainer>
       <ContactUsButton
         type="submit"
         onClick={evt => onLeaveReviewButtonClick(evt)}
       >
-        Залишити відгук
+        {t('reviews.buttonText')}
       </ContactUsButton>
     </ContactUsContainer>
   );
@@ -57,7 +57,7 @@ const ReviewsPage = () => {
       <ReviewsPageSection>
         <ReviewsPageGradientContainer>
           <ReviewsTitlePartContainer>
-            <ReviewsTitle>Відгуки</ReviewsTitle>
+            <ReviewsTitle>{t('pages.reviews')}</ReviewsTitle>
           </ReviewsTitlePartContainer>
           <ReviewsPagination />
 

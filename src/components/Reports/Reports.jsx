@@ -1,4 +1,5 @@
 import { useState, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 import useFetch from 'hooks/useFetch';
 import { LanguageContext } from 'utils/LanguageContext';
 import sprite from '../../assets/images/sprite.svg';
@@ -46,6 +47,7 @@ const Reports = () => {
 
   const { lang } = useContext(LanguageContext);
   const { data } = useFetch('reporting');
+  const { t } = useTranslation();
 
   const handleLoadMore = () => {
     setNextNumber(nextNumber + rowsToShow);
@@ -59,11 +61,8 @@ const Reports = () => {
     <>
       <ReportsSection>
         <ReportTextWrapper>
-          <ReportTitle>Звіти павучків</ReportTitle>
-          <ReportText>
-            Ви можете нам довіряти адже у нас спільна мета - допомогти нашим
-            захисникам
-          </ReportText>
+          <ReportTitle>{t('reporting.reports')}</ReportTitle>
+          <ReportText>{t('reporting.trust')}</ReportText>
         </ReportTextWrapper>
         <ReportsList>
           {data?.reportingList?.slice(0, nextNumber).map(el => (
@@ -76,7 +75,7 @@ const Reports = () => {
                   href={el?.financialReport}
                   target="_blank"
                 >
-                  <ReportName>Фінансовий звіт</ReportName>
+                  <ReportName>{t('reporting.finances')}</ReportName>
                   <ReportIconArrow>
                     <use href={`${sprite}#arrow-up-blue`}></use>
                   </ReportIconArrow>
@@ -84,7 +83,7 @@ const Reports = () => {
               </ReportsWrapper>
               <ReportsWrapper>
                 <ReportsButtonWrapper href={el?.resultsReport} target="_blank">
-                  <ReportName>Звіт про результати</ReportName>
+                  <ReportName>{t('reporting.results')}</ReportName>
                   <ReportIconArrow>
                     <use href={`${sprite}#arrow-up-blue`}></use>
                   </ReportIconArrow>

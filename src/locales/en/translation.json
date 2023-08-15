@@ -64,14 +64,20 @@
     "weNeed": "We need"
   },
   "reviews": {
-    "reviews": "Reviews"
+    "reviews": "Reviews",
+    "write": "Write to us",
+    "mobileThanksText": "Thanks to you, we are getting better!",
+    "buttonText": "Leave a review",
+    "tabletThanksText": "Thank you! Thanks to you, we are getting better!",
+    "desktopThanksText": "Your opinion is very important to us. Thanks to you, we are getting better!"
   },
   "donation": {
     "victory": "Donate to the victory",
     "protect": "Each donation helps protect our soldiers and brings Ukraine closer to victory!",
     "transfer": "You can transfer funds to ",
     "monobank": "our Monobank card",
-    "initiativeDetails": "To find out other details of the Spiders, please contact the initiative administrator"
+    "initiativeDetails": "To find out other details of the Spiders, please contact ",
+    "initiativeAdministrator": "the initiative administrator"
   },
   "partners": {
     "partners": "Partners",
@@ -94,6 +100,7 @@
     "number": "Your cell number",
     "comments": "Comments",
     "commentsPl": "If required",
+
     "submit": "Submit an application",
     "info": "All received data is fully anonymous and will be used only for contacting you",
     "success": "Data sent successfully!",
@@ -141,5 +148,11 @@
     "here": " here",
     "submit": "Submit a feedback",
     "thank": "Thank you for your feedback!"
+  },
+  "reporting": {
+    "reports": "Reports of the Spiders",
+    "trust": "You can trust us because we have a common goal – to help our defenders",
+    "finances": "Financial report",
+    "results": "Results report"
   }
 }

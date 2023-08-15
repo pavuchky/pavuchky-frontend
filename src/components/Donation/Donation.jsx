@@ -8,6 +8,7 @@ import {
   BankLink,
   CardInput,
   CardLabel,
+  ContactsLink,
   CopyButton,
   CopyIcon,
   DonationDescr,
@@ -87,6 +88,9 @@ export const Donation = () => {
         {(isMobile || isDesktop) && (
           <DonationDescrText>
             {t('donation.initiativeDetails')}
+            <ContactsLink to="#contacts">
+              {t('donation.initiativeAdministrator')}
+            </ContactsLink>
           </DonationDescrText>
         )}
       </DonationWrapper>
@@ -100,6 +104,9 @@ export const Donation = () => {
           {isTablet && (
             <DonationDescrText>
               {t('donation.initiativeDetails')}
+              <ContactsLink to="#contacts">
+                {t('donation.initiativeAdministrator')}
+              </ContactsLink>
             </DonationDescrText>
           )}
         </DonationQRWrapper>
