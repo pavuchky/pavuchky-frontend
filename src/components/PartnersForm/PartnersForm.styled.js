@@ -9,10 +9,12 @@ export const FormContainer = styled.div`
   @media (min-width: 768px) {
     padding: 32px;
     border-radius: ${({ theme }) => theme.radii.m};
+    margin-bottom: 44px;
   }
 
   @media (min-width: 1440px) {
     padding: 44px 64px;
+    margin-bottom: 64px;
     border-radius: ${({ theme }) => theme.radii.xl};
     display: flex;
     justify-content: space-between;
@@ -57,7 +59,7 @@ export const FormBtn = styled.button`
   margin-top: 4px;
   width: 100%;
   height: 40px;
-  padding: 10px;
+  padding: 10.5px;
   text-align: center;
   border-radius: 12px;
   font-family: ${({ theme }) => theme.fonts.regular};
@@ -72,17 +74,18 @@ export const FormBtn = styled.button`
   }
 
   @media (min-width: 768px) {
-    width: 656px;
+    width: 100%;
     height: 48px;
-    padding: 10px;
+    padding: 9.5px;
     margin-top: 20px;
     border-radius: 16px;
     font-size: ${({ theme }) => theme.fontSizes.m};
   }
 
   @media (min-width: 1440px) {
-    width: 519px;
+    max-width: 519px;
     height: 64px;
+    padding: 17.5px;
     border-radius: ${({ theme }) => theme.radii.m};
   }
 `;
@@ -90,4 +93,5 @@ export const FormBtn = styled.button`
 export const SupportImg = styled.img`
   width: 446px;
   height: 490px;
+  padding-top: 28px;
 `;

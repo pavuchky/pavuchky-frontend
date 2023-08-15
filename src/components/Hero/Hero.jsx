@@ -31,7 +31,7 @@ export const Hero = () => {
             type="hashLink"
             text={t('hero.joinWeaving')}
             path="/#contacts"
-            variant="white"
+            variant="blue"
           />
         </HeroItem>
         <HeroItem>
@@ -39,7 +39,7 @@ export const Hero = () => {
             type="hashLink"
             text={t('nav.donate')}
             path="/#donation"
-            variant="blue"
+            variant="yellow"
           />
         </HeroItem>
       </HeroBtnList>

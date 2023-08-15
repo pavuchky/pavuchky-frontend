@@ -1,5 +1,7 @@
 import * as Yup from 'yup';
 
+const PHONE_REGEXP = /^\+380\d{9}$|^\+380\d{2}\s?\d{3}\s?\d{2}\s?\d{2}$/;
+
 const PHONE_REGEXP_PARTNER =
   /^\+\d{1,3}\s?\d{2,3}\s?\d{3}\s?\d{2}\s?\d{2}$|^\+\d{10,12}$/;
 
@@ -22,7 +24,7 @@ export const orderValidationSchema = Yup.object().shape({
   militaryUnit: Yup.string().required('Please enter your military unit.'),
   phone: Yup.string()
     .required('Please enter your phone number.')
-    .matches(PHONE_REGEXP_PARTNER, 'Invalid phone number'),
+    .matches(PHONE_REGEXP, 'Invalid phone number'),
   gridSize: Yup.string().required('Please enter grid size.'),
   typeBase: Yup.string().required('Please enter type base.'),
   material: Yup.string().required('Please enter material.'),

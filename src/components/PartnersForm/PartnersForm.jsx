@@ -7,7 +7,7 @@ import { addPartner } from 'services/api';
 import { partnerValidationSchema } from '../../utils/validationSchema';
 import { Gratitude } from 'components/Gratitude/Gratitude';
 import { CustomInput } from 'components/CustomInput/CustomInput';
-import heart from '../../assets/images/heart.png';
+import heart from '../../assets/images/gratitude/gratitude_tablet.svg';
 import {
   FormBtn,
   FormContainer,
