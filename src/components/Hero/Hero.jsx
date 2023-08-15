@@ -11,7 +11,7 @@ import {
   HeroTitle,
   IconTank,
 } from './Hero.styled';
-import { CustomLink } from 'components/CustomLink/CustomLink';
+import { CustomLink } from '../CustomLink/CustomLink';
 
 export const Hero = () => {
   const { t } = useTranslation();

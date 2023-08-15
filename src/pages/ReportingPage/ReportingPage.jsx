@@ -1,6 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { PathDisplayer } from 'components/PathDisplayer/PathDisplayer';
 
+import Reports from 'components/Reports/Reports';
+
 const ReportingPage = () => {
   const { t } = useTranslation();
 
@@ -9,6 +11,7 @@ const ReportingPage = () => {
       <PathDisplayer
         current={{ path: '/reporting', name: t('nav.reporting') }}
       />
+      <Reports />
     </>
   );
 };
