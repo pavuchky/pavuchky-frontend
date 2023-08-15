@@ -25,7 +25,8 @@
   },
   "buttons": {
     "toHome": "Go to homepage",
-    "learnMore": "Learn more"
+    "learnMore": "Learn more",
+    "viewMore": "View more "
   },
   "hero": {
     "protection": "We offer protection against enemy  observation!",
@@ -87,9 +88,58 @@
     "follow": "Follow us here:"
   },
   "forms": {
+    "data": "Enter your data",
+    "name": "Name",
+    "namePl": "Ivashchuk Ivan Petrovych",
+    "number": "Your cell number",
+    "comments": "Comments",
+    "commentsPl": "If required",
+    "submit": "Submit an application",
+    "info": "All received data is fully anonymous and will be used only for contacting you",
+    "success": "Data sent successfully!",
+    "error": "An error occurred while submitting the form. Please try again.",
+    "contact": "We will contact you shortly"
+  },
+  "orderForm": {
+    "name": "Name",
+    "position": "Your position",
+    "positionPl": "Junior Lieutenant",
+    "militaryUnit": "Number of your military unit",
+    "militaryUnitPl": "3 separate motorized rifle brigade",
+    "size": "Net’s size",
+    "sizePl": "8x4m",
+    "type": "Type of base:",
+    "typePl": "Select the type of grid base",
     "plastic": "plastic",
     "kapron": "kapron",
+    "fabric": "Fabric:",
+    "fabricPl": "Select a material",
     "cotton": "cotton",
-    "spunbond": "spunbond"
+    "spunbond": "spunbond",
+    "color": "Colour",
+    "colorPl": "30% green 70% dry grass",
+    "loops": "Loops for fastening",
+    "yes": "Yes",
+    "no": "No",
+    "submit": "Order",
+    "thank": "Thank you for choosing us!"
+  },
+  "partnerForm": {
+    "activity": "Your field of activity",
+    "activityPl": "I have a construction company",
+    "thank": "Thank you for your support!"
+  },
+  "feedback": {
+    "write": "Write to us",
+    "titleThank": "Your feedback is very important to us! Thank you:)",
+    "important": "Your feedback is very important to us",
+    "feedback": "Your feedback",
+    "necessarily": "Necessarily",
+    "published": "Feedback will be published anonymously, all received data is for internal use only",
+    "photo": "Add a photo:",
+    "drag": "Add a photo or drag and drop",
+    "here": " here",
+    "submit": "Submit a feedback",
+    "thank": "Thank you for your feedback!"
   }
 }
