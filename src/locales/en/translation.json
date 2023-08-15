@@ -25,7 +25,8 @@
   },
   "buttons": {
     "toHome": "Go to homepage",
-    "learnMore": "Learn more"
+    "learnMore": "Learn more",
+    "viewMore": "View more "
   },
   "hero": {
     "protection": "We offer protection against enemy  observation!",
