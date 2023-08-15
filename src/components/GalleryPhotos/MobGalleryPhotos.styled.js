@@ -94,7 +94,7 @@ export const LightBoxImgContainer = styled.div`
     height: 690px;
   }
   @media (min-width: 1440px) {
-    width: 915px;
+    width: 585px;
     height: 673px;
   }
 `;
