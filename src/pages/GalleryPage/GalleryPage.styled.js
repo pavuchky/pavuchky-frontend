@@ -31,8 +31,8 @@ export const GalleryTitle = styled.h3`
   margin-bottom: 24px;
   @media (min-width: 768px) {
     font-size: ${fontSizes.l};
-    font-weight: ${fontWeights.light};
-    font-family: ${fonts.headLight};
+    font-weight: ${fontWeights.regular};
+    font-family: ${fonts.headRegular};
     margin-bottom: 24px;
   }
   @media (min-width: 1440px) {
@@ -57,7 +57,7 @@ export const GalleryTabs = styled.div`
 `;
 export const GlleryTabLinks = styled(NavLink)`
   padding: 8px 12px 8px 12px;
-  font-family: ${fonts.light};
+  font-family: ${fonts.regular};
   font-size: 18px;
   text-decoration: none;
   color: ${colors.grey};
@@ -79,5 +79,6 @@ export const GlleryTabLinks = styled(NavLink)`
   }
   @media (min-width: 1440px) {
     font-weight: ${fontWeights.regular};
+    font-family: ${fonts.regular};
   }
 `;
