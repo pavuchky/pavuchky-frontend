@@ -42,7 +42,6 @@ export const ReviewForm = () => {
     },
     validationSchema: reviewValidationSchema,
     onSubmit: async values => {
-      console.log(values);
       try {
         await addReview(values);
         setSubmitted(true);
