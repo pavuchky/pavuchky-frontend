@@ -163,19 +163,12 @@ export const ReportsButtonWrapper = styled.a`
   transition: stroke 0.3s ease;
 
   &:hover > p {
-    color: ${({ theme }) => theme.colors.yellow};
-    text-shadow: -0 -1px 0 #7c7575, 0 -1px 0 #7c7575, -0 1px 0 #7c7575,
-      0 1px 0 #7c7575, -1px -0 0 #7c7575, 1px -0 0 #7c7575, -1px 0 0 #7c7575,
-      1px 0 0 #7c7575, -1px -1px 0 #7c7575, 1px -1px 0 #7c7575,
-      -1px 1px 0 #7c7575, 1px 1px 0 #7c7575, -1px -1px 0 #7c7575,
-      1px -1px 0 #7c7575, -1px 1px 0 #7c7575, 1px 1px 0 #7c7575;
+    color: rgba(197, 179, 4, 0.96);
   }
 
   &:hover > svg {
-    stroke: ${({ theme }) => theme.colors.yellow};
-    color: ${({ theme }) => theme.colors.yellow};
-    stroke: #ffed00;
-    color: #ffed00;
+    color: rgba(197, 179, 4, 0.96);
+    stroke: rgba(197, 179, 4, 0.96);
   }
 `;
 
@@ -203,10 +196,6 @@ export const ReportName = styled.p`
     font-size: 20px;
     font-weight: 300;
   }
-
-  &:hover {
-    color: ${({ theme }) => theme.colors.yellow};
-  }
 `;
 
 export const ReportIconArrow = styled.svg`
@@ -215,10 +204,6 @@ export const ReportIconArrow = styled.svg`
   height: 24px;
   stroke: ${({ theme }) => theme.colors.blue};
   transition: stroke 0.3s ease;
-
-  &:hover {
-    stroke: ${({ theme }) => theme.colors.yellow};
-  }
 `;
 
 export const LoadMoreWrapper = styled.div`
@@ -236,7 +221,7 @@ export const LoadIconArrow = styled.svg`
   transition: stroke 0.3s ease;
 
   &:hover {
-    stroke: ${({ theme }) => theme.colors.yellow};
+    stroke: rgba(197, 179, 4, 0.96);
   }
 
   @media only screen and (min-width: 768px) {
@@ -255,7 +240,7 @@ export const CollapseIconArrow = styled.svg`
   transition: stroke 0.3s ease;
 
   &:hover {
-    stroke: ${({ theme }) => theme.colors.yellow};
+    stroke: rgba(197, 179, 4, 0.96);
   }
 
   @media only screen and (min-width: 768px) {

@@ -14,8 +14,6 @@ import {
   DescriptionContainer,
   DescriptionWrapper,
   TitleWrapper,
-  // AboutUsDescriptionShort,
-  // AboutUsDescriptionDesktop,
 } from './AboutUs.styled';
 
 const AboutUs = () => {
@@ -38,14 +36,6 @@ const AboutUs = () => {
         <DescriptionContainer>
           <DescriptionWrapper>
             <AboutUsDescription>{data?.aboutShort[lang]}</AboutUsDescription>
-            {/* <AboutUsDescriptionShort>
-              Ми відчули єдність і солідарність, взялися активно волонтерити,
-              донатити, поширювати важливу інформацію для збереження життів
-              українців і правду про злочини росіян на нашій землі.
-            </AboutUsDescriptionShort> */}
-            {/* <AboutUsDescriptionDesktop>
-              {data?.aboutShort[lang]}
-            </AboutUsDescriptionDesktop> */}
           </DescriptionWrapper>
           <AboutUsMap src={Map} alt="Ukraine map" />
         </DescriptionContainer>
