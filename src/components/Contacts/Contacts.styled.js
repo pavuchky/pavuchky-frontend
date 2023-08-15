@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { theme } from '../../stylesheet/theme';
 
-const { fontSizes, fontWeights, colors, fonts } = theme;
+const { fontSizes, fontWeights, colors, fonts, transitions } = theme;
 
 export const ContactsContainer = styled.section`
   position: relative;
@@ -193,7 +193,9 @@ export const SocialMediaContainer = styled.div`
   margin-top: 24px;
   align-items: center;
   @media (min-width: 768px) {
-    position: relative;
+    position: absolute;
+    max-width: 295px;
+    right: 32px;
     bottom: 25px;
     margin-top: 0;
     justify-content: flex-end;
@@ -227,8 +229,16 @@ export const SocialMediaLinks = styled.ul`
   gap: 12px;
   margin-left: 16px;
   align-items: center;
-  @media (min-width: 768px) {
+
+  & li {
+    transition: transform ${transitions.regular};
   }
+
+  & li:hover,
+  & li:focus {
+    transform: scale(1.07);
+  }
+
   @media (min-width: 1440px) {
     justify-content: flex-start;
     margin-left: 0;
