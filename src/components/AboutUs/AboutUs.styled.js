@@ -91,7 +91,7 @@ export const DescriptionWrapper = styled.div`
   white-space: break-spaces;
 
   @media screen and (min-width: 768px) {
-    height: 215px;
+    height: 220px;
     -webkit-line-clamp: 10;
   }
 
@@ -107,6 +107,7 @@ export const AboutUsDescription = styled.p`
   font-family: ${({ theme }) => theme.fonts.light};
   font-size: 16px;
   font-weight: 300;
+  white-space: break-spaces;
 
   @media screen and (min-width: 768px) {
     font-size: 18px;
