@@ -64,7 +64,12 @@
     "weNeed": "We need"
   },
   "reviews": {
-    "reviews": "Reviews"
+    "reviews": "Reviews",
+    "write": "Write to us",
+    "mobileThanksText": "Thanks to you, we are getting better!",
+    "buttonText": "Leave a review",
+    "tabletThanksText": "Thank you! Thanks to you, we are getting better!",
+    "desktopThanksText": "Your opinion is very important to us. Thanks to you, we are getting better!"
   },
   "donation": {
     "victory": "Donate to the victory",
