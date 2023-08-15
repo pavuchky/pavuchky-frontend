@@ -9,11 +9,13 @@ export const FormContainer = styled.div`
   @media (min-width: 768px) {
     padding: 32px;
     border-radius: ${({ theme }) => theme.radii.m};
+    margin-bottom: 44px;
   }
 
   @media (min-width: 1440px) {
     padding: 44px 64px;
     border-radius: ${({ theme }) => theme.radii.xl};
+    margin-bottom: 64px;
   }
 `;
 
