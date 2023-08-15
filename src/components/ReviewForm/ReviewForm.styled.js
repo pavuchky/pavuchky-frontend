@@ -92,7 +92,6 @@ export const FormSubList = styled.div`
 export const FormBtn = styled.button`
   margin-top: 4px;
   width: 100%;
-  height: 40px;
   padding: 10.5px;
   text-align: center;
   border-radius: 8px;
@@ -108,7 +107,6 @@ export const FormBtn = styled.button`
 
   @media (min-width: 768px) {
     width: 656px;
-    height: 48px;
     padding: 12px;
     margin-top: 8px;
     border-radius: 10px;
@@ -117,7 +115,6 @@ export const FormBtn = styled.button`
 
   @media (min-width: 1440px) {
     width: 440px;
-    height: 64px;
     padding: 26px;
     margin-top: 0;
     border-radius: 25px;
@@ -240,6 +237,12 @@ export const PhotoContainer = styled.div`
 
       fill: ${({ theme, isDragging }) =>
         isDragging ? theme.colors.yellow : theme.colors.blue};
+    }
+
+    &:hover {
+      svg {
+        stroke: none;
+      }
     }
   }
 `;
