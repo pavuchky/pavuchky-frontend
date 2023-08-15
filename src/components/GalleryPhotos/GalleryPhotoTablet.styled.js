@@ -100,8 +100,8 @@ export const GalleryFirstSvgButton = styled.button`
     color: ${colors.blue};
     border-radius: ${radii.round};
     position: relative;
-    top: 368px;
-    left: 1px;
+    top: 366px;
+    left: 51px;
     z-index: 99999999;
   }
 `;
@@ -125,7 +125,7 @@ export const GallerySecondSvgButton = styled.button`
     border-radius: ${radii.round};
     position: relative;
     top:-391px;
-    left: 1066px;
+    left: 995px;
     z-index: 99999999;
   }
 `;
