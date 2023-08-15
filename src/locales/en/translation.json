@@ -70,7 +70,8 @@
     "protect": "Each donation helps protect our soldiers and brings Ukraine closer to victory!",
     "transfer": "You can transfer funds to ",
     "monobank": "our Monobank card",
-    "initiativeDetails": "To find out other details of the Spiders, please contact the initiative administrator"
+    "initiativeDetails": "To find out other details of the Spiders, please contact ",
+    "initiativeAdministrator": "the initiative administrator"
   },
   "partners": {
     "partners": "Partners",
@@ -93,6 +94,7 @@
     "number": "Your cell number",
     "comments": "Comments",
     "commentsPl": "If required",
+
     "submit": "Submit an application",
     "info": "All received data is fully anonymous and will be used only for contacting you",
     "success": "Data sent successfully!",

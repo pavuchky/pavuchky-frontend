@@ -163,6 +163,12 @@ export const ContactNumber = styled.a`
   font-weight: ${fontWeights.light};
   margin-bottom: 8px;
   cursor: pointer;
+  transition: color ${transitions.regular};
+
+  &:hover,
+  &:focus {
+    color: ${colors.blue};
+  }
 
   @media (min-width: 1440px) {
     font-size: ${fontSizes.s};
@@ -201,8 +207,10 @@ export const SocialMediaContainer = styled.div`
     justify-content: flex-end;
   }
   @media (min-width: 1440px) {
+    position: relative;
     margin-top: 44px;
     flex-direction: column;
+    right: 0;
     bottom: 0px;
     justify-content: flex-start;
     align-items: flex-start;

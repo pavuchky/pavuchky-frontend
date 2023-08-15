@@ -1,3 +1,4 @@
+import { HashLink } from 'react-router-hash-link';
 import styled from 'styled-components';
 
 export const DonationSection = styled.section`
@@ -133,6 +134,12 @@ export const CopyButton = styled.button`
 export const CopyIcon = styled.svg`
   width: 28px;
   height: 28px;
+  transition: transform ${({ theme }) => theme.transitions.regular};
+
+  &:hover,
+  &:focus {
+    transform: scale(1.07);
+  }
 
   @media only screen and (min-width: 768px) {
     width: 32px;
@@ -200,6 +207,23 @@ export const DonationDescrText = styled.p`
 
 export const BankLink = styled.a`
   color: ${({ theme }) => theme.colors.blue};
+  transition: text-shadow ${({ theme }) => theme.transitions.regular};
+
+  &:hover,
+  &:focus {
+    text-shadow: 1px 1px 0px ${({ theme }) => theme.colors.yellow};
+  }
+`;
+
+export const ContactsLink = styled(HashLink)`
+  display: inline-block;
+  color: ${({ theme }) => theme.colors.blue};
+  transition: text-shadow ${({ theme }) => theme.transitions.regular};
+
+  &:hover,
+  &:focus {
+    text-shadow: 1px 1px 0px ${({ theme }) => theme.colors.yellow};
+  }
 `;
 
 export const QRIcon = styled.svg`
