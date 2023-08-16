@@ -11,7 +11,7 @@ import {
   HeroTitle,
   IconTank,
 } from './Hero.styled';
-import { CustomLink } from 'components/CustomLink/CustomLink';
+import { CustomLink } from '../CustomLink/CustomLink';
 
 export const Hero = () => {
   const { t } = useTranslation();
@@ -31,7 +31,7 @@ export const Hero = () => {
             type="hashLink"
             text={t('hero.joinWeaving')}
             path="/#contacts"
-            variant="white"
+            variant="blue"
           />
         </HeroItem>
         <HeroItem>
@@ -39,7 +39,7 @@ export const Hero = () => {
             type="hashLink"
             text={t('nav.donate')}
             path="/#donation"
-            variant="blue"
+            variant="yellow"
           />
         </HeroItem>
       </HeroBtnList>

@@ -1,24 +1,26 @@
 import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import { toast } from 'react-toastify';
+import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
 import { addPartner } from 'services/api';
 import { partnerValidationSchema } from '../../utils/validationSchema';
 import { Gratitude } from 'components/Gratitude/Gratitude';
-import heart from '../../assets/images/heart.png';
+import { CustomInput } from 'components/CustomInput/CustomInput';
+import heart from '../../assets/images/gratitude/gratitude_tablet.svg';
 import {
   FormBtn,
   FormContainer,
-  FormInput,
   FormList,
-  FormText,
   FormTitle,
-  FormValidation,
   SupportImg,
 } from './PartnersForm.styled';
 
 export const PartnersForm = () => {
   const [submitted, setSubmitted] = useState(false);
+
+  const { t } = useTranslation();
+
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 
   const formik = useFormik({
@@ -34,12 +36,10 @@ export const PartnersForm = () => {
       try {
         await addPartner(values);
         setSubmitted(true);
-        toast.success('Дані успішно відправлені!');
+        toast.success(t('forms.success'));
       } catch (error) {
         setSubmitted(false);
-        toast.error(
-          'Виникла помилка під час відправки форми. Спробуйте ще раз.'
-        );
+        toast.error(t('forms.error'));
       }
     },
   });
@@ -49,47 +49,46 @@ export const PartnersForm = () => {
     <>
       {submitted ? (
         <Gratitude
-          title="Дякуємо за підтримку!"
-          text="Ми зв’яжемось з вами у найближчий час"
+          title={t('partnerForm.thank')}
+          text={t('forms.contact')}
           variant="primary"
         />
       ) : (
         <FormContainer>
           <div>
-            <FormTitle>Вкажіть ваші дані</FormTitle>
+            <FormTitle>{t('forms.data')}</FormTitle>
             <FormList onSubmit={formik.handleSubmit}>
               <label>
-                <FormText>ПІБ</FormText>
-                <FormInput
+                <CustomInput
+                  title={t('forms.name')}
                   type="text"
                   name="name"
-                  placeholder="Іващук Іван Петрович"
+                  placeholder={t('forms.namePl')}
                   autoComplete="username"
                   value={name}
                   onChange={formik.handleChange}
                   hasValue={name.length > 0}
+                  touched={formik.touched.name}
+                  error={formik.errors.name}
                 />
-                {formik.touched.name && formik.errors.name ? (
-                  <FormValidation>{formik.errors.name}</FormValidation>
-                ) : null}
               </label>
               <label>
-                <FormText>Чим ви займаєтесь</FormText>
-                <FormInput
+                <CustomInput
+                  title={t('partnerForm.activity')}
                   type="text"
                   name="company"
-                  placeholder="В мене будівельна компанія"
+                  placeholder={t('partnerForm.activityPl')}
+                  autoComplete="off"
                   value={company}
                   onChange={formik.handleChange}
                   hasValue={company.length > 0}
+                  touched={formik.touched.company}
+                  error={formik.errors.company}
                 />
-                {formik.touched.company && formik.errors.company ? (
-                  <FormValidation>{formik.errors.company}</FormValidation>
-                ) : null}
               </label>
               <label>
-                <FormText>E-mail</FormText>
-                <FormInput
+                <CustomInput
+                  title="E-mail"
                   type="email"
                   name="email"
                   placeholder="ukrain@gmail.com"
@@ -97,14 +96,13 @@ export const PartnersForm = () => {
                   value={email}
                   onChange={formik.handleChange}
                   hasValue={email.length > 0}
+                  touched={formik.touched.email}
+                  error={formik.errors.email}
                 />
-                {formik.touched.email && formik.errors.email ? (
-                  <FormValidation>{formik.errors.email}</FormValidation>
-                ) : null}
               </label>
               <label>
-                <FormText>Ваш номер телефону</FormText>
-                <FormInput
+                <CustomInput
+                  title={t('forms.number')}
                   type="text"
                   name="phone"
                   placeholder="+380 98 200 77 49"
@@ -112,24 +110,23 @@ export const PartnersForm = () => {
                   value={phone}
                   onChange={formik.handleChange}
                   hasValue={phone.length > 0}
+                  touched={formik.touched.phone}
+                  error={formik.errors.phone}
                 />
-                {formik.touched.phone && formik.errors.phone ? (
-                  <FormValidation>{formik.errors.phone}</FormValidation>
-                ) : null}
               </label>
               <label>
-                <FormText>Додаткові коментарі</FormText>
-                <FormInput
+                <CustomInput
+                  title={t('forms.comments')}
                   type="text"
                   name="comment"
-                  placeholder="Якщо потрібно"
+                  placeholder={t('forms.commentsPl')}
                   autoComplete="off"
                   value={comment}
                   onChange={formik.handleChange}
                   hasValue={comment.length > 0}
                 />
               </label>
-              <FormBtn type="submit">Подати заявку</FormBtn>
+              <FormBtn type="submit">{t('forms.submit')}</FormBtn>
             </FormList>
           </div>
           {isDesktop && <SupportImg src={heart} alt="support" />}
