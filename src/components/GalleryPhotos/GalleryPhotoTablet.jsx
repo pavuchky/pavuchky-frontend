@@ -15,8 +15,11 @@ import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
 import { useMediaQuery } from 'react-responsive';
 import { PaginationItem } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+
+
 const GalleryTabPhotos = () => {
   const { data } = useFetch('galleryPhoto');
+  
 
   const [currentPage, setCurrentPage] = useState(1);
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -89,7 +92,7 @@ const GalleryTabPhotos = () => {
       <>
         {isDesktopScreen && (
           <>
-            <div>
+            <>
               <GalleryDesctopGridContainer>
                 {showingImages?.map((photoLink, index) => {
                   return (
@@ -111,7 +114,7 @@ const GalleryTabPhotos = () => {
                 selectedImageIndex={selectedImageIndex}
                 onClose={closeLightbox}
               />
-            </div>
+            </>
             <GalleryPaginationContainer>
               <GalleryPagnation
                 count={Math.ceil(

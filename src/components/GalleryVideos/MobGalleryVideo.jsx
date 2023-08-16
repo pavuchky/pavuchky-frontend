@@ -1,29 +1,44 @@
 import React from 'react';
 import useFetch from '../../hooks/useFetch';
-import ReactPlayer from 'react-player';
+
 
 import 'swiper/css/bundle';
 import { Scrollbar } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+
+import {
+  VideoGallerySwiperWrapper,
+  VideoSwiperSlideContainer,
+  VideoSwiperContainer, VideoText, VideoReactPlayer
+} from './MobGalleryVideo.styled';
 
 const MobGalleryVideos = () => {
   const { data } = useFetch('galleryVideo');
   console.log(data);
- 
+
   return (
-    <div>
-      <Swiper
+    <VideoGallerySwiperWrapper>
+      <VideoSwiperContainer
         spaceBetween={16}
         slidesPerView={1}
         scrollbar={{ draggable: false }}
         modules={[Scrollbar]}
-          >
-              {data?.galleryVideoList?.map(({ id, index, videoLink }) => (
-                  <SwiperSlide key={id} >
-                  <ReactPlayer key={id} url={videoLink} width={327} height={427} controls={true} />
-                  </SwiperSlide>))}
-      </Swiper>
-    </div>
+      >
+        {data?.galleryVideoList?.map(({ id, index, videoLink }) => (
+          <VideoSwiperSlideContainer key={index}>
+            <VideoReactPlayer
+              key={index}
+              url={videoLink}
+              width="327"
+              playing={false}
+              muted={true}
+              controls={true}
+              loop={true}
+            />
+            <VideoText>Виготовлення маскувальних сіток</VideoText>
+          </VideoSwiperSlideContainer>
+        ))}
+      </VideoSwiperContainer>
+    </VideoGallerySwiperWrapper>
   );
 };
 export default MobGalleryVideos;

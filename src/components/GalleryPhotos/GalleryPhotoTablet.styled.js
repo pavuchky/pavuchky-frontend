@@ -10,13 +10,6 @@ export const GalleryTabGridContainer = styled.div`
   gap: 24px;
   
   margin-bottom: 32px;
-  @media (min-width: 1440px) {
-    grid-template-columns: 409px 409px 409px;
-    gap: 26px;
-    margin-bottom: 44px;
-   
-  }
- 
 `;
 export const GalleryTabImg = styled.img`
   width: 316px;
