@@ -207,22 +207,22 @@ export const DonationDescrText = styled.p`
 
 export const BankLink = styled.a`
   color: ${({ theme }) => theme.colors.blue};
-  transition: text-shadow ${({ theme }) => theme.transitions.regular};
+  transition: color ${({ theme }) => theme.transitions.regular};
 
   &:hover,
   &:focus {
-    text-shadow: 1px 1px 0px ${({ theme }) => theme.colors.yellow};
+    color: ${({ theme }) => theme.colors.darkYellow};
   }
 `;
 
 export const ContactsLink = styled(HashLink)`
   display: inline-block;
   color: ${({ theme }) => theme.colors.blue};
-  transition: text-shadow ${({ theme }) => theme.transitions.regular};
+  transition: color ${({ theme }) => theme.transitions.regular};
 
   &:hover,
   &:focus {
-    text-shadow: 1px 1px 0px ${({ theme }) => theme.colors.yellow};
+    color: ${({ theme }) => theme.colors.darkYellow};
   }
 `;
 

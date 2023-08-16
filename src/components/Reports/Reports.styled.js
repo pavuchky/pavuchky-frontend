@@ -162,20 +162,15 @@ export const ReportsButtonWrapper = styled.a`
   transition: color 0.3s ease;
   transition: stroke 0.3s ease;
 
-  &:hover > p {
-    color: ${({ theme }) => theme.colors.yellow};
-    text-shadow: -0 -1px 0 #7c7575, 0 -1px 0 #7c7575, -0 1px 0 #7c7575,
-      0 1px 0 #7c7575, -1px -0 0 #7c7575, 1px -0 0 #7c7575, -1px 0 0 #7c7575,
-      1px 0 0 #7c7575, -1px -1px 0 #7c7575, 1px -1px 0 #7c7575,
-      -1px 1px 0 #7c7575, 1px 1px 0 #7c7575, -1px -1px 0 #7c7575,
-      1px -1px 0 #7c7575, -1px 1px 0 #7c7575, 1px 1px 0 #7c7575;
+  &:hover > p,
+  &:focus > p {
+    color: ${({ theme }) => theme.colors.darkYellow};
   }
 
-  &:hover > svg {
-    stroke: ${({ theme }) => theme.colors.yellow};
-    color: ${({ theme }) => theme.colors.yellow};
-    stroke: #ffed00;
-    color: #ffed00;
+  &:hover > svg,
+  &:focus > svg {
+    color: ${({ theme }) => theme.colors.darkYellow};
+    stroke: ${({ theme }) => theme.colors.darkYellow};
   }
 `;
 
@@ -235,8 +230,9 @@ export const LoadIconArrow = styled.svg`
   stroke: ${({ theme }) => theme.colors.blue};
   transition: stroke 0.3s ease;
 
-  &:hover {
-    stroke: ${({ theme }) => theme.colors.yellow};
+  &:hover,
+  &:focus {
+    stroke: ${({ theme }) => theme.colors.darkYellow};
   }
 
   @media only screen and (min-width: 768px) {
@@ -254,8 +250,9 @@ export const CollapseIconArrow = styled.svg`
   stroke: ${({ theme }) => theme.colors.blue};
   transition: stroke 0.3s ease;
 
-  &:hover {
-    stroke: ${({ theme }) => theme.colors.yellow};
+  &:hover,
+  &:focus {
+    stroke: ${({ theme }) => theme.colors.darkYellow};
   }
 
   @media only screen and (min-width: 768px) {
