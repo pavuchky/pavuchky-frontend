@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { theme } from 'stylesheet/theme';
 import { createGlobalStyle } from 'styled-components';
 
-
 const { colors } = theme;
 
 export const GallerySwiperWrapper = styled.div`
@@ -44,9 +43,7 @@ export const SwiperImg = styled.img`
   border-radius: 16px;
 `;
 
-
 /**==============Styles For Light Box================== */
-
 
 export const ImageModalOverlay = styled.div`
   position: fixed;
@@ -62,40 +59,57 @@ export const ImageModalOverlay = styled.div`
 `;
 
 export const ImageModalContent = styled.div`
-
   border-radius: 4px;
   max-width: 80%;
   max-height: 80%;
   overflow: auto;
   position: fixed;
- 
+
+  .slider-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 700px;
+  }
 `;
 
-
 export const LightBoxImg = styled.img`
-  border-radius: 16px;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /* border-radius: 16px;
 
   @media (min-width: 768px) {
     height: 690px;
   }
   @media (min-width: 1440px) {
     height: 673px;
-  }
-`; 
+  } */
+`;
 
 export const LightBoxImgContainer = styled.div`
-  width: 258px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 700px;
+  max-width: 850px;
+  margin: 0 auto;
+
+  /* width: 258px;
   height: 344px;
   border-radius: 16px;
   margin: 0 auto;
+  max-width: 100%; */
 
   @media (min-width: 768px) {
-    width: 550px;
-    height: 690px;
+    /* width: 550px;
+    height: 690px; */
   }
   @media (min-width: 1440px) {
-    width: 585px;
-    height: 673px;
+    /* width: 585px;
+    height: 673px; */
   }
 `;
 

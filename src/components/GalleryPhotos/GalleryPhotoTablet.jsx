@@ -7,7 +7,10 @@ import {
   GalleryTabButton,
   GalleryTabImg,
   GalleryDestopImg,
-  GalleryPaginationContainer, GalleryDesctopGridContainer
+  GalleryPaginationContainer,
+  GalleryDesctopGridContainer,
+  GalleryItem,
+  GalleryDesktopItem,
 } from './GalleryPhotoTablet.styled';
 import { GalleryPagnation } from './MuiPagnation.styled';
 import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
@@ -59,12 +62,13 @@ const GalleryTabPhotos = () => {
                 ?.slice(0, visibleImages)
                 .map((photoLink, index) => {
                   return (
-                    <GalleryTabImg
-                      key={index}
-                      src={photoLink.photoLink}
-                      alt="Varior"
-                      onClick={() => openLightbox(index)}
-                    />
+                    <GalleryItem key={index}>
+                      <GalleryTabImg
+                        src={photoLink.photoLink}
+                        alt="Varior"
+                        onClick={() => openLightbox(index)}
+                      />
+                    </GalleryItem>
                   );
                 })}
             </GalleryTabGridContainer>
@@ -79,7 +83,7 @@ const GalleryTabPhotos = () => {
           <div>
             {visibleImages < data?.galleryPhotoList.length && (
               <GalleryTabButton onClick={loadMoreImages}>
-               {t('buttons.viewMore')}
+                {t('buttons.viewMore')}
               </GalleryTabButton>
             )}
           </div>
@@ -93,14 +97,14 @@ const GalleryTabPhotos = () => {
               <GalleryDesctopGridContainer>
                 {showingImages?.map((photoLink, index) => {
                   return (
-                    <div>
+                    <GalleryDesktopItem>
                       <GalleryDestopImg
                         key={index}
                         src={photoLink.photoLink}
                         alt="Varior"
                         onClick={() => openLightbox(index)}
                       />
-                    </div>
+                    </GalleryDesktopItem>
                   );
                 })}
               </GalleryDesctopGridContainer>
@@ -124,14 +128,14 @@ const GalleryTabPhotos = () => {
                 boundaryCount={1}
                 siblingCount={0}
                 renderItem={item => (
-          <PaginationItem
-            slots={{
-              previous: SlArrowLeft,
-              next: SlArrowRight,
-            }}
-            {...item}
-          />
-        )}
+                  <PaginationItem
+                    slots={{
+                      previous: SlArrowLeft,
+                      next: SlArrowRight,
+                    }}
+                    {...item}
+                  />
+                )}
               />
             </GalleryPaginationContainer>
           </>
