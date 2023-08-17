@@ -40,9 +40,9 @@ export const Donation = () => {
   const handleCopyClick = async () => {
     try {
       await navigator.clipboard.writeText(cardNumber);
-      toast.success('Card number copied successfully.');
+      toast.success(`${t('notifications.copiedSuccess')}`);
     } catch (error) {
-      toast.error('Unable to copy the card number. Please try again later.');
+      toast.error(`${t('notifications.copiedError')}`);
     }
   };
 

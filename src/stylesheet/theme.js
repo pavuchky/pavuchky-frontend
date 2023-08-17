@@ -8,6 +8,7 @@ export const theme = {
     lightGrey: '#EBECEC',
     yellow: '#FFED00',
     blue: '#0069B5',
+    lightBlue: 'rgba(6, 131, 255, 0.97)',
     pink: '#E78585',
     photoBg: 'rgba(0, 0, 0, 0.2)',
     backdrop: 'rgba(0, 0, 0, 0.23)',
