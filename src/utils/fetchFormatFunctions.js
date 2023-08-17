@@ -128,8 +128,9 @@ export const galleryPhotoFormattedFn = ({ galleryPhotoList, _id }) => {
   return {
     id: _id,
     galleryPhotoList: galleryPhotoList
-      ? galleryPhotoList.map(({ photoLink }) => {
+      ? galleryPhotoList.map(({ photoLink, _key }) => {
           return {
+            id: _key,
             photoLink: !!photoLink ? BASE_PHOTO_URL + photoLink : null,
           };
         })
@@ -141,8 +142,9 @@ export const galleryVideoFormattedFn = ({ galleryVideoList, _id }) => {
   return {
     id: _id,
     galleryVideoList: galleryVideoList
-      ? galleryVideoList.map(({ videoLink }) => {
+      ? galleryVideoList.map(({ videoLink, _key }) => {
           return {
+            id: _key,
             videoLink: !!videoLink ? videoLink : null,
           };
         })
