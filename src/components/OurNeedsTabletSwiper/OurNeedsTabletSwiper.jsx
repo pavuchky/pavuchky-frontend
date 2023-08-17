@@ -1,4 +1,5 @@
 import 'swiper/css';
+import { useTranslation } from 'react-i18next';
 
 import 'swiper/css/scrollbar';
 import { Scrollbar } from 'swiper';
@@ -16,6 +17,8 @@ import {
 } from './OurNeedsTabletSwiper.styled';
 
 const OurNeedsTabletSwiper = () => {
+  const { t } = useTranslation();
+
   return (
     <SwiperContainer
       spaceBetween={24}
@@ -26,12 +29,12 @@ const OurNeedsTabletSwiper = () => {
       <SwiperSlideContainer>
         <OurNeedsItemDiv>
           <LocationAndNeedTypeContainer>
-            <Location>Київ</Location>
+            <Location>{`${t('ourNeeds.city')}`}</Location>
           </LocationAndNeedTypeContainer>
 
-          <NeedsItemTitel>Потребуємо пластик, капрон</NeedsItemTitel>
+          <NeedsItemTitel>{`${t('ourNeeds.needPlastic')}`}</NeedsItemTitel>
           <NeedsItemDeccription>
-            {`Пластикова сітка розмір клітинки 3x3,5 см,\nкапронова сітка - розмір клітинки 5x5 см`}
+            {`${t('ourNeeds.plasticMesh')}`}
           </NeedsItemDeccription>
         </OurNeedsItemDiv>
       </SwiperSlideContainer>
@@ -39,12 +42,12 @@ const OurNeedsTabletSwiper = () => {
       <SwiperSlideContainer>
         <OurNeedsItemDiv>
           <LocationAndNeedTypeContainer>
-            <Location>Київ</Location>
+            <Location>{`${t('ourNeeds.city')}`}</Location>
           </LocationAndNeedTypeContainer>
 
-          <NeedsItemTitel>Щільна темна тканина</NeedsItemTitel>
+          <NeedsItemTitel>{`${t('ourNeeds.darkFabric')}`}</NeedsItemTitel>
           <NeedsItemDeccription>
-            Щільна темна тканина (для оверлоку сіток та петель)
+            {`${t('ourNeeds.fabricForOverlocking')}`}
           </NeedsItemDeccription>
         </OurNeedsItemDiv>
       </SwiperSlideContainer>
@@ -52,12 +55,12 @@ const OurNeedsTabletSwiper = () => {
       <SwiperSlideContainer>
         <OurNeedsItemDiv>
           <LocationAndNeedTypeContainer>
-            <Location>Київ</Location>
+            <Location>{`${t('ourNeeds.city')}`}</Location>
           </LocationAndNeedTypeContainer>
 
-          <NeedsItemTitel>Спанбонд</NeedsItemTitel>
+          <NeedsItemTitel>{`${t('ourNeeds.spunbond')}`}</NeedsItemTitel>
           <NeedsItemDeccription>
-            Маскувальних кольорів: олива, суха трава, різні видтінки зелені
+            {`${t('ourNeeds.camouflageColors')}`}
           </NeedsItemDeccription>
         </OurNeedsItemDiv>
       </SwiperSlideContainer>

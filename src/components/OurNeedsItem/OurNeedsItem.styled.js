@@ -100,25 +100,35 @@ export const NeedsItemDeccription = styled.p`
   }
 `;
 
-export const NeedsItemContact = styled.p`
+export const NeedsItemContact = styled.a`
   font-family: ${fonts.regular};
   font-weight: ${fontWeights.regular};
+  cursor: pointer;
 
   @media (min-width: 1440px) {
     font-size: ${fontSizes.s};
   }
 `;
 
-export const NeedsItemContactPerson = styled.p`
-  color: ${colors.secondaryFont};
+// export const NeedsItemContact = styled.p`
+//   font-family: ${fonts.regular};
+//   font-weight: ${fontWeights.regular};
 
-  @media (min-width: 1440px) {
-    font-weight: ${fontWeights.regular};
-    color: ${colors.grey};
-    line-height: 1.9;
-    font-family: ${fonts.regular};
-  }
-`;
+//   @media (min-width: 1440px) {
+//     font-size: ${fontSizes.s};
+//   }
+// `;
+
+// export const NeedsItemContactPerson = styled.p`
+//   color: ${colors.secondaryFont};
+
+//   @media (min-width: 1440px) {
+//     font-weight: ${fontWeights.regular};
+//     color: ${colors.grey};
+//     line-height: 1.9;
+//     font-family: ${fonts.regular};
+//   }
+// `;
 
 export const ContactContainer = styled.div`
   display: flex;

@@ -61,7 +61,16 @@
   },
   "ourNeeds": {
     "whatWeNeed": "What we need",
-    "weNeed": "We need"
+    "weNeed": "We need",
+    "city": "Kyiv",
+    "administratorContacts": "Administrator contacts",
+    "needsType": "military needs",
+    "needPlastic": "We need plastic, kapron",
+    "plasticMesh": "Plastic mesh, hole size - 3x3.5cm, \nnylon mesh, hole size - 5x5cm",
+    "darkFabric": "Dense dark fabric",
+    "fabricForOverlocking": "Dense dark fabric (for overlocking nets and loops)",
+    "spunbond": "Spunbond",
+    "camouflageColors": "Of camouflage colors: olive, dry grass, various shades of green"
   },
   "reviews": {
     "reviews": "Reviews",
