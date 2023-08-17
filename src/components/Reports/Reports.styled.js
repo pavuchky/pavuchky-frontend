@@ -163,14 +163,14 @@ export const ReportsButtonWrapper = styled.a`
 
   &:hover > p,
   &:focus > p {
-    color: ${({ theme }) => theme.colors.darkYellow};
+    color: ${({ theme }) => theme.colors.lightBlue};
     transform: scale(1.1);
   }
 
   &:hover > svg,
   &:focus > svg {
-    color: ${({ theme }) => theme.colors.darkYellow};
-    stroke: ${({ theme }) => theme.colors.darkYellow};
+    color: ${({ theme }) => theme.colors.lightBlue};
+    stroke: ${({ theme }) => theme.colors.lightBlue};
     transform: scale(1.1);
   }
 `;
@@ -225,7 +225,7 @@ export const LoadIconArrow = styled.svg`
 
   &:hover,
   &:focus {
-    stroke: ${({ theme }) => theme.colors.darkYellow};
+    stroke: ${({ theme }) => theme.colors.lightBlue};
   }
 
   @media only screen and (min-width: 768px) {
@@ -245,7 +245,7 @@ export const CollapseIconArrow = styled.svg`
 
   &:hover,
   &:focus {
-    stroke: ${({ theme }) => theme.colors.darkYellow};
+    stroke: ${({ theme }) => theme.colors.lightBlue};
   }
 
   @media only screen and (min-width: 768px) {

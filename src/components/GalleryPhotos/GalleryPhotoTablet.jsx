@@ -6,9 +6,9 @@ import {
   GalleryTabGridContainer,
   GalleryTabButton,
   GalleryTabImg,
-  GalleryDestopImg,
+  GalleryDesktopImg,
   GalleryPaginationContainer,
-  GalleryDesctopGridContainer,
+  GalleryDesktopGridContainer,
   GalleryItem,
   GalleryDesktopItem,
 } from './GalleryPhotoTablet.styled';
@@ -56,22 +56,54 @@ const GalleryTabPhotos = () => {
     <>
       {!isDesktopScreen && isTabletScreen && (
         <>
-          <div>
-            <GalleryTabGridContainer>
-              {data?.galleryPhotoList
-                ?.slice(0, visibleImages)
-                .map((photoLink, index) => {
-                  return (
-                    <GalleryItem key={index}>
-                      <GalleryTabImg
-                        src={photoLink.photoLink}
-                        alt="Varior"
-                        onClick={() => openLightbox(index)}
-                      />
-                    </GalleryItem>
-                  );
-                })}
-            </GalleryTabGridContainer>
+          <GalleryTabGridContainer>
+            {data?.galleryPhotoList
+              ?.slice(0, visibleImages)
+              .map((photoLink, index) => {
+                return (
+                  <GalleryItem key={index}>
+                    <GalleryTabImg
+                      src={photoLink.photoLink}
+                      alt="Warriors and camouflage nets"
+                      onClick={() => openLightbox(index)}
+                    />
+                  </GalleryItem>
+                );
+              })}
+          </GalleryTabGridContainer>
+
+          <ImageModal
+            isOpen={lightboxOpen}
+            images={data}
+            selectedImageIndex={selectedImageIndex}
+            onClose={closeLightbox}
+          />
+
+          {visibleImages < data?.galleryPhotoList.length && (
+            <GalleryTabButton onClick={loadMoreImages}>
+              {t('buttons.viewMore')}
+            </GalleryTabButton>
+          )}
+        </>
+      )}
+
+      <>
+        {isDesktopScreen && (
+          <>
+            <GalleryDesktopGridContainer>
+              {showingImages?.map((photoLink, index) => {
+                return (
+                  <GalleryDesktopItem>
+                    <GalleryDesktopImg
+                      key={index}
+                      src={photoLink.photoLink}
+                      alt="Warriors and camouflage nets"
+                      onClick={() => openLightbox(index)}
+                    />
+                  </GalleryDesktopItem>
+                );
+              })}
+            </GalleryDesktopGridContainer>
 
             <ImageModal
               isOpen={lightboxOpen}
@@ -79,43 +111,7 @@ const GalleryTabPhotos = () => {
               selectedImageIndex={selectedImageIndex}
               onClose={closeLightbox}
             />
-          </div>
-          <div>
-            {visibleImages < data?.galleryPhotoList.length && (
-              <GalleryTabButton onClick={loadMoreImages}>
-                {t('buttons.viewMore')}
-              </GalleryTabButton>
-            )}
-          </div>
-        </>
-      )}
 
-      <>
-        {isDesktopScreen && (
-          <>
-            <div>
-              <GalleryDesctopGridContainer>
-                {showingImages?.map((photoLink, index) => {
-                  return (
-                    <GalleryDesktopItem>
-                      <GalleryDestopImg
-                        key={index}
-                        src={photoLink.photoLink}
-                        alt="Varior"
-                        onClick={() => openLightbox(index)}
-                      />
-                    </GalleryDesktopItem>
-                  );
-                })}
-              </GalleryDesctopGridContainer>
-
-              <ImageModal
-                isOpen={lightboxOpen}
-                images={data}
-                selectedImageIndex={selectedImageIndex}
-                onClose={closeLightbox}
-              />
-            </div>
             <GalleryPaginationContainer>
               <GalleryPagnation
                 count={Math.ceil(

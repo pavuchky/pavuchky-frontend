@@ -211,7 +211,7 @@ export const BankLink = styled.a`
 
   &:hover,
   &:focus {
-    color: ${({ theme }) => theme.colors.darkYellow};
+    color: ${({ theme }) => theme.colors.lightBlue};
   }
 `;
 
@@ -222,7 +222,7 @@ export const ContactsLink = styled(HashLink)`
 
   &:hover,
   &:focus {
-    color: ${({ theme }) => theme.colors.darkYellow};
+    color: ${({ theme }) => theme.colors.lightBlue};
   }
 `;
 

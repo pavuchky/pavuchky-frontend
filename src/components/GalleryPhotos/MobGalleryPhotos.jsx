@@ -4,7 +4,6 @@ import useFetch from '../../hooks/useFetch';
 import 'swiper/css/bundle';
 import { Scrollbar } from 'swiper';
 
-
 import {
   GallerySwiperSlideContainer,
   GallerySwiperContainer,
@@ -15,7 +14,7 @@ import ImageModal from './ImageModal';
 
 const MobGalleryPhotos = () => {
   const { data } = useFetch('galleryPhoto');
-  console.log(data);
+
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
@@ -29,7 +28,7 @@ const MobGalleryPhotos = () => {
   };
 
   return (
-    <div>
+    <>
       <GallerySwiperContainer
         spaceBetween={16}
         slidesPerView={1.3}
@@ -54,7 +53,7 @@ const MobGalleryPhotos = () => {
         selectedImageIndex={selectedImageIndex}
         onClose={closeLightbox}
       />
-    </div>
+    </>
   );
 };
 

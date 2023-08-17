@@ -69,7 +69,26 @@ export const ImageModalContent = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    max-height: 700px;
+    max-height: 344px;
+  }
+
+  .carousel .slide img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+  }
+
+  @media (min-width: 768px) {
+    .slider-wrapper {
+      max-height: 690px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .slider-wrapper {
+      max-height: 700px;
+    }
   }
 `;
 
@@ -77,39 +96,24 @@ export const LightBoxImg = styled.img`
   max-width: 100%;
   height: 100%;
   object-fit: cover;
-
-  /* border-radius: 16px;
-
-  @media (min-width: 768px) {
-    height: 690px;
-  }
-  @media (min-width: 1440px) {
-    height: 673px;
-  } */
 `;
 
 export const LightBoxImgContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  height: 700px;
-  max-width: 850px;
-  margin: 0 auto;
-
-  /* width: 258px;
   height: 344px;
-  border-radius: 16px;
+  max-width: 273px;
   margin: 0 auto;
-  max-width: 100%; */
 
   @media (min-width: 768px) {
-    /* width: 550px;
-    height: 690px; */
+    max-width: 550px;
+    height: 690px;
   }
+
   @media (min-width: 1440px) {
-    /* width: 585px;
-    height: 673px; */
+    max-width: 850px;
+    height: 700px;
   }
 `;
 
