@@ -6,7 +6,7 @@ import {
   LocationAndNeedTypeContainer,
   NeedType,
   NeedsItemContact,
-  NeedsItemContactPerson,
+  // NeedsItemContactPerson,
   NeedsItemDeccription,
   NeedsItemTitel,
   OurNeedsItemLi,
@@ -20,7 +20,7 @@ const OurNeedsItem = ({ location, needType, titel, description, contact }) => {
     <OurNeedsItemLi>
       <LocationAndNeedTypeContainer>
         <Location>{location}</Location>
-        {!isTabletScreen && <NeedType>{needType.trim() + ' потреби'}</NeedType>}
+        {!isTabletScreen && <NeedType>{needType.trim()}</NeedType>}
       </LocationAndNeedTypeContainer>
 
       <NeedsItemTitel>{titel}</NeedsItemTitel>
@@ -28,8 +28,9 @@ const OurNeedsItem = ({ location, needType, titel, description, contact }) => {
 
       {(!isTabletScreen || isDesctopScreen) && (
         <ContactContainer>
-          <NeedsItemContact>Контакти</NeedsItemContact>
-          <NeedsItemContactPerson>{contact}</NeedsItemContactPerson>
+          <NeedsItemContact href="#contacts">{contact}</NeedsItemContact>
+
+          {/* <NeedsItemContactPerson>{contact}</NeedsItemContactPerson> */}
         </ContactContainer>
       )}
     </OurNeedsItemLi>
