@@ -159,18 +159,19 @@ export const ReportsButtonWrapper = styled.a`
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  transition: color 0.3s ease;
-  transition: stroke 0.3s ease;
+  transition: all 0.3s ease;
 
   &:hover > p,
   &:focus > p {
     color: ${({ theme }) => theme.colors.darkYellow};
+    transform: scale(1.1);
   }
 
   &:hover > svg,
   &:focus > svg {
     color: ${({ theme }) => theme.colors.darkYellow};
     stroke: ${({ theme }) => theme.colors.darkYellow};
+    transform: scale(1.1);
   }
 `;
 
@@ -198,10 +199,6 @@ export const ReportName = styled.p`
     font-size: 20px;
     font-weight: 300;
   }
-
-  &:hover {
-    color: ${({ theme }) => theme.colors.yellow};
-  }
 `;
 
 export const ReportIconArrow = styled.svg`
@@ -210,10 +207,6 @@ export const ReportIconArrow = styled.svg`
   height: 24px;
   stroke: ${({ theme }) => theme.colors.blue};
   transition: stroke 0.3s ease;
-
-  &:hover {
-    stroke: ${({ theme }) => theme.colors.yellow};
-  }
 `;
 
 export const LoadMoreWrapper = styled.div`

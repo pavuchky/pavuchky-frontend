@@ -90,19 +90,19 @@ export const GalleryContainer = styled.ul`
   }
 
   @media screen and (min-width: 768px) {
-    height: auto;
+    height: 614px;
     gap: 24px;
-    grid-template-columns: repeat(2, minmax(316px, 1fr));
-    grid-template-rows: repeat(3, minmax(186px, 1fr));
+    grid-template-columns: repeat(2, minmax(308px, 1fr));
+    grid-template-rows: repeat(3, minmax(188px, 1fr));
     overflow-x: visible;
   }
   @media screen and (min-width: 1440px) {
-    height: auto;
+    height: 692px;
     gap: 26px;
     grid-auto-rows: auto;
 
-    grid-template-columns: repeat(3, minmax(409px, 1fr));
-    grid-template-rows: repeat(3, minmax(218px, 1fr));
+    grid-template-columns: repeat(3, minmax(403px, 1fr));
+    grid-template-rows: repeat(3, minmax(214px, 1fr));
   }
 `;
 
@@ -204,4 +204,7 @@ export const GalleryImg = styled.img`
   height: 100%;
   object-fit: cover;
   border-radius: 8px;
+  @media screen and (min-width: 1440px) {
+    /* object-position: top; */
+  }
 `;
