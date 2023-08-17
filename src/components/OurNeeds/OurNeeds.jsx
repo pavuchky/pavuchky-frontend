@@ -26,25 +26,25 @@ const OurNeeds = () => {
       ) : (
         <OurNeedsList>
           <OurNeedsItem
-            location="Київ"
-            needType="військові"
-            titel="Потребуємо пластик, капрон"
-            description={`Пластикова сітка розмір клітинки 3x3,5 см,\nкапронова сітка - розмір клітинки 5x5 см`}
-            contact="Ольга Кузакова"
+            location={`${t('ourNeeds.city')}`}
+            needType={`${t('ourNeeds.needsType')}`}
+            titel={`${t('ourNeeds.needPlastic')}`}
+            description={`${t('ourNeeds.plasticMesh')}`}
+            contact={`${t('ourNeeds.administratorContacts')}`}
           />
           <OurNeedsItem
-            location="Київ"
-            needType="військові"
-            titel="Щільна темна тканина"
-            description="Щільна темна тканина (для оверлоку сіток та петель)"
-            contact="Ольга Кузакова"
+            location={`${t('ourNeeds.city')}`}
+            needType={`${t('ourNeeds.needsType')}`}
+            titel={`${t('ourNeeds.darkFabric')}`}
+            description={`${t('ourNeeds.fabricForOverlocking')}`}
+            contact={`${t('ourNeeds.administratorContacts')}`}
           />
           <OurNeedsItem
-            location="Київ"
-            needType="військові"
-            titel="Спанбонд"
-            description="Маскувальних кольорів: олива, суха трава, різні видтінки зелені"
-            contact="Ольга Кузакова"
+            location={`${t('ourNeeds.city')}`}
+            needType={`${t('ourNeeds.needsType')}`}
+            titel={`${t('ourNeeds.spunbond')}`}
+            description={`${t('ourNeeds.camouflageColors')}`}
+            contact={`${t('ourNeeds.administratorContacts')}`}
           />
         </OurNeedsList>
       )}
