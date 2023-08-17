@@ -69,7 +69,7 @@ export const GalleryContainer = styled.ul`
   gap: 16px;
   max-height: 100%;
   height: 326px;
-  grid-template-columns: repeat(2, 254px);
+  grid-template-columns: repeat(6, 254px);
   grid-template-rows: repeat(auto-fit, 300px);
   border-radius: 8px;
   overflow-x: scroll;
