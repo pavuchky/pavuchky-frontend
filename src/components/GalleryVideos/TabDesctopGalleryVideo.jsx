@@ -48,10 +48,10 @@ const TabDesctopGalleryVideo = () => {
         <>
           <div>
             <VideoTabGridContainer>
-              {data?.galleryVideoList?.slice(0, visibleVideos).map((videoLink, id) => {
+              {data?.galleryVideoList?.slice(0, visibleVideos).map((videoLink, id, index) => {
                 return (
                   <VideoTabReactPlayer
-                    key={id}
+                    key={index}
                     url={videoLink}
                     width="316"
                     playing={false}
@@ -75,11 +75,11 @@ const TabDesctopGalleryVideo = () => {
           <>
             <>
               <VideoDesctopGridContainer>
-                {showingVideos?.map((id, videoLink) => {
+                {showingVideos?.map((id, videoLink, index) => {
                   return (
                     <div>
                       <VideoDesctopReactPlayer
-                        key={id}
+                        key={index}
                         url={videoLink}
                         width="316"
                         playing={false}
