@@ -7,7 +7,7 @@ export const theme = {
     grey: '#B8B6B7',
     lightGrey: '#EBECEC',
     yellow: '#FFED00',
-    darkYellow: 'rgba(197, 179, 4, 0.96)',
+    darkYellow: 'rgba(6, 131, 255, 0.97)',
     blue: '#0069B5',
     pink: '#E78585',
     photoBg: 'rgba(0, 0, 0, 0.2)',
