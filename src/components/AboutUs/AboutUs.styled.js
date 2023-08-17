@@ -74,15 +74,12 @@ export const DescriptionContainer = styled.div`
   }
   @media screen and (min-width: 1440px) {
     gap: 93px;
+    padding-top: 28px;
   }
 `;
 
 export const DescriptionWrapper = styled.div`
   height: 210px;
-
-  /* display: flex;
-  flex-direction: column; */
-  /* gap: 12px; */
   overflow: hidden;
 
   display: -webkit-box;
@@ -91,7 +88,7 @@ export const DescriptionWrapper = styled.div`
   white-space: break-spaces;
 
   @media screen and (min-width: 768px) {
-    height: 215px;
+    height: 220px;
     -webkit-line-clamp: 10;
   }
 
@@ -107,46 +104,14 @@ export const AboutUsDescription = styled.p`
   font-family: ${({ theme }) => theme.fonts.light};
   font-size: 16px;
   font-weight: 300;
+  white-space: break-spaces;
 
   @media screen and (min-width: 768px) {
     font-size: 18px;
   }
   @media screen and (min-width: 1440px) {
+    margin-top: 10px;
     font-size: 20px;
-  }
-`;
-
-export const AboutUsDescriptionShort = styled(AboutUsDescription)`
-  max-height: 84px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-
-  @media screen and (min-width: 375px) {
-    -webkit-line-clamp: 4;
-  }
-
-  @media screen and (min-width: 768px) {
-    max-height: 84px;
-    -webkit-line-clamp: 3;
-  }
-  @media screen and (min-width: 1440px) {
-    display: block;
-    max-height: none;
-    overflow: visible;
-    text-overflow: clip;
-    -webkit-line-clamp: none;
-  }
-`;
-
-export const AboutUsDescriptionDesktop = styled(AboutUsDescription)`
-  display: none;
-
-  @media screen and (min-width: 1440px) {
-    display: block;
   }
 `;
 
@@ -161,6 +126,5 @@ export const AboutUsMap = styled.img`
   @media screen and (min-width: 1440px) {
     width: 605px;
     height: 404px;
-    margin-top: 28px;
   }
 `;
