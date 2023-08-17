@@ -159,16 +159,17 @@ export const ReportsButtonWrapper = styled.a`
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  transition: color 0.3s ease;
-  transition: stroke 0.3s ease;
+  transition: all 0.3s ease;
 
   &:hover > p {
-    color: rgba(197, 179, 4, 0.96);
+    color: rgba(6, 131, 255, 0.97);
+    transform: scale(1.1);
   }
 
   &:hover > svg {
-    color: rgba(197, 179, 4, 0.96);
-    stroke: rgba(197, 179, 4, 0.96);
+    color: rgba(6, 131, 255, 0.97);
+    stroke: rgba(6, 131, 255, 0.97);
+    transform: scale(1.1);
   }
 `;
 
@@ -221,7 +222,7 @@ export const LoadIconArrow = styled.svg`
   transition: stroke 0.3s ease;
 
   &:hover {
-    stroke: rgba(197, 179, 4, 0.96);
+    stroke: rgba(6, 131, 255, 0.97);
   }
 
   @media only screen and (min-width: 768px) {
@@ -240,7 +241,7 @@ export const CollapseIconArrow = styled.svg`
   transition: stroke 0.3s ease;
 
   &:hover {
-    stroke: rgba(197, 179, 4, 0.96);
+    stroke: rgba(6, 131, 255, 0.97);
   }
 
   @media only screen and (min-width: 768px) {
