@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 import { theme } from 'stylesheet/theme';
-const { colors, radii, borders, fontWeights, fonts, fontSizes } = theme;
+const { colors, radii, borders, fontWeights, fonts, fontSizes, transitions } =
+  theme;
 
 export const ReviewsPageSection = styled.section`
   margin-bottom: 36px;
@@ -127,6 +128,9 @@ export const ContactUsButton = styled.button`
   font-weight: ${fontWeights.light};
   font-size: ${fontSizes.xs};
   font-family: ${fonts.light};
+
+  transition: background-color ${transitions.regular},
+    color ${transitions.regular};
 
   &:hover,
   &:focus {
