@@ -13,7 +13,7 @@ import {
 
 const MobGalleryVideos = () => {
   const { data } = useFetch('galleryVideo');
-  console.log(data);
+
 
   return (
     <VideoGallerySwiperWrapper>

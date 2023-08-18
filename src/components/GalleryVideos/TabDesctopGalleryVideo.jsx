@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import useFetch from '../../hooks/useFetch';
 
-
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
 
@@ -18,20 +17,18 @@ import {
 const TabDesctopGalleryVideo = () => {
   const { data } = useFetch('galleryVideo');
 
- 
-
   const [currentPage, setCurrentPage] = useState(1);
 
   const [visibleVideos, setVisibleVideos] = useState(2);
 
-  const itemsPerPage = 3;
+  const itemsPerPage = 1;
   const isDesktopScreen = useMediaQuery({ minWidth: 1440 });
   const isTabletScreen = useMediaQuery({ minWidth: 768 });
 
   const { t } = useTranslation();
 
   const loadMoreVideos = () => {
-    setVisibleVideos(prevVisibleImages => prevVisibleImages + 2);
+    setVisibleVideos(prevVisibleImages => prevVisibleImages + 1);
   };
 
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -48,16 +45,21 @@ const TabDesctopGalleryVideo = () => {
         <>
           <div>
             <VideoTabGridContainer>
-              {data?.galleryVideoList?.slice(0, visibleVideos).map((videoLink, id, index) => {
-                return (
-                  <VideoTabReactPlayer
-                    key={index}
-                    url={videoLink}
-                    width="316"
-                    playing={false}
-                  />
-                );
-              })}
+              {data?.galleryVideoList
+                ?.slice(0, visibleVideos)
+                .map(({ videoLink },  index) => {
+                  return (
+                    
+                    <div key={index}>
+                      <VideoTabReactPlayer
+                       
+                        url={videoLink}
+                        width="316"
+                        playing={false}
+                      />
+                    </div>
+                  );
+                })}
             </VideoTabGridContainer>
           </div>
           <div>
@@ -75,11 +77,10 @@ const TabDesctopGalleryVideo = () => {
           <>
             <>
               <VideoDesctopGridContainer>
-                {showingVideos?.map((id, videoLink, index) => {
+                {showingVideos?.map(({videoLink}, index) => {
                   return (
-                    <div>
+                    <div key={index}>
                       <VideoDesctopReactPlayer
-                        key={index}
                         url={videoLink}
                         width="316"
                         playing={false}
@@ -88,21 +89,23 @@ const TabDesctopGalleryVideo = () => {
                   );
                 })}
               </VideoDesctopGridContainer>
-            </> <VideoPaginationContainer>
-        <VideoPagnation
-          count={Math.ceil((data?.galleryVideoList?.length || 0) / itemsPerPage)}
-          page={currentPage}
-          onChange={onPageChange}
-          color="primary"
-          variant="outlined"
-          boundaryCount={1}
-          siblingCount={0}
-        />
-      </VideoPaginationContainer>
+            </>{' '}
+            <VideoPaginationContainer>
+              <VideoPagnation
+                count={Math.ceil(
+                  (data?.galleryVideoList?.length || 0) / itemsPerPage
+                )}
+                page={currentPage}
+                onChange={onPageChange}
+                color="primary"
+                variant="outlined"
+                boundaryCount={1}
+                siblingCount={0}
+              />
+            </VideoPaginationContainer>
           </>
         )}
       </>
-     
     </>
   );
 };
