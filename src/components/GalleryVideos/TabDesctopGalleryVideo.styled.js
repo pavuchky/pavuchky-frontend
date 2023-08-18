@@ -15,10 +15,12 @@ export const VideoTabGridContainer = styled.div`
   & :first-child {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    /* border: 1px solid #0069b5; */
   }
   & :last-child {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    /* border: 1px solid #0069b5; */
   }
 `;
 

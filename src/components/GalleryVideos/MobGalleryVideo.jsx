@@ -8,7 +8,7 @@ import { Scrollbar } from 'swiper';
 import {
   VideoGallerySwiperWrapper,
   VideoSwiperSlideContainer,
-  VideoSwiperContainer, VideoText, VideoReactPlayer
+  VideoSwiperContainer, VideoText, VideoReactPlayer, SwiperSliderWrapper
 } from './MobGalleryVideo.styled';
 
 const MobGalleryVideos = () => {
@@ -24,18 +24,20 @@ const MobGalleryVideos = () => {
         modules={[Scrollbar]}
       >
         {data?.galleryVideoList?.map(({ id, videoLink }) => (
+          
           <VideoSwiperSlideContainer key={id}>
+            <SwiperSliderWrapper>
             <VideoReactPlayer
-              key={id}
+             
               url={videoLink}
-              width="327"
+              width={320}
               playing={false}
               muted={true}
               controls={true}
               loop={true}
               config={{youtube:{playerVars:{origin: 'https://www.youtube.com'}}}}
             />
-            <VideoText>Виготовлення маскувальних сіток</VideoText>
+            <VideoText>Виготовлення <br/> маскувальних сіток</VideoText></SwiperSliderWrapper>
           </VideoSwiperSlideContainer>
         ))}
       </VideoSwiperContainer>
