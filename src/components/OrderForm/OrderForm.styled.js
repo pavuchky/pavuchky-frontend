@@ -48,6 +48,7 @@ export const FormList = styled.form`
   }
 
   @media (min-width: 1440px) {
+    position: relative;
     justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
@@ -85,8 +86,30 @@ export const FormValidation = styled.p`
   color: ${({ theme }) => theme.colors.pink};
 `;
 
+export const FormInfo = styled.p`
+  font-size: 12px;
+  color: ${({ theme }) => theme.colors.grey};
+
+  @media (min-width: 768px) {
+    margin-top: 8px;
+    font-size: 14px;
+  }
+
+  @media (min-width: 1440px) {
+    position: absolute;
+    top: 551px;
+    left: 747px;
+    height: 72px;
+    width: 597px;
+    margin-top: 0px;
+    font-family: ${({ theme }) => theme.fonts.regular};
+    font-size: 16px;
+    font-weight: ${({ theme }) => theme.fontWeights.regular};
+    line-height: ${({ theme }) => theme.lineHeights.secondary};
+  }
+`;
+
 export const FormBtn = styled.button`
-  margin-top: 4px;
   width: 100%;
   height: 40px;
   padding: 10px;
@@ -107,7 +130,6 @@ export const FormBtn = styled.button`
     width: 656px;
     height: 48px;
     padding: 10px;
-    margin-top: 20px;
     border-radius: 16px;
     font-size: ${({ theme }) => theme.fontSizes.m};
   }
@@ -115,6 +137,7 @@ export const FormBtn = styled.button`
   @media (min-width: 1440px) {
     width: 519px;
     height: 64px;
+    margin-top: 8px;
     border-radius: ${({ theme }) => theme.radii.m};
   }
 `;

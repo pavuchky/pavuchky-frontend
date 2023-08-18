@@ -38,7 +38,12 @@ export const PartnersTitle = styled.h3`
 export const PartnersList = styled.ul`
   margin-bottom: 24px;
   display: flex;
+  flex-wrap: wrap;
   gap: 21px;
+
+  li {
+    width: calc((100% - 48px) / 3);
+  }
 
   @media (min-width: 768px) {
     margin-bottom: 28px;

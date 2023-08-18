@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
-import { addReview } from 'services/api';
+import { useFetchPost } from 'hooks/useFetchPost';
 import { reviewValidationSchema } from 'utils/validationSchema';
 import { Gratitude } from 'components/Gratitude/Gratitude';
 import { CustomInput } from 'components/CustomInput/CustomInput';
@@ -11,11 +11,11 @@ import svg from '../../assets/images/sprite.svg';
 import {
   FormBtn,
   FormContainer,
+  FormInfo,
   FormList,
   FormPhoto,
   FormSubList,
   FormTitle,
-  Notice,
   PhotoContainer,
   PhotoText,
   PhotoTitle,
@@ -27,6 +27,7 @@ export const ReviewForm = () => {
   const [isDragging, setIsDragging] = useState(false);
 
   const { t } = useTranslation();
+  const { isLoading, fetchPost } = useFetchPost();
 
   const isTablet = useMediaQuery({
     query: '(min-width: 768px) and (max-width: 1439px)',
@@ -43,7 +44,17 @@ export const ReviewForm = () => {
     validationSchema: reviewValidationSchema,
     onSubmit: async values => {
       try {
-        await addReview(values);
+        const formData = new FormData();
+        formData.append('name', values.name);
+        formData.append('email', values.email);
+        formData.append('comment', values.comment);
+        formData.append('photo', values.photo);
+
+        await fetchPost('/rewie', formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        });
         setSubmitted(true);
         toast.success(t('forms.success'));
       } catch (error) {
@@ -76,7 +87,9 @@ export const ReviewForm = () => {
 
   return (
     <>
-      {submitted ? (
+      {isLoading ? (
+        <div style={{ height: '300px' }}>Loading...</div>
+      ) : submitted ? (
         <Gratitude title={t('feedback.thank')} />
       ) : (
         <FormContainer>
@@ -130,7 +143,6 @@ export const ReviewForm = () => {
                   error={formik.errors.comment}
                 />
               </label>
-              {isDesktop && <Notice>{t('feedback.published')}</Notice>}
             </FormSubList>
             <FormPhoto>
               <div>
@@ -167,6 +179,7 @@ export const ReviewForm = () => {
                 )}
               </PhotoContainer>
             </FormPhoto>
+            <FormInfo>{t('forms.review')}</FormInfo>
             <FormBtn type="submit">{t('feedback.submit')}</FormBtn>
           </FormList>
         </FormContainer>
