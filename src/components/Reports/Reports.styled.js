@@ -160,6 +160,7 @@ export const ReportsButtonWrapper = styled.a`
   align-items: center;
   gap: 16px;
   transition: all 0.3s ease;
+  transition: transform 1s ease;
 
   &:hover > p,
   &:focus > p {
@@ -183,6 +184,7 @@ export const ReportName = styled.p`
   font-weight: 300;
 
   transition: color 0.3s ease;
+  transition: transform 1s ease;
   @media only screen and (min-width: 768px) {
     width: auto;
 
@@ -207,6 +209,7 @@ export const ReportIconArrow = styled.svg`
   height: 24px;
   stroke: ${({ theme }) => theme.colors.blue};
   transition: stroke 0.3s ease;
+  transition: transform 1s ease;
 `;
 
 export const LoadMoreWrapper = styled.div`
