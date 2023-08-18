@@ -59,17 +59,19 @@ const GalleryTabPhotos = () => {
       {!isDesktopScreen && isTabletScreen && (
         <>
           <GalleryTabGridContainer>
-            {data?.galleryPhotoList?.slice(0, visibleImages).map(photo => {
-              return (
-                <GalleryItem key={photo.id}>
-                  <GalleryTabImg
-                    src={photo.photoLink}
-                    alt="Warriors and camouflage nets"
-                    onClick={() => openLightbox(photo.id)}
-                  />
-                </GalleryItem>
-              );
-            })}
+            {data?.galleryPhotoList
+              ?.slice(0, visibleImages)
+              .map((photo, index) => {
+                return (
+                  <GalleryItem key={photo.id}>
+                    <GalleryTabImg
+                      src={photo.photoLink}
+                      alt="Warriors and camouflage nets"
+                      onClick={() => openLightbox(index)}
+                    />
+                  </GalleryItem>
+                );
+              })}
           </GalleryTabGridContainer>
 
           <ImageModal
@@ -91,13 +93,13 @@ const GalleryTabPhotos = () => {
         {isDesktopScreen && (
           <>
             <GalleryDesktopGridContainer>
-              {showingImages?.map(photo => {
+              {showingImages?.map((photo, index) => {
                 return (
                   <GalleryDesktopItem key={photo.id}>
                     <GalleryDesktopImg
                       src={photo.photoLink}
                       alt="Warriors and camouflage nets"
-                      onClick={() => openLightbox(photo.id)}
+                      onClick={() => openLightbox(index)}
                     />
                   </GalleryDesktopItem>
                 );
