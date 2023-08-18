@@ -14,6 +14,7 @@ import { GallerySwiperContainer } from 'components/GalleryPhotos/MobGalleryPhoto
 
 const GallerySwiper = () => {
   const { data } = useFetch('galleryPhoto');
+  const galleryArr = data?.galleryPhotoList?.slice(0, 6);
 
   return (
     <GallerySwiperWrapper>
@@ -23,7 +24,7 @@ const GallerySwiper = () => {
         modules={[Scrollbar, Navigation]}
         scrollbar={{ draggable: true }}
       >
-        {data?.galleryPhotoList?.map(el => (
+        {galleryArr?.map(el => (
           <GallerySwiperSlideContainer key={el?.id}>
             <GallerySwiperItem galleryImage={el?.photoLink} />
           </GallerySwiperSlideContainer>
