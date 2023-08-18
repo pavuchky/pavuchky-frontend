@@ -1,4 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { PaginationItem } from '@mui/material';
+import { useMediaQuery } from 'react-responsive';
+import { useTranslation } from 'react-i18next';
+import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
+
 import useFetch from '../../hooks/useFetch';
 import ImageModal from './ImageModal';
 
@@ -12,12 +17,8 @@ import {
   GalleryItem,
   GalleryDesktopItem,
 } from './GalleryPhotoTablet.styled';
-import { GalleryPagnation } from './MuiPagnation.styled';
-import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
+import { GalleryPagination } from './MuiPagnation.styled';
 
-import { useMediaQuery } from 'react-responsive';
-import { PaginationItem } from '@mui/material';
-import { useTranslation } from 'react-i18next';
 const GalleryTabPhotos = () => {
   const { data } = useFetch('galleryPhoto');
 
@@ -52,24 +53,23 @@ const GalleryTabPhotos = () => {
   const onPageChange = (event, newPage) => {
     setCurrentPage(newPage);
   };
+
   return (
     <>
       {!isDesktopScreen && isTabletScreen && (
         <>
           <GalleryTabGridContainer>
-            {data?.galleryPhotoList
-              ?.slice(0, visibleImages)
-              .map((photoLink, index) => {
-                return (
-                  <GalleryItem key={index}>
-                    <GalleryTabImg
-                      src={photoLink.photoLink}
-                      alt="Warriors and camouflage nets"
-                      onClick={() => openLightbox(index)}
-                    />
-                  </GalleryItem>
-                );
-              })}
+            {data?.galleryPhotoList?.slice(0, visibleImages).map(photo => {
+              return (
+                <GalleryItem key={photo.id}>
+                  <GalleryTabImg
+                    src={photo.photoLink}
+                    alt="Warriors and camouflage nets"
+                    onClick={() => openLightbox(photo.id)}
+                  />
+                </GalleryItem>
+              );
+            })}
           </GalleryTabGridContainer>
 
           <ImageModal
@@ -91,14 +91,13 @@ const GalleryTabPhotos = () => {
         {isDesktopScreen && (
           <>
             <GalleryDesktopGridContainer>
-              {showingImages?.map((photoLink, index) => {
+              {showingImages?.map(photo => {
                 return (
-                  <GalleryDesktopItem>
+                  <GalleryDesktopItem key={photo.id}>
                     <GalleryDesktopImg
-                      key={index}
-                      src={photoLink.photoLink}
+                      src={photo.photoLink}
                       alt="Warriors and camouflage nets"
-                      onClick={() => openLightbox(index)}
+                      onClick={() => openLightbox(photo.id)}
                     />
                   </GalleryDesktopItem>
                 );
@@ -113,7 +112,7 @@ const GalleryTabPhotos = () => {
             />
 
             <GalleryPaginationContainer>
-              <GalleryPagnation
+              <GalleryPagination
                 count={Math.ceil(
                   (data?.galleryPhotoList?.length || 0) / itemsPerPage
                 )}

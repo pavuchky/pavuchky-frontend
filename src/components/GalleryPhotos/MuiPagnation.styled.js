@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { theme } from '../../stylesheet/theme';
 import { Pagination } from '@mui/material';
 
-const { fontSizes, fontWeights, colors, fonts, } = theme;
+const { fontSizes, fontWeights, colors, fonts } = theme;
 
-export const GalleryPagnation = styled(Pagination)`
+export const GalleryPagination = styled(Pagination)`
   display: flex;
   justify-content: center;
   align-items: center;
