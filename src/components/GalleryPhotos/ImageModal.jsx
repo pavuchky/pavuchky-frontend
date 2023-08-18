@@ -1,20 +1,22 @@
-import React, { useEffect} from 'react';
+import { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import useFetch from '../../hooks/useFetch';
 
-
 import {
   ImageModalOverlay,
   ImageModalContent,
-   GlobalStyles, LightBoxImgContainer, LightBoxImg
+  GlobalStyles,
+  LightBoxImgContainer,
+  LightBoxImg,
 } from './MobGalleryPhotos.styled';
 
-import {GalleryFirstSvgButton, GallerySecondSvgButton, GalleryDesctopSvg} from './GalleryPhotoTablet.styled'
-
-
-
+import {
+  GalleryFirstSvgButton,
+  GallerySecondSvgButton,
+  GalleryDesctopSvg,
+} from './GalleryPhotoTablet.styled';
 import sprite from '../../assets/images/sprite.svg';
 
 const ImageModal = ({
@@ -24,10 +26,6 @@ const ImageModal = ({
   setSelectedImageIndex,
 }) => {
   const { data } = useFetch('galleryPhoto');
-
-
- 
-
 
   useEffect(() => {
     if (isOpen) {
@@ -45,7 +43,6 @@ const ImageModal = ({
     }
   };
 
-   
   return ReactDOM.createPortal(
     <>
       <GlobalStyles />
@@ -62,28 +59,31 @@ const ImageModal = ({
             onChange={setSelectedImageIndex}
             onCloseClick={onClose}
             renderArrowPrev={(onClickHandler, hasPrev) =>
-                hasPrev && (
-                    <GalleryFirstSvgButton type="button" onClick={onClickHandler}>
+              hasPrev && (
+                <GalleryFirstSvgButton type="button" onClick={onClickHandler}>
                   <GalleryDesctopSvg width="17px" height="32px">
-                    <use  xlinkHref={`${sprite}#prew-icon`}></use>
-                        </GalleryDesctopSvg>
-                    </GalleryFirstSvgButton>
-                )
+                    <use xlinkHref={`${sprite}#prew-icon`}></use>
+                  </GalleryDesctopSvg>
+                </GalleryFirstSvgButton>
+              )
             }
-             renderArrowNext={(onClickHandler, hasNext) =>
-                hasNext && (
-                    <GallerySecondSvgButton type="button" onClick={onClickHandler}>
-                        <GalleryDesctopSvg width="17px" height="32px">
-                    <use  xlinkHref={`${sprite}#next-icon`}></use>
-                        </GalleryDesctopSvg>
-                    </GallerySecondSvgButton>
-                )
+            renderArrowNext={(onClickHandler, hasNext) =>
+              hasNext && (
+                <GallerySecondSvgButton type="button" onClick={onClickHandler}>
+                  <GalleryDesctopSvg width="17px" height="32px">
+                    <use xlinkHref={`${sprite}#next-icon`}></use>
+                  </GalleryDesctopSvg>
+                </GallerySecondSvgButton>
+              )
             }
           >
-            {data?.galleryPhotoList?.map((photoLink, index) => {
+            {data?.galleryPhotoList?.map(photo => {
               return (
-                <LightBoxImgContainer key={index}>
-                  <LightBoxImg src={photoLink.photoLink} alt="varior" />
+                <LightBoxImgContainer key={photo.id}>
+                  <LightBoxImg
+                    src={photo.photoLink}
+                    alt="Warriors and camouflage nets"
+                  />
                 </LightBoxImgContainer>
               );
             })}
