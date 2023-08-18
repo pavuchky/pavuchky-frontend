@@ -27,6 +27,8 @@ export const VideoText = styled.span`
   @media (min-width: 768px) {
     font-size: ${fontSizes.s};
     font-weight: ${fontWeights.light};
+    padding-bottom: 0;
+    margin-bottom: 0;
   }
 `;
 export const VideoSwiperContainer = styled(Swiper)`

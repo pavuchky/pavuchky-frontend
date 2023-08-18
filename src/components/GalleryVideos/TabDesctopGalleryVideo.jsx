@@ -13,10 +13,11 @@ import {
   VideoPaginationContainer,
   VideoPagnation,
 } from './TabDesctopGalleryVideo.styled';
+import { VideoText } from './MobGalleryVideo.styled';
 
 const TabDesctopGalleryVideo = () => {
   const { data } = useFetch('galleryVideo');
-console.log(data);
+  console.log(data);
   const [currentPage, setCurrentPage] = useState(1);
 
   const [visibleVideos, setVisibleVideos] = useState(2);
@@ -43,26 +44,24 @@ console.log(data);
     <>
       {!isDesktopScreen && isTabletScreen && (
         <>
-          <div>
+          <>
             <VideoTabGridContainer>
               {data?.galleryVideoList
                 ?.slice(0, visibleVideos)
-                .map(({ videoLink },  index) => {
+                .map(({ videoLink }, index) => {
                   return (
-                    
-                    <div key={index}>
+                    <div key={index} >
                       <VideoTabReactPlayer
-                       
                         url={videoLink}
-                        width="316"
+                        width={"100%"}
                         playing={false}
                       />
+                      <VideoText>Виготовлення маскувальних сіток</VideoText>
                     </div>
                   );
                 })}
             </VideoTabGridContainer>
-            <span>Виготовлення маскувальних сіток</span>
-          </div>
+          </>
           <div>
             {visibleVideos < data?.galleryVideoList?.length && (
               <VideoTabButton onClick={loadMoreVideos}>
@@ -78,19 +77,20 @@ console.log(data);
           <>
             <>
               <VideoDesctopGridContainer>
-                {showingVideos?.map(({videoLink}, index) => {
+                {showingVideos?.map(({ videoLink }, index) => {
                   return (
                     <div key={index}>
                       <VideoDesctopReactPlayer
                         url={videoLink}
-                        width="316"
+                        width={"316"}
                         playing={false}
                       />
+                      <VideoText>Виготовлення маскувальних сіток</VideoText>
                     </div>
                   );
                 })}
               </VideoDesctopGridContainer>
-            </>{' '}
+            </>
             <VideoPaginationContainer>
               <VideoPagnation
                 count={Math.ceil(

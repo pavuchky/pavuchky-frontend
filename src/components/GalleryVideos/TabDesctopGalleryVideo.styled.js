@@ -12,18 +12,19 @@ export const VideoTabGridContainer = styled.div`
   grid-template-columns: 316px 316px;
   gap: 24px;
   margin-bottom: 32px;
-  
-  @media (min-width: 1440px) {
-    grid-template-columns: 409px 409px 409px;
-    gap: 26px;
-    margin-bottom: 44px;
-   
+  & :first-child {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  & :last-child {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
   }
 `;
 
 export const VideoTabReactPlayer = styled(ReactPlayer)`
   margin-bottom: 16px;
-  border-radius: 8px 8px 0px 0px;
+  border-radius: 10px 10px 0px 0px;
 
 `;
 
@@ -66,7 +67,16 @@ export const VideoDesctopGridContainer = styled.div`
   gap: 26px;
   margin-top: 44px;
   margin-bottom: 44px;
+  & :first-child {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  & :last-child {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
 `;
+
 export const VideoDesctopReactPlayer = styled(ReactPlayer)`
   margin-bottom: 16px;
   border-radius: 8px 8px 0px 0px;
