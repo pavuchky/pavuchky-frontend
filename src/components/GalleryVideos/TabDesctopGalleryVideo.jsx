@@ -17,7 +17,7 @@ import { VideoText } from './MobGalleryVideo.styled';
 
 const TabDesctopGalleryVideo = () => {
   const { data } = useFetch('galleryVideo');
-  console.log(data);
+  
   const [currentPage, setCurrentPage] = useState(1);
 
   const [visibleVideos, setVisibleVideos] = useState(2);
@@ -48,9 +48,9 @@ const TabDesctopGalleryVideo = () => {
             <VideoTabGridContainer>
               {data?.galleryVideoList
                 ?.slice(0, visibleVideos)
-                .map(({ videoLink }, index) => {
+                .map(({ videoLink }, id) => {
                   return (
-                    <div key={index} >
+                    <div key={id} >
                       <VideoTabReactPlayer
                         url={videoLink}
                         width={"100%"}
@@ -77,9 +77,9 @@ const TabDesctopGalleryVideo = () => {
           <>
             <>
               <VideoDesctopGridContainer>
-                {showingVideos?.map(({ videoLink }, index) => {
+                {showingVideos?.map(({ videoLink }, id) => {
                   return (
-                    <div key={index}>
+                    <div key={id}>
                       <VideoDesctopReactPlayer
                         url={videoLink}
                         width={"316"}
