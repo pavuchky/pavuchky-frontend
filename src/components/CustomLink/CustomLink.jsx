@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { StyledHashLink, StyledLink } from './CustomLink.styled';
 
 export const CustomLink = ({ type, text, path, variant }) => {
@@ -15,4 +16,11 @@ export const CustomLink = ({ type, text, path, variant }) => {
       )}
     </>
   );
+};
+
+CustomLink.propTypes = {
+  type: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired,
+  variant: PropTypes.string.isRequired,
 };
