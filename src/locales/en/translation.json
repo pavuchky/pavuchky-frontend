@@ -163,5 +163,9 @@
     "trust": "You can trust us because we have a common goal – to help our defenders",
     "finances": "Financial report",
     "results": "Results report"
+  },
+  "notifications": {
+    "copiedSuccess": "Card number copied successfully.",
+    "copiedError": "Unable to copy the card number. Please try again later."
   }
 }

@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { theme } from '../../stylesheet/theme';
 import { NavLink } from 'react-router-dom';
-const { fontSizes, fontWeights, colors, fonts } = theme;
+const { fontSizes, fontWeights, colors, fonts, transitions } = theme;
 
 export const GallerySection = styled.section`
-  padding: 28px 16px 28px;
+  padding: 28px 16px;
   margin-bottom: 36px;
   border-radius: 20px;
   background: ${colors.gradientBackground};
@@ -12,8 +12,8 @@ export const GallerySection = styled.section`
   @media (min-width: 768px) {
     margin-bottom: 44px;
     padding: 32px;
-    border-radius: 20px;
   }
+
   @media (min-width: 1440px) {
     margin-bottom: 64px;
     padding: 44px 64px;
@@ -25,60 +25,62 @@ export const GalleryTitle = styled.h3`
   color: ${colors.primaryFont};
   font-family: ${fonts.regular};
   font-size: ${fontSizes.m};
-  font-style: normal;
   font-weight: ${fontWeights.regular};
-  line-height: normal;
   margin-bottom: 24px;
+
   @media (min-width: 768px) {
-    font-size: ${fontSizes.l};
-    font-weight: ${fontWeights.regular};
     font-family: ${fonts.headRegular};
-    margin-bottom: 24px;
+    font-size: ${fontSizes.l};
   }
+
   @media (min-width: 1440px) {
     font-size: ${fontSizes.xl};
-    font-weight: ${fontWeights.light};
     letter-spacing: -2.4px;
     margin-bottom: 44px;
   }
 `;
 
-export const GalleryTabs = styled.div`
+export const GalleryTabs = styled.ul`
   display: flex;
   flex-direction: row;
-  gap: 75px;
+  gap: 55px;
   margin-bottom: 24px;
+
   @media (min-width: 768px) {
     margin-bottom: 32px;
   }
+
   @media (min-width: 1440px) {
-    margin-bottom: 46px;
+    margin-bottom: 44px;
   }
 `;
-export const GlleryTabLinks = styled(NavLink)`
-  padding: 8px 12px 8px 12px;
+export const GalleryTabLink = styled(NavLink)`
+  padding: 8px 10px;
   font-family: ${fonts.regular};
   font-size: 18px;
+  font-weight: ${fontWeights.regular};
   text-decoration: none;
   color: ${colors.grey};
-  font-weight: ${fontWeights.regular};
+  transition: color ${transitions.regular};
+
   &.active {
-    border-bottom: 2px solid rgba(43, 43, 43, 1);
-    color: ${colors.black};
+    border-bottom: 2px solid ${colors.primaryFont};
+    color: ${colors.primaryFont};
   }
 
   &:hover,
   &:focus {
-    text-decoration: none;
-    border-bottom: 2px solid rgba(43, 43, 43, 1);
-    color: ${colors.black};
+    color: ${colors.blue};
   }
+
   @media (min-width: 768px) {
+    font-family: ${fonts.light};
     font-size: ${fontSizes.s};
     font-weight: ${fontWeights.light};
   }
+
   @media (min-width: 1440px) {
-    font-weight: ${fontWeights.regular};
     font-family: ${fonts.regular};
+    font-weight: ${fontWeights.regular};
   }
 `;

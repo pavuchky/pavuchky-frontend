@@ -1,4 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { PaginationItem } from '@mui/material';
+import { useMediaQuery } from 'react-responsive';
+import { useTranslation } from 'react-i18next';
+import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
+
 import useFetch from '../../hooks/useFetch';
 import ImageModal from './ImageModal';
 
@@ -6,16 +11,13 @@ import {
   GalleryTabGridContainer,
   GalleryTabButton,
   GalleryTabImg,
-  GalleryDestopImg,
-  GalleryPaginationContainer, GalleryDesctopGridContainer
+  GalleryDesktopImg,
+  GalleryPaginationContainer,
+  GalleryDesktopGridContainer,
+  GalleryItem,
+  GalleryDesktopItem,
 } from './GalleryPhotoTablet.styled';
-import { GalleryPagnation } from './MuiPagnation.styled';
-import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
-
-import { useMediaQuery } from 'react-responsive';
-import { PaginationItem } from '@mui/material';
-import { useTranslation } from 'react-i18next';
-
+import { GalleryPagination } from './MuiPagnation.styled';
 
 const GalleryTabPhotos = () => {
   const { data } = useFetch('galleryPhoto');
@@ -52,25 +54,56 @@ const GalleryTabPhotos = () => {
   const onPageChange = (event, newPage) => {
     setCurrentPage(newPage);
   };
+
   return (
     <>
       {!isDesktopScreen && isTabletScreen && (
         <>
-          <div>
-            <GalleryTabGridContainer>
-              {data?.galleryPhotoList
-                ?.slice(0, visibleImages)
-                .map((photoLink, index) => {
-                  return (
-                    <GalleryTabImg
-                      key={index}
-                      src={photoLink.photoLink}
-                      alt="Varior"
-                      onClick={() => openLightbox(index)}
+          <GalleryTabGridContainer>
+            {data?.galleryPhotoList?.slice(0, visibleImages).map(photo => {
+              return (
+                <GalleryItem key={photo.id}>
+                  <GalleryTabImg
+                    src={photo.photoLink}
+                    alt="Warriors and camouflage nets"
+                    onClick={() => openLightbox(photo.id)}
+                  />
+                </GalleryItem>
+              );
+            })}
+          </GalleryTabGridContainer>
+
+          <ImageModal
+            isOpen={lightboxOpen}
+            images={data}
+            selectedImageIndex={selectedImageIndex}
+            onClose={closeLightbox}
+          />
+
+          {visibleImages < data?.galleryPhotoList.length && (
+            <GalleryTabButton onClick={loadMoreImages}>
+              {t('buttons.viewMore')}
+            </GalleryTabButton>
+          )}
+        </>
+      )}
+
+      <>
+        {isDesktopScreen && (
+          <>
+            <GalleryDesktopGridContainer>
+              {showingImages?.map(photo => {
+                return (
+                  <GalleryDesktopItem key={photo.id}>
+                    <GalleryDesktopImg
+                      src={photo.photoLink}
+                      alt="Warriors and camouflage nets"
+                      onClick={() => openLightbox(photo.id)}
                     />
-                  );
-                })}
-            </GalleryTabGridContainer>
+                  </GalleryDesktopItem>
+                );
+              })}
+            </GalleryDesktopGridContainer>
 
             <ImageModal
               isOpen={lightboxOpen}
@@ -78,45 +111,9 @@ const GalleryTabPhotos = () => {
               selectedImageIndex={selectedImageIndex}
               onClose={closeLightbox}
             />
-          </div>
-          <div>
-            {visibleImages < data?.galleryPhotoList.length && (
-              <GalleryTabButton onClick={loadMoreImages}>
-               {t('buttons.viewMore')}
-              </GalleryTabButton>
-            )}
-          </div>
-        </>
-      )}
 
-      <>
-        {isDesktopScreen && (
-          <>
-            <>
-              <GalleryDesctopGridContainer>
-                {showingImages?.map((photoLink, index) => {
-                  return (
-                    <div>
-                      <GalleryDestopImg
-                        key={index}
-                        src={photoLink.photoLink}
-                        alt="Varior"
-                        onClick={() => openLightbox(index)}
-                      />
-                    </div>
-                  );
-                })}
-              </GalleryDesctopGridContainer>
-
-              <ImageModal
-                isOpen={lightboxOpen}
-                images={data}
-                selectedImageIndex={selectedImageIndex}
-                onClose={closeLightbox}
-              />
-            </>
             <GalleryPaginationContainer>
-              <GalleryPagnation
+              <GalleryPagination
                 count={Math.ceil(
                   (data?.galleryPhotoList?.length || 0) / itemsPerPage
                 )}
@@ -127,14 +124,14 @@ const GalleryTabPhotos = () => {
                 boundaryCount={1}
                 siblingCount={0}
                 renderItem={item => (
-          <PaginationItem
-            slots={{
-              previous: SlArrowLeft,
-              next: SlArrowRight,
-            }}
-            {...item}
-          />
-        )}
+                  <PaginationItem
+                    slots={{
+                      previous: SlArrowLeft,
+                      next: SlArrowRight,
+                    }}
+                    {...item}
+                  />
+                )}
               />
             </GalleryPaginationContainer>
           </>

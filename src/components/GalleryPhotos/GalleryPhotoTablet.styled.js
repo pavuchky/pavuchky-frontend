@@ -4,23 +4,25 @@ import { theme } from '../../stylesheet/theme';
 
 const { fontSizes, fontWeights, colors, fonts, borders, radii } = theme;
 
-export const GalleryTabGridContainer = styled.div`
-  display: grid;
-  grid-template-columns: 316px 316px;
+export const GalleryTabGridContainer = styled.ul`
+  display: flex;
   gap: 24px;
-  
+  flex-wrap: wrap;
   margin-bottom: 32px;
+  justify-content: center;
 `;
+
+export const GalleryItem = styled.li`
+  display: flex;
+  flex-basis: calc((100% - 24px) / 2);
+`;
+
 export const GalleryTabImg = styled.img`
-  width: 316px;
-  height: 398px;
-  margin: 0;
-  padding: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  vertical-align: middle;
   border-radius: 10px;
-  @media (min-width: 1440px) {
-    width: 409px;
-    height: 543px;
-  }
 `;
 
 export const GalleryTabButton = styled.button`
@@ -47,27 +49,33 @@ export const GalleryTabButton = styled.button`
     outline: transparent;
     color: ${colors.yellow};
   }
-   @media (min-width: 1440px) {
+  @media (min-width: 1440px) {
     display: none;
-   }
+  }
 `;
 
 /**==============StylesForDesktop======================== */
 
-export const GalleryDesctopGridContainer = styled.div`
-  display: grid;
-  grid-template-columns: 409px 409px 409px;
+export const GalleryDesktopGridContainer = styled.ul`
+  display: flex;
   gap: 26px;
-  margin-top: 44px;
+  flex-wrap: wrap;
   margin-bottom: 44px;
-  
+  justify-content: center;
 `;
-export const GalleryDestopImg = styled.img`
+
+export const GalleryDesktopItem = styled.li`
+  display: flex;
+  flex-basis: calc((100% - 52px) / 3);
+  justify-content: center;
+`;
+
+export const GalleryDesktopImg = styled.img`
   width: 100%;
-  margin: 0;
-  padding: 0;
+  height: auto;
+  object-fit: cover;
+  vertical-align: middle;
   border-radius: 10px;
-  height: 543px;
 `;
 
 export const GalleryPaginationContainer = styled.div`
@@ -75,13 +83,9 @@ export const GalleryPaginationContainer = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
 export const GalleryFirstSvgButton = styled.button`
-    @media (min-width: 375px) {
-    display: none;
-  }
-  @media (min-width: 768px) {
-    display: none;
-  }
+  display: none;
 
   @media (min-width: 1440px) {
     display: flex;
@@ -92,20 +96,15 @@ export const GalleryFirstSvgButton = styled.button`
     border: ${borders.normal};
     color: ${colors.blue};
     border-radius: ${radii.round};
-    position: relative;
-    top: 366px;
-    left: 51px;
+    position: absolute;
+    top: 50%;
+    left: 3%;
     z-index: 99999999;
   }
 `;
 
 export const GallerySecondSvgButton = styled.button`
-  @media (min-width: 375px) {
-    display: none;
-  }
-  @media (min-width: 768px) {
-    display: none;
-  }
+  display: none;
 
   @media (min-width: 1440px) {
     display: flex;
@@ -116,9 +115,9 @@ export const GallerySecondSvgButton = styled.button`
     border: ${borders.normal};
     color: ${colors.blue};
     border-radius: ${radii.round};
-    position: relative;
-    top:-391px;
-    left: 995px;
+    position: absolute;
+    top: 50%;
+    right: 3%;
     z-index: 99999999;
   }
 `;
