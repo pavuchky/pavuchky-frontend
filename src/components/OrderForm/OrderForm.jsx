@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
-import { addOrder } from 'services/api';
+import { useFetchPost } from 'hooks/useFetchPost';
 import { orderValidationSchema } from '../../utils/validationSchema';
 import Icon from '../../assets/images/sprite.svg';
 import { CustomSelect } from 'components/CustomSelect/CustomSelect';
@@ -12,6 +12,7 @@ import {
   FormBlocks,
   FormBtn,
   FormContainer,
+  FormInfo,
   FormList,
   FormText,
   FormTitle,
@@ -27,6 +28,7 @@ export const OrderForm = () => {
   const [submitted, setSubmitted] = useState(false);
 
   const { t } = useTranslation();
+  const { isLoading, fetchPost } = useFetchPost();
 
   const typeBaseOptions = [
     { value: t('orderForm.kapron'), label: t('orderForm.kapron') },
@@ -54,7 +56,7 @@ export const OrderForm = () => {
     validationSchema: orderValidationSchema,
     onSubmit: async values => {
       try {
-        await addOrder(values);
+        await fetchPost('/order', values);
         setSubmitted(true);
         toast.success(t('forms.success'));
       } catch (error) {
@@ -78,7 +80,9 @@ export const OrderForm = () => {
 
   return (
     <>
-      {submitted ? (
+      {isLoading ? (
+        <div style={{ height: '300px' }}>Loading...</div>
+      ) : submitted ? (
         <Gratitude
           title={t('orderForm.thank')}
           text={t('forms.contact')}
@@ -113,8 +117,6 @@ export const OrderForm = () => {
                   value={position}
                   onChange={formik.handleChange}
                   hasValue={position.length > 0}
-                  touched={formik.touched.position}
-                  error={formik.errors.position}
                 />
               </label>
               <label>
@@ -127,8 +129,6 @@ export const OrderForm = () => {
                   value={militaryUnit}
                   onChange={formik.handleChange}
                   hasValue={militaryUnit.length > 0}
-                  touched={formik.touched.militaryUnit}
-                  error={formik.errors.militaryUnit}
                 />
               </label>
               <label>
@@ -136,7 +136,7 @@ export const OrderForm = () => {
                   title={t('forms.number')}
                   type="text"
                   name="phone"
-                  placeholder="+380 98 200 77 49"
+                  placeholder="+380XXXXXXXXX"
                   autoComplete="tel"
                   value={phone}
                   onChange={formik.handleChange}
@@ -262,7 +262,7 @@ export const OrderForm = () => {
                 ) : null}
               </div>
             </FormBlocks>
-
+            <FormInfo>{t('forms.info')}</FormInfo>
             <FormBtn type="submit">{t('orderForm.submit')}</FormBtn>
           </FormList>
         </FormContainer>

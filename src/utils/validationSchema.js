@@ -9,22 +9,28 @@ const EMAIL_REGEXP = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
 
 export const partnerValidationSchema = Yup.object().shape({
   name: Yup.string().required('Please enter your name.'),
-  company: Yup.string().required('Please enter your company.'),
+  company: Yup.string()
+    .min(3, 'Field must be at least 3 characters.')
+    .required('Please enter your company.'),
   email: Yup.string()
     .matches(EMAIL_REGEXP, 'Incorrect email address.')
     .required('Please enter your email.'),
   phone: Yup.string()
     .required('Please enter your phone number.')
-    .matches(PHONE_REGEXP_PARTNER, 'Invalid phone number'),
+    .matches(
+      PHONE_REGEXP_PARTNER,
+      'Invalid phone number. Please use the format +XXXXXXXXXXXX or +XXX XX XXX XX XX.'
+    ),
 });
 
 export const orderValidationSchema = Yup.object().shape({
   name: Yup.string().required('Please enter your name.'),
-  position: Yup.string().required('Please enter your position.'),
-  militaryUnit: Yup.string().required('Please enter your military unit.'),
   phone: Yup.string()
     .required('Please enter your phone number.')
-    .matches(PHONE_REGEXP, 'Invalid phone number'),
+    .matches(
+      PHONE_REGEXP,
+      'Invalid phone number. Please use the format +380XXXXXXXXX.'
+    ),
   gridSize: Yup.string().required('Please enter grid size.'),
   typeBase: Yup.string().required('Please enter type base.'),
   material: Yup.string().required('Please enter material.'),

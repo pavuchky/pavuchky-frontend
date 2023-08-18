@@ -68,6 +68,7 @@ export const FormList = styled.form`
   }
 
   @media (min-width: 1440px) {
+    position: relative;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -89,8 +90,29 @@ export const FormSubList = styled.div`
   }
 `;
 
+export const FormInfo = styled.p`
+  font-size: 12px;
+  color: ${({ theme }) => theme.colors.grey};
+
+  @media (min-width: 768px) {
+    margin-top: 24px;
+    font-family: ${({ theme }) => theme.fonts.regular};
+    font-size: 16px;
+    font-weight: ${({ theme }) => theme.fontWeights.regular};
+    line-height: ${({ theme }) => theme.lineHeights.secondary};
+  }
+
+  @media (min-width: 1440px) {
+    position: absolute;
+    top: 400px;
+    left: 764px;
+    height: 72px;
+    width: 583px;
+    margin-top: 0px;
+  }
+`;
+
 export const FormBtn = styled.button`
-  margin-top: 4px;
   width: 100%;
   padding: 10.5px;
   text-align: center;
@@ -108,7 +130,6 @@ export const FormBtn = styled.button`
   @media (min-width: 768px) {
     width: 656px;
     padding: 12px;
-    margin-top: 8px;
     border-radius: 10px;
     font-size: ${({ theme }) => theme.fontSizes.s};
   }
@@ -119,14 +140,6 @@ export const FormBtn = styled.button`
     margin-top: 0;
     border-radius: 25px;
   }
-`;
-
-export const Notice = styled.p`
-  width: 475px;
-  font-family: ${({ theme }) => theme.fonts.regular};
-  font-size: 14px;
-  font-weight: ${({ theme }) => theme.fontWeights.regular};
-  color: ${({ theme }) => theme.colors.grey};
 `;
 
 export const FormPhoto = styled.label`

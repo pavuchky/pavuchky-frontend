@@ -112,6 +112,7 @@
 
     "submit": "Submit an application",
     "info": "All received data is fully anonymous and will be used only for contacting you",
+    "review": "The feedback will be published anonymously. All received data will be used only for contacting you",
     "success": "Data sent successfully!",
     "error": "An error occurred while submitting the form. Please try again.",
     "contact": "We will contact you shortly"
@@ -151,7 +152,6 @@
     "important": "Your feedback is very important to us",
     "feedback": "Your feedback",
     "necessarily": "Necessarily",
-    "published": "Feedback will be published anonymously, all received data is for internal use only",
     "photo": "Add a photo:",
     "drag": "Add a photo or drag and drop",
     "here": " here",
