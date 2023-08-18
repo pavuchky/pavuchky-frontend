@@ -33,6 +33,7 @@ const MobGalleryVideos = () => {
               muted={true}
               controls={true}
               loop={true}
+              config={{youtube:{playerVars:{origin: 'https://www.youtube.com'}}}}
             />
             <VideoText>Виготовлення маскувальних сіток</VideoText>
           </VideoSwiperSlideContainer>

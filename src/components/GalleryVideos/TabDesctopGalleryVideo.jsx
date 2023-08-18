@@ -22,14 +22,14 @@ const TabDesctopGalleryVideo = () => {
 
   const [visibleVideos, setVisibleVideos] = useState(2);
 
-  const itemsPerPage = 1;
+  const itemsPerPage = 3;
   const isDesktopScreen = useMediaQuery({ minWidth: 1440 });
   const isTabletScreen = useMediaQuery({ minWidth: 768 });
 
   const { t } = useTranslation();
 
   const loadMoreVideos = () => {
-    setVisibleVideos(prevVisibleImages => prevVisibleImages + 1);
+    setVisibleVideos(prevVisibleImages => prevVisibleImages + 3);
   };
 
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -55,6 +55,7 @@ const TabDesctopGalleryVideo = () => {
                         url={videoLink}
                         width={"100%"}
                         playing={false}
+                        config={{youtube:{playerVars:{origin: 'https://www.youtube.com'}}}}
                       />
                       <VideoText>Виготовлення маскувальних сіток</VideoText>
                     </div>
@@ -84,6 +85,7 @@ const TabDesctopGalleryVideo = () => {
                         url={videoLink}
                         width={"316"}
                         playing={false}
+                         config={{youtube:{playerVars:{origin: 'https://www.youtube.com'}}}}
                       />
                       <VideoText>Виготовлення маскувальних сіток</VideoText>
                     </div>
