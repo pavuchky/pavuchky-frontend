@@ -8,7 +8,7 @@ export const ReviewsSwiperItemContainer = styled.div`
   flex-direction: column;
 
   position: relative;
-  width: 327px;
+  max-width: 327px;
   height: 263px;
   padding: 12px;
   padding-top: 44px;
@@ -86,7 +86,7 @@ export const ReviewsSwiperItemParagraph = styled.p`
 `;
 
 export const ReviewsSwiperItemImageContainer = styled.div`
-  width: 303px;
+  max-width: 303px;
   min-height: 157px;
   max-height: 157px;
   overflow: hidden;
@@ -113,8 +113,8 @@ export const ReviewsSwiperItemImageContainer = styled.div`
 `;
 
 export const ReviewsSwiperItemImage = styled.img`
-  width: 100%;
-  /* height: 100%; */
+  max-width: 100%;
+
   border-radius: ${radii.s};
 
   @media (min-width: 768px) {
@@ -133,11 +133,4 @@ export const ReviewsSvg = styled.svg`
     top: 24px;
     right: 24px;
   }
-`;
-
-export const Test = styled.div`
-  //////////////
-  width: 50px;
-  height: 100%;
-  background-color: red;
 `;
