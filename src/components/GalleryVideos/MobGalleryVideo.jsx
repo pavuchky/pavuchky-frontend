@@ -20,7 +20,7 @@ const MobGalleryVideos = () => {
       <VideoSwiperContainer
         spaceBetween={16}
         slidesPerView={1}
-        scrollbar={{ draggable: false }}
+        scrollbar={{ draggable: true }}
         modules={[Scrollbar]}
       >
         {data?.galleryVideoList?.map(({ id, videoLink }) => (
