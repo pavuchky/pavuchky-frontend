@@ -13,7 +13,7 @@ export const ReviewsSection = styled.section`
   gap: 23px;
 
   border-radius: 16px;
-  width: 359px;
+  width: 100%;
   background: ${colors.gradientBackground};
   margin-bottom: 36px;
 
