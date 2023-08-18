@@ -32,7 +32,7 @@ const MobGalleryPhotos = () => {
       <GallerySwiperContainer
         spaceBetween={16}
         slidesPerView={1.3}
-        scrollbar={{ draggable: false }}
+        scrollbar={{ draggable: true }}
         modules={[Scrollbar]}
       >
         {data?.galleryPhotoList?.map((photoLink, index) => {

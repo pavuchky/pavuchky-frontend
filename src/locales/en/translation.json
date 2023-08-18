@@ -111,8 +111,8 @@
     "commentsPl": "If required",
 
     "submit": "Submit an application",
-    "info": "All received data is fully anonymous and will be used only for contacting you",
-    "review": "The feedback will be published anonymously. All received data will be used only for contacting you",
+    "info": "All received data is fully anonymous and will be used only for contacting you.",
+    "review": "The feedback will be published anonymously. All received data will be used only for contacting you.",
     "success": "Data sent successfully!",
     "error": "An error occurred while submitting the form. Please try again.",
     "contact": "We will contact you shortly"
