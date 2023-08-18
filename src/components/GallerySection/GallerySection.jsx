@@ -40,7 +40,7 @@ const GallerySection = () => {
         <ViewAll
           shortText={t('nav.viewMore')}
           longText={t('nav.viewAll')}
-          changeable
+          changeable={true}
           path="/gallery/photos"
         />
       </TitleWrapper>

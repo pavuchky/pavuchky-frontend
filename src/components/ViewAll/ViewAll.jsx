@@ -1,8 +1,9 @@
 import { useMediaQuery } from 'react-responsive';
+import PropTypes from 'prop-types';
 import { ViewAllIcon, ViewAllLink, ViewAllText } from './ViewAll.styled';
 import sprite from 'assets/images/sprite.svg';
 
-export const ViewAll = ({ shortText, longText, changeable, path }) => {
+export const ViewAll = ({ shortText, longText, changeable = false, path }) => {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
 
   return (
@@ -15,4 +16,11 @@ export const ViewAll = ({ shortText, longText, changeable, path }) => {
       </ViewAllIcon>
     </ViewAllLink>
   );
+};
+
+ViewAll.propTypes = {
+  shortText: PropTypes.string.isRequired,
+  longText: PropTypes.string,
+  changeable: PropTypes.bool.isRequired,
+  path: PropTypes.string.isRequired,
 };
