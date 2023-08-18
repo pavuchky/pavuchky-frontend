@@ -16,7 +16,7 @@ import {
 
 const TabDesctopGalleryVideo = () => {
   const { data } = useFetch('galleryVideo');
-
+console.log(data);
   const [currentPage, setCurrentPage] = useState(1);
 
   const [visibleVideos, setVisibleVideos] = useState(2);
@@ -61,6 +61,7 @@ const TabDesctopGalleryVideo = () => {
                   );
                 })}
             </VideoTabGridContainer>
+            <span>Виготовлення маскувальних сіток</span>
           </div>
           <div>
             {visibleVideos < data?.galleryVideoList?.length && (
