@@ -1,5 +1,12 @@
+import { useMediaQuery } from 'react-responsive';
+import MobGalleryVideos from './MobGalleryVideo';
+import TabDesctopGalleryVideo from './TabDesctopGalleryVideo';
+
 const GalleryVideos = () => {
-  return <div>GalleryVideos</div>;
+  const isTabletScreen = useMediaQuery({ minWidth: 767 });
+  return (
+    <>{!isTabletScreen ? <MobGalleryVideos /> : <TabDesctopGalleryVideo />}</>
+  );
 };
 
 export default GalleryVideos;

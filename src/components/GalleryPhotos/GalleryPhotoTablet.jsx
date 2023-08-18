@@ -21,6 +21,7 @@ import { GalleryPagination } from './MuiPagnation.styled';
 
 const GalleryTabPhotos = () => {
   const { data } = useFetch('galleryPhoto');
+  
 
   const [currentPage, setCurrentPage] = useState(1);
   const [lightboxOpen, setLightboxOpen] = useState(false);
