@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
-import { addPartner } from 'services/api';
+import { useFetchPost } from 'hooks/useFetchPost';
 import { partnerValidationSchema } from '../../utils/validationSchema';
 import { Gratitude } from 'components/Gratitude/Gratitude';
 import { CustomInput } from 'components/CustomInput/CustomInput';
@@ -11,6 +11,7 @@ import heart from '../../assets/images/gratitude/gratitude_tablet.svg';
 import {
   FormBtn,
   FormContainer,
+  FormInfo,
   FormList,
   FormTitle,
   SupportImg,
@@ -20,6 +21,7 @@ export const PartnersForm = () => {
   const [submitted, setSubmitted] = useState(false);
 
   const { t } = useTranslation();
+  const { isLoading, fetchPost } = useFetchPost();
 
   const isDesktop = useMediaQuery({ query: '(min-width: 1440px)' });
 
@@ -34,7 +36,7 @@ export const PartnersForm = () => {
     validationSchema: partnerValidationSchema,
     onSubmit: async values => {
       try {
-        await addPartner(values);
+        await fetchPost('/partners', values);
         setSubmitted(true);
         toast.success(t('forms.success'));
       } catch (error) {
@@ -47,7 +49,9 @@ export const PartnersForm = () => {
 
   return (
     <>
-      {submitted ? (
+      {isLoading ? (
+        <div style={{ height: '300px' }}>Loading...</div>
+      ) : submitted ? (
         <Gratitude
           title={t('partnerForm.thank')}
           text={t('forms.contact')}
@@ -105,7 +109,7 @@ export const PartnersForm = () => {
                   title={t('forms.number')}
                   type="text"
                   name="phone"
-                  placeholder="+380 98 200 77 49"
+                  placeholder="+380XXXXXXXXX"
                   autoComplete="tel"
                   value={phone}
                   onChange={formik.handleChange}
@@ -126,6 +130,7 @@ export const PartnersForm = () => {
                   hasValue={comment.length > 0}
                 />
               </label>
+              <FormInfo>{t('forms.info')}</FormInfo>
               <FormBtn type="submit">{t('forms.submit')}</FormBtn>
             </FormList>
           </div>
