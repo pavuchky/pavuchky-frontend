@@ -1,6 +1,9 @@
 import { urlFor } from 'client';
-import formatTextSanity from './formatTextSanity';
-import formatFileSanity from './formatFileSanity';
+import {
+  formatTextSanity,
+  formatFileSanity,
+  formatMediaLinkSanity,
+} from './sanityHelpers';
 
 export const contactsFormattedFn = ({
   phone,
@@ -123,7 +126,6 @@ export const aboutFormattedFn = ({
   };
 };
 
-const BASE_PHOTO_URL = 'https://drive.google.com/uc?export=view&id=';
 export const galleryPhotoFormattedFn = ({ galleryPhotoList, _id }) => {
   return {
     id: _id,
@@ -131,7 +133,7 @@ export const galleryPhotoFormattedFn = ({ galleryPhotoList, _id }) => {
       ? galleryPhotoList.map(({ photoLink, _key }) => {
           return {
             id: _key,
-            photoLink: !!photoLink ? BASE_PHOTO_URL + photoLink : null,
+            photoLink: !!photoLink ? formatMediaLinkSanity(photoLink) : null,
           };
         })
       : null,
@@ -143,9 +145,13 @@ export const galleryVideoFormattedFn = ({ galleryVideoList, _id }) => {
     id: _id,
     galleryVideoList: galleryVideoList
       ? galleryVideoList.map(({ videoLink, _key }) => {
+          const currentVideoLink = videoLink.includes('youtube')
+            ? videoLink
+            : formatMediaLinkSanity(videoLink);
+
           return {
             id: _key,
-            videoLink: !!videoLink ? videoLink : null,
+            videoLink: !!videoLink ? currentVideoLink : null,
           };
         })
       : null,
