@@ -19,7 +19,6 @@ export const GallerySwiperSlideContainer = styled(SwiperSlide)`
 
 export const GallerySwiperContainer = styled(Swiper)`
   position: relative;
-  width: 327px;
   overflow: hidden;
 
   .swiper-scrollbar {
@@ -35,11 +34,14 @@ export const GallerySwiperContainer = styled(Swiper)`
   .swiper-scrollbar-drag:not(:last-child) {
     display: none;
   }
+
+  @media (min-width: 375px) {
+    width: 327px;
+  }
 `;
 
 export const SwiperImg = styled.img`
-  width: 254px;
-  height: 300px;
+  max-height: 300px;
   border-radius: 16px;
 `;
 
