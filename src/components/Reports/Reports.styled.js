@@ -159,16 +159,20 @@ export const ReportsButtonWrapper = styled.a`
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  transition: all 0.3s ease;
 
-  &:hover > p {
-    color: rgba(6, 131, 255, 0.97);
+  transition: color ${({ theme }) => theme.transitions.regular},
+    transform ${({ theme }) => theme.transitions.regular};
+
+  &:hover > p,
+  &:focus > p {
+    color: ${({ theme }) => theme.colors.lightBlue};
     transform: scale(1.1);
   }
 
-  &:hover > svg {
-    color: rgba(6, 131, 255, 0.97);
-    stroke: rgba(6, 131, 255, 0.97);
+  &:hover > svg,
+  &:focus > svg {
+    color: ${({ theme }) => theme.colors.lightBlue};
+    stroke: ${({ theme }) => theme.colors.lightBlue};
     transform: scale(1.1);
   }
 `;
@@ -180,7 +184,9 @@ export const ReportName = styled.p`
   font-size: 14px;
   font-weight: 300;
 
-  transition: color 0.3s ease;
+  transition: color ${({ theme }) => theme.transitions.regular},
+    transform ${({ theme }) => theme.transitions.regular};
+
   @media only screen and (min-width: 768px) {
     width: auto;
 
@@ -204,7 +210,9 @@ export const ReportIconArrow = styled.svg`
   width: 24px;
   height: 24px;
   stroke: ${({ theme }) => theme.colors.blue};
-  transition: stroke 0.3s ease;
+  transition: stroke ${({ theme }) => theme.transitions.regular},
+    color ${({ theme }) => theme.transitions.regular},
+    transform ${({ theme }) => theme.transitions.regular};
 `;
 
 export const LoadMoreWrapper = styled.div`
@@ -219,10 +227,11 @@ export const LoadIconArrow = styled.svg`
   height: 50px;
   transform: rotate(90deg);
   stroke: ${({ theme }) => theme.colors.blue};
-  transition: stroke 0.3s ease;
+  transition: stroke ${({ theme }) => theme.transitions.regular};
 
-  &:hover {
-    stroke: rgba(6, 131, 255, 0.97);
+  &:hover,
+  &:focus {
+    stroke: ${({ theme }) => theme.colors.lightBlue};
   }
 
   @media only screen and (min-width: 768px) {
@@ -238,10 +247,11 @@ export const CollapseIconArrow = styled.svg`
   margin-left: 15px;
   transform: rotate(-90deg);
   stroke: ${({ theme }) => theme.colors.blue};
-  transition: stroke 0.3s ease;
+  transition: stroke ${({ theme }) => theme.transitions.regular};
 
-  &:hover {
-    stroke: rgba(6, 131, 255, 0.97);
+  &:hover,
+  &:focus {
+    stroke: ${({ theme }) => theme.colors.lightBlue};
   }
 
   @media only screen and (min-width: 768px) {

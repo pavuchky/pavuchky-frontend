@@ -28,7 +28,7 @@ const AboutUs = () => {
         <ViewAll
           shortText={t('nav.aboutUs')}
           longText={t('nav.viewAll')}
-          changeable
+          changeable={true}
           path="/about"
         />
       </TitleWrapper>

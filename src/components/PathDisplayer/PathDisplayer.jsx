@@ -1,8 +1,9 @@
+import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { PathArrow, PathLink, PathWrapper } from './PathDisplayer.styled';
 import sprite from 'assets/images/sprite.svg';
 
-export const PathDisplayer = ({ current, isGallery, galleryType }) => {
+export const PathDisplayer = ({ current, isGallery = false }) => {
   const { t } = useTranslation();
   const homePage = { path: '/', name: t('nav.main') };
 
@@ -33,4 +34,13 @@ export const PathDisplayer = ({ current, isGallery, galleryType }) => {
       )}
     </PathWrapper>
   );
+};
+
+PathDisplayer.propTypes = {
+  current: PropTypes.shape({
+    path: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    galleryType: PropTypes.string,
+  }).isRequired,
+  isGallery: PropTypes.bool,
 };

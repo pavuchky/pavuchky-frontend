@@ -96,8 +96,8 @@ export const AchievementsListItem = styled.li`
   }
 
   @media only screen and (max-width: 364px) {
-    padding-left: ${({ theme }) => theme.spacing(2.5)};
-    padding-right: ${({ theme }) => theme.spacing(2.5)};
+    padding-left: ${({ theme }) => theme.spacing(1)};
+    padding-right: ${({ theme }) => theme.spacing(1)};
   }
 
   @media only screen and (min-width: 768px) {

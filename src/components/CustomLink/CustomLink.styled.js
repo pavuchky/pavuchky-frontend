@@ -52,14 +52,6 @@ export const StyledLink = styled(Link)`
     `}
 
   ${({ variant }) =>
-    variant === 'white' &&
-    css`
-      color: ${({ theme }) => theme.colors.primaryFont};
-      background-color: ${({ theme }) => theme.colors.white};
-    `}
-
-
-  ${({ variant }) =>
     variant === 'about' &&
     css`
       color: ${({ theme }) => theme.colors.yellow};
@@ -124,12 +116,5 @@ export const StyledHashLink = styled(HashLink)`
     css`
       color: ${({ theme }) => theme.colors.blue};
       background-color: ${({ theme }) => theme.colors.yellow};
-    `}
-
-  ${({ variant }) =>
-    variant === 'white' &&
-    css`
-      color: ${({ theme }) => theme.colors.primaryFont};
-      background-color: ${({ theme }) => theme.colors.white};
     `}
 `;

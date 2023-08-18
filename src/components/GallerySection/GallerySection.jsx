@@ -17,24 +17,21 @@ import {
 } from './GallerySection.styled';
 
 import useFetch from 'hooks/useFetch';
+import GallerySwiper from 'components/GallerySwiper/GallerySwiper';
 
 const GallerySection = () => {
   const { t } = useTranslation();
   const { data } = useFetch('galleryPhoto');
 
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 1439px)',
-  });
+  const isDesktop = useMediaQuery({ minWidth: 1440 });
 
-  const isTablet = useMediaQuery({
-    query: '(min-width: 767px)',
-  });
+  const isTablet = useMediaQuery({ minWidth: 768 });
 
   const galleryArr = isDesktop
     ? data?.galleryPhotoList?.slice(0, 6)
     : isTablet
     ? data?.galleryPhotoList?.slice(0, 4)
-    : data?.galleryPhotoList?.slice(0, 2);
+    : data?.galleryPhotoList?.slice(0, 6);
 
   return (
     <GallerySectionWrapper>
@@ -43,41 +40,45 @@ const GallerySection = () => {
         <ViewAll
           shortText={t('nav.viewMore')}
           longText={t('nav.viewAll')}
-          changeable
+          changeable={true}
           path="/gallery/photos"
         />
       </TitleWrapper>
-      <GalleryMainWrapper>
-        <GalleryContainer>
-          {galleryArr?.map((el, i) => {
-            return i + 1 === 1 ? (
-              <GalleryItem1 key={i}>
-                <GalleryImg src={el?.photoLink} alt="gallery_image" />
-              </GalleryItem1>
-            ) : i + 1 === 2 ? (
-              <GalleryItem2 key={i}>
-                <GalleryImg src={el?.photoLink} alt="gallery_image" />
-              </GalleryItem2>
-            ) : i + 1 === 3 ? (
-              <GalleryItem3 key={i}>
-                <GalleryImg src={el?.photoLink} alt="gallery_image" />
-              </GalleryItem3>
-            ) : i + 1 === 4 ? (
-              <GalleryItem4 key={i}>
-                <GalleryImg src={el?.photoLink} alt="gallery_image" />
-              </GalleryItem4>
-            ) : i + 1 === 5 ? (
-              <GalleryItem5 key={i}>
-                <GalleryImg src={el?.photoLink} alt="gallery_image" />
-              </GalleryItem5>
-            ) : (
-              <GalleryItem6 key={i}>
-                <GalleryImg src={el?.photoLink} alt="gallery_image" />
-              </GalleryItem6>
-            );
-          })}
-        </GalleryContainer>
-      </GalleryMainWrapper>
+      {isTablet || isDesktop ? (
+        <GalleryMainWrapper>
+          <GalleryContainer>
+            {galleryArr?.map((el, i) => {
+              return i + 1 === 1 ? (
+                <GalleryItem1 key={i}>
+                  <GalleryImg src={el?.photoLink} alt="gallery_image" />
+                </GalleryItem1>
+              ) : i + 1 === 2 ? (
+                <GalleryItem2 key={i}>
+                  <GalleryImg src={el?.photoLink} alt="gallery_image" />
+                </GalleryItem2>
+              ) : i + 1 === 3 ? (
+                <GalleryItem3 key={i}>
+                  <GalleryImg src={el?.photoLink} alt="gallery_image" />
+                </GalleryItem3>
+              ) : i + 1 === 4 ? (
+                <GalleryItem4 key={i}>
+                  <GalleryImg src={el?.photoLink} alt="gallery_image" />
+                </GalleryItem4>
+              ) : i + 1 === 5 ? (
+                <GalleryItem5 key={i}>
+                  <GalleryImg src={el?.photoLink} alt="gallery_image" />
+                </GalleryItem5>
+              ) : (
+                <GalleryItem6 key={i}>
+                  <GalleryImg src={el?.photoLink} alt="gallery_image" />
+                </GalleryItem6>
+              );
+            })}
+          </GalleryContainer>
+        </GalleryMainWrapper>
+      ) : (
+        <GallerySwiper />
+      )}
     </GallerySectionWrapper>
   );
 };

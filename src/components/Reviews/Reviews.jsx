@@ -17,7 +17,7 @@ const Reviews = () => {
         <ViewAll
           shortText={t('nav.viewMore')}
           longText={t('nav.viewAll')}
-          changeable
+          changeable={true}
           path="/reviews"
         />
       </ReviewsTitlePartContainer>

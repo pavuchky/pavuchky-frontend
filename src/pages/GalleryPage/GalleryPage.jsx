@@ -4,7 +4,7 @@ import {
   GalleryTitle,
   GallerySection,
   GalleryTabs,
-  GlleryTabLinks,
+  GalleryTabLink,
 } from './GalleryPage.styled';
 
 import { Outlet, useLocation } from 'react-router-dom';
@@ -28,13 +28,21 @@ const GalleryPage = () => {
           name: t('nav.gallery'),
           galleryType,
         }}
-        isGallery
+        isGallery={true}
       />
       <GallerySection>
         <GalleryTitle>{t('nav.gallery')}</GalleryTitle>
         <GalleryTabs>
-          <GlleryTabLinks to="/gallery/photos">{t('pages.photos')}</GlleryTabLinks>
-          <GlleryTabLinks to="/gallery/videos">{t('pages.videos')}</GlleryTabLinks>
+          <li>
+            <GalleryTabLink to="/gallery/photos">
+              {t('pages.photos')}
+            </GalleryTabLink>
+          </li>
+          <li>
+            <GalleryTabLink to="/gallery/videos">
+              {t('pages.videos')}
+            </GalleryTabLink>
+          </li>
         </GalleryTabs>
         <Suspense fallback={null}>
           <Outlet />
