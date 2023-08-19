@@ -49,7 +49,7 @@ export const ContactsList = styled.ul`
   flex-direction: column;
   gap: 10px;
   margin-bottom: 24px;
-  white-space: pre;
+  white-space: break-spaces;
   color: ${colors.secondaryFont};
 
   @media (min-width: 768px) {

@@ -1,19 +1,19 @@
 import React from 'react';
 import useFetch from '../../hooks/useFetch';
 
-
 import 'swiper/css/bundle';
 import { Scrollbar } from 'swiper';
 
 import {
   VideoGallerySwiperWrapper,
   VideoSwiperSlideContainer,
-  VideoSwiperContainer, VideoText, VideoReactPlayer, SwiperSliderWrapper
+  VideoSwiperContainer,
+  VideoText,
+  VideoReactPlayer,
 } from './MobGalleryVideo.styled';
 
 const MobGalleryVideos = () => {
   const { data } = useFetch('galleryVideo');
-
 
   return (
     <VideoGallerySwiperWrapper>
@@ -24,20 +24,23 @@ const MobGalleryVideos = () => {
         modules={[Scrollbar]}
       >
         {data?.galleryVideoList?.map(({ id, videoLink }) => (
-          
           <VideoSwiperSlideContainer key={id}>
-            <SwiperSliderWrapper>
             <VideoReactPlayer
-             
               url={videoLink}
               width={320}
               playing={false}
               muted={true}
               controls={true}
               loop={true}
-              config={{youtube:{playerVars:{origin: 'https://www.youtube.com'}}}}
+              config={{
+                youtube: {
+                  playerVars: { origin: 'https://www.youtube.com' },
+                },
+              }}
             />
-            <VideoText>Виготовлення <br/> маскувальних сіток</VideoText></SwiperSliderWrapper>
+            <VideoText>
+              Виготовлення <br /> маскувальних сіток
+            </VideoText>
           </VideoSwiperSlideContainer>
         ))}
       </VideoSwiperContainer>
