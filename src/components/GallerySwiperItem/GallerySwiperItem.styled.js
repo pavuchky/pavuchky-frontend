@@ -10,8 +10,7 @@ export const GalleryContainer = styled.div`
   display: grid;
   box-sizing: border-box;
   max-height: 100%;
-  grid-template-columns: repeat(2, 254px);
-  grid-template-rows: repeat(auto-fit, 300px);
+  grid-template-rows: repeat(1, 300px);
   border-radius: 8px;
 `;
 
