@@ -1,4 +1,5 @@
 import { createPortal } from 'react-dom';
+import PropTypes from 'prop-types';
 import sprite from '../../assets/images/sprite.svg';
 import {
   CloseIcon,
@@ -55,4 +56,8 @@ export const DonationModal = ({ setIsModalOpen }) => {
     </DonationBackdrop>,
     modalContainer
   );
+};
+
+DonationModal.propTypes = {
+  setIsModalOpen: PropTypes.func.isRequired,
 };

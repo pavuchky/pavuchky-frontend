@@ -1,3 +1,6 @@
+import PropTypes from 'prop-types';
+import { useMediaQuery } from 'react-responsive';
+import { useTranslation } from 'react-i18next';
 import gratitudeMob from 'assets/images/gratitude/gratitude.svg';
 import gratitude from 'assets/images/gratitude/gratitude_tablet.svg';
 import review from 'assets/images/gratitude/review.svg';
@@ -9,10 +12,10 @@ import {
   GratitudeTitle,
   GratitudeWrapper,
 } from './Gratitude.styled';
-import { useMediaQuery } from 'react-responsive';
 
 export const Gratitude = ({ title, text, variant }) => {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+  const { t } = useTranslation();
 
   return (
     <GratitudeWrapper>
@@ -29,7 +32,13 @@ export const Gratitude = ({ title, text, variant }) => {
         <GratitudeReviewImg src={review} alt="gratitude" />
       )}
 
-      <GratitudeLink to="/">На головну</GratitudeLink>
+      <GratitudeLink to="/">{t('buttons.toHome')}</GratitudeLink>
     </GratitudeWrapper>
   );
+};
+
+Gratitude.propTypes = {
+  title: PropTypes.string.isRequired,
+  text: PropTypes.string,
+  variant: PropTypes.string,
 };
