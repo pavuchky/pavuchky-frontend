@@ -1,6 +1,9 @@
 import { urlFor } from 'client';
-import formatTextSanity from './formatTextSanity';
-import formatFileSanity from './formatFileSanity';
+import {
+  formatTextSanity,
+  formatFileSanity,
+  formatMediaLinkSanity,
+} from './sanityHelpers';
 
 export const contactsFormattedFn = ({
   phone,
@@ -61,7 +64,10 @@ export const reviewsFormattedFn = ({ reviewList, _id }) => {
     reviewList: reviewList
       ? reviewList.map(({ reviewDesc, reviewImage, _key }) => {
           return {
-            reviewImage: reviewImage?.asset ? urlFor(reviewImage?.asset) : null,
+            // reviewImage: reviewImage?.asset ? urlFor(reviewImage?.asset) : null,
+            reviewImage: !!reviewImage
+              ? formatMediaLinkSanity(reviewImage)
+              : null,
             reviewDesc: !!reviewDesc ? reviewDesc : null,
             id: _key,
           };
@@ -83,15 +89,38 @@ export const partnersFormattedFn = ({ partnersList, _id }) => {
   return {
     id: _id,
     partnersList: partnersList
-      ? partnersList.map(({ partnerImage, partnerLink, _key }) => {
-          return {
-            partnerImage: partnerImage?.asset
-              ? urlFor(partnerImage?.asset)
-              : null,
-            partnerLink: !!partnerLink ? partnerLink : null,
-            id: _key,
-          };
-        })
+      ? partnersList.map(
+          ({
+            partnerImageMobile,
+            partnerImageTablet,
+            partnerImageDesktop,
+            partnerLink,
+            _key,
+          }) => {
+            const defaultImage = [
+              partnerImageDesktop,
+              partnerImageTablet,
+              partnerImageMobile,
+            ];
+
+            return {
+              partnerImageMobile: partnerImageMobile?.asset
+                ? urlFor(partnerImageMobile?.asset)
+                : null,
+              partnerImageTablet: partnerImageTablet?.asset
+                ? urlFor(partnerImageTablet?.asset)
+                : null,
+              partnerImageDesktop: partnerImageDesktop?.asset
+                ? urlFor(partnerImageDesktop?.asset)
+                : null,
+              defaultImage: defaultImage.some(el => el)
+                ? defaultImage.find(el => !!el)
+                : null,
+              partnerLink: !!partnerLink ? partnerLink : null,
+              id: _key,
+            };
+          }
+        )
       : null,
   };
 };
@@ -123,7 +152,6 @@ export const aboutFormattedFn = ({
   };
 };
 
-const BASE_PHOTO_URL = 'https://drive.google.com/uc?export=view&id=';
 export const galleryPhotoFormattedFn = ({ galleryPhotoList, _id }) => {
   return {
     id: _id,
@@ -131,7 +159,7 @@ export const galleryPhotoFormattedFn = ({ galleryPhotoList, _id }) => {
       ? galleryPhotoList.map(({ photoLink, _key }) => {
           return {
             id: _key,
-            photoLink: !!photoLink ? BASE_PHOTO_URL + photoLink : null,
+            photoLink: !!photoLink ? formatMediaLinkSanity(photoLink) : null,
           };
         })
       : null,
@@ -143,9 +171,13 @@ export const galleryVideoFormattedFn = ({ galleryVideoList, _id }) => {
     id: _id,
     galleryVideoList: galleryVideoList
       ? galleryVideoList.map(({ videoLink, _key }) => {
+          const currentVideoLink = videoLink.includes('youtube')
+            ? videoLink
+            : formatMediaLinkSanity(videoLink);
+
           return {
             id: _key,
-            videoLink: !!videoLink ? videoLink : null,
+            videoLink: !!videoLink ? currentVideoLink : null,
           };
         })
       : null,
