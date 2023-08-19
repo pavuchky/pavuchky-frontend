@@ -46,5 +46,5 @@ export default ReviewSwiperItem;
 
 ReviewSwiperItem.propTypes = {
   review: PropTypes.string,
-  reviewImage: PropTypes.object,
+  reviewImage: PropTypes.string,
 };
