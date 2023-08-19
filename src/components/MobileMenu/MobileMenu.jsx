@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { MenuBtn, MenuList } from './MobileMenu.styled';
 import { useTranslation } from 'react-i18next';
 import { HashLink } from 'react-router-hash-link';
+import { Modal } from 'components/Modal/Modal';
 
 export const MobileMenu = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -17,22 +18,39 @@ export const MobileMenu = () => {
     { href: '/gallery/photos', value: t('nav.gallery') },
   ];
 
+  const handleMenuOpen = () => {
+    setShowMenu(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const handleMenuClose = () => {
+    setShowMenu(false);
+    document.body.style.overflow = 'auto';
+  };
+
   return (
     <>
-      <MenuBtn onClick={() => setShowMenu(!showMenu)}>{t('nav.menu')}</MenuBtn>
-      <MenuList showMenu={showMenu}>
-        {items.map((i, index) => (
-          <li key={index} onClick={() => setShowMenu(false)}>
-            <Link to={i.href} dangerouslySetInnerHTML={{ __html: i.value }} />
-          </li>
-        ))}
-        <li onClick={() => setShowMenu(false)}>
-          <HashLink to="/#donation"> {t('nav.donate')}</HashLink>
-        </li>
-        <li onClick={() => setShowMenu(false)}>
-          <HashLink to="/#contacts">{t('nav.weave')}</HashLink>
-        </li>
-      </MenuList>
+      <MenuBtn onClick={handleMenuOpen}>{t('nav.menu')}</MenuBtn>
+      {showMenu && (
+        <Modal onClose={handleMenuClose} variant="menu">
+          <MenuList showMenu={showMenu}>
+            {items.map((i, index) => (
+              <li key={index} onClick={handleMenuClose}>
+                <Link
+                  to={i.href}
+                  dangerouslySetInnerHTML={{ __html: i.value }}
+                />
+              </li>
+            ))}
+            <li onClick={handleMenuClose}>
+              <HashLink to="/#donation"> {t('nav.donate')}</HashLink>
+            </li>
+            <li onClick={handleMenuClose}>
+              <HashLink to="/#contacts">{t('nav.weave')}</HashLink>
+            </li>
+          </MenuList>
+        </Modal>
+      )}
     </>
   );
 };

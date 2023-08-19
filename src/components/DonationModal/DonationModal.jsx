@@ -1,60 +1,20 @@
-import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
+import { Modal } from 'components/Modal/Modal';
 import sprite from '../../assets/images/sprite.svg';
-import {
-  CloseIcon,
-  DonationBackdrop,
-  DonationModalWindow,
-  DonationQRCode,
-} from './DonationModal.styled';
-import { useEffect } from 'react';
-
-const modalContainer = document.getElementById('modal-root');
+import { DonationQRCode } from './DonationModal.styled';
 
 export const DonationModal = ({ setIsModalOpen }) => {
-  useEffect(() => {
-    const handleEscClick = event => {
-      if (event.code === 'Escape') {
-        setIsModalOpen(prev => !prev);
-        document.body.style.overflow = 'auto';
-      }
-    };
-
-    window.addEventListener('keydown', handleEscClick);
-
-    return () => {
-      window.removeEventListener('keydown', handleEscClick);
-    };
-  }, [setIsModalOpen]);
-
-  const handleCloseBtnClick = () => {
+  const handleModalClose = () => {
     setIsModalOpen(prev => !prev);
     document.body.style.overflow = 'auto';
   };
 
-  const handleBackdropClick = event => {
-    if (event.target !== event.currentTarget) {
-      return;
-    }
-
-    setIsModalOpen(prev => !prev);
-    document.body.style.overflow = 'auto';
-  };
-
-  return createPortal(
-    <DonationBackdrop onClick={handleBackdropClick}>
-      <DonationModalWindow>
-        <button type="button" onClick={handleCloseBtnClick}>
-          <CloseIcon>
-            <use href={sprite + '#close'}></use>
-          </CloseIcon>
-        </button>
-        <DonationQRCode>
-          <use href={sprite + '#qr'}></use>
-        </DonationQRCode>
-      </DonationModalWindow>
-    </DonationBackdrop>,
-    modalContainer
+  return (
+    <Modal onClose={handleModalClose}>
+      <DonationQRCode>
+        <use href={sprite + '#qr'}></use>
+      </DonationQRCode>
+    </Modal>
   );
 };
 
