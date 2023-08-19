@@ -4,93 +4,85 @@ import { theme } from '../../stylesheet/theme';
 import ReactPlayer from 'react-player';
 import { Pagination } from '@mui/material';
 
-const { fontSizes, fontWeights, colors, fonts} = theme;
+const { fontSizes, fontWeights, colors, fonts, radii } = theme;
 
-
-export const VideoTabGridContainer = styled.div`
+export const VideoTabGridContainer = styled.ul`
   display: grid;
   grid-template-columns: 316px 316px;
   gap: 24px;
   margin-bottom: 32px;
-  & :first-child {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    /* border: 1px solid #0069b5; */
-  }
-  & :last-child {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    /* border: 1px solid #0069b5; */
+
+  li {
+    border: 1px solid ${colors.blue};
+    border-radius: ${radii.s};
+    overflow: hidden;
   }
 `;
 
 export const VideoTabReactPlayer = styled(ReactPlayer)`
-  margin-bottom: 16px;
-  border-radius: 10px 10px 0px 0px;
-
+  height: 421px !important;
 `;
 
 export const VideoTabButton = styled.button`
-  width: 656px;
+  width: 100%;
   height: 48px;
-  border-radius: 16px;
-  background: ${colors.blue};
   padding: 10px;
+
+  display: flex;
   justify-content: center;
   align-items: center;
+
   font-family: ${fonts.regular};
   font-size: ${fontSizes.m};
-  font-style: normal;
   font-weight: ${fontWeights.regular};
-  line-height: normal;
+
   cursor: pointer;
+  border-radius: 16px;
   outline: transparent;
   color: ${colors.white};
+  background-color: ${colors.blue};
 
   &:hover {
     color: ${colors.yellow};
   }
+
   &:focus {
     outline: transparent;
     color: ${colors.yellow};
   }
+
   @media (min-width: 1440px) {
     display: none;
   }
 `;
 
-
 /**==========================DesctopStyles================= */
 
-
-export const VideoDesctopGridContainer = styled.div`
+export const VideoDesktopGridContainer = styled.ul`
   display: grid;
   grid-template-columns: 409px 409px 409px;
   gap: 26px;
   margin-top: 44px;
   margin-bottom: 44px;
-  & :first-child {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-  }
-  & :last-child {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+
+  li {
+    border: 1px solid ${colors.blue};
+    border-radius: ${radii.s};
+    overflow: hidden;
   }
 `;
 
-export const VideoDesctopReactPlayer = styled(ReactPlayer)`
-  margin-bottom: 16px;
-  border-radius: 8px 8px 0px 0px;
+export const VideoDesktopReactPlayer = styled(ReactPlayer)`
+  height: 421px !important;
 `;
+
 export const VideoPaginationContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
-
-export const VideoPagnation = styled(Pagination)`
+export const VideoPagination = styled(Pagination)`
   display: flex;
   justify-content: center;
   align-items: center;

@@ -2,35 +2,41 @@ import styled from 'styled-components';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import ReactPlayer from 'react-player';
 import { theme } from '../../stylesheet/theme';
-const { fontSizes, fontWeights, colors } = theme;
+const { fonts, fontSizes, fontWeights, colors } = theme;
 
 export const VideoGallerySwiperWrapper = styled.div`
   display: flex;
-  width: 320px;
-
+  width: 100%;
 `;
+
 export const VideoReactPlayer = styled(ReactPlayer)`
-
-width: 320px;
+  width: 100% !important;
 `;
+
 export const VideoSwiperSlideContainer = styled(SwiperSlide)`
-  width:320px;
+  width: 100%;
   height: 427px;
-
 `;
+
 export const VideoText = styled.span`
   display: flex;
   padding-top: 16px;
+  padding-left: 16px;
   padding-bottom: 16px;
   margin-bottom: 24px;
+
+  font-family: ${fonts.regular};
   font-size: ${fontSizes.xs};
   font-weight: ${fontWeights.regular};
-  border: 1px solid #0069b5;
+
+  border: 1px solid ${colors.blue};
   border-top: 0px;
   border-radius: 0px 0px 8px 8px;
-  padding-left: 16px;
+
+  background-color: ${colors.white};
 
   @media (min-width: 768px) {
+    font-family: ${fonts.light};
     font-size: ${fontSizes.s};
     font-weight: ${fontWeights.light};
     padding-bottom: 0;
@@ -38,16 +44,15 @@ export const VideoText = styled.span`
     border: 0;
     border-top: 0px;
     border-radius: 0px;
-    padding-left: 16px;
+    padding: 16px 16px 24px 16px;
   }
 `;
 export const VideoSwiperContainer = styled(Swiper)`
   position: relative;
-  width: 320px;
+  width: 100%;
   overflow: hidden;
- 
-  border-radius: 8px 8px 0px 0px;
-  
+
+  border-radius: 8px 8px 0 0;
 
   .swiper-scrollbar {
     background-color: ${colors.grey};
@@ -63,12 +68,3 @@ export const VideoSwiperContainer = styled(Swiper)`
     display: none;
   }
 `;
-
-
-export const SwiperSliderWrapper = styled.div`
-  /* border: 1px solid #0069b5; */
-  width: 320px;
-  background-color: #fff;
-`;
-
-
