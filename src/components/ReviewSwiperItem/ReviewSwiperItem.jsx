@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useMediaQuery } from 'react-responsive';
 import {
   ReviewsSvg,
@@ -42,3 +43,8 @@ const ReviewSwiperItem = ({ review, reviewImage }) => {
 };
 
 export default ReviewSwiperItem;
+
+ReviewSwiperItem.propTypes = {
+  review: PropTypes.string,
+  reviewImage: PropTypes.object,
+};
