@@ -24,24 +24,11 @@ export const MenuBtn = styled.button`
 `;
 
 export const MenuList = styled.ul`
-  width: 174px;
-  z-index: 1;
-  position: absolute;
-  top: 69px;
-  left: 188px;
-  padding: 32px 34px;
-  border-radius: 16px;
-  box-shadow: rgba(25, 0, 0, 0.09) -4px 8px 19px,
-    rgba(22, 0, 0, 0.1) -18px 31px 35px, rgba(12, 0, 0, 0.13) -28px 50px 48px;
   display: flex;
   flex-direction: column;
   gap: 24px;
   font-size: ${({ theme }) => theme.fontSizes.xs};
   background-color: ${({ theme }) => theme.colors.white};
-
-  opacity: ${({ showMenu }) => (showMenu ? 1 : 0)};
-  visibility: ${({ showMenu }) => (showMenu ? 'visible' : 'hidden')};
-  transition: opacity 0.3s ease-in-out;
 
   li {
     transition: color ${({ theme }) => theme.transitions.regular};
@@ -51,12 +38,8 @@ export const MenuList = styled.ul`
     }
   }
 
-  @media (min-width: 768px) {
-    top: 104px;
-    left: 515px;
-  }
-
-  @media only screen and (max-width: 374px) {
-    left: 178px;
+  @media only screen and (min-width: 768px) {
+    gap: 28px;
+    font-size: 18px;
   }
 `;
