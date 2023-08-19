@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useMediaQuery } from 'react-responsive';
 
 import {
@@ -38,3 +39,11 @@ const OurNeedsItem = ({ location, needType, titel, description, contact }) => {
 };
 
 export default OurNeedsItem;
+
+OurNeedsItem.propTypes = {
+  location: PropTypes.string,
+  needType: PropTypes.string,
+  titel: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  contact: PropTypes.string,
+};
