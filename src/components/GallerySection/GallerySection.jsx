@@ -23,9 +23,9 @@ const GallerySection = () => {
   const { t } = useTranslation();
   const { data } = useFetch('galleryPhoto');
 
-  const isDesktop = useMediaQuery({ minWidth: 1440 });
-
   const isTablet = useMediaQuery({ minWidth: 768 });
+
+  const isDesktop = useMediaQuery({ minWidth: 1440 });
 
   const galleryArr = isDesktop
     ? data?.galleryPhotoList?.slice(0, 6)
