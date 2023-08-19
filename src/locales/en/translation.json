@@ -107,9 +107,9 @@
     "name": "Name",
     "namePl": "Ivashchuk Ivan Petrovych",
     "number": "Your cell number",
+    "numberPl": "Enter your phone number",
     "comments": "Comments",
     "commentsPl": "If required",
-
     "submit": "Submit an application",
     "info": "All received data is fully anonymous and will be used only for contacting you.",
     "review": "The feedback will be published anonymously. All received data will be used only for contacting you.",

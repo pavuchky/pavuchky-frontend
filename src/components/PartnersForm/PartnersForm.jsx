@@ -109,7 +109,7 @@ export const PartnersForm = () => {
                   title={t('forms.number')}
                   type="text"
                   name="phone"
-                  placeholder="+380XXXXXXXXX"
+                  placeholder={t('forms.numberPl')}
                   autoComplete="tel"
                   value={phone}
                   onChange={formik.handleChange}
