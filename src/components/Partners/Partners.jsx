@@ -36,15 +36,15 @@ export const Partners = () => {
               <a href={partnerLink} target="_blank" rel="noopener noreferrer">
                 <picture>
                   <source
-                    srcset={partnerImageMobile}
+                    srcSet={partnerImageMobile}
                     media="(max-width: 767px)"
                   />
                   <source
-                    srcset={partnerImageTablet}
+                    srcSet={partnerImageTablet}
                     media="(max-width: 1439px)"
                   />
                   <source
-                    srcset={partnerImageDesktop}
+                    srcSet={partnerImageDesktop}
                     media="(min-width: 1440px)"
                   />
                   <PartnersImg src={defaultImage} alt="partner" />
