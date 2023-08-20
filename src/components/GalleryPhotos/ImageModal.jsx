@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -27,14 +27,25 @@ const ImageModal = ({
   setSelectedImageIndex,
 }) => {
   const { data } = useFetch('galleryPhoto');
-
+const handleKeyPress = useCallback(
+  (event) => {
+    if (event.key === 'Escape') {
+      onClose();
+    }
+  },
+  [onClose]
+);
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add('modal-open');
+      document.addEventListener('keydown', handleKeyPress);
     } else {
       document.body.classList.remove('modal-open');
     }
-  }, [isOpen]);
+     return () => {
+    document.removeEventListener('keydown', handleKeyPress);
+  };
+  }, [isOpen, handleKeyPress]);
 
   if (!isOpen) return null;
 
@@ -51,6 +62,8 @@ const ImageModal = ({
       onClose();
     }
   };
+  
+
 
   return ReactDOM.createPortal(
     <>
