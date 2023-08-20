@@ -56,7 +56,9 @@ const TabDesktopGalleryVideo = () => {
                       playing={false}
                       config={{
                         youtube: {
-                          playerVars: { origin: 'https://www.youtube.com' },
+                          playerVars: {
+                            origin: 'https://www.youtube.com',
+                          },
                         },
                       }}
                     />

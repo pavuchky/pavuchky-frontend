@@ -171,13 +171,12 @@ export const galleryVideoFormattedFn = ({ galleryVideoList, _id }) => {
     id: _id,
     galleryVideoList: galleryVideoList
       ? galleryVideoList.map(({ videoLink, _key }) => {
-          const currentVideoLink = videoLink.includes('youtube')
-            ? videoLink
-            : formatMediaLinkSanity(videoLink);
-
+          // https://docs.document360.com/docs/embed-youtube-shorts
           return {
             id: _key,
-            videoLink: !!videoLink ? currentVideoLink : null,
+            videoLink: !!videoLink
+              ? videoLink.replace('shorts', 'embed')
+              : null,
           };
         })
       : null,
