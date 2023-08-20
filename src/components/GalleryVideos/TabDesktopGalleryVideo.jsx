@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import useFetch from '../../hooks/useFetch';
+
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
 import { PaginationItem } from '@mui/material';
@@ -16,8 +16,8 @@ import {
 } from './TabDesktopGalleryVideo.styled';
 import { VideoText } from './MobGalleryVideo.styled';
 
-const TabDesktopGalleryVideo = () => {
-  const { data } = useFetch('galleryVideo');
+const TabDesktopGalleryVideo = ({ galleryVideoData }) => {
+
 
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -34,7 +34,7 @@ const TabDesktopGalleryVideo = () => {
   };
 
   const startIndex = (currentPage - 1) * itemsPerPage;
-  const showingVideos = data?.galleryVideoList?.slice(
+  const showingVideos = galleryVideoData?.galleryVideoList?.slice(
     startIndex,
     startIndex + itemsPerPage
   );
@@ -46,7 +46,7 @@ const TabDesktopGalleryVideo = () => {
       {!isDesktopScreen && isTabletScreen && (
         <>
           <VideoTabGridContainer>
-            {data?.galleryVideoList
+            {galleryVideoData?.galleryVideoList
               ?.slice(0, visibleVideos)
               .map(({ videoLink }, id) => {
                 return (
@@ -68,7 +68,7 @@ const TabDesktopGalleryVideo = () => {
                 );
               })}
           </VideoTabGridContainer>
-          {visibleVideos < data?.galleryVideoList?.length && (
+          {visibleVideos < galleryVideoData?.galleryVideoList?.length && (
             <VideoTabButton onClick={loadMoreVideos}>
               {t('buttons.viewMore')}
             </VideoTabButton>
@@ -101,7 +101,7 @@ const TabDesktopGalleryVideo = () => {
           <VideoPaginationContainer>
             <VideoPagination
               count={Math.ceil(
-                (data?.galleryVideoList?.length || 0) / itemsPerPage
+                (galleryVideoData?.galleryVideoList?.length || 0) / itemsPerPage
               )}
               page={currentPage}
               onChange={onPageChange}

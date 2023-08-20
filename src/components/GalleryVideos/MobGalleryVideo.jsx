@@ -1,6 +1,4 @@
 import React from 'react';
-import useFetch from '../../hooks/useFetch';
-
 import 'swiper/css/bundle';
 import { Scrollbar } from 'swiper';
 
@@ -12,8 +10,8 @@ import {
   VideoReactPlayer,
 } from './MobGalleryVideo.styled';
 
-const MobGalleryVideos = () => {
-  const { data } = useFetch('galleryVideo');
+const MobGalleryVideos = ({galleryVideoData}) => {
+  
 
   return (
     <VideoGallerySwiperWrapper>
@@ -23,7 +21,7 @@ const MobGalleryVideos = () => {
         scrollbar={{ draggable: true }}
         modules={[Scrollbar]}
       >
-        {data?.galleryVideoList?.map(({ id, videoLink }) => (
+        {galleryVideoData?.galleryVideoList?.map(({ id, videoLink }) => (
           <VideoSwiperSlideContainer key={id}>
             <VideoReactPlayer
               url={videoLink}
