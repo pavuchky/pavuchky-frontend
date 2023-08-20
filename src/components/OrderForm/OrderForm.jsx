@@ -54,7 +54,7 @@ export const OrderForm = () => {
       color: '',
       loops: '',
     },
-    validationSchema: orderValidationSchema,
+    validationSchema: orderValidationSchema(t),
     onSubmit: async values => {
       try {
         await fetchPost('/order', values);
