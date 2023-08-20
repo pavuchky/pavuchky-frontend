@@ -4,6 +4,7 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import useFetch from '../../hooks/useFetch';
 
+import PropTypes from 'prop-types';
 import {
   ImageModalOverlay,
   ImageModalContent,
@@ -94,5 +95,15 @@ const ImageModal = ({
     document.getElementById('modal-root')
   );
 };
+
+
+
+ImageModal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  selectedImageIndex: PropTypes.number.isRequired,
+  onClose: PropTypes.func.isRequired,
+  setSelectedImageIndex: PropTypes.func,
+};
+
 
 export default ImageModal;
