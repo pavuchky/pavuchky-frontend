@@ -167,5 +167,20 @@
   "notifications": {
     "copiedSuccess": "Card number copied successfully.",
     "copiedError": "Unable to copy the card number. Please try again later."
+  },
+  "validation": {
+    "name": "Please enter your name.",
+    "containName": "Name can only contain letters.",
+    "fill": "Please fill in the field.",
+    "empty": "The field cannot be empty.",
+    "atLeast": "Field must be at least 3 characters.",
+    "incorrectEmail": "Incorrect email address.",
+    "email": "Please enter your email.",
+    "phone": "Please enter your phone number.",
+    "invalidPhonePartner": "Invalid phone number. Please use the format +XXXXXXXXXXXX or +XXX XX XXX XX XX.",
+    "invalidPhone": "Invalid phone number. Please use the format +380XXXXXXXXX.",
+    "color": "The entered value is incorrect.",
+    "review": "Please enter your review.",
+    "reviewEmpty": "The feedback field cannot be empty."
   }
 }

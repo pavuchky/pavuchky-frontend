@@ -42,7 +42,7 @@ export const ReviewForm = () => {
       comment: '',
       photo: '',
     },
-    validationSchema: reviewValidationSchema,
+    validationSchema: reviewValidationSchema(t),
     onSubmit: async values => {
       try {
         const formData = new FormData();
