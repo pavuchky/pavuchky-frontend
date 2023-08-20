@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Pagination } from '@mui/material';
 
 import { theme } from 'stylesheet/theme';
-const { colors, radii, borders } = theme;
+const { fonts, fontSizes, fontWeights, colors, radii, borders } = theme;
 
 export const PaginationContainer = styled(Pagination)`
   width: 320px;
@@ -17,8 +17,20 @@ export const PaginationContainer = styled(Pagination)`
     margin: 0px;
     color: ${colors.grey};
 
+    font-family: ${fonts.light};
+    font-size: 14px;
+    font-weight: ${fontWeights.light};
+
     .MuiPaginationItem-icon {
       fill: ${colors.blue};
+    }
+
+    @media (min-width: 768px) {
+      font-size: ${fontSizes.xs};
+    }
+
+    @media (min-width: 1440px) {
+      font-size: ${fontSizes.s};
     }
   }
 
@@ -30,6 +42,7 @@ export const PaginationContainer = styled(Pagination)`
 
   .MuiPagination-ul {
     gap: 16px;
+
     @media (min-width: 1440px) {
       gap: 24px;
     }
@@ -90,6 +103,21 @@ export const PaginationContainer = styled(Pagination)`
 
   @media (min-width: 1440px) {
     width: 592px;
+
+    .MuiPaginationItem-page {
+      width: 64px;
+      height: 64px;
+    }
+
+    .MuiPaginationItem-previousNext {
+      width: 64px;
+      height: 64px;
+    }
+
+    .MuiPaginationItem-ellipsis {
+      width: 64px;
+      height: 64px;
+    }
   }
 `;
 
@@ -101,8 +129,5 @@ export const ReviewsPaginationList = styled.ul`
   @media (min-width: 768px) {
     flex-direction: row;
     flex-wrap: wrap;
-  }
-
-  @media (min-width: 1440px) {
   }
 `;

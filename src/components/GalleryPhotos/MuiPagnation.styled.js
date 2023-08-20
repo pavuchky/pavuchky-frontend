@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { theme } from '../../stylesheet/theme';
 import { Pagination } from '@mui/material';
 
-const { fontSizes, fontWeights, colors, fonts } = theme;
+const { fontSizes, fontWeights, colors, fonts, borders, radii } = theme;
 
 export const GalleryPagination = styled(Pagination)`
   display: flex;
@@ -39,5 +39,11 @@ export const GalleryPagination = styled(Pagination)`
         fill: ${colors.grey} !important;
       }
     }
+  }
+
+  .MuiPaginationItem-previousNext {
+    border: ${borders.normal};
+    border-color: ${colors.blue} !important;
+    border-radius: ${radii.round};
   }
 `;
