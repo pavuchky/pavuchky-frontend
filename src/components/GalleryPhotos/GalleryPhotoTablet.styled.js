@@ -122,6 +122,6 @@ export const GallerySecondSvgButton = styled.button`
   }
 `;
 
-export const GalleryDesctopSvg = styled.svg`
+export const GalleryDesktopSvg = styled.svg`
   stroke: ${colors.blue};
 `;

@@ -8,6 +8,7 @@ import Icon from '../../assets/images/sprite.svg';
 import { CustomSelect } from 'components/CustomSelect/CustomSelect';
 import { Gratitude } from 'components/Gratitude/Gratitude';
 import { CustomInput } from 'components/CustomInput/CustomInput';
+import { Loader } from 'components/Loader/Loader';
 import {
   FormBlocks,
   FormBtn,
@@ -81,7 +82,7 @@ export const OrderForm = () => {
   return (
     <>
       {isLoading ? (
-        <div style={{ height: '300px' }}>Loading...</div>
+        <Loader />
       ) : submitted ? (
         <Gratitude
           title={t('orderForm.thank')}

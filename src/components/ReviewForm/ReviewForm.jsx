@@ -8,6 +8,7 @@ import { reviewValidationSchema } from 'utils/validationSchema';
 import { Gratitude } from 'components/Gratitude/Gratitude';
 import { CustomInput } from 'components/CustomInput/CustomInput';
 import svg from '../../assets/images/sprite.svg';
+import { Loader } from 'components/Loader/Loader';
 import {
   FormBtn,
   FormContainer,
@@ -88,7 +89,7 @@ export const ReviewForm = () => {
   return (
     <>
       {isLoading ? (
-        <div style={{ height: '300px' }}>Loading...</div>
+        <Loader />
       ) : submitted ? (
         <Gratitude title={t('feedback.thank')} />
       ) : (

@@ -16,7 +16,7 @@ import {
 import {
   GalleryFirstSvgButton,
   GallerySecondSvgButton,
-  GalleryDesctopSvg,
+  GalleryDesktopSvg,
 } from './GalleryPhotoTablet.styled';
 import sprite from '../../assets/images/sprite.svg';
 
@@ -39,6 +39,8 @@ const ImageModal = ({
   if (!isOpen) return null;
 
   const handleOverlayClick = event => {
+    console.log(event.target.nodeName);
+
     if (event.target === event.currentTarget) {
       onClose();
     }
@@ -62,18 +64,18 @@ const ImageModal = ({
             renderArrowPrev={(onClickHandler, hasPrev) =>
               hasPrev && (
                 <GalleryFirstSvgButton type="button" onClick={onClickHandler}>
-                  <GalleryDesctopSvg width="17px" height="32px">
+                  <GalleryDesktopSvg width="17px" height="32px">
                     <use xlinkHref={`${sprite}#prew-icon`}></use>
-                  </GalleryDesctopSvg>
+                  </GalleryDesktopSvg>
                 </GalleryFirstSvgButton>
               )
             }
             renderArrowNext={(onClickHandler, hasNext) =>
               hasNext && (
                 <GallerySecondSvgButton type="button" onClick={onClickHandler}>
-                  <GalleryDesctopSvg width="17px" height="32px">
+                  <GalleryDesktopSvg width="17px" height="32px">
                     <use xlinkHref={`${sprite}#next-icon`}></use>
-                  </GalleryDesctopSvg>
+                  </GalleryDesktopSvg>
                 </GallerySecondSvgButton>
               )
             }
@@ -96,14 +98,11 @@ const ImageModal = ({
   );
 };
 
-
-
 ImageModal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   selectedImageIndex: PropTypes.number.isRequired,
   onClose: PropTypes.func.isRequired,
   setSelectedImageIndex: PropTypes.func,
 };
-
 
 export default ImageModal;
