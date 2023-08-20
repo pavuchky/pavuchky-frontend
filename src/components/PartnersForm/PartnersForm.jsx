@@ -8,6 +8,7 @@ import { partnerValidationSchema } from '../../utils/validationSchema';
 import { Gratitude } from 'components/Gratitude/Gratitude';
 import { CustomInput } from 'components/CustomInput/CustomInput';
 import heart from '../../assets/images/gratitude/gratitude_tablet.svg';
+import { Loader } from 'components/Loader/Loader';
 import {
   FormBtn,
   FormContainer,
@@ -50,7 +51,7 @@ export const PartnersForm = () => {
   return (
     <>
       {isLoading ? (
-        <div style={{ height: '300px' }}>Loading...</div>
+        <Loader />
       ) : submitted ? (
         <Gratitude
           title={t('partnerForm.thank')}
