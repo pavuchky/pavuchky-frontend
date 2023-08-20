@@ -25,7 +25,6 @@ export const GalleryPagination = styled(Pagination)`
 
     .MuiPaginationItem-icon {
       fill: ${colors.blue};
-      width: 27px;
     }
   }
 
