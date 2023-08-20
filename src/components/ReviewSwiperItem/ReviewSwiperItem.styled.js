@@ -29,6 +29,7 @@ export const ReviewsSwiperItemContainer = styled.div`
 
   @media (min-width: 1440px) {
     width: 409px;
+    max-width: 409px;
     height: 554px;
     padding: 16px;
     padding-top: 86px;

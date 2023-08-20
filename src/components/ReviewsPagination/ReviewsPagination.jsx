@@ -45,6 +45,10 @@ const ReviewsPagination = () => {
     );
   };
 
+  useEffect(() => {
+    setPage(1);
+  }, [isDesktopScreen, isTabletScreen]);
+
   return (
     <>
       <ReviewsPaginationList>
@@ -54,21 +58,23 @@ const ReviewsPagination = () => {
           </li>
         ))}
       </ReviewsPaginationList>
-      <PaginationContainer
-        onChange={handleChange}
-        count={count}
-        boundaryCount={isTabletScreen ? 1 : 1}
-        siblingCount={isTabletScreen ? 0 : -1}
-        renderItem={item => (
-          <PaginationItem
-            slots={{
-              previous: SlArrowLeft,
-              next: SlArrowRight,
-            }}
-            {...item}
-          />
-        )}
-      />
+      {count !== 1 && (
+        <PaginationContainer
+          onChange={handleChange}
+          count={count}
+          boundaryCount={isTabletScreen ? 1 : 1}
+          siblingCount={isTabletScreen ? 0 : -1}
+          renderItem={item => (
+            <PaginationItem
+              slots={{
+                previous: SlArrowLeft,
+                next: SlArrowRight,
+              }}
+              {...item}
+            />
+          )}
+        />
+      )}
     </>
   );
 };
