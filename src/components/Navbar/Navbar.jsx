@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import i18n from 'i18n';
 import { useMediaQuery } from 'react-responsive';
@@ -29,6 +29,7 @@ export const Navbar = () => {
   const { changeLanguage } = useContext(LanguageContext);
 
   const [isOpen, setIsOpen] = useState(false);
+  const langContainerRef = useRef(null);
 
   //
   useEffect(() => {
@@ -42,6 +43,22 @@ export const Navbar = () => {
     }
   }, [location.hash]);
   //
+
+  useEffect(() => {
+    const handleClickOutside = e => {
+      if (
+        isOpen &&
+        langContainerRef.current &&
+        !langContainerRef.current.contains(e.target)
+      ) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener('click', handleClickOutside);
+    return () => {
+      window.removeEventListener('click', handleClickOutside);
+    };
+  }, [isOpen]);
 
   const toggleDropdown = () => {
     setIsOpen(prev => !prev);
@@ -68,7 +85,7 @@ export const Navbar = () => {
         </LogoLink>
         {isDesktop && <DesktopNav />}
 
-        <LangContainer>
+        <LangContainer ref={langContainerRef}>
           <LangSelect onClick={toggleDropdown}>
             {locales[i18n.language].title}
           </LangSelect>
