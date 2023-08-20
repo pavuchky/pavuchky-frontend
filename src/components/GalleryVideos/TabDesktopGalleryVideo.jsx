@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import useFetch from '../../hooks/useFetch';
-
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
+import { PaginationItem } from '@mui/material';
+import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
 
 import {
   VideoTabGridContainer,
@@ -106,6 +107,15 @@ const TabDesktopGalleryVideo = () => {
               variant="outlined"
               boundaryCount={1}
               siblingCount={0}
+              renderItem={item => (
+                <PaginationItem
+                  slots={{
+                    previous: SlArrowLeft,
+                    next: SlArrowRight,
+                  }}
+                  {...item}
+                />
+              )}
             />
           </VideoPaginationContainer>
         </>
