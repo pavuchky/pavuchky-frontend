@@ -1,6 +1,6 @@
 import React from 'react';
-import 'swiper/css/bundle';
 import { Scrollbar } from 'swiper';
+import 'swiper/css/bundle';
 
 import {
   VideoGallerySwiperWrapper,
@@ -10,9 +10,7 @@ import {
   VideoReactPlayer,
 } from './MobGalleryVideo.styled';
 
-const MobGalleryVideos = ({galleryVideoData}) => {
-  
-
+const MobGalleryVideos = ({ data }) => {
   return (
     <VideoGallerySwiperWrapper>
       <VideoSwiperContainer
@@ -21,7 +19,7 @@ const MobGalleryVideos = ({galleryVideoData}) => {
         scrollbar={{ draggable: true }}
         modules={[Scrollbar]}
       >
-        {galleryVideoData?.galleryVideoList?.map(({ id, videoLink }) => (
+        {data?.galleryVideoList?.map(({ id, videoLink }) => (
           <VideoSwiperSlideContainer key={id}>
             <VideoReactPlayer
               url={videoLink}

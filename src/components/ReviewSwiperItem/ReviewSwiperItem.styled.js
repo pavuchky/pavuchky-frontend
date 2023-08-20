@@ -97,6 +97,7 @@ export const ReviewsSwiperItemImageContainer = styled.div`
 
   @media (min-width: 768px) {
     width: 280px;
+    max-width: 100%;
 
     min-height: 197px;
     max-height: 197px;
@@ -117,12 +118,6 @@ export const ReviewsSwiperItemImage = styled.img`
   max-width: 100%;
 
   border-radius: ${radii.s};
-
-  @media (min-width: 768px) {
-  }
-
-  @media (min-width: 1440px) {
-  }
 `;
 
 export const ReviewsSvg = styled.svg`
