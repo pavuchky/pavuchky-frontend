@@ -48,7 +48,7 @@ const TabDesktopGalleryVideo = () => {
           <VideoTabGridContainer>
             {data?.galleryVideoList
               ?.slice(0, visibleVideos)
-              .map(({ videoLink }, id) => {
+              .map(({ videoLink, id }) => {
                 return (
                   <li key={id}>
                     <VideoTabReactPlayer
@@ -79,7 +79,7 @@ const TabDesktopGalleryVideo = () => {
       {isDesktopScreen && (
         <>
           <VideoDesktopGridContainer>
-            {showingVideos?.map(({ videoLink }, id) => {
+            {showingVideos?.map(({ videoLink, id }) => {
               return (
                 <li key={id}>
                   <VideoDesktopReactPlayer
