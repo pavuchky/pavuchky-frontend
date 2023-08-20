@@ -31,7 +31,7 @@ const TabDesktopGalleryVideo = ({ data }) => {
   };
 
   const startIndex = (currentPage - 1) * itemsPerPage;
-  const showingVideos = galleryVideoData?.galleryVideoList?.slice(
+  const showingVideos = data?.galleryVideoList?.slice(
     startIndex,
     startIndex + itemsPerPage
   );
@@ -43,7 +43,7 @@ const TabDesktopGalleryVideo = ({ data }) => {
       {!isDesktopScreen && isTabletScreen && (
         <>
           <VideoTabGridContainer>
-            {galleryVideoData?.galleryVideoList
+            {data?.galleryVideoList
               ?.slice(0, visibleVideos)
               .map(({ videoLink }, id) => {
                 return (
@@ -65,7 +65,7 @@ const TabDesktopGalleryVideo = ({ data }) => {
                 );
               })}
           </VideoTabGridContainer>
-          {visibleVideos < galleryVideoData?.galleryVideoList?.length && (
+          {visibleVideos < data?.galleryVideoList?.length && (
             <VideoTabButton onClick={loadMoreVideos}>
               {t('buttons.viewMore')}
             </VideoTabButton>
@@ -98,7 +98,7 @@ const TabDesktopGalleryVideo = ({ data }) => {
           <VideoPaginationContainer>
             <VideoPagination
               count={Math.ceil(
-                (galleryVideoData?.galleryVideoList?.length || 0) / itemsPerPage
+                (data?.galleryVideoList?.length || 0) / itemsPerPage
               )}
               page={currentPage}
               onChange={onPageChange}

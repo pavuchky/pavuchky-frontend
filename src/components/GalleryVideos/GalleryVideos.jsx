@@ -2,7 +2,7 @@ import { useMediaQuery } from 'react-responsive';
 import useFetch from '../../hooks/useFetch';
 import MobGalleryVideos from './MobGalleryVideo';
 import TabDesktopGalleryVideo from './TabDesktopGalleryVideo';
-import useFetch from '../../hooks/useFetch';
+
 
 
 const GalleryVideos = () => {
