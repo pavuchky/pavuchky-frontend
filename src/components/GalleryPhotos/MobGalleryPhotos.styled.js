@@ -101,9 +101,7 @@ export const LightBoxImg = styled.img`
 `;
 
 export const LightBoxImgContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: inline-flex;
   height: 344px;
   max-width: 273px;
   margin: 0 auto;

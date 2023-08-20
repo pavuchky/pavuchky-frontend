@@ -44,11 +44,17 @@ const ImageModal = ({
     }
   };
 
+  const onCarouselClick = evt => {
+    if (evt.target.nodeName === 'LI') {
+      onClose();
+    }
+  };
+
   return ReactDOM.createPortal(
     <>
       <GlobalStyles />
       <ImageModalOverlay onClick={handleOverlayClick}>
-        <ImageModalContent>
+        <ImageModalContent onClick={onCarouselClick}>
           <Carousel
             selectedItem={selectedImageIndex}
             showThumbs={false}
@@ -96,14 +102,11 @@ const ImageModal = ({
   );
 };
 
-
-
 ImageModal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   selectedImageIndex: PropTypes.number.isRequired,
   onClose: PropTypes.func.isRequired,
   setSelectedImageIndex: PropTypes.func,
 };
-
 
 export default ImageModal;
