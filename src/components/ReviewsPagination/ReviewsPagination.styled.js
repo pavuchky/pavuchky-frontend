@@ -5,7 +5,7 @@ import { theme } from 'stylesheet/theme';
 const { fonts, fontSizes, fontWeights, colors, radii, borders } = theme;
 
 export const PaginationContainer = styled(Pagination)`
-  width: 320px;
+  max-width: 320px;
 
   margin-left: auto;
   margin-right: auto;
@@ -83,6 +83,7 @@ export const PaginationContainer = styled(Pagination)`
     align-items: center;
   }
   @media (min-width: 768px) {
+    max-width: 432px;
     width: 432px;
 
     .MuiPaginationItem-page {
@@ -102,6 +103,7 @@ export const PaginationContainer = styled(Pagination)`
   }
 
   @media (min-width: 1440px) {
+    max-width: 592px;
     width: 592px;
 
     .MuiPaginationItem-page {
