@@ -110,7 +110,7 @@ export const ContactUsParagraph = styled.p`
 `;
 
 export const ContactUsButton = styled.button`
-  width: 327px;
+  max-width: 327px;
   height: 40px;
 
   display: flex;
@@ -147,6 +147,7 @@ export const ContactUsButton = styled.button`
   }
 
   @media (min-width: 1440px) {
+    max-width: 440px;
     width: 440px;
     height: 76px;
     padding: 26px;
