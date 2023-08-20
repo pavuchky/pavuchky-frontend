@@ -31,7 +31,7 @@ export const OrderForm = () => {
   const { isLoading, fetchPost } = useFetchPost();
 
   const typeBaseOptions = [
-    { value: t('orderForm.kapron'), label: t('orderForm.kapron') },
+    { value: t('orderForm.nylon'), label: t('orderForm.nylon') },
     { value: t('orderForm.plastic'), label: t('orderForm.plastic') },
   ];
 

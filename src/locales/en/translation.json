@@ -65,12 +65,12 @@
     "city": "Kyiv",
     "administratorContacts": "Administrator contacts",
     "needsType": "military needs",
-    "needPlastic": "We need plastic, kapron",
+    "needPlastic": "We need plastic, nylon",
     "plasticMesh": "Plastic mesh, hole size - 3x3.5cm, \nnylon mesh, hole size - 5x5cm",
     "darkFabric": "Dense dark fabric",
     "fabricForOverlocking": "Dense dark fabric (for overlocking nets and loops)",
     "spunbond": "Spunbond",
-    "camouflageColors": "Of camouflage colors: olive, dry grass, various shades of green"
+    "camouflageColors": "Fabric of camouflage colors: olive, dry grass, various shades of green"
   },
   "reviews": {
     "reviews": "Reviews",
@@ -112,7 +112,7 @@
     "commentsPl": "If required",
     "submit": "Submit an application",
     "info": "All received data is fully anonymous and will be used only for contacting you.",
-    "review": "The feedback will be published anonymously. All received data will be used only for contacting you.",
+    "review": "The review will be published anonymously. All received data will be used only for contacting you.",
     "success": "Data sent successfully!",
     "error": "An error occurred while submitting the form. Please try again.",
     "contact": "We will contact you shortly"
@@ -126,14 +126,14 @@
     "size": "Net’s size",
     "sizePl": "8x4m",
     "type": "Type of base:",
-    "typePl": "Select the type of grid base",
+    "typePl": "Select the type of net base",
     "plastic": "plastic",
-    "kapron": "kapron",
+    "nylon": "nylon",
     "fabric": "Fabric:",
     "fabricPl": "Select a material",
     "cotton": "cotton",
     "spunbond": "spunbond",
-    "color": "Colour",
+    "color": "Color",
     "colorPl": "30% green 70% dry grass",
     "loops": "Loops for fastening",
     "yes": "Yes",
@@ -148,15 +148,15 @@
   },
   "feedback": {
     "write": "Write to us",
-    "titleThank": "Your feedback is very important to us! Thank you:)",
-    "important": "Your feedback is very important to us",
-    "feedback": "Your feedback",
+    "titleThank": "Your review is very important to us! Thank you:)",
+    "important": "Your review is very important to us",
+    "feedback": "Your review",
     "necessarily": "Necessarily",
     "photo": "Add a photo:",
     "drag": "Add a photo or drag and drop",
     "here": " here",
-    "submit": "Submit a feedback",
-    "thank": "Thank you for your feedback!"
+    "submit": "Submit a review",
+    "thank": "Thank you for your review!"
   },
   "reporting": {
     "reports": "Reports of the Spiders",
