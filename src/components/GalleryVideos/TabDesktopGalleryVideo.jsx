@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import useFetch from '../../hooks/useFetch';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
 import { PaginationItem } from '@mui/material';
@@ -16,14 +15,12 @@ import {
 } from './TabDesktopGalleryVideo.styled';
 import { VideoText } from './MobGalleryVideo.styled';
 
-const TabDesktopGalleryVideo = () => {
-  const { data } = useFetch('galleryVideo');
-
+const TabDesktopGalleryVideo = ({ data }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
   const [visibleVideos, setVisibleVideos] = useState(4);
 
-  const itemsPerPage = 3;
+  const itemsPerPage = 9;
   const isDesktopScreen = useMediaQuery({ minWidth: 1440 });
   const isTabletScreen = useMediaQuery({ minWidth: 768 });
 
