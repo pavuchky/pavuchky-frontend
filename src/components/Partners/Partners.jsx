@@ -23,13 +23,36 @@ export const Partners = () => {
     <PartnersContainer>
       <PartnersTitle>{t('partners.partners')}</PartnersTitle>
       <PartnersList>
-        {data?.partnersList.map(({ id, partnerImage, partnerLink }) => (
-          <li key={id}>
-            <a href={partnerLink} target="_blank" rel="noopener noreferrer">
-              <PartnersImg src={partnerImage} alt="partner" />
-            </a>
-          </li>
-        ))}
+        {data?.partnersList.map(
+          ({
+            id,
+            partnerLink,
+            defaultImage,
+            partnerImageMobile,
+            partnerImageTablet,
+            partnerImageDesktop,
+          }) => (
+            <li key={id}>
+              <a href={partnerLink} target="_blank" rel="noopener noreferrer">
+                <picture>
+                  <source
+                    srcSet={partnerImageMobile}
+                    media="(max-width: 767px)"
+                  />
+                  <source
+                    srcSet={partnerImageTablet}
+                    media="(max-width: 1439px)"
+                  />
+                  <source
+                    srcSet={partnerImageDesktop}
+                    media="(min-width: 1440px)"
+                  />
+                  <PartnersImg src={defaultImage} alt="partner" />
+                </picture>
+              </a>
+            </li>
+          )
+        )}
       </PartnersList>
       <PartnersTablet>
         <div>

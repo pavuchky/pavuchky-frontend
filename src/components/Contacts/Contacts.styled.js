@@ -16,20 +16,24 @@ export const ContactsContainer = styled.section`
     padding: 32px 32px 28px 32px;
     border-radius: 20px;
   }
+
   @media (min-width: 1440px) {
     margin-bottom: 64px;
     padding: 44px 64px;
     border-radius: 25px;
   }
 `;
+
 export const ContactsWrapper = styled.div`
   color: ${colors.secondaryFont};
   display: flex;
   flex-direction: column;
+
   @media (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
   }
+
   @media (min-width: 1440px) {
     margin-bottom: 0px;
   }
@@ -39,6 +43,7 @@ export const ContactsListWrapper = styled.div`
     width: 316px;
     justify-content: space-between;
   }
+
   @media (min-width: 1440px) {
     margin-bottom: 0px;
   }
@@ -56,11 +61,13 @@ export const ContactsList = styled.ul`
     gap: 37px;
     margin-bottom: 16px;
   }
+
   @media (min-width: 1440px) {
     gap: 24px;
     margin-bottom: 24px;
   }
 `;
+
 export const ContactsTitle = styled.h3`
   font-size: ${fontSizes.m};
   font-weight: ${fontWeights.regular};
@@ -68,6 +75,7 @@ export const ContactsTitle = styled.h3`
   line-height: normal;
   font-family: ${fonts.regular};
   font-style: normal;
+
   @media (min-width: 768px) {
     max-width: 768px;
     margin-bottom: 28px;
@@ -75,11 +83,13 @@ export const ContactsTitle = styled.h3`
     letter-spacing: -1.44px;
     font-size: ${fontSizes.l};
   }
+
   @media (min-width: 1440px) {
     font-size: ${fontSizes.xl};
     margin-bottom: 44px;
   }
 `;
+
 export const ContactsSubTitle = styled.h4`
   font-size: 18px;
   font-weight: ${fontWeights.regular};
@@ -93,6 +103,7 @@ export const ContactsSubTitle = styled.h4`
   @media (min-width: 768px) {
     margin-bottom: 8px;
   }
+
   @media (min-width: 1440px) {
     font-size: 26px;
     margin-bottom: 24px;
@@ -175,7 +186,11 @@ export const ContactNumber = styled.a`
     margin-bottom: 0;
   }
 `;
+
 export const LocationContainer = styled.div`
+  position: relative;
+  z-index: 1;
+
   width: 100%;
   max-width: 327px;
   height: 218px;
@@ -194,10 +209,12 @@ export const LocationContainer = styled.div`
     margin-top: 0;
   }
 `;
+
 export const SocialMediaContainer = styled.div`
   display: flex;
   margin-top: 24px;
   align-items: center;
+
   @media (min-width: 768px) {
     position: absolute;
     max-width: 295px;
@@ -206,6 +223,7 @@ export const SocialMediaContainer = styled.div`
     margin-top: 0;
     justify-content: flex-end;
   }
+
   @media (min-width: 1440px) {
     position: relative;
     margin-top: 44px;
@@ -216,14 +234,17 @@ export const SocialMediaContainer = styled.div`
     align-items: flex-start;
   }
 `;
+
 export const SocialMediaTitle = styled.p`
   font-size: ${fontSizes.xs};
   font-weight: ${fontWeights.light};
   color: ${colors.secondaryFont};
+
   @media (min-width: 768px) {
     display: flex;
     justify-content: center;
   }
+
   @media (min-width: 1440px) {
     font-size: ${fontSizes.s};
     justify-content: flex-start;
