@@ -8,10 +8,18 @@ const PHONE_REGEXP_PARTNER =
 const EMAIL_REGEXP = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
 
 export const partnerValidationSchema = Yup.object().shape({
-  name: Yup.string().required('Please enter your name.'),
+  name: Yup.string()
+    .required('Please enter your name.')
+    .matches(/^[A-Za-zА-Яа-яЁёІіЇї\s]+$/, 'Name can only contain letters.')
+    .test('is-not-empty', 'Name cannot be empty.', value => {
+      return !/^\s+$/.test(value);
+    }),
   company: Yup.string()
     .min(3, 'Field must be at least 3 characters.')
-    .required('Please enter your company.'),
+    .required('Please enter your company.')
+    .test('is-not-empty', 'The field cannot be empty.', value => {
+      return !/^\s+$/.test(value);
+    }),
   email: Yup.string()
     .matches(EMAIL_REGEXP, 'Incorrect email address.')
     .required('Please enter your email.'),
@@ -24,24 +32,49 @@ export const partnerValidationSchema = Yup.object().shape({
 });
 
 export const orderValidationSchema = Yup.object().shape({
-  name: Yup.string().required('Please enter your name.'),
+  name: Yup.string()
+    .required('Please enter your name.')
+    .matches(/^[A-Za-zА-Яа-яЁёІіЇї\s]+$/, 'Name can only contain letters.')
+    .test('is-not-empty', 'Name cannot be empty.', value => {
+      return !/^\s+$/.test(value);
+    }),
   phone: Yup.string()
     .required('Please enter your phone number.')
     .matches(
       PHONE_REGEXP,
       'Invalid phone number. Please use the format +380XXXXXXXXX.'
     ),
-  gridSize: Yup.string().required('Please enter grid size.'),
+  gridSize: Yup.string()
+    .required('Please enter grid size.')
+    .test('is-not-empty', 'Grid size cannot be empty.', value => {
+      return !/^\s+$/.test(value);
+    }),
   typeBase: Yup.string().required('Please enter type base.'),
   material: Yup.string().required('Please enter material.'),
-  color: Yup.string().required('Please enter color.'),
+  color: Yup.string()
+    .required('Please enter color.')
+    .test('is-color-valid', 'Invalid color.', value => {
+      if (/^\d+%?$/.test(value) || /^\s+$/.test(value)) {
+        return false;
+      }
+      return true;
+    }),
   loops: Yup.string().required('Please enter loops.'),
 });
 
 export const reviewValidationSchema = Yup.object().shape({
-  name: Yup.string().required('Please enter your name.'),
+  name: Yup.string()
+    .required('Please enter your name.')
+    .matches(/^[A-Za-zА-Яа-яЁёІіЇї\s]+$/, 'Name can only contain letters.')
+    .test('is-not-empty', 'Name cannot be empty.', value => {
+      return !/^\s+$/.test(value);
+    }),
   email: Yup.string()
     .matches(EMAIL_REGEXP, 'Incorrect email address.')
     .required('Please enter your email.'),
-  comment: Yup.string().required('Please enter your comment.'),
+  comment: Yup.string()
+    .required('Please enter your comment.')
+    .test('is-not-empty', 'Your review cannot be empty.', value => {
+      return !/^\s+$/.test(value);
+    }),
 });

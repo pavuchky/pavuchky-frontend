@@ -28,6 +28,13 @@ const MobFooter = () => {
   const { data } = useFetch('contacts');
   const { t } = useTranslation();
 
+  const scroll = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <FooterContainer>
       <FooterSocialMediaContainer>
@@ -52,22 +59,30 @@ const MobFooter = () => {
       <div>
         <FooterSubList>
           <li>
-            <NavLink to="/gallery/photos">{t('nav.gallery')}</NavLink>
+            <NavLink to="/gallery/photos" onClick={scroll}>
+              {t('nav.gallery')}
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/about">{t('nav.aboutUs')}</NavLink>
+            <NavLink to="/about" onClick={scroll}>
+              {t('nav.aboutUs')}
+            </NavLink>
           </li>
           <li>
             <FooterSubLinks to="/#donation">{t('nav.donate')}</FooterSubLinks>
           </li>
           <li>
-            <NavLink to="/order">{t('nav.order')}</NavLink>
+            <NavLink to="/order" onClick={scroll}>
+              {t('nav.order')}
+            </NavLink>
           </li>
           <li>
             <FooterSubLinks to="/#contacts">{t('nav.weave')}</FooterSubLinks>
           </li>
           <li>
-            <NavLink to="reporting">{t('nav.reporting')}</NavLink>
+            <NavLink to="reporting" onClick={scroll}>
+              {t('nav.reporting')}
+            </NavLink>
           </li>
         </FooterSubList>
         <FooterTel>

@@ -44,13 +44,20 @@ const TabletDesktopFooter = () => {
     { href: '/gallery/photos', value: t('nav.gallery') },
   ];
 
+  const scroll = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <FooterTabContainer>
       <>
         <FooterTabListWrapper>
           <FooterTabList>
             {footerItems.map((i, index) => (
-              <li key={index}>
+              <li key={index} onClick={scroll}>
                 <NavLink
                   to={i.href}
                   dangerouslySetInnerHTML={{ __html: i.value }}
