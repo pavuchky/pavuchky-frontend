@@ -34,7 +34,7 @@ export const PartnersForm = () => {
       phone: '',
       comment: '',
     },
-    validationSchema: partnerValidationSchema,
+    validationSchema: partnerValidationSchema(t),
     onSubmit: async values => {
       try {
         await fetchPost('/partners', values);

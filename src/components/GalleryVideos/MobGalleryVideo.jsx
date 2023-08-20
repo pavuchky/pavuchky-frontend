@@ -1,8 +1,6 @@
 import React from 'react';
-import useFetch from '../../hooks/useFetch';
-
-import 'swiper/css/bundle';
 import { Scrollbar } from 'swiper';
+import 'swiper/css/bundle';
 
 import {
   VideoGallerySwiperWrapper,
@@ -12,9 +10,7 @@ import {
   VideoReactPlayer,
 } from './MobGalleryVideo.styled';
 
-const MobGalleryVideos = () => {
-  const { data } = useFetch('galleryVideo');
-
+const MobGalleryVideos = ({ data }) => {
   return (
     <VideoGallerySwiperWrapper>
       <VideoSwiperContainer

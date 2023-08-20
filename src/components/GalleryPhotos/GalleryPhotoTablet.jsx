@@ -4,7 +4,6 @@ import { useMediaQuery } from 'react-responsive';
 import { useTranslation } from 'react-i18next';
 import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
 
-import useFetch from '../../hooks/useFetch';
 import ImageModal from './ImageModal';
 
 import {
@@ -19,10 +18,7 @@ import {
 } from './GalleryPhotoTablet.styled';
 import { GalleryPagination } from './MuiPagnation.styled';
 
-const GalleryTabPhotos = () => {
-  const { data } = useFetch('galleryPhoto');
-  
-
+const GalleryTabPhotos = ({ data }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);

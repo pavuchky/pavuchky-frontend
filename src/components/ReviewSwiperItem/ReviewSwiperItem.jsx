@@ -34,7 +34,7 @@ const ReviewSwiperItem = ({ review, reviewImage }) => {
             height={
               isTabletScreen ? (isDesctopScreen ? '320px' : '197px') : '157px'
             }
-            alt=" Additional content about feedback "
+            alt="Additional content about feedback"
           />
         </ReviewsSwiperItemImageContainer>
       )}

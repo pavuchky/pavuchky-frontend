@@ -1,4 +1,5 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import i18n from 'i18n';
 import { useMediaQuery } from 'react-responsive';
 import { useTranslation } from 'react-i18next';
@@ -18,11 +19,29 @@ import {
 } from './Navbar.styled';
 
 export const Navbar = () => {
+  //
+  const navigate = useNavigate();
+  const location = useLocation();
+  //
+
   const locales = { ua: { title: 'UA' }, en: { title: 'EN' } };
   const { t } = useTranslation();
   const { changeLanguage } = useContext(LanguageContext);
 
   const [isOpen, setIsOpen] = useState(false);
+
+  //
+  useEffect(() => {
+    if (location.hash === '#donation') {
+      const element = document.getElementById('donation');
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 500);
+      }
+    }
+  }, [location.hash]);
+  //
 
   const toggleDropdown = () => {
     setIsOpen(prev => !prev);
@@ -66,7 +85,19 @@ export const Navbar = () => {
           )}
         </LangContainer>
 
-        <DonateBtn to="/#donation">{t('nav.donate')}</DonateBtn>
+        <DonateBtn
+          onClick={() => {
+            navigate(`/#donation`);
+            setTimeout(() => {
+              const element = document.getElementById('donation');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+              }
+            }, 500);
+          }}
+        >
+          {t('nav.donate')}
+        </DonateBtn>
         {isTabletOrMobile && <MobileMenu />}
       </NavBar>
     </Header>
