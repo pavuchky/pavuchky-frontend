@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
 import { LanguageContext } from 'utils/LanguageContext';
@@ -13,14 +14,24 @@ import {
   AboutUsPageTitle,
   AboutUsSection,
   AboutUsTop,
+  ToHomeButton,
 } from './AboutPage.styled';
-import { CustomLink } from 'components/CustomLink/CustomLink';
 
 const AboutPage = () => {
   const { lang } = useContext(LanguageContext);
   const { data } = useFetch('about');
   const { t } = useTranslation();
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+
+  const navigate = useNavigate();
+
+  const handleBtnClick = () => {
+    navigate('/');
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
 
   return (
     <>
@@ -39,12 +50,9 @@ const AboutPage = () => {
         <AboutLogoIcon>
           <use href={sprite + '#logo'}></use>
         </AboutLogoIcon>
-        <CustomLink
-          type="link"
-          text={t('buttons.toHome')}
-          path="/"
-          variant="blue"
-        />
+        <ToHomeButton type="button" onClick={handleBtnClick}>
+          {t('buttons.toHome')}
+        </ToHomeButton>
       </AboutUsSection>
     </>
   );
