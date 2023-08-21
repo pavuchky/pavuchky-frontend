@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/pavuchky-frontend/static/css/main.aa60a9c0.css",
-    "main.js": "/pavuchky-frontend/static/js/main.55b14f88.js",
+    "main.js": "/pavuchky-frontend/static/js/main.306c457d.js",
     "static/js/434.ea6e9a35.chunk.js": "/pavuchky-frontend/static/js/434.ea6e9a35.chunk.js",
     "static/js/350.d40cdbef.chunk.js": "/pavuchky-frontend/static/js/350.d40cdbef.chunk.js",
     "static/js/824.c00a7ef9.chunk.js": "/pavuchky-frontend/static/js/824.c00a7ef9.chunk.js",
     "static/js/947.175879b7.chunk.js": "/pavuchky-frontend/static/js/947.175879b7.chunk.js",
     "static/css/533.1cf4ee21.chunk.css": "/pavuchky-frontend/static/css/533.1cf4ee21.chunk.css",
     "static/js/533.c47d3ac2.chunk.js": "/pavuchky-frontend/static/js/533.c47d3ac2.chunk.js",
-    "static/js/987.b0a1de2d.chunk.js": "/pavuchky-frontend/static/js/987.b0a1de2d.chunk.js",
+    "static/js/987.45bcd7e8.chunk.js": "/pavuchky-frontend/static/js/987.45bcd7e8.chunk.js",
     "static/js/703.0a4460ba.chunk.js": "/pavuchky-frontend/static/js/703.0a4460ba.chunk.js",
     "static/js/764.cdec6730.chunk.js": "/pavuchky-frontend/static/js/764.cdec6730.chunk.js",
     "static/js/951.f6959a20.chunk.js": "/pavuchky-frontend/static/js/951.f6959a20.chunk.js",
@@ -47,14 +47,14 @@
     "index.html": "/pavuchky-frontend/index.html",
     "static/media/getFetch.cjs": "/pavuchky-frontend/static/media/getFetch.40f37ddea2378391108f.cjs",
     "main.aa60a9c0.css.map": "/pavuchky-frontend/static/css/main.aa60a9c0.css.map",
-    "main.55b14f88.js.map": "/pavuchky-frontend/static/js/main.55b14f88.js.map",
+    "main.306c457d.js.map": "/pavuchky-frontend/static/js/main.306c457d.js.map",
     "434.ea6e9a35.chunk.js.map": "/pavuchky-frontend/static/js/434.ea6e9a35.chunk.js.map",
     "350.d40cdbef.chunk.js.map": "/pavuchky-frontend/static/js/350.d40cdbef.chunk.js.map",
     "824.c00a7ef9.chunk.js.map": "/pavuchky-frontend/static/js/824.c00a7ef9.chunk.js.map",
     "947.175879b7.chunk.js.map": "/pavuchky-frontend/static/js/947.175879b7.chunk.js.map",
     "533.1cf4ee21.chunk.css.map": "/pavuchky-frontend/static/css/533.1cf4ee21.chunk.css.map",
     "533.c47d3ac2.chunk.js.map": "/pavuchky-frontend/static/js/533.c47d3ac2.chunk.js.map",
-    "987.b0a1de2d.chunk.js.map": "/pavuchky-frontend/static/js/987.b0a1de2d.chunk.js.map",
+    "987.45bcd7e8.chunk.js.map": "/pavuchky-frontend/static/js/987.45bcd7e8.chunk.js.map",
     "703.0a4460ba.chunk.js.map": "/pavuchky-frontend/static/js/703.0a4460ba.chunk.js.map",
     "764.cdec6730.chunk.js.map": "/pavuchky-frontend/static/js/764.cdec6730.chunk.js.map",
     "951.f6959a20.chunk.js.map": "/pavuchky-frontend/static/js/951.f6959a20.chunk.js.map",
@@ -69,6 +69,6 @@
   },
   "entrypoints": [
     "static/css/main.aa60a9c0.css",
-    "static/js/main.55b14f88.js"
+    "static/js/main.306c457d.js"
   ]
 }
