@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Scrollbar} from 'swiper';
+import { Scrollbar } from 'swiper';
 import 'swiper/css/bundle';
 
 import {
@@ -7,51 +7,61 @@ import {
   VideoSwiperSlideContainer,
   VideoSwiperContainer,
   VideoText,
-  VideoReactPlayer,
+  VideoReactPlayer, RedirectButton
 } from './MobGalleryVideo.styled';
 
 const MobGalleryVideos = ({ data }) => {
-  const [playingVideoId, setPlayingVideoId] = useState(null);
+  const [playingVideoLink, setPlayingVideoLink] = useState(null);
 
-  const handleVideoClick = (id) => {
-    setPlayingVideoId(id);
+  const handleVideoClick = (videoLink) => {
+    setPlayingVideoLink(videoLink);
   };
-    
+
+  const redirectToYouTube = () => {
+    if (playingVideoLink) {
+      window.open(playingVideoLink, '_blank');
+    }
+  };
+
   return (
     <VideoGallerySwiperWrapper>
       <VideoSwiperContainer
-        
         spaceBetween={16}
         slidesPerView={1}
         scrollbar={{ draggable: true }}
         modules={[Scrollbar]}
-       clickable= {true}
+       
       >
         {data?.galleryVideoList?.map(({ id, videoLink }) => (
-          <VideoSwiperSlideContainer key={id}  >
-            <div  onClick={() => handleVideoClick(id)}>
-            <VideoReactPlayer
-            
-         style={{ pointerEvents: 'none' }}
-              url={videoLink}
-              width={320}
-              playing={id === playingVideoId}
-              muted={true}
-              controls={false}
-              loop={false}
-              config={{
-                youtube: {
-                  playerVars: { origin: 'https://www.youtube.com' },
-                },
-              }}
-            /></div>
+          <VideoSwiperSlideContainer key={id}>
+            <div onClick={() => handleVideoClick(videoLink)}>
+              <VideoReactPlayer
+                style={{ pointerEvents: 'none' }}
+                url={videoLink}
+                width={320}
+                playing={videoLink === playingVideoLink}
+                muted={true}
+                controls={false}
+                loop={false}
+                config={{
+                  youtube: {
+                    playerVars: { origin: 'https://www.youtube.com' },
+                  },
+                }}
+              />
+            </div>
             <VideoText>
               Виготовлення <br /> маскувальних сіток
             </VideoText>
+            {playingVideoLink && (
+              <RedirectButton onClick={redirectToYouTube}>Переглянути на YouTube</RedirectButton>
+            )}
           </VideoSwiperSlideContainer>
         ))}
       </VideoSwiperContainer>
+      
     </VideoGallerySwiperWrapper>
   );
 };
+
 export default MobGalleryVideos;
