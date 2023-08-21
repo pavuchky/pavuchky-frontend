@@ -1,66 +1,76 @@
 import React, { useState } from 'react';
-import { Scrollbar } from 'swiper';
-import 'swiper/css/bundle';
+
+import {  PaginationItem } from '@mui/material';
+import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
 
 import {
-  VideoGallerySwiperWrapper,
-  VideoSwiperSlideContainer,
-  VideoSwiperContainer,
+
+  VideoMobileContainer,
+  MobPagination,
   VideoText,
-  VideoReactPlayer, RedirectButton
+  VideoReactPlayer,
 } from './MobGalleryVideo.styled';
 
+
 const MobGalleryVideos = ({ data }) => {
-  const [playingVideoLink, setPlayingVideoLink] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const handleVideoClick = (videoLink) => {
-    setPlayingVideoLink(videoLink);
-  };
+  const itemsPerPage = 1;
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const showingVideos = data?.galleryVideoList?.slice(
+    startIndex,
+    startIndex + itemsPerPage
+  );
 
-  const redirectToYouTube = () => {
-    if (playingVideoLink) {
-      window.open(playingVideoLink, '_blank');
-    }
+  const onPageChange = (event, newPage) => {
+    setCurrentPage(newPage);
   };
 
   return (
-    <VideoGallerySwiperWrapper>
-      <VideoSwiperContainer
-        spaceBetween={16}
-        slidesPerView={1}
-        scrollbar={{ draggable: true }}
-        modules={[Scrollbar]}
-       
-      >
-        {data?.galleryVideoList?.map(({ id, videoLink }) => (
-          <VideoSwiperSlideContainer key={id}>
-            <div onClick={() => handleVideoClick(videoLink)}>
+    <>
+      <VideoMobileContainer>
+        {showingVideos?.map(({ videoLink, id }) => {
+          return (
+            <li key={id}>
               <VideoReactPlayer
-                style={{ pointerEvents: 'none' }}
                 url={videoLink}
-                width={320}
-                playing={videoLink === playingVideoLink}
-                muted={true}
-                controls={false}
-                loop={false}
+                width={'316'}
+                playing={false}
                 config={{
                   youtube: {
                     playerVars: { origin: 'https://www.youtube.com' },
                   },
                 }}
               />
-            </div>
-            <VideoText>
-              Виготовлення <br /> маскувальних сіток
-            </VideoText>
-            {playingVideoLink && (
-              <RedirectButton onClick={redirectToYouTube}>Переглянути на YouTube</RedirectButton>
-            )}
-          </VideoSwiperSlideContainer>
-        ))}
-      </VideoSwiperContainer>
-      
-    </VideoGallerySwiperWrapper>
+              <VideoText>Виготовлення маскувальних сіток</VideoText>
+            </li>
+          );
+        })}
+      </VideoMobileContainer>
+      <div>
+        <MobPagination
+          count={Math.ceil(
+            (data?.galleryVideoList?.length || 0) / itemsPerPage
+          )}
+          page={currentPage}
+          onChange={onPageChange}
+          size='small'
+          color="primary"
+          variant="outlined"
+          boundaryCount={1}
+          siblingCount={-1}
+          renderItem={item => (
+            <PaginationItem
+              slots={{
+                previous: SlArrowLeft,
+                next: SlArrowRight,
+              }}
+              {...item}
+            />
+          )}
+        />
+      </div>
+    </>
   );
 };
 
