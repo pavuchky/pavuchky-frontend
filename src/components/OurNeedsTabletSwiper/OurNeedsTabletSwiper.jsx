@@ -7,6 +7,7 @@ import { Scrollbar } from 'swiper';
 import {
   Location,
   LocationAndNeedTypeContainer,
+  NeedsItemContact,
   NeedsItemDeccription,
   NeedsItemTitel,
 } from 'components/OurNeedsItem/OurNeedsItem.styled';
@@ -36,6 +37,9 @@ const OurNeedsTabletSwiper = () => {
           <NeedsItemDeccription>
             {`${t('ourNeeds.plasticMesh')}`}
           </NeedsItemDeccription>
+          <NeedsItemContact href="#contacts">{`${t(
+            'ourNeeds.administratorContacts'
+          )}`}</NeedsItemContact>
         </OurNeedsItemDiv>
       </SwiperSlideContainer>
 
@@ -49,6 +53,9 @@ const OurNeedsTabletSwiper = () => {
           <NeedsItemDeccription>
             {`${t('ourNeeds.fabricForOverlocking')}`}
           </NeedsItemDeccription>
+          <NeedsItemContact href="#contacts">{`${t(
+            'ourNeeds.administratorContacts'
+          )}`}</NeedsItemContact>
         </OurNeedsItemDiv>
       </SwiperSlideContainer>
 
@@ -62,6 +69,9 @@ const OurNeedsTabletSwiper = () => {
           <NeedsItemDeccription>
             {`${t('ourNeeds.camouflageColors')}`}
           </NeedsItemDeccription>
+          <NeedsItemContact href="#contacts">{`${t(
+            'ourNeeds.administratorContacts'
+          )}`}</NeedsItemContact>
         </OurNeedsItemDiv>
       </SwiperSlideContainer>
     </SwiperContainer>
