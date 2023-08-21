@@ -1,4 +1,5 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import i18n from 'i18n';
 import { useMediaQuery } from 'react-responsive';
 import { useTranslation } from 'react-i18next';
@@ -18,11 +19,46 @@ import {
 } from './Navbar.styled';
 
 export const Navbar = () => {
+  //
+  const navigate = useNavigate();
+  const location = useLocation();
+  //
+
   const locales = { ua: { title: 'UA' }, en: { title: 'EN' } };
   const { t } = useTranslation();
   const { changeLanguage } = useContext(LanguageContext);
 
   const [isOpen, setIsOpen] = useState(false);
+  const langContainerRef = useRef(null);
+
+  //
+  useEffect(() => {
+    if (location.hash === '#donation') {
+      const element = document.getElementById('donation');
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 500);
+      }
+    }
+  }, [location.hash]);
+  //
+
+  useEffect(() => {
+    const handleClickOutside = e => {
+      if (
+        isOpen &&
+        langContainerRef.current &&
+        !langContainerRef.current.contains(e.target)
+      ) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener('click', handleClickOutside);
+    return () => {
+      window.removeEventListener('click', handleClickOutside);
+    };
+  }, [isOpen]);
 
   const toggleDropdown = () => {
     setIsOpen(prev => !prev);
@@ -49,7 +85,7 @@ export const Navbar = () => {
         </LogoLink>
         {isDesktop && <DesktopNav />}
 
-        <LangContainer>
+        <LangContainer ref={langContainerRef}>
           <LangSelect onClick={toggleDropdown}>
             {locales[i18n.language].title}
           </LangSelect>
@@ -66,7 +102,19 @@ export const Navbar = () => {
           )}
         </LangContainer>
 
-        <DonateBtn to="/#donation">{t('nav.donate')}</DonateBtn>
+        <DonateBtn
+          onClick={() => {
+            navigate(`/#donation`);
+            setTimeout(() => {
+              const element = document.getElementById('donation');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+              }
+            }, 500);
+          }}
+        >
+          {t('nav.donate')}
+        </DonateBtn>
         {isTabletOrMobile && <MobileMenu />}
       </NavBar>
     </Header>

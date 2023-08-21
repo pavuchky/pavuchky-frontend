@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import useFetch from '../../hooks/useFetch';
-
-import 'swiper/css/bundle';
 import { Scrollbar } from 'swiper';
+import 'swiper/css/bundle';
 
 import {
   GallerySwiperSlideContainer,
@@ -12,9 +10,7 @@ import {
 
 import ImageModal from './ImageModal';
 
-const MobGalleryPhotos = () => {
-  const { data } = useFetch('galleryPhoto');
-
+const MobGalleryPhotos = ({ data }) => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 

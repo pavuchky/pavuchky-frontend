@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import PropTypes from 'prop-types';
 import sprite from '../../assets/images/sprite.svg';
 import {
   CloseButton,
@@ -54,4 +55,10 @@ export const Modal = ({ children, onClose, variant }) => {
     </ModalBackdrop>,
     modalContainer
   );
+};
+
+Modal.propTypes = {
+  children: PropTypes.node.isRequired,
+  onClose: PropTypes.func.isRequired,
+  variant: PropTypes.string,
 };

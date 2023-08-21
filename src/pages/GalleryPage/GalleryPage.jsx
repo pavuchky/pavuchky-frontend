@@ -1,4 +1,8 @@
 import { Suspense } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { PathDisplayer } from 'components/PathDisplayer/PathDisplayer';
+import { Loader } from 'components/Loader/Loader';
 
 import {
   GalleryTitle,
@@ -6,10 +10,6 @@ import {
   GalleryTabs,
   GalleryTabLink,
 } from './GalleryPage.styled';
-
-import { Outlet, useLocation } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import { PathDisplayer } from 'components/PathDisplayer/PathDisplayer';
 
 const GalleryPage = () => {
   const location = useLocation();
@@ -44,7 +44,7 @@ const GalleryPage = () => {
             </GalleryTabLink>
           </li>
         </GalleryTabs>
-        <Suspense fallback={null}>
+        <Suspense fallback={<Loader />}>
           <Outlet />
         </Suspense>
       </GallerySection>

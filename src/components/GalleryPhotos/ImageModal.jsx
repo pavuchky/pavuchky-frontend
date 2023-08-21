@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -16,7 +16,7 @@ import {
 import {
   GalleryFirstSvgButton,
   GallerySecondSvgButton,
-  GalleryDesctopSvg,
+  GalleryDesktopSvg,
 } from './GalleryPhotoTablet.styled';
 import sprite from '../../assets/images/sprite.svg';
 
@@ -27,18 +27,31 @@ const ImageModal = ({
   setSelectedImageIndex,
 }) => {
   const { data } = useFetch('galleryPhoto');
-
+const handleKeyPress = useCallback(
+  (event) => {
+    if (event.key === 'Escape') {
+      onClose();
+    }
+  },
+  [onClose]
+);
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add('modal-open');
+      document.addEventListener('keydown', handleKeyPress);
     } else {
       document.body.classList.remove('modal-open');
     }
-  }, [isOpen]);
+     return () => {
+    document.removeEventListener('keydown', handleKeyPress);
+  };
+  }, [isOpen, handleKeyPress]);
 
   if (!isOpen) return null;
 
   const handleOverlayClick = event => {
+    console.log(event.target.nodeName);
+
     if (event.target === event.currentTarget) {
       onClose();
     }
@@ -49,6 +62,8 @@ const ImageModal = ({
       onClose();
     }
   };
+  
+
 
   return ReactDOM.createPortal(
     <>
@@ -68,18 +83,18 @@ const ImageModal = ({
             renderArrowPrev={(onClickHandler, hasPrev) =>
               hasPrev && (
                 <GalleryFirstSvgButton type="button" onClick={onClickHandler}>
-                  <GalleryDesctopSvg width="17px" height="32px">
+                  <GalleryDesktopSvg width="17px" height="32px">
                     <use xlinkHref={`${sprite}#prew-icon`}></use>
-                  </GalleryDesctopSvg>
+                  </GalleryDesktopSvg>
                 </GalleryFirstSvgButton>
               )
             }
             renderArrowNext={(onClickHandler, hasNext) =>
               hasNext && (
                 <GallerySecondSvgButton type="button" onClick={onClickHandler}>
-                  <GalleryDesctopSvg width="17px" height="32px">
+                  <GalleryDesktopSvg width="17px" height="32px">
                     <use xlinkHref={`${sprite}#next-icon`}></use>
-                  </GalleryDesctopSvg>
+                  </GalleryDesktopSvg>
                 </GallerySecondSvgButton>
               )
             }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useFormik } from 'formik';
 import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
@@ -6,8 +6,8 @@ import { useFetchPost } from 'hooks/useFetchPost';
 import { orderValidationSchema } from '../../utils/validationSchema';
 import Icon from '../../assets/images/sprite.svg';
 import { CustomSelect } from 'components/CustomSelect/CustomSelect';
-import { Gratitude } from 'components/Gratitude/Gratitude';
 import { CustomInput } from 'components/CustomInput/CustomInput';
+import { Loader } from 'components/Loader/Loader';
 import {
   FormBlocks,
   FormBtn,
@@ -23,6 +23,7 @@ import {
   RadioLabel,
   SquareRadio,
 } from './OrderForm.styled';
+import { Navigate } from 'react-router-dom';
 
 export const OrderForm = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -53,7 +54,7 @@ export const OrderForm = () => {
       color: '',
       loops: '',
     },
-    validationSchema: orderValidationSchema,
+    validationSchema: orderValidationSchema(t),
     onSubmit: async values => {
       try {
         await fetchPost('/order', values);
@@ -81,12 +82,15 @@ export const OrderForm = () => {
   return (
     <>
       {isLoading ? (
-        <div style={{ height: '300px' }}>Loading...</div>
+        <Loader />
       ) : submitted ? (
-        <Gratitude
-          title={t('orderForm.thank')}
-          text={t('forms.contact')}
-          variant="primary"
+        <Navigate
+          to="/gratitude"
+          state={{
+            title: `${t('orderForm.thank')}`,
+            text: `${t('forms.contact')}`,
+            variant: 'primary',
+          }}
         />
       ) : (
         <FormContainer>

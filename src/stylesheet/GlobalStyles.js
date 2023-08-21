@@ -38,6 +38,10 @@ export const GlobalStyles = createGlobalStyle`
   src: url(${eUkraineHeadMedium});
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   min-height: 100vh;  
   margin: 0;

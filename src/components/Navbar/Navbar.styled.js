@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
+// import { HashLink } from 'react-router-hash-link';
 import styled from 'styled-components';
 
 export const Header = styled.header`
@@ -120,7 +120,7 @@ export const LangList = styled.ul`
   }
 `;
 
-export const DonateBtn = styled(HashLink)`
+export const DonateBtn = styled.button`
   min-width: 107px;
   padding: 12px 5px 12px 10px;
   margin-left: 10px;
