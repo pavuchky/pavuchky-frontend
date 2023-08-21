@@ -6,7 +6,7 @@ const { colors, borders } = theme;
 
 export const OurNeedsItemDiv = styled.div`
   width: 316px;
-  height: 178px;
+  height: auto;
   border: ${borders.normal};
   border-color: ${colors.blue};
   border-radius: 10px;
