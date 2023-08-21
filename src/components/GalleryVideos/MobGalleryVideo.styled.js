@@ -69,12 +69,20 @@ export const VideoSwiperContainer = styled(Swiper)`
   }
 `;
 export const RedirectButton = styled.button`
-  width: 325px;
-  height: 25px;
-  font-size: 14px;
-  border-radius: 25px;
-  border: none;
+  width: 100%;
+  padding: 10.5px;
+
+  font-family: ${fonts.regular};
+  font-size: ${fontSizes.xs};
+  font-weight: ${fontWeights.regular};
+
+  border-radius: 12px;
   background-color: ${colors.blue};
-  color: ${colors.yellow};
+  color: ${colors.white};
   margin-bottom: 25px;
+
+  &:hover,
+  &:focus {
+    color: ${colors.yellow};
+  }
 `;
