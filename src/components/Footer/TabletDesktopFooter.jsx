@@ -79,7 +79,7 @@ const TabletDesktopFooter = () => {
           </FooterTabSubList>
         </FooterTabListWrapper>
         <FooterTabTel>
-          <a href={telegramLink} target="_blank" rel="noreferrer">
+          <a href={telegramLink} target="_blank" rel="noopener noreferrer">
             {data?.phone}
           </a>
         </FooterTabTel>
@@ -90,13 +90,12 @@ const TabletDesktopFooter = () => {
           {data?.socialMediaList?.map(
             ({ id, socialMediaLink, socialMediaName }) => (
               <li key={id}>
-                <a href={socialMediaLink}>
-                  <IconFooterSocial
-                    name={socialMediaName}
-                    size={36}
-                    target="_blank"
-                    rel="noreferrer"
-                  />
+                <a
+                  href={socialMediaLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <IconFooterSocial name={socialMediaName} size={36} />
                 </a>
               </li>
             )
