@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useFormik } from 'formik';
 import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
 import { useFetchPost } from 'hooks/useFetchPost';
 import { partnerValidationSchema } from '../../utils/validationSchema';
-import { Gratitude } from 'components/Gratitude/Gratitude';
 import { CustomInput } from 'components/CustomInput/CustomInput';
 import heart from '../../assets/images/gratitude/gratitude_tablet.svg';
 import { Loader } from 'components/Loader/Loader';
@@ -17,6 +16,7 @@ import {
   FormTitle,
   SupportImg,
 } from './PartnersForm.styled';
+import { Navigate } from 'react-router-dom';
 
 export const PartnersForm = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -53,10 +53,13 @@ export const PartnersForm = () => {
       {isLoading ? (
         <Loader />
       ) : submitted ? (
-        <Gratitude
-          title={t('partnerForm.thank')}
-          text={t('forms.contact')}
-          variant="primary"
+        <Navigate
+          to="/gratitude"
+          state={{
+            title: `${t('partnerForm.thank')}`,
+            text: `${t('forms.contact')}`,
+            variant: 'primary',
+          }}
         />
       ) : (
         <FormContainer>
