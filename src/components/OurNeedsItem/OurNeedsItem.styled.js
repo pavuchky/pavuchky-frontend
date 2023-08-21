@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 import { theme } from 'stylesheet/theme';
-const { fontSizes, fontWeights, colors, borders, fonts, radii } = theme;
+const { fontSizes, fontWeights, colors, borders, fonts, radii, transitions } =
+  theme;
 
 export const OurNeedsItemLi = styled.li`
   width: 100%;
@@ -70,11 +71,13 @@ export const NeedsItemTitel = styled.h4`
   margin-bottom: 8px;
 
   @media (min-width: 768px) {
+    height: 44px;
     font-size: 18px;
     margin-bottom: 12px;
   }
 
   @media (min-width: 1440px) {
+    height: auto;
     font-size: ${fontSizes.s};
     margin-bottom: 16px;
   }
@@ -89,6 +92,7 @@ export const NeedsItemDeccription = styled.p`
   white-space: pre-line;
 
   @media (min-width: 768px) {
+    height: 84px;
     font-weight: ${fontWeights.regular};
   }
 
@@ -105,30 +109,21 @@ export const NeedsItemContact = styled.a`
   font-weight: ${fontWeights.regular};
   cursor: pointer;
 
+  transition: color ${transitions.regular};
+
+  &:hover,
+  &:focus {
+    color: ${colors.blue};
+  }
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
+
   @media (min-width: 1440px) {
     font-size: ${fontSizes.s};
   }
 `;
-
-// export const NeedsItemContact = styled.p`
-//   font-family: ${fonts.regular};
-//   font-weight: ${fontWeights.regular};
-
-//   @media (min-width: 1440px) {
-//     font-size: ${fontSizes.s};
-//   }
-// `;
-
-// export const NeedsItemContactPerson = styled.p`
-//   color: ${colors.secondaryFont};
-
-//   @media (min-width: 1440px) {
-//     font-weight: ${fontWeights.regular};
-//     color: ${colors.grey};
-//     line-height: 1.9;
-//     font-family: ${fonts.regular};
-//   }
-// `;
 
 export const ContactContainer = styled.div`
   display: flex;
