@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useFormik } from 'formik';
 import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
 import { useFetchPost } from 'hooks/useFetchPost';
 import { reviewValidationSchema } from 'utils/validationSchema';
-import { Gratitude } from 'components/Gratitude/Gratitude';
 import { CustomInput } from 'components/CustomInput/CustomInput';
 import svg from '../../assets/images/sprite.svg';
 import { Loader } from 'components/Loader/Loader';
@@ -22,6 +21,7 @@ import {
   PhotoTitle,
   TitleContainer,
 } from './ReviewForm.styled';
+import { Navigate } from 'react-router-dom';
 
 export const ReviewForm = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -91,7 +91,12 @@ export const ReviewForm = () => {
       {isLoading ? (
         <Loader />
       ) : submitted ? (
-        <Gratitude title={t('feedback.thank')} />
+        <Navigate
+          to="/gratitude"
+          state={{
+            title: `${t('feedback.thank')}`,
+          }}
+        />
       ) : (
         <FormContainer>
           <TitleContainer>

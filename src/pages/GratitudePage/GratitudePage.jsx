@@ -1,29 +1,46 @@
-import PropTypes from 'prop-types';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import { useTranslation } from 'react-i18next';
+
 import gratitudeMob from 'assets/images/gratitude/gratitude.svg';
 import gratitude from 'assets/images/gratitude/gratitude_tablet.svg';
 import review from 'assets/images/gratitude/review.svg';
+
 import {
+  GratitudeButton,
   GratitudeImg,
-  GratitudeLink,
   GratitudeReviewImg,
   GratitudeText,
   GratitudeTitle,
   GratitudeWrapper,
-} from './Gratitude.styled';
+} from './GratitudePage.styled';
 
-export const Gratitude = ({ title, text, variant }) => {
+export const GratitudePage = () => {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
   const { t } = useTranslation();
 
+  const navigate = useNavigate();
+
+  const location = useLocation();
+  const state = location?.state;
+
+  const handleBtnClick = () => {
+    navigate('/');
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <GratitudeWrapper>
-      <GratitudeTitle>{title}</GratitudeTitle>
+      <GratitudeTitle>{state?.title}</GratitudeTitle>
 
-      {variant === 'primary' && <GratitudeText>{text}</GratitudeText>}
+      {state?.variant === 'primary' && (
+        <GratitudeText>{state?.text}</GratitudeText>
+      )}
 
-      {variant === 'primary' ? (
+      {state?.variant === 'primary' ? (
         <GratitudeImg
           src={isMobile ? gratitudeMob : gratitude}
           alt="gratitude"
@@ -32,13 +49,9 @@ export const Gratitude = ({ title, text, variant }) => {
         <GratitudeReviewImg src={review} alt="gratitude" />
       )}
 
-      <GratitudeLink to="/">{t('buttons.toHome')}</GratitudeLink>
+      <GratitudeButton type="button" onClick={handleBtnClick}>
+        {t('buttons.toHome')}
+      </GratitudeButton>
     </GratitudeWrapper>
   );
-};
-
-Gratitude.propTypes = {
-  title: PropTypes.string.isRequired,
-  text: PropTypes.string,
-  variant: PropTypes.string,
 };
