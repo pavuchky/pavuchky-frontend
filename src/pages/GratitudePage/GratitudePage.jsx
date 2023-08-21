@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import { useTranslation } from 'react-i18next';
 
@@ -7,8 +7,8 @@ import gratitude from 'assets/images/gratitude/gratitude_tablet.svg';
 import review from 'assets/images/gratitude/review.svg';
 
 import {
+  GratitudeButton,
   GratitudeImg,
-  GratitudeLink,
   GratitudeReviewImg,
   GratitudeText,
   GratitudeTitle,
@@ -19,8 +19,18 @@ export const GratitudePage = () => {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
   const { t } = useTranslation();
 
+  const navigate = useNavigate();
+
   const location = useLocation();
   const state = location?.state;
+
+  const handleBtnClick = () => {
+    navigate('/');
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
 
   return (
     <GratitudeWrapper>
@@ -39,7 +49,9 @@ export const GratitudePage = () => {
         <GratitudeReviewImg src={review} alt="gratitude" />
       )}
 
-      <GratitudeLink to="/">{t('buttons.toHome')}</GratitudeLink>
+      <GratitudeButton type="button" onClick={handleBtnClick}>
+        {t('buttons.toHome')}
+      </GratitudeButton>
     </GratitudeWrapper>
   );
 };

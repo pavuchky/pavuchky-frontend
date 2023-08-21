@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const GratitudeWrapper = styled.section`
@@ -88,7 +87,7 @@ export const GratitudeImg = styled.img`
   }
 `;
 
-export const GratitudeLink = styled(Link)`
+export const GratitudeButton = styled.button`
   width: 100%;
   padding: 10.5px;
 
