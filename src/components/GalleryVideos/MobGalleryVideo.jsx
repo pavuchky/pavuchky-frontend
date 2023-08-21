@@ -18,10 +18,12 @@ const MobGalleryVideos = ({ data }) => {
         slidesPerView={1}
         scrollbar={{ draggable: true }}
         modules={[Scrollbar]}
+       
       >
         {data?.galleryVideoList?.map(({ id, videoLink }) => (
           <VideoSwiperSlideContainer key={id}>
             <VideoReactPlayer
+             
               url={videoLink}
               width={320}
               playing={false}
