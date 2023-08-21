@@ -72,12 +72,14 @@ const Contacts = () => {
           {data?.socialMediaList?.map(
             ({ id, socialMediaLink, socialMediaName }) => (
               <li key={id}>
-                <a href={socialMediaLink}>
+                <a
+                  href={socialMediaLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <IconSocial
                     name={socialMediaName}
                     size={isLargeScreen ? 36 : 24}
-                    target="_blank"
-                    rel="noreferrer"
                   />
                 </a>
               </li>

@@ -50,8 +50,6 @@ const handleKeyPress = useCallback(
   if (!isOpen) return null;
 
   const handleOverlayClick = event => {
-    console.log(event.target.nodeName);
-
     if (event.target === event.currentTarget) {
       onClose();
     }

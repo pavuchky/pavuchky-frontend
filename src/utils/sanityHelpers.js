@@ -6,8 +6,6 @@ export const formatFileSanity = file => {
   const format = assetRefParts[2];
   const assetUrl = `https://cdn.sanity.io/files/b1wab9pv/production/${id}.${format}`;
 
-  console.log('assetUrl', assetUrl);
-
   return assetUrl;
 };
 

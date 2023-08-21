@@ -43,13 +43,12 @@ const MobFooter = () => {
           {data?.socialMediaList?.map(
             ({ id, socialMediaLink, socialMediaName }) => (
               <li key={id}>
-                <a href={socialMediaLink}>
-                  <IconFooterSocial
-                    name={socialMediaName}
-                    size={36}
-                    target="_blank"
-                    rel="noreferrer"
-                  />
+                <a
+                  href={socialMediaLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <IconFooterSocial name={socialMediaName} size={36} />
                 </a>
               </li>
             )
