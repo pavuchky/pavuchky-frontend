@@ -49,6 +49,7 @@ const TabDesktopGalleryVideo = ({ data }) => {
                 return (
                   <li key={id}>
                     <VideoTabReactPlayer
+                  
                       url={videoLink}
                       width={'100%'}
                       playing={false}
