@@ -3,18 +3,22 @@ import { Pagination } from '@mui/material';
 import ReactPlayer from 'react-player';
 import { theme } from '../../stylesheet/theme';
 
-const { fonts, fontSizes, fontWeights, colors, radii, borders} = theme;
+const { fonts, fontSizes, fontWeights, colors, radii, borders } = theme;
 
 export const VideoGalleryWrapper = styled.div`
   display: flex;
 `;
 
 export const VideoReactPlayer = styled(ReactPlayer)`
-  width:327px !important;
+  width: 100%;
+
+  @media only screen and (min-width: 375px) {
+    width: 327px !important;
+  }
 `;
 
 export const VideoMobileContainer = styled.ul`
-margin-bottom: 24px;
+  margin-bottom: 24px;
   li {
     border: 1px solid ${colors.blue};
     border-radius: ${radii.s};
@@ -24,15 +28,11 @@ margin-bottom: 24px;
 
 export const VideoText = styled.span`
   display: flex;
-  padding-top: 16px;
-  padding-left: 16px;
-  padding-bottom: 16px;
- 
+  padding: 16px;
 
   font-family: ${fonts.regular};
   font-size: ${fontSizes.xs};
   font-weight: ${fontWeights.regular};
-
 
   border-radius: 0px 0px 8px 8px;
 
@@ -50,8 +50,6 @@ export const VideoText = styled.span`
     padding: 16px 16px 24px 16px;
   }
 `;
-
-
 
 export const MobPagination = styled(Pagination)`
   max-width: 320px;
@@ -89,13 +87,13 @@ export const MobPagination = styled(Pagination)`
         fill: ${colors.grey} !important;
       }
     }
+
     .MuiPaginationItem-outlinedPrimary {
       margin: 0 !important;
     }
   }
 
   .MuiPaginationItem-previousNext {
-   
     border: ${borders.normal};
     border-color: ${colors.blue} !important;
     border-radius: ${radii.round};

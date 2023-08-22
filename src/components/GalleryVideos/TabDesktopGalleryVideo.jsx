@@ -49,7 +49,6 @@ const TabDesktopGalleryVideo = ({ data }) => {
                 return (
                   <li key={id}>
                     <VideoTabReactPlayer
-                  
                       url={videoLink}
                       width={'100%'}
                       playing={false}
@@ -61,7 +60,7 @@ const TabDesktopGalleryVideo = ({ data }) => {
                         },
                       }}
                     />
-                    <VideoText>Виготовлення маскувальних сіток</VideoText>
+                    <VideoText>{t('videos.netsCreation')}</VideoText>
                   </li>
                 );
               })}
@@ -86,11 +85,11 @@ const TabDesktopGalleryVideo = ({ data }) => {
                     playing={false}
                     config={{
                       youtube: {
-                        playerVars: { origin: 'https://www.youtube.com' }
+                        playerVars: { origin: 'https://www.youtube.com' },
                       },
                     }}
                   />
-                  <VideoText>Виготовлення маскувальних сіток</VideoText>
+                  <VideoText>{t('videos.netsCreation')}</VideoText>
                 </li>
               );
             })}
