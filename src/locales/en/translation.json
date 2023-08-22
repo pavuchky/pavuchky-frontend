@@ -182,5 +182,8 @@
     "color": "The entered value is incorrect.",
     "review": "Please enter your review.",
     "reviewEmpty": "The feedback field cannot be empty."
+  },
+  "videos": {
+    "netsCreation": "Camouflage nets creation"
   }
 }
