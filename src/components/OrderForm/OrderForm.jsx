@@ -159,6 +159,8 @@ export const OrderForm = () => {
                   value={comment}
                   onChange={formik.handleChange}
                   hasValue={comment.length > 0}
+                  touched={formik.touched.comment}
+                  error={formik.errors.comment}
                 />
               </label>
             </FormBlocks>

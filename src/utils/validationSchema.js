@@ -12,12 +12,14 @@ export const partnerValidationSchema = t =>
     name: Yup.string()
       .required(t('validation.name'))
       .min(3, t('validation.atLeast'))
+      .max(30, t('validation.maxLength'))
       .matches(/^[A-Za-zА-Яа-яЁёІіЇї\s]+$/, t('validation.containName'))
       .test('is-not-empty', t('validation.empty'), value => {
         return !/^\s+$/.test(value);
       }),
     company: Yup.string()
       .min(3, t('validation.atLeast'))
+      .max(30, t('validation.maxLength'))
       .required(t('validation.fill'))
       .test('is-not-empty', t('validation.empty'), value => {
         return !/^\s+$/.test(value);
@@ -28,6 +30,7 @@ export const partnerValidationSchema = t =>
     phone: Yup.string()
       .required(t('validation.phone'))
       .matches(PHONE_REGEXP_PARTNER, t('validation.invalidPhonePartner')),
+    comment: Yup.string().max(1000, t('validation.maxComment')),
   });
 
 export const orderValidationSchema = t =>
@@ -35,6 +38,7 @@ export const orderValidationSchema = t =>
     name: Yup.string()
       .required(t('validation.name'))
       .min(3, t('validation.atLeast'))
+      .max(30, t('validation.maxLength'))
       .matches(/^[A-Za-zА-Яа-яЁёІіЇї\s]+$/, t('validation.containName'))
       .test('is-not-empty', t('validation.empty'), value => {
         return !/^\s+$/.test(value);
@@ -58,6 +62,7 @@ export const orderValidationSchema = t =>
         return true;
       }),
     loops: Yup.string().required(t('validation.fill')),
+    comment: Yup.string().max(1000, t('validation.maxComment')),
   });
 
 export const reviewValidationSchema = t =>
@@ -65,6 +70,7 @@ export const reviewValidationSchema = t =>
     name: Yup.string()
       .required(t('validation.name'))
       .min(3, t('validation.atLeast'))
+      .max(30, t('validation.maxLength'))
       .matches(/^[A-Za-zА-Яа-яЁёІіЇї\s]+$/, t('validation.containName'))
       .test('is-not-empty', t('validation.empty'), value => {
         return !/^\s+$/.test(value);
@@ -74,6 +80,7 @@ export const reviewValidationSchema = t =>
       .required(t('validation.email')),
     comment: Yup.string()
       .required(t('validation.review'))
+      .max(1000, t('validation.maxComment'))
       .test('is-not-empty', t('validation.reviewEmpty'), value => {
         return !/^\s+$/.test(value);
       }),

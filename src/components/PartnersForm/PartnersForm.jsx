@@ -132,6 +132,8 @@ export const PartnersForm = () => {
                   value={comment}
                   onChange={formik.handleChange}
                   hasValue={comment.length > 0}
+                  touched={formik.touched.comment}
+                  error={formik.errors.comment}
                 />
               </label>
               <FormInfo>{t('forms.info')}</FormInfo>
