@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router';
 import { useMediaQuery } from 'react-responsive';
 import { PathDisplayer } from 'components/PathDisplayer/PathDisplayer';
 import {
@@ -16,7 +17,6 @@ import {
   ReviewsPageGradientContainer,
   ReviewsPageSection,
 } from './ReviewsPage.styled';
-import { useNavigate } from 'react-router';
 
 const ReviewsPage = () => {
   const { t } = useTranslation();
