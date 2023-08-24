@@ -11,7 +11,7 @@ export const partnerValidationSchema = t =>
   Yup.object().shape({
     name: Yup.string()
       .required(t('validation.name'))
-      .min(3, t('validation.atLeast'))
+      .min(2, t('validation.atLeast'))
       .max(30, t('validation.maxLength'))
       .matches(/^[A-Za-zА-Яа-яЁёІіЇї\s]+$/, t('validation.containName'))
       .test('is-not-empty', t('validation.empty'), value => {
@@ -37,7 +37,7 @@ export const orderValidationSchema = t =>
   Yup.object().shape({
     name: Yup.string()
       .required(t('validation.name'))
-      .min(3, t('validation.atLeast'))
+      .min(2, t('validation.atLeast'))
       .max(30, t('validation.maxLength'))
       .matches(/^[A-Za-zА-Яа-яЁёІіЇї\s]+$/, t('validation.containName'))
       .test('is-not-empty', t('validation.empty'), value => {
@@ -69,7 +69,7 @@ export const reviewValidationSchema = t =>
   Yup.object().shape({
     name: Yup.string()
       .required(t('validation.name'))
-      .min(3, t('validation.atLeast'))
+      .min(2, t('validation.atLeast'))
       .max(30, t('validation.maxLength'))
       .matches(/^[A-Za-zА-Яа-яЁёІіЇї\s]+$/, t('validation.containName'))
       .test('is-not-empty', t('validation.empty'), value => {
