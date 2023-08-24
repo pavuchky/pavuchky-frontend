@@ -45,6 +45,7 @@ export const Modal = ({ children, onClose, variant }) => {
           type="button"
           onClick={handleCloseBtnClick}
           variant={variant}
+          aria-label="Close button"
         >
           <CloseIcon>
             <use href={sprite + '#close'}></use>

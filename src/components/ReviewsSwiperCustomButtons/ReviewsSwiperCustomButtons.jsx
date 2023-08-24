@@ -13,12 +13,20 @@ import {
 const ReviewsSwiperCustomButtons = () => {
   return (
     <ReviewsSwiperCustomButtonsContainer>
-      <ReviewsSwiperCustomButton type="button" className="swiper-prev-btn">
+      <ReviewsSwiperCustomButton
+        type="button"
+        className="swiper-prev-btn"
+        aria-label="Previous button"
+      >
         <ReviewsSwiperCustomButtonSvg width="17px" height="32px">
           <use xlinkHref={`${sprite}#prew-icon`} />
         </ReviewsSwiperCustomButtonSvg>
       </ReviewsSwiperCustomButton>
-      <ReviewsSwiperCustomButton className="swiper-next-btn" type="button">
+      <ReviewsSwiperCustomButton
+        className="swiper-next-btn"
+        type="button"
+        aria-label="Next button"
+      >
         <ReviewsSwiperCustomButtonSvg width="17px" height="32px">
           <use xlinkHref={`${sprite}#next-icon`} />
         </ReviewsSwiperCustomButtonSvg>

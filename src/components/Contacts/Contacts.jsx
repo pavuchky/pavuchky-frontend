@@ -76,6 +76,7 @@ const Contacts = () => {
                   href={socialMediaLink}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`Link to ${socialMediaName}`}
                 >
                   <IconSocial
                     name={socialMediaName}
