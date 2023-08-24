@@ -94,6 +94,7 @@ const TabletDesktopFooter = () => {
                   href={socialMediaLink}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`Link to ${socialMediaName}`}
                 >
                   <IconFooterSocial name={socialMediaName} size={36} />
                 </a>

@@ -58,7 +58,11 @@ export const Donation = () => {
 
         <CardLabel>
           <CardInput type="text" value={cardNumber} readOnly />
-          <CopyButton type="button" onClick={() => handleCopyClick()}>
+          <CopyButton
+            type="button"
+            onClick={() => handleCopyClick()}
+            aria-label="Button for copying the card number"
+          >
             <CopyIcon>
               <use href={sprite + '#copy'}></use>
             </CopyIcon>
