@@ -1,10 +1,24 @@
+import { useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { NavList } from './DesktopNav.styled';
-import { HashLink } from 'react-router-hash-link';
 
 export const DesktopNav = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === '#contacts') {
+      const element = document.getElementById('contacts');
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 500);
+      }
+    }
+  }, [location.hash]);
 
   const items = [
     { href: '/about', value: t('nav.about') },
@@ -21,7 +35,19 @@ export const DesktopNav = () => {
         </li>
       ))}
       <li>
-        <HashLink to="/#contacts">{t('nav.contacts')}</HashLink>
+        <p
+          onClick={() => {
+            navigate(`/#contacts`);
+            setTimeout(() => {
+              const element = document.getElementById('contacts');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+              }
+            }, 500);
+          }}
+        >
+          {t('nav.contacts')}
+        </p>
       </li>
     </NavList>
   );

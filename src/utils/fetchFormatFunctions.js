@@ -170,12 +170,15 @@ export const galleryVideoFormattedFn = ({ galleryVideoList, _id }) => {
   return {
     id: _id,
     galleryVideoList: galleryVideoList
-      ? galleryVideoList.map(({ videoLink, _key }) => {
+      ? galleryVideoList.map(({ videoLink, videoDescription, _key }) => {
           // https://docs.document360.com/docs/embed-youtube-shorts
           return {
             id: _key,
             videoLink: !!videoLink
               ? videoLink.replace('shorts', 'embed')
+              : null,
+            videoDescription: !!videoDescription
+              ? { en: videoDescription.en, ua: videoDescription.ua }
               : null,
           };
         })
