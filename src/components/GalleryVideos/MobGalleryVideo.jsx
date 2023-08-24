@@ -30,7 +30,8 @@ const MobGalleryVideos = ({ data }) => {
   return (
     <>
       <VideoMobileContainer>
-        {showingVideos?.map(({ videoLink, id, videoDescription}) => {
+         {showingVideos?.map(({ videoLink, id, videoDescription }) => {
+          const renderedDescription = videoDescription?.[lang] || ''; 
           return (
             <li key={id}>
               <VideoReactPlayer
@@ -43,7 +44,7 @@ const MobGalleryVideos = ({ data }) => {
                   },
                 }}
               />
-              <VideoText>{videoDescription[lang]}</VideoText>
+              <VideoText>{renderedDescription}</VideoText>
             </li>
           );
         })}

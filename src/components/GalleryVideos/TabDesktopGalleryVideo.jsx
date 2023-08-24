@@ -19,7 +19,7 @@ const TabDesktopGalleryVideo = ({ data }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
   const { lang } = useContext(LanguageContext);
-  
+
   const [visibleVideos, setVisibleVideos] = useState(4);
 
   const itemsPerPage = 9;
@@ -48,7 +48,9 @@ const TabDesktopGalleryVideo = ({ data }) => {
           <VideoTabGridContainer>
             {data?.galleryVideoList
               ?.slice(0, visibleVideos)
-              .map(({ videoLink, id, videoDescription}) => {
+              .map(({ videoLink, id, videoDescription }) => {
+                const renderedDescription = videoDescription?.[lang] || '';
+
                 return (
                   <li key={id}>
                     <VideoTabReactPlayer
@@ -63,7 +65,7 @@ const TabDesktopGalleryVideo = ({ data }) => {
                         },
                       }}
                     />
-                    <VideoText>{videoDescription[lang]}</VideoText>
+                    <VideoText>{renderedDescription}</VideoText>
                   </li>
                 );
               })}
@@ -80,6 +82,7 @@ const TabDesktopGalleryVideo = ({ data }) => {
         <>
           <VideoDesktopGridContainer>
             {showingVideos?.map(({ videoLink, id, videoDescription }) => {
+              const renderedDescription = videoDescription?.[lang] || '';
               return (
                 <li key={id}>
                   <VideoDesktopReactPlayer
@@ -92,7 +95,7 @@ const TabDesktopGalleryVideo = ({ data }) => {
                       },
                     }}
                   />
-                  <VideoText>{videoDescription[lang]}</VideoText>
+                  <VideoText>{renderedDescription }</VideoText>
                 </li>
               );
             })}
