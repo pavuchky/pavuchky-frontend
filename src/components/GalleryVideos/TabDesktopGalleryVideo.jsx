@@ -37,7 +37,7 @@ const TabDesktopGalleryVideo = ({ data }) => {
     startIndex,
     startIndex + itemsPerPage
   );
-  console.log(showingVideos);
+ 
   const onPageChange = (event, newPage) => {
     setCurrentPage(newPage);
   };
@@ -49,7 +49,7 @@ const TabDesktopGalleryVideo = ({ data }) => {
             {data?.galleryVideoList
               ?.slice(0, visibleVideos)
               .map(({ videoLink, id, videoDescription }) => {
-                const renderedDescription = videoDescription?.[lang] || '';
+                const renderedDescription = videoDescription?.[lang] || `${t('videos.netsCreation')}`;
 
                 return (
                   <li key={id}>
@@ -82,7 +82,7 @@ const TabDesktopGalleryVideo = ({ data }) => {
         <>
           <VideoDesktopGridContainer>
             {showingVideos?.map(({ videoLink, id, videoDescription }) => {
-              const renderedDescription = videoDescription?.[lang] || '';
+              const renderedDescription = videoDescription?.[lang] || `${t('videos.netsCreation')}`;
               return (
                 <li key={id}>
                   <VideoDesktopReactPlayer

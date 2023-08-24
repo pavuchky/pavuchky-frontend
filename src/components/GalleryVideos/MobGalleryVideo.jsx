@@ -8,11 +8,11 @@ import {
   VideoText,
   VideoReactPlayer,
 } from './MobGalleryVideo.styled';
-
+import { useTranslation } from 'react-i18next';
 
 const MobGalleryVideos = ({ data }) => {
   const [currentPage, setCurrentPage] = useState(1);
-
+ const { t } = useTranslation();
  const { lang } = useContext(LanguageContext);
 
   const itemsPerPage = 1;
@@ -21,7 +21,7 @@ const MobGalleryVideos = ({ data }) => {
     startIndex,
     startIndex + itemsPerPage
   );
-  console.log(showingVideos);
+
  
   const onPageChange = (event, newPage) => {
     setCurrentPage(newPage);
@@ -31,7 +31,7 @@ const MobGalleryVideos = ({ data }) => {
     <>
       <VideoMobileContainer>
          {showingVideos?.map(({ videoLink, id, videoDescription }) => {
-          const renderedDescription = videoDescription?.[lang] || ''; 
+          const renderedDescription = videoDescription?.[lang] || `${t('videos.netsCreation')}`; 
           return (
             <li key={id}>
               <VideoReactPlayer
