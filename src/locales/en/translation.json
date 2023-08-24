@@ -173,7 +173,7 @@
     "containName": "Name can only contain letters.",
     "fill": "Please fill in the field.",
     "empty": "The field cannot be empty.",
-    "atLeast": "Field must be at least 3 characters.",
+    "atLeast": "Field must be at least 2 characters.",
     "maxLength": "The length of the field must be less than or equal to 30 characters.",
     "maxComment": "The length of the field must be less than or equal to 1000 characters.",
     "incorrectEmail": "Incorrect email address.",
