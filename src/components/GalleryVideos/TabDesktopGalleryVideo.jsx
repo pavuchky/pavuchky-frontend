@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
 import { PaginationItem } from '@mui/material';
 import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
-
+import { LanguageContext } from 'utils/LanguageContext';
 import {
   VideoTabGridContainer,
   VideoTabButton,
@@ -17,6 +17,8 @@ import { VideoText } from './MobGalleryVideo.styled';
 
 const TabDesktopGalleryVideo = ({ data }) => {
   const [currentPage, setCurrentPage] = useState(1);
+
+  const { lang } = useContext(LanguageContext);
 
   const [visibleVideos, setVisibleVideos] = useState(4);
 
@@ -35,6 +37,7 @@ const TabDesktopGalleryVideo = ({ data }) => {
     startIndex,
     startIndex + itemsPerPage
   );
+ 
   const onPageChange = (event, newPage) => {
     setCurrentPage(newPage);
   };
@@ -45,7 +48,9 @@ const TabDesktopGalleryVideo = ({ data }) => {
           <VideoTabGridContainer>
             {data?.galleryVideoList
               ?.slice(0, visibleVideos)
-              .map(({ videoLink, id }) => {
+              .map(({ videoLink, id, videoDescription }) => {
+                const renderedDescription = videoDescription?.[lang] || `${t('videos.netsCreation')}`;
+
                 return (
                   <li key={id}>
                     <VideoTabReactPlayer
@@ -60,7 +65,7 @@ const TabDesktopGalleryVideo = ({ data }) => {
                         },
                       }}
                     />
-                    <VideoText>{t('videos.netsCreation')}</VideoText>
+                    <VideoText>{renderedDescription}</VideoText>
                   </li>
                 );
               })}
@@ -76,7 +81,8 @@ const TabDesktopGalleryVideo = ({ data }) => {
       {isDesktopScreen && (
         <>
           <VideoDesktopGridContainer>
-            {showingVideos?.map(({ videoLink, id }) => {
+            {showingVideos?.map(({ videoLink, id, videoDescription }) => {
+              const renderedDescription = videoDescription?.[lang] || `${t('videos.netsCreation')}`;
               return (
                 <li key={id}>
                   <VideoDesktopReactPlayer
@@ -89,7 +95,7 @@ const TabDesktopGalleryVideo = ({ data }) => {
                       },
                     }}
                   />
-                  <VideoText>{t('videos.netsCreation')}</VideoText>
+                  <VideoText>{renderedDescription }</VideoText>
                 </li>
               );
             })}

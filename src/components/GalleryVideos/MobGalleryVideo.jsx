@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-
+import React, { useContext, useState } from 'react';
 import { PaginationItem } from '@mui/material';
 import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
-
+import { LanguageContext } from 'utils/LanguageContext';
 import {
   VideoMobileContainer,
   MobPagination,
@@ -13,8 +12,8 @@ import { useTranslation } from 'react-i18next';
 
 const MobGalleryVideos = ({ data }) => {
   const [currentPage, setCurrentPage] = useState(1);
-
-  const { t } = useTranslation();
+ const { t } = useTranslation();
+ const { lang } = useContext(LanguageContext);
 
   const itemsPerPage = 1;
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -23,6 +22,7 @@ const MobGalleryVideos = ({ data }) => {
     startIndex + itemsPerPage
   );
 
+ 
   const onPageChange = (event, newPage) => {
     setCurrentPage(newPage);
   };
@@ -30,7 +30,8 @@ const MobGalleryVideos = ({ data }) => {
   return (
     <>
       <VideoMobileContainer>
-        {showingVideos?.map(({ videoLink, id }) => {
+         {showingVideos?.map(({ videoLink, id, videoDescription }) => {
+          const renderedDescription = videoDescription?.[lang] || `${t('videos.netsCreation')}`; 
           return (
             <li key={id}>
               <VideoReactPlayer
@@ -43,7 +44,7 @@ const MobGalleryVideos = ({ data }) => {
                   },
                 }}
               />
-              <VideoText>{t('videos.netsCreation')}</VideoText>
+              <VideoText>{renderedDescription}</VideoText>
             </li>
           );
         })}
