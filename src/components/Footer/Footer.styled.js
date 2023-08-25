@@ -33,15 +33,6 @@ export const FooterSocialTitle = styled.p`
   font-weight: ${fontWeights.regular};
   color: ${colors.secondaryFont};
 `;
-export const FooterList = styled.ul`
-  display: grid;
-  grid-template-columns: 50% 50%;
-  column-gap: 45px;
-  row-gap: 16px;
-  font-size: ${fontSizes.xs};
-  font-weight: ${fontWeights.regular};
-  color: ${colors.secondaryFont};
-`;
 export const FooterSubList = styled.ul`
   display: grid;
   grid-template-columns: 50% 50%;

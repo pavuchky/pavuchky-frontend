@@ -64,6 +64,20 @@ export const StyledLink = styled(Link)`
         right: 9%;
       }
     `}
+
+
+      ${({ variant }) =>
+    variant === 'toHome' &&
+    css`
+      color: ${({ theme }) => theme.colors.white};
+      background-color: ${({ theme }) => theme.colors.blue};
+
+      &:hover,
+      &:focus {
+        color: ${({ theme }) => theme.colors.yellow};
+        background-color: ${({ theme }) => theme.colors.blue};
+      }
+    `}
 `;
 
 export const StyledHashLink = styled(HashLink)`

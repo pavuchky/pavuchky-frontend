@@ -2,6 +2,7 @@ import React from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { useTranslation } from 'react-i18next';
 import useFetch from 'hooks/useFetch';
+import { handleScrollToTop } from 'utils/handleScrollToTop';
 import {
   PartnersBtn,
   PartnersContainer,
@@ -63,7 +64,9 @@ export const Partners = () => {
             <PartnersText>{t('partners.help')}</PartnersText>
           )}
         </div>
-        <PartnersBtn to="/partners">{t('partners.apply')}</PartnersBtn>
+        <PartnersBtn to="/partners" onClick={handleScrollToTop}>
+          {t('partners.apply')}
+        </PartnersBtn>
       </PartnersTablet>
     </PartnersContainer>
   );

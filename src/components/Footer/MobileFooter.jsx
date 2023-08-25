@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import useFetch from '../../hooks/useFetch';
+import { handleScrollToTop } from 'utils/handleScrollToTop';
 
 import Icons from '../../assets/images/sprite.svg';
 
@@ -9,14 +11,11 @@ import {
   FooterSocialMediaContainer,
   FooterSocialMediaLinks,
   FooterSocialTitle,
-  // FooterList,
   FooterTel,
   FooterAllReserved,
   FooterSubLinks,
   FooterSubList,
 } from './Footer.styled';
-
-import useFetch from '../../hooks/useFetch';
 
 const MobFooter = () => {
   const IconFooterSocial = ({ name, color, size }) => (
@@ -27,13 +26,6 @@ const MobFooter = () => {
 
   const { data } = useFetch('contacts');
   const { t } = useTranslation();
-
-  const scroll = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
 
   return (
     <FooterContainer>
@@ -59,12 +51,12 @@ const MobFooter = () => {
       <div>
         <FooterSubList>
           <li>
-            <NavLink to="/gallery/photos" onClick={scroll}>
+            <NavLink to="/gallery/photos" onClick={handleScrollToTop}>
               {t('nav.gallery')}
             </NavLink>
           </li>
           <li>
-            <NavLink to="/about" onClick={scroll}>
+            <NavLink to="/about" onClick={handleScrollToTop}>
               {t('nav.aboutUs')}
             </NavLink>
           </li>
@@ -72,7 +64,7 @@ const MobFooter = () => {
             <FooterSubLinks to="/#donation">{t('nav.donate')}</FooterSubLinks>
           </li>
           <li>
-            <NavLink to="/order" onClick={scroll}>
+            <NavLink to="/order" onClick={handleScrollToTop}>
               {t('nav.order')}
             </NavLink>
           </li>
@@ -80,7 +72,7 @@ const MobFooter = () => {
             <FooterSubLinks to="/#contacts">{t('nav.weave')}</FooterSubLinks>
           </li>
           <li>
-            <NavLink to="reporting" onClick={scroll}>
+            <NavLink to="/reporting" onClick={handleScrollToTop}>
               {t('nav.reporting')}
             </NavLink>
           </li>

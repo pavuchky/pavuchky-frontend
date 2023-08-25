@@ -2,12 +2,13 @@ import { useMediaQuery } from 'react-responsive';
 import PropTypes from 'prop-types';
 import { ViewAllIcon, ViewAllLink, ViewAllText } from './ViewAll.styled';
 import sprite from 'assets/images/sprite.svg';
+import { handleScrollToTop } from 'utils/handleScrollToTop';
 
 export const ViewAll = ({ shortText, longText, changeable = false, path }) => {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
 
   return (
-    <ViewAllLink to={path}>
+    <ViewAllLink to={path} onClick={handleScrollToTop}>
       <ViewAllText>
         {changeable ? (isMobile ? shortText : longText) : shortText}
       </ViewAllText>
