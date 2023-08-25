@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
 import { useMediaQuery } from 'react-responsive';
 import { PathDisplayer } from 'components/PathDisplayer/PathDisplayer';
+import { handleScrollToTop } from 'utils/handleScrollToTop';
 import {
   ReviewsTitle,
   ReviewsTitlePartContainer,
@@ -27,6 +28,7 @@ const ReviewsPage = () => {
   const onLeaveReviewButtonClick = evt => {
     evt.preventDefault();
     navigate('/review');
+    handleScrollToTop();
   };
 
   const ContactUs = (
