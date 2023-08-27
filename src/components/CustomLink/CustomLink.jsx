@@ -2,7 +2,13 @@ import PropTypes from 'prop-types';
 import { StyledHashLink, StyledLink } from './CustomLink.styled';
 import { handleScrollToTop } from 'utils/handleScrollToTop';
 
-export const CustomLink = ({ type, text, path, variant }) => {
+export const CustomLink = ({
+  type,
+  text,
+  path,
+  variant,
+  onClick = () => null,
+}) => {
   return (
     <>
       {type === 'link' && (
@@ -11,7 +17,7 @@ export const CustomLink = ({ type, text, path, variant }) => {
         </StyledLink>
       )}
       {type === 'hashLink' && (
-        <StyledHashLink to={path} variant={variant}>
+        <StyledHashLink onClick={onClick} variant={variant}>
           {text}
         </StyledHashLink>
       )}

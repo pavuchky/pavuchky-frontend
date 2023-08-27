@@ -2,11 +2,12 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MenuBtn, MenuList } from './MobileMenu.styled';
 import { useTranslation } from 'react-i18next';
-import { HashLink } from 'react-router-hash-link';
 import { Modal } from 'components/Modal/Modal';
+import useHash from 'hooks/useHash';
 
 export const MobileMenu = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const { handleHashScroll } = useHash();
 
   const { t } = useTranslation();
 
@@ -43,10 +44,22 @@ export const MobileMenu = () => {
               </li>
             ))}
             <li onClick={handleMenuClose}>
-              <HashLink to="/#donation"> {t('nav.donate')}</HashLink>
+              <p
+                onClick={() => {
+                  handleHashScroll('donation');
+                }}
+              >
+                {t('nav.donate')}
+              </p>
             </li>
             <li onClick={handleMenuClose}>
-              <HashLink to="/#contacts">{t('nav.weave')}</HashLink>
+              <p
+                onClick={() => {
+                  handleHashScroll('contacts');
+                }}
+              >
+                {t('nav.weave')}
+              </p>
             </li>
           </MenuList>
         </Modal>

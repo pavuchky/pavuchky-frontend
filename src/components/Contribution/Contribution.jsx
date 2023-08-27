@@ -9,8 +9,10 @@ import {
   LinksListItem,
   TextWrapper,
 } from './Contribution.styled';
+import useHash from 'hooks/useHash';
 
 export const Contribution = () => {
+  const { handleHashScroll } = useHash();
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
   const { t } = useTranslation();
 
@@ -33,9 +35,11 @@ export const Contribution = () => {
       <LinksList>
         <LinksListItem>
           <CustomLink
+            onClick={() => {
+              handleHashScroll('donation');
+            }}
             type="hashLink"
             text={t('nav.donate')}
-            path="/#donation"
             variant="blue"
           />
         </LinksListItem>
