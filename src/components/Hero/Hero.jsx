@@ -12,8 +12,10 @@ import {
   IconTank,
 } from './Hero.styled';
 import { CustomLink } from '../CustomLink/CustomLink';
+import useHash from 'hooks/useHash';
 
 export const Hero = () => {
+  const { handleHashScroll } = useHash();
   const { t } = useTranslation();
 
   return (
@@ -28,17 +30,21 @@ export const Hero = () => {
       <HeroBtnList>
         <HeroItem>
           <CustomLink
+            onClick={() => {
+              handleHashScroll('contacts');
+            }}
             type="hashLink"
             text={t('hero.joinWeaving')}
-            path="/#contacts"
             variant="blue"
           />
         </HeroItem>
         <HeroItem>
           <CustomLink
+            onClick={() => {
+              handleHashScroll('donation');
+            }}
             type="hashLink"
             text={t('nav.donate')}
-            path="/#donation"
             variant="yellow"
           />
         </HeroItem>

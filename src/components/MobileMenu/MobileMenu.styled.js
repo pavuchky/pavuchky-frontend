@@ -36,6 +36,10 @@ export const MenuList = styled.ul`
     &:hover {
       color: ${({ theme }) => theme.colors.blue};
     }
+
+    p {
+      cursor: pointer;
+    }
   }
 
   @media only screen and (min-width: 768px) {

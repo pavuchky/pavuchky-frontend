@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
 import styled, { css } from 'styled-components';
 
 export const StyledLink = styled(Link)`
@@ -80,9 +79,10 @@ export const StyledLink = styled(Link)`
     `}
 `;
 
-export const StyledHashLink = styled(HashLink)`
+export const StyledHashLink = styled.p`
   width: 100%;
   padding: 10px;
+  cursor: pointer;
 
   font-family: ${({ theme }) => theme.fonts.regular};
   font-weight: ${({ theme }) => theme.fontWeights.regular};

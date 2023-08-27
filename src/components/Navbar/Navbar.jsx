@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
 import i18n from 'i18n';
 import { useMediaQuery } from 'react-responsive';
 import { useTranslation } from 'react-i18next';
@@ -7,6 +6,7 @@ import Icon from '../../assets/images/sprite.svg';
 import { LanguageContext } from 'utils/LanguageContext';
 import { MobileMenu } from 'components/MobileMenu/MobileMenu';
 import { DesktopNav } from 'components/DesktopNav/DesktopNav';
+import useHash from 'hooks/useHash';
 import {
   DonateBtn,
   Header,
@@ -19,10 +19,7 @@ import {
 } from './Navbar.styled';
 
 export const Navbar = () => {
-  //
-  const navigate = useNavigate();
-  const location = useLocation();
-  //
+  const { handleHashScroll } = useHash();
 
   const locales = { ua: { title: 'UA' }, en: { title: 'EN' } };
   const { t } = useTranslation();
@@ -30,19 +27,6 @@ export const Navbar = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   const langContainerRef = useRef(null);
-
-  //
-  useEffect(() => {
-    if (location.hash === '#donation') {
-      const element = document.getElementById('donation');
-      if (element) {
-        setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }, 500);
-      }
-    }
-  }, [location.hash]);
-  //
 
   useEffect(() => {
     const handleClickOutside = e => {
@@ -104,13 +88,7 @@ export const Navbar = () => {
 
         <DonateBtn
           onClick={() => {
-            navigate(`/#donation`);
-            setTimeout(() => {
-              const element = document.getElementById('donation');
-              if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-              }
-            }, 500);
+            handleHashScroll('donation');
           }}
         >
           {t('nav.donate')}

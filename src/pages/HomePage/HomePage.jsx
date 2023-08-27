@@ -11,12 +11,14 @@ import { Statistics } from 'components/Statistics/Statistics';
 import { Partners } from 'components/Partners/Partners';
 import { OurWork } from 'components/OurWork/OurWork';
 import { useEffect } from 'react';
+import { handleScrollToTop } from 'utils/handleScrollToTop';
 
 const HomePage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (window.performance.navigation.type === 1) {
+    if (performance.getEntriesByType('navigation')[0].type === 'reload') {
+      handleScrollToTop();
       navigate('/');
     }
   }, [navigate]);
