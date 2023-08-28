@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 
-const PHONE_REGEXP = /^\+380\d{9}$|^\+380\d{2}\s?\d{3}\s?\d{2}\s?\d{2}$/;
+const PHONE_REGEXP = /^\+380\d{9}$/;
 
 const PHONE_REGEXP_PARTNER =
   /^\+\d{1,3}\s?\d{2,3}\s?\d{3}\s?\d{2}\s?\d{2}$|^\+\d{10,12}$/;
