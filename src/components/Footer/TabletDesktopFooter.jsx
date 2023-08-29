@@ -97,7 +97,7 @@ const TabletDesktopFooter = () => {
           )}
         </FooterSocialTabLinks>
       </FooterSocialTabContainer>
-      <FooterTabAllReserved>&#169;All rights reserved</FooterTabAllReserved>
+      <FooterTabAllReserved>&#xa9;All rights reserved</FooterTabAllReserved>
     </FooterTabContainer>
   );
 };
