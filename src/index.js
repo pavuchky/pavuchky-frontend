@@ -15,7 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <I18nextProvider i18n={i18n}>
       <ThemeProvider theme={theme}>
-        <BrowserRouter basename="/pavuchky-frontend">
+        <BrowserRouter basename="/">
           <LanguageProvider>
             <App />
             <ToastContainer autoClose={2000} />
