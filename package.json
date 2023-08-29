@@ -2,7 +2,6 @@
   "name": "pavuchky-frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://pavuchky.github.io/pavuchky-frontend/",
   "dependencies": {
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.3",

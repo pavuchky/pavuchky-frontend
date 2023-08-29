@@ -34,7 +34,8 @@ const GalleryTabPhotos = ({ data }) => {
   };
 
   const openLightbox = index => {
-    setSelectedImageIndex(index);
+    const absoluteIndex = startIndex + index;
+    setSelectedImageIndex(absoluteIndex);
     setLightboxOpen(true);
   };
 
@@ -49,6 +50,10 @@ const GalleryTabPhotos = ({ data }) => {
   );
   const onPageChange = (event, newPage) => {
     setCurrentPage(newPage);
+    const newStartIndex = (newPage - 1) * itemsPerPage;
+    const newSelectedImageIndex =
+      newStartIndex + (selectedImageIndex % itemsPerPage);
+    setSelectedImageIndex(newSelectedImageIndex);
   };
 
   return (

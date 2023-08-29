@@ -28,6 +28,6 @@ export const CustomLink = ({
 CustomLink.propTypes = {
   type: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
-  path: PropTypes.string.isRequired,
+  path: PropTypes.string,
   variant: PropTypes.string.isRequired,
 };
