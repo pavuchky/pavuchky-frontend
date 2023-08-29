@@ -81,7 +81,7 @@ const MobFooter = () => {
           <a href="tel:+380635693058">+380635693058</a>
         </FooterTel>
       </div>
-      <FooterAllReserved>&#64;All right reserved</FooterAllReserved>
+      <FooterAllReserved>&#169;All rights reserved</FooterAllReserved>
     </FooterContainer>
   );
 };
