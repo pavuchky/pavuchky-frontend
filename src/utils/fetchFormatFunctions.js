@@ -2,7 +2,7 @@ import { urlFor } from 'client';
 import {
   formatTextSanity,
   formatFileSanity,
-  formatMediaLinkSanity,
+  // formatMediaLinkSanity,
 } from './sanityHelpers';
 
 export const contactsFormattedFn = ({
@@ -64,10 +64,10 @@ export const reviewsFormattedFn = ({ reviewList, _id }) => {
     reviewList: reviewList
       ? reviewList.map(({ reviewDesc, reviewImage, _key }) => {
           return {
-            // reviewImage: reviewImage?.asset ? urlFor(reviewImage?.asset) : null,
-            reviewImage: !!reviewImage
-              ? formatMediaLinkSanity(reviewImage)
-              : null,
+            reviewImage: reviewImage?.asset ? urlFor(reviewImage?.asset) : null,
+            // reviewImage: !!reviewImage
+            //   ? formatMediaLinkSanity(reviewImage)
+            //   : null,
             reviewDesc: !!reviewDesc ? reviewDesc : null,
             id: _key,
           };
@@ -159,7 +159,8 @@ export const galleryPhotoFormattedFn = ({ galleryPhotoList, _id }) => {
       ? galleryPhotoList.map(({ photoLink, _key }) => {
           return {
             id: _key,
-            photoLink: !!photoLink ? formatMediaLinkSanity(photoLink) : null,
+            // photoLink: !!photoLink ? formatMediaLinkSanity(photoLink) : null,
+            photoLink: photoLink?.asset ? urlFor(photoLink?.asset) : null,
           };
         })
       : null,
